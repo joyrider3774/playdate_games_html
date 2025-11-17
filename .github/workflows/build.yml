@@ -36,7 +36,7 @@ jobs:
       - name: Checkout repo sources
         uses: actions/checkout@v4
         with:
-          submodules: 'true'
+          repository: 'joyrider3774/playdate_games_html' 
           path: repo
           
       - name: Checkout Playdate SDL2 Api Sources
@@ -44,7 +44,7 @@ jobs:
         with:
           repository: 'joyrider3774/Playdate_Api_SDL2'
 
-      - name: Checkout game sources sources
+      - name: Checkout game sources
         uses: actions/checkout@v4
         with:
           submodules: 'true'
