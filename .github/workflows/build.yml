@@ -21,7 +21,7 @@ jobs:
           - { buildtype: 'playdate', repo: 'joyrider3774/worm_playdate',               runs-on: 'ubuntu-latest',  output: 'worm',                 downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
           - { buildtype: 'playdate', repo: 'joyrider3774/mazethingie_playdate',        runs-on: 'ubuntu-latest',  output: 'mazethingie',          downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
           - { buildtype: 'playdate', repo: 'joyrider3774/sokoban_playdate',            runs-on: 'ubuntu-latest',  output: 'playdoban',            downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
-    
+
     runs-on: ${{ matrix.runs-on }}
     steps:
       - name: Grab FFMPEG
@@ -39,7 +39,7 @@ jobs:
         with:
           repository: ${{ matrix.repo }} 
           path: tmp
-        
+
       - name: Checkout EMSDK sources
         uses: actions/checkout@v4
         with:
@@ -50,34 +50,34 @@ jobs:
         run: |
             cd emsdk
             ./emsdk install latest
-            ./emsdk activate latest            
-      
-     - if: ${{ (matrix.codesecret != '') && (matrix.codesecretfile != '')}}
+            ./emsdk activate latest
+
+      - if: ${{ (matrix.codesecret != '') && (matrix.codesecretfile != '')}}
         name: Setup Secret codekey.h File
         env: 
           SECRET: ${{secrets[matrix.codesecret] }}
         run : |
           echo "$SECRET" | base64 --decode >  tmp/${{matrix.codesecretfile}}
-       
+
       - if: ${{ matrix.buildtype== 'playdate'}}
         name: move things to correct directories playdate
         run: |
           rm -rf ./src/srcgame
           mv tmp/src ./src/srcgame
           cp -Rf tmp/Source/. ./Source
-     
+
       - if: ${{ (matrix.downloadsecret != '') && (matrix.downloadsecretcmd != '')}}
         name: run secret download
         uses: wei/wget@v1
         with:
           args: -O download ${{ secrets[matrix.downloadsecret] }}
-      
+
       - if: ${{ (matrix.downloadsecret != '') && (matrix.downloadsecretcmd != '')}}
         name: run secret download cmd
         run: |
           ${{matrix.downloadsecretcmd}}
           rm download
-     
+
       - name: move things to correct directories
         run: |
           rm -rf ./src/srcgame
