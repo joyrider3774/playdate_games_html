@@ -110,7 +110,7 @@ Rubido is a little chinese checkers or solitaire game with four difficulties.
 ---
 
 ## Tree Squirrel
-![Tree Squirrel Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/tree-squirrel-screenshot1.png"> ![Tree Squirrel Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/tree-squirrel-screenshot2.png"> 
+![Tree Squirrel Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/tree-squirrel-screenshot1.png") ![Tree Squirrel Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/tree-squirrel-screenshot2.png")
 
 RetroTime is a game containing 8 retro based games playable in 3 game modes being Retro Carousel, Time Attack and Lives mode. The game is a port from my competetion entry for Fuze 4 for Nintendo switch, in colleboration Wireframe magazine.
 
