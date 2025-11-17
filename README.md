@@ -19,6 +19,42 @@ GamePads are supported if your browser support it.
 ## Games
 Please see respective repo of each game to get more information about the games by clicking on the `Game Info` links
 
+## Blockdude (Playdate)
+![Blockdude Screenshot 1](https://raw.githubusercontent.com/joyrider3774/blockdude_playdate/main/metadata/screenshots/screenshot1.png) ![Blockdude Screenshot 2](https://raw.githubusercontent.com/joyrider3774/blockdude_playdate/main/metadata/screenshots/screenshot9.png)
+
+Blokdude is a remake of the well known TI Caluculator game from Brandon Sterner as well as the blockman game from Soleau Software. This version of the game is based on the GP2X port of blockdude i made over a decade ago.
+
+[Game Info](https://joyrider3774.github.io/blockdude_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/blockdude)
+
+---
+
+## Checkers
+![Checkers Screenshot 1](https://raw.githubusercontent.com/joyrider3774/checkers_playdate/main/metadata/screenshots/Checkers-screenshot1.gif) ![Checkers Screenshot 2](https://raw.githubusercontent.com/joyrider3774/checkers_playdate/main/metadata/screenshots/Checkers-screenshot5.png)
+
+Checkers is the well known board game with four difficulties and a jump heuristic. This version is port of my gp2x version made to work with the Trimui Smart pro handheld.
+
+[Game Info](https://joyrider3774.github.io/checkers_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/checkers)
+
+---
+
+## Dynamate
+![Dynamate Screenshot 1](https://raw.githubusercontent.com/joyrider3774/dynamate_playdate/main/metadata/screenshots/Dynamate-screenshot1.gif) ![Dynamate Screenshot 2](https://raw.githubusercontent.com/joyrider3774/dynamate_playdate/main/metadata/screenshots/Dynamate-screenshot4.png)
+
+Dynamate is a puzzle game invented by Björn Kalzen and Jonas Norberg, a couple of years ago i contacted them to make a port for the gp2x handheld. This version is port of my gp2x version made to work with the Trimui Smart pro handheld.
+
+[Game Info](https://joyrider3774.github.io/dynamate_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/dynamate)
+
+---
+
+## Formula 1 Game & Watch
+![Formula 1 Screenshot 1](https://raw.githubusercontent.com/joyrider3774/formula1_playdate/main/metadata/screenshots/Formula%201%20Game%20%26%20Watch%20screenshot%201.png) ![Formula 1 Screenshot 2](https://raw.githubusercontent.com/joyrider3774/formula1_playdate/main/metadata/screenshots/Formula%201%20Game%20%26%20Watch%20screenshot%204.png)
+
+Formula 1 Game & Watch is a small, fictive formula 1 game & watch style lcd game with high score keeping. The Game was initially created over a decade ago for a small retrogame competition, after which it got ported to the gp2x. This version is based on the gp2x version but with added high score saving.
+
+[Game Info](https://joyrider3774.github.io/formula1_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/formula_1)
+
+---
+
 ## Checkers
 ![Checkers Screenshot 1](https://raw.githubusercontent.com/joyrider3774/checkers_playdate/main/metadata/screenshots/Checkers-screenshot1.gif) ![Checkers Screenshot 2](https://raw.githubusercontent.com/joyrider3774/checkers_playdate/main/metadata/screenshots/Checkers-screenshot5.png)
 
@@ -34,6 +70,15 @@ Checkers is the well known board game with four difficulties and a jump heuristi
 Dynamate is a puzzle game invented by Björn Kalzen and Jonas Norberg, a couple of years ago i contacted them to make a port for the gp2x handheld. This version is port of my gp2x version made to work with the Playdate.
 
 [Game Info](https://joyrider3774.github.io/dynamate_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/dynamate)
+
+---
+
+## Mazethingie
+![Mazethingie Screenshot 1](https://raw.githubusercontent.com/joyrider3774/mazethingie_playdate/main/screenshots/screenshot1.png) ![Mazethingie Screenshot 2](https://raw.githubusercontent.com/joyrider3774/mazethingie_playdate/main/screenshots/screenshot2.png)
+
+Mazethingie which is a maze generator / player.
+
+[Game Info](https://joyrider3774.github.io/mazethingie_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/mazethingie)
 
 ---
 

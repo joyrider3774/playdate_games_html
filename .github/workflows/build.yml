@@ -21,6 +21,10 @@ jobs:
           - { repo: 'joyrider3774/worm_playdate',               runs-on: 'ubuntu-latest',  output: 'worm',                 downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
           - { repo: 'joyrider3774/mazethingie_playdate',        runs-on: 'ubuntu-latest',  output: 'mazethingie',          downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
           - { repo: 'joyrider3774/sokoban_playdate',            runs-on: 'ubuntu-latest',  output: 'playdoban',            downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
+          - { repo: 'brenden-t-r/playdate-tree-squirrel',       runs-on: 'ubuntu-latest',  output: 'tree-squirrel',        downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
+          - { repo: 'brenden-t-r/cwmiller/playing-with-blocks', runs-on: 'ubuntu-latest',  output: 'playing-with-blocks',  downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: '"SRC_C_DIR=src/srcgame src/srcgame/scenes/board src/srcgame/scenes/options src/srcgame/scenes/title"'}
+          - { repo: 'raseene/Playdate_KaesuGaesu',              runs-on: 'ubuntu-latest',  output: 'kaesugaesu',           downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: '"SRC_C_DIR=src/srcgame src/srcgame/Game"'}
+
 
     runs-on: ${{ matrix.runs-on }}
     steps:
@@ -86,5 +90,5 @@ jobs:
       - name: Store build
         uses: actions/upload-artifact@v4
         with:
-          name: ${{matrix.output}} - html
+          name: ${{matrix.output}}
           path: html
