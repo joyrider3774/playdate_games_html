@@ -74,11 +74,11 @@ Playdoban is a remake of the classic sokoban game. You as the player need to pus
 ---
 
 ## Playing With Blocks
-![Playing With Blocks 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/playing-with-blocks-screenshot1.png") ![Playing With Blocks 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/playing-with-blocks-screenshot2.png")
+![Playing With Blocks 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/playing-with-blocks-screenshot1.png) ![Playing With Blocks 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/playing-with-blocks-screenshot2.png)
 
-RetroTime is a game containing 8 retro based games playable in 3 game modes being Retro Carousel, Time Attack and Lives mode. The game is a port from my competetion entry for Fuze 4 for Nintendo switch, in colleboration Wireframe magazine.
+Playing With Blocks brings everyone's favorite puzzle game to the Playdate! Since the Playdate is a handheld console meant to go anywhere, Playing With Blocks is primarily inspired by the DMG Game Boy edition.
 
-[Game Info](https://www.github.com/brenden-t-r/playdate-tree-squirrel) - [Play](https://joyrider3774.github.io/playdate_games_html/games/tree-squirrel)
+[Game Info](https://www.github.com/cwmiller/playing-with-blocks) - [Play](https://joyrider3774.github.io/playdate_games_html/games/playing-with-blocks)
 
 ---
 
@@ -101,7 +101,7 @@ Puztrix is a remake of the Gravnic game from inside the NES Puzznic game.
 ---
 
 ## RetroTime
-![RetroTime Screenshot 1](https://raw.githubusercontent.com/joyrider3774/retrotime_playdate/main/metadata/bubblebuster.png") ![RetroTime Screenshot 2](https://raw.githubusercontent.com/joyrider3774/retrotime_playdate/main/metadata/toady.png")
+![RetroTime Screenshot 1](https://raw.githubusercontent.com/joyrider3774/retrotime_playdate/main/metadata/bubblebuster.png) ![RetroTime Screenshot 2](https://raw.githubusercontent.com/joyrider3774/retrotime_playdate/main/metadata/toady.png)
 
 RetroTime is a game containing 8 retro based games playable in 3 game modes being Retro Carousel, Time Attack and Lives mode. The game is a port from my competetion entry for Fuze 4 for Nintendo switch, in colleboration Wireframe magazine.
 
@@ -110,7 +110,7 @@ RetroTime is a game containing 8 retro based games playable in 3 game modes bein
 ---
 
 ## Rubido
-![Rubido Screenshot 1](https://raw.githubusercontent.com/joyrider3774/rubido_playdate/main/metadata/screenshots/Rubido-screenshot1.png)![Puztrix Screenshot 2](https://raw.githubusercontent.com/joyrider3774/rubido_playdate/main/metadata/screenshots/Rubido-screenshot3-original.gif )
+![Rubido Screenshot 1](https://raw.githubusercontent.com/joyrider3774/rubido_playdate/main/metadata/screenshots/Rubido-screenshot1.png) ![Puztrix Screenshot 2](https://raw.githubusercontent.com/joyrider3774/rubido_playdate/main/metadata/screenshots/Rubido-screenshot3-original.gif)
 
 Rubido is a little chinese checkers or solitaire game with four difficulties.
 
@@ -119,7 +119,7 @@ Rubido is a little chinese checkers or solitaire game with four difficulties.
 ---
 
 ## Tree Squirrel
-![Tree Squirrel Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/tree-squirrel-screenshot1.png") ![Tree Squirrel Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/tree-squirrel-screenshot2.png")
+![Tree Squirrel Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/tree-squirrel-screenshot1.png) ![Tree Squirrel Screenshot 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/tree-squirrel-screenshot2.png)
 
 RetroTime is a game containing 8 retro based games playable in 3 game modes being Retro Carousel, Time Attack and Lives mode. The game is a port from my competetion entry for Fuze 4 for Nintendo switch, in colleboration Wireframe magazine.
 
