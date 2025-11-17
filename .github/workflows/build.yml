@@ -32,6 +32,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install ffmpeg
+      
+      - name: Checkout repo sources
+        uses: actions/checkout@v4
+        with:
+          submodules: 'true'
+          path: repo
           
       - name: Checkout Playdate SDL2 Api Sources
         uses: actions/checkout@v4
@@ -64,7 +70,7 @@ jobs:
           
       - name: Apply Source dir Patches 
         run : |
-          cp -Rf Source_patches/${{matrix.output}}/. tmp 2>/dev/null || :
+          cp -Rf repo/Source_patches/${{matrix.output}}/. tmp 2>/dev/null || :
             
       - if: ${{ (matrix.codesecret != '') && (matrix.codesecretfile != '')}}
         name: Setup Secret codekey.h File
