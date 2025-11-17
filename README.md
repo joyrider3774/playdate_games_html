@@ -91,6 +91,15 @@ Playing With Blocks brings everyone's favorite puzzle game to the Playdate! Sinc
 
 ---
 
+## PlayPong
+![PlayPong Screenshot 1](hhttps://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/playpong-screenshot1.png) ![PlayPong Screenshot 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/playpong-screenshot2.png)
+
+PlayPong is an arcade game for 1 or 2 players, inspired by the classic Atari Pong.
+
+[Game Info](https://github.com/knightfox75/PlayPong) - [Play](https://joyrider3774.github.io/playdate_games_html/games/playpong)
+
+---
+
 ## Puzzle Land
 ![Puzzle Land Screenshot 1](https://raw.githubusercontent.com/joyrider3774/puzzleland_playdate/main/metadata/screenshots/Puzzleland-screenshot1.png) ![Puzzle Land Screenshot 2](https://raw.githubusercontent.com/joyrider3774/puzzleland_playdate/main/metadata/screenshots/Puzzleland-screenshot8.png)
 
