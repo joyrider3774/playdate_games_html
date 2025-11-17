@@ -73,6 +73,15 @@ Playdoban is a remake of the classic sokoban game. You as the player need to pus
 
 ---
 
+## Playing With Blocks
+![Playing With Blocks 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/playing-with-blocks-screenshot1.png") ![Playing With Blocks 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/playing-with-blocks-screenshot2.png")
+
+RetroTime is a game containing 8 retro based games playable in 3 game modes being Retro Carousel, Time Attack and Lives mode. The game is a port from my competetion entry for Fuze 4 for Nintendo switch, in colleboration Wireframe magazine.
+
+[Game Info](https://www.github.com/brenden-t-r/playdate-tree-squirrel) - [Play](https://joyrider3774.github.io/playdate_games_html/games/tree-squirrel)
+
+---
+
 ## Puzzle Land
 ![Puzzle Land Screenshot 1](https://raw.githubusercontent.com/joyrider3774/puzzleland_playdate/main/metadata/screenshots/Puzzleland-screenshot1.png) ![Puzzle Land Screenshot 2](https://raw.githubusercontent.com/joyrider3774/puzzleland_playdate/main/metadata/screenshots/Puzzleland-screenshot8.png)
 
