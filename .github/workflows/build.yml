@@ -1,0 +1,96 @@
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually ftarget the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: ${{ matrix.output }}
+    strategy:
+      matrix:
+        include:
+          - { buildtype: 'playdate', repo: 'joyrider3774/formula1_playdate',           runs-on: 'ubuntu-latest',  output: 'formula_1',            downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: 'FORMULA1_PLAYDATE_CODEKEY', codesecretfile: 'src/codekey.h', makecommand: '"SRC_C_DIR=src/srcgame src/srcgame/scoresubmit" SCREENRESX=320 SCREENRESY=240 SCALINGMODE=0'}
+          - { buildtype: 'playdate', repo: 'joyrider3774/checkers_playdate',           runs-on: 'ubuntu-latest',  output: 'checkers',             downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: 'CPP_BUILD=1 SCREENRESX=320 SCREENRESY=240 SCALINGMODE=0'}
+          - { buildtype: 'playdate', repo: 'joyrider3774/dynamate_playdate',           runs-on: 'ubuntu-latest',  output: 'dynamate',             downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: 'CPP_BUILD=1 SCREENRESX=320 SCREENRESY=240 SCALINGMODE=0'}
+          - { buildtype: 'playdate', repo: 'joyrider3774/blockdude_playdate',          runs-on: 'ubuntu-latest',  output: 'blockdude',            downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
+          - { buildtype: 'playdate', repo: 'joyrider3774/puztrix_playdate',            runs-on: 'ubuntu-latest',  output: 'puztrix',              downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: 'PUZTRIX_PLAYDATE_CODEKEY',  codesecretfile: 'src/codekey.h', makecommand: '"SRC_C_DIR=src/srcgame/scoresubmit/src/playdate/C_API/scoresubmit" "SRC_CPP_DIR=src/srcgame src/srcstub/sdl_rotate src/srcstub/gfx_primitives_surface src/srcstub/bump src/srcstub/bump/src src/srcstub src/srcstub/pd_api"'}
+          - { buildtype: 'playdate', repo: 'joyrider3774/puzzleland_playdate',         runs-on: 'ubuntu-latest',  output: 'puzzleland',           downloadsecret: 'PUZZLELAND_MUSIC', downloadsecretcmd: 'unzip download && mv music Source/music', codesecret: '',                          codesecretfile: '',              makecommand: '"SRC_C_DIR=src/srcgame src/srcgame/gameobjects src/srcgame/gamestates" SCREENRESX=320 SCREENRESY=240 SCALINGMODE=0'}
+          - { buildtype: 'playdate', repo: 'joyrider3774/rubido_playdate',             runs-on: 'ubuntu-latest',  output: 'rubido',               downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
+          - { buildtype: 'playdate', repo: 'joyrider3774/waternet_playdate',           runs-on: 'ubuntu-latest',  output: 'waternet',             downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
+          - { buildtype: 'playdate', repo: 'joyrider3774/retrotime_playdate',          runs-on: 'ubuntu-latest',  output: 'retrotime',            downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: 'RETROTIME_PLAYDATE_CODEKEY',codesecretfile: 'src/codekey.h', makecommand: '"SRC_C_DIR=src/srcgame src/srcgame/scoresubmit src/srcgame/games"'}
+          - { buildtype: 'playdate', repo: 'joyrider3774/worm_playdate',               runs-on: 'ubuntu-latest',  output: 'worm',                 downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
+          - { buildtype: 'playdate', repo: 'joyrider3774/mazethingie_playdate',        runs-on: 'ubuntu-latest',  output: 'mazethingie',          downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
+          - { buildtype: 'playdate', repo: 'joyrider3774/sokoban_playdate',            runs-on: 'ubuntu-latest',  output: 'playdoban',            downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
+    
+    runs-on: ${{ matrix.runs-on }}
+    steps:
+      - name: Grab FFMPEG
+        run: |
+          sudo apt-get update
+          sudo apt-get install ffmpeg
+          
+      - name: Checkout Playdate SDL2 Api Sources
+        uses: actions/checkout@v4
+        with:
+          repository: 'joyrider3774/Playdate_Api_SDL2'
+
+      - name: Checkout sources
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ matrix.repo }} 
+          path: tmp
+        
+      - name: Checkout EMSDK sources
+        uses: actions/checkout@v4
+        with:
+          path: emsdk
+          repository: 'emscripten-core/emsdk'
+
+      - name: Setup EMSDK stuff
+        run: |
+            cd emsdk
+            ./emsdk install latest
+            ./emsdk activate latest            
+      
+     - if: ${{ (matrix.codesecret != '') && (matrix.codesecretfile != '')}}
+        name: Setup Secret codekey.h File
+        env: 
+          SECRET: ${{secrets[matrix.codesecret] }}
+        run : |
+          echo "$SECRET" | base64 --decode >  tmp/${{matrix.codesecretfile}}
+       
+      - if: ${{ matrix.buildtype== 'playdate'}}
+        name: move things to correct directories playdate
+        run: |
+          rm -rf ./src/srcgame
+          mv tmp/src ./src/srcgame
+          cp -Rf tmp/Source/. ./Source
+     
+      - if: ${{ (matrix.downloadsecret != '') && (matrix.downloadsecretcmd != '')}}
+        name: run secret download
+        uses: wei/wget@v1
+        with:
+          args: -O download ${{ secrets[matrix.downloadsecret] }}
+      
+      - if: ${{ (matrix.downloadsecret != '') && (matrix.downloadsecretcmd != '')}}
+        name: run secret download cmd
+        run: |
+          ${{matrix.downloadsecretcmd}}
+          rm download
+     
+      - name: move things to correct directories
+        run: |
+          rm -rf ./src/srcgame
+          mv tmp/src ./src/srcgame
+          cp -Rf tmp/Source/. ./Source
+
+      - name: Build Game        
+        run: |
+          source ./emsdk/emsdk_env.sh
+          emmake make PLATFORM=emscripten EMSCRIPTEN_BUILD=1 EMSCRIPTEN_ASYNCIFY=1 EMSCRIPTEN_MEMORY_SIZE=786432000 ${{ matrix.makecommand}} WINDOWSCALE=2
+
+      - name: Store build
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{matrix.output}} - html
+          path: html
