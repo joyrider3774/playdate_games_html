@@ -24,7 +24,7 @@ Please see respective repo of each game to get more information about the games 
 
 Blokdude is a remake of the well known TI Caluculator game from Brandon Sterner as well as the blockman game from Soleau Software. This version of the game is based on the GP2X port of blockdude i made over a decade ago.
 
-[Game Info](https://joyrider3774.github.io/blockdude_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/games/blockdude)
+[Game Info](https://joyrider3774.github.io/blockdude_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/blockdude)
 
 ---
 
@@ -33,7 +33,7 @@ Blokdude is a remake of the well known TI Caluculator game from Brandon Sterner 
 
 Checkers is the well known board game with four difficulties and a jump heuristic. This version is port of my gp2x version made to work with the Playdate.
 
-[Game Info](https://joyrider3774.github.io/checkers_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/games/checkers)
+[Game Info](https://joyrider3774.github.io/checkers_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/checkers)
 
 ---
 
@@ -42,7 +42,7 @@ Checkers is the well known board game with four difficulties and a jump heuristi
 
 Dynamate is a puzzle game invented by Björn Kalzen and Jonas Norberg, a couple of years ago i contacted them to make a port for the gp2x handheld. This version is port of my gp2x version made to work with the Playdate.
 
-[Game Info](https://joyrider3774.github.io/dynamate_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/games/dynamate)
+[Game Info](https://joyrider3774.github.io/dynamate_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/dynamate)
 
 ---
 
@@ -51,7 +51,7 @@ Dynamate is a puzzle game invented by Björn Kalzen and Jonas Norberg, a couple 
 
 Formula 1 Game & Watch is a small, fictive formula 1 game & watch style lcd game with high score keeping. The Game was initially created over a decade ago for a small retrogame competition, after which it got ported to the gp2x. This version is based on the gp2x version but with added high score saving.
 
-[Game Info](https://joyrider3774.github.io/formula1_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/games/formula_1)
+[Game Info](https://joyrider3774.github.io/formula1_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/formula_1)
 
 ---
 
@@ -60,7 +60,7 @@ Formula 1 Game & Watch is a small, fictive formula 1 game & watch style lcd game
 
 Mazethingie which is a maze generator / player.
 
-[Game Info](https://joyrider3774.github.io/mazethingie_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/games/mazethingie)
+[Game Info](https://joyrider3774.github.io/mazethingie_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/mazethingie)
 
 ---
 
@@ -69,7 +69,7 @@ Mazethingie which is a maze generator / player.
 
 Playdoban is a remake of the classic sokoban game. You as the player need to push boxes to specific locations in the level. Once all boxes are pushed to the correct spots the level is finished. Playdoban is basically a sokoban engine, it contains all the game rules and has the ability to use level packs.
 
-[Game Info](https://joyrider3774.github.io/sokoban_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/games/playdoban)
+[Game Info](https://joyrider3774.github.io/sokoban_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/playdoban)
 
 ---
 
@@ -78,7 +78,7 @@ Playdoban is a remake of the classic sokoban game. You as the player need to pus
 
 Puzzle Land is a remake of the gameboy game Daedalian opus also known as puzzle road in japan. The gameplay and levels are the same but the graphics, music sounds have changed. It's a puzzle game with 36 levels. It is a tribute to a game i spend endless hours playing as a child.
 
-[Game Info](https://joyrider3774.github.io/puzzleland_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/games/puzzleland)
+[Game Info](https://joyrider3774.github.io/puzzleland_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/puzzleland)
 
 ---
 
@@ -87,7 +87,7 @@ Puzzle Land is a remake of the gameboy game Daedalian opus also known as puzzle 
 
 Puztrix is a remake of the Gravnic game from inside the NES Puzznic game.
 
-[Game Info](https://joyrider3774.github.io/puztrix_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/games/puztrix)
+[Game Info](https://joyrider3774.github.io/puztrix_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/puztrix)
 
 ---
 
@@ -96,7 +96,7 @@ Puztrix is a remake of the Gravnic game from inside the NES Puzznic game.
 
 RetroTime is a game containing 8 retro based games playable in 3 game modes being Retro Carousel, Time Attack and Lives mode. The game is a port from my competetion entry for Fuze 4 for Nintendo switch, in colleboration Wireframe magazine.
 
-[Game Info](https://joyrider3774.github.io/retrotime_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/games/retrotime)
+[Game Info](https://joyrider3774.github.io/retrotime_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/retrotime)
 
 ---
 
@@ -105,7 +105,7 @@ RetroTime is a game containing 8 retro based games playable in 3 game modes bein
 
 Rubido is a little chinese checkers or solitaire game with four difficulties.
 
-[Game Info](https://joyrider3774.github.io/rubido_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/games/rubido)
+[Game Info](https://joyrider3774.github.io/rubido_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/rubido)
 
 ---
 
@@ -114,7 +114,7 @@ Rubido is a little chinese checkers or solitaire game with four difficulties.
 
 RetroTime is a game containing 8 retro based games playable in 3 game modes being Retro Carousel, Time Attack and Lives mode. The game is a port from my competetion entry for Fuze 4 for Nintendo switch, in colleboration Wireframe magazine.
 
-[Game Info](https://www.github.com/brenden-t-r/playdate-tree-squirrel) - [Play](https://github.com/joyrider3774/playdate_games_html/games/tree-squirrel)
+[Game Info](https://www.github.com/brenden-t-r/playdate-tree-squirrel) - [Play](https://joyrider3774.github.io/playdate_games_html/games/tree-squirrel)
 
 ---
 
@@ -123,7 +123,7 @@ RetroTime is a game containing 8 retro based games playable in 3 game modes bein
 
 Waternet is a multiplatform puzzle game written for old consoles and handhelds like Game Boy (Color), Game Gear, Master System, Analogue Pocket and Mega Duck and now also Funkey / RG-Nano! It's a combination of the net and netslide games from the simon tatham's puzzle collection!
 
-[Game Info](https://joyrider3774.github.io/waternet_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/games/waternet)
+[Game Info](https://joyrider3774.github.io/waternet_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/waternet)
 
 
 ---
@@ -133,4 +133,4 @@ Waternet is a multiplatform puzzle game written for old consoles and handhelds l
 
 Worm is a copter / worm game remake with 5 game modes and a seed system written for playdate
 
-[Game Info](https://joyrider3774.github.io/worm_playdate) - [Play](https://github.com/joyrider3774/playdate_games_html/games/worm)
+[Game Info](https://joyrider3774.github.io/worm_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/worm)
