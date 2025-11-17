@@ -70,7 +70,10 @@ jobs:
           
       - name: Apply Source dir Patches 
         run : |
-          cp -Rf repo/Source_patches/${{matrix.output}}/. tmp 2>/dev/null || :
+          ls
+          ls repo
+          ls tmp
+          cp -Rf repo/Source_patches/${{ matrix.output }}/. ./tmp 2>/dev/null || :
             
       - if: ${{ (matrix.codesecret != '') && (matrix.codesecretfile != '')}}
         name: Setup Secret codekey.h File
