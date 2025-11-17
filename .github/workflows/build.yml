@@ -32,18 +32,18 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install ffmpeg
-      
-      - name: Checkout repo sources
-        uses: actions/checkout@v4
-        with:
-          repository: 'joyrider3774/playdate_games_html' 
-          path: repo
           
       - name: Checkout Playdate SDL2 Api Sources
         uses: actions/checkout@v4
         with:
           repository: 'joyrider3774/Playdate_Api_SDL2'
 
+      - name: Checkout repo sources
+        uses: actions/checkout@v4
+        with:
+          repository: 'joyrider3774/playdate_games_html' 
+          path: repo
+      
       - name: Checkout game sources
         uses: actions/checkout@v4
         with:
