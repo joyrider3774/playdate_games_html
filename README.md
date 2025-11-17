@@ -55,6 +55,15 @@ Formula 1 Game & Watch is a small, fictive formula 1 game & watch style lcd game
 
 ---
 
+## KaesuGaesu (Flip Puzzle)
+![KaesuGaesu Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/kaesugaesu-screenshot1.png) ![KaesuGaesu Screenshot 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/kaesugaesu-screenshot2.png)
+
+A Flip Puzzle game
+
+[Game Info](https://github.com/raseene/Playdate_KaesuGaesu) - [Play](https://joyrider3774.github.io/playdate_games_html/games/kaesugaesu)
+
+---
+
 ## Mazethingie
 ![Mazethingie Screenshot 1](https://raw.githubusercontent.com/joyrider3774/mazethingie_playdate/main/screenshots/screenshot1.png) ![Mazethingie Screenshot 2](https://raw.githubusercontent.com/joyrider3774/mazethingie_playdate/main/screenshots/screenshot2.png)
 
