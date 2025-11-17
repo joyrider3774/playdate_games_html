@@ -58,9 +58,13 @@ jobs:
             ./emsdk activate latest
             
       - if: ${{ (matrix.patch != '') }}
-        name: Apply Patches 
+        name: Apply file Patches 
         run : |
           ${{matrix.patch}}
+          
+      - name: Apply Source dir Patches 
+        run : |
+          cp -Rf Source_patches/${{matrix.output}}/. ./tmp/Source 2>/dev/null || :
             
       - if: ${{ (matrix.codesecret != '') && (matrix.codesecretfile != '')}}
         name: Setup Secret codekey.h File
