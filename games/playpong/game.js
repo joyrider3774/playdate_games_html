@@ -66,7 +66,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmpeokkae1x.js
+// include: /tmp/tmpu0vzh8l0.js
 
   if (!Module['expectedDataFileDownloads']) Module['expectedDataFileDownloads'] = 0;
   Module['expectedDataFileDownloads']++;
@@ -202,25 +202,25 @@ Module['FS_createPath']("/data/sprites", "numbers", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/Place_your_games_Source_directory_containing_assets_here", "start": 0, "end": 0}, {"filename": "/System/Fonts/Asheville-Sans-14-Light.ttf", "start": 0, "end": 47708}, {"filename": "/System/Fonts/Origin_of_fonts.txt", "start": 47708, "end": 47945}, {"filename": "/System/Fonts/Roobert-10-Bold.ttf", "start": 47945, "end": 59033}, {"filename": "/data/images/background_400x240.png", "start": 59033, "end": 63814}, {"filename": "/data/images/msg_left_wins_234x87.png", "start": 63814, "end": 67857}, {"filename": "/data/images/msg_right_wins_255x87.png", "start": 67857, "end": 72066}, {"filename": "/data/images/ngine_400x240.png", "start": 72066, "end": 77524}, {"filename": "/data/images/nightfoxandco_400x240.png", "start": 77524, "end": 80635}, {"filename": "/data/images/title_bg_400x240.png", "start": 80635, "end": 87003}, {"filename": "/data/images/title_credits_400x240.png", "start": 87003, "end": 94684}, {"filename": "/data/images/title_players_400x240.png", "start": 94684, "end": 103371}, {"filename": "/data/images/title_points_400x240.png", "start": 103371, "end": 111895}, {"filename": "/data/music/game.mp3", "start": 111895, "end": 1286421}, {"filename": "/data/music/menu.mp3", "start": 1286421, "end": 1945999}, {"filename": "/data/sfx/ball_hit_sfx.ogg", "start": 1945999, "end": 1950174}, {"filename": "/data/sfx/game_point_sfx.ogg", "start": 1950174, "end": 1958416}, {"filename": "/data/sfx/menu_ok_sfx.ogg", "start": 1958416, "end": 1967222}, {"filename": "/data/sfx/menu_select_sfx.ogg", "start": 1967222, "end": 1971388}, {"filename": "/data/sfx/ngine_sfx.ogg", "start": 1971388, "end": 1978298}, {"filename": "/data/sfx/paddle_hit_sfx.ogg", "start": 1978298, "end": 1982352}, {"filename": "/data/sfx/play_pong_sfx.ogg", "start": 1982352, "end": 1991949}, {"filename": "/data/sfx/player_left_wins_sfx.ogg", "start": 1991949, "end": 2003723}, {"filename": "/data/sfx/player_right_wins_sfx.ogg", "start": 2003723, "end": 2015088}, {"filename": "/data/sprites/ball_16x16.png", "start": 2015088, "end": 2016778}, {"filename": "/data/sprites/cursor_16x16.png", "start": 2016778, "end": 2019817}, {"filename": "/data/sprites/numbers/n0_39x55.png", "start": 2019817, "end": 2021942}, {"filename": "/data/sprites/numbers/n1_39x55.png", "start": 2021942, "end": 2023578}, {"filename": "/data/sprites/numbers/n2_39x55.png", "start": 2023578, "end": 2025254}, {"filename": "/data/sprites/numbers/n3_39x55.png", "start": 2025254, "end": 2026897}, {"filename": "/data/sprites/numbers/n4_39x55.png", "start": 2026897, "end": 2028530}, {"filename": "/data/sprites/numbers/n5_39x55.png", "start": 2028530, "end": 2030159}, {"filename": "/data/sprites/numbers/n6_39x55.png", "start": 2030159, "end": 2031806}, {"filename": "/data/sprites/numbers/n7_39x55.png", "start": 2031806, "end": 2033446}, {"filename": "/data/sprites/numbers/n8_39x55.png", "start": 2033446, "end": 2035077}, {"filename": "/data/sprites/numbers/n9_39x55.png", "start": 2035077, "end": 2036730}, {"filename": "/data/sprites/paddle_16x64.png", "start": 2036730, "end": 2038391}, {"filename": "/main.lua", "start": 2038391, "end": 2038391}, {"filename": "/pdxinfo", "start": 2038391, "end": 2038602}], "remote_package_size": 2038602});
+    loadPackage({"files": [{"filename": "/Place_your_games_Source_directory_containing_assets_here", "start": 0, "end": 0}, {"filename": "/System/Fonts/Asheville-Sans-14-Light.ttf", "start": 0, "end": 47708}, {"filename": "/System/Fonts/Origin_of_fonts.txt", "start": 47708, "end": 47945}, {"filename": "/System/Fonts/Roobert-10-Bold.ttf", "start": 47945, "end": 59033}, {"filename": "/data/images/background_400x240.png", "start": 59033, "end": 63814}, {"filename": "/data/images/msg_left_wins_234x87.png", "start": 63814, "end": 67857}, {"filename": "/data/images/msg_right_wins_255x87.png", "start": 67857, "end": 72066}, {"filename": "/data/images/ngine_400x240.png", "start": 72066, "end": 77524}, {"filename": "/data/images/nightfoxandco_400x240.png", "start": 77524, "end": 80635}, {"filename": "/data/images/title_bg_400x240.png", "start": 80635, "end": 87003}, {"filename": "/data/images/title_credits_400x240.png", "start": 87003, "end": 94684}, {"filename": "/data/images/title_players_400x240.png", "start": 94684, "end": 103371}, {"filename": "/data/images/title_points_400x240.png", "start": 103371, "end": 111895}, {"filename": "/data/music/game.ogg", "start": 111895, "end": 539862}, {"filename": "/data/music/menu.ogg", "start": 539862, "end": 767263}, {"filename": "/data/sfx/ball_hit_sfx.ogg", "start": 767263, "end": 771438}, {"filename": "/data/sfx/game_point_sfx.ogg", "start": 771438, "end": 779680}, {"filename": "/data/sfx/menu_ok_sfx.ogg", "start": 779680, "end": 788486}, {"filename": "/data/sfx/menu_select_sfx.ogg", "start": 788486, "end": 792652}, {"filename": "/data/sfx/ngine_sfx.ogg", "start": 792652, "end": 799562}, {"filename": "/data/sfx/paddle_hit_sfx.ogg", "start": 799562, "end": 803616}, {"filename": "/data/sfx/play_pong_sfx.ogg", "start": 803616, "end": 813213}, {"filename": "/data/sfx/player_left_wins_sfx.ogg", "start": 813213, "end": 824987}, {"filename": "/data/sfx/player_right_wins_sfx.ogg", "start": 824987, "end": 836352}, {"filename": "/data/sprites/ball_16x16.png", "start": 836352, "end": 838042}, {"filename": "/data/sprites/cursor_16x16.png", "start": 838042, "end": 841081}, {"filename": "/data/sprites/numbers/n0_39x55.png", "start": 841081, "end": 843206}, {"filename": "/data/sprites/numbers/n1_39x55.png", "start": 843206, "end": 844842}, {"filename": "/data/sprites/numbers/n2_39x55.png", "start": 844842, "end": 846518}, {"filename": "/data/sprites/numbers/n3_39x55.png", "start": 846518, "end": 848161}, {"filename": "/data/sprites/numbers/n4_39x55.png", "start": 848161, "end": 849794}, {"filename": "/data/sprites/numbers/n5_39x55.png", "start": 849794, "end": 851423}, {"filename": "/data/sprites/numbers/n6_39x55.png", "start": 851423, "end": 853070}, {"filename": "/data/sprites/numbers/n7_39x55.png", "start": 853070, "end": 854710}, {"filename": "/data/sprites/numbers/n8_39x55.png", "start": 854710, "end": 856341}, {"filename": "/data/sprites/numbers/n9_39x55.png", "start": 856341, "end": 857994}, {"filename": "/data/sprites/paddle_16x64.png", "start": 857994, "end": 859655}, {"filename": "/main.lua", "start": 859655, "end": 859655}, {"filename": "/pdxinfo", "start": 859655, "end": 859866}], "remote_package_size": 859866});
 
   })();
 
-// end include: /tmp/tmpeokkae1x.js
-// include: /tmp/tmppg9a9kwk.js
+// end include: /tmp/tmpu0vzh8l0.js
+// include: /tmp/tmpiczhf7r6.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if ((typeof ENVIRONMENT_IS_WASM_WORKER != 'undefined' && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != 'undefined' && ENVIRONMENT_IS_AUDIO_WORKLET)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmppg9a9kwk.js
-// include: /tmp/tmpw9qbwmr6.js
+  // end include: /tmp/tmpiczhf7r6.js
+// include: /tmp/tmpge02nvv6.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmpw9qbwmr6.js
+  // end include: /tmp/tmpge02nvv6.js
 
 
 var arguments_ = [];
