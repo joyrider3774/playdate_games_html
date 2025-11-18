@@ -25,6 +25,7 @@ jobs:
           - { repo: 'cwmiller/playing-with-blocks',             runs-on: 'ubuntu-latest',  output: 'playing-with-blocks',  patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: '"SRC_C_DIR=src/srcgame src/srcgame/scenes/board src/srcgame/scenes/options src/srcgame/scenes/title"'}
           - { repo: 'raseene/Playdate_KaesuGaesu',              runs-on: 'ubuntu-latest',  output: 'kaesugaesu',           patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: '"SRC_C_DIR=src/srcgame src/srcgame/Game"'}
           - { repo: 'knightfox75/PlayPong',                     runs-on: 'ubuntu-latest',  output: 'playpong',             patch: 'cp -rf tmp/source/. tmp && mv tmp/Src tmp/src', downloadsecret: '', downloadsecretcmd: '',           codesecret: '',                          codesecretfile: '',              makecommand: '"SRC_C_DIR=src/srcgame src/srcgame/game src/srcgame/ngine"'}
+          - { repo: 'cofinalsubnets/pdxlander',                 runs-on: 'ubuntu-latest',  output: 'pdxlander',            patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
 
 
     runs-on: ${{ matrix.runs-on }}
@@ -104,7 +105,7 @@ jobs:
       - name: Build Game        
         run: |
           source ./emsdk/emsdk_env.sh
-          emmake make PLATFORM=emscripten EMSCRIPTEN_BUILD=1 EMSCRIPTEN_ASYNCIFY=1 EMSCRIPTEN_MEMORY_SIZE=786432000 ${{ matrix.makecommand}} WINDOWSCALE=2
+          emmake make FORCE_ACCELERATED_RENDER=1 PLATFORM=emscripten EMSCRIPTEN_BUILD=1 EMSCRIPTEN_ASYNCIFY=1 EMSCRIPTEN_MEMORY_SIZE=786432000 ${{ matrix.makecommand}} WINDOWSCALE=2
 
       - name: Store build
         uses: actions/upload-artifact@v4
