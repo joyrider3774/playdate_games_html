@@ -73,6 +73,15 @@ Mazethingie which is a maze generator / player.
 
 ---
 
+## Pdxlander
+![Pdxlander Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/pdxlander-screenshot1.png) ![Tree Squirrel Screenshot 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/pdxlander-screenshot2.png)
+
+This is a port of the classic X windows game XLander (1992) to the Playdate game console. Gameplay is mostly unchanged, except the difficulty scaling with successful landings is tweaked a little bit. Lateral thrusters are controlled with the d-pad, retro thrusters with the A/B buttons or the crank.
+
+[Game Info](https://www.github.com/cofinalsubnets/pdxlander) - [Play](https://joyrider3774.github.io/playdate_games_html/games/pdxlander)
+
+---
+
 ## Playdoban
 ![Playdoban Screenshot 1](https://raw.githubusercontent.com/joyrider3774/sokoban_playdate/main/screenshots/screenshot1.png) ![Playdoban Screenshot 2](https://raw.githubusercontent.com/joyrider3774/sokoban_playdate/main/screenshots/screenshot2.png)
 
