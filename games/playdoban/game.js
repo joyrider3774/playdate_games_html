@@ -21,17 +21,22 @@
     throw new Error(`This emscripten-generated code requires node v${ packedVersionToHumanReadable(160000) } (detected v${packedVersionToHumanReadable(currentNodeVersion)})`);
   }
 
-  var currentSafariVersion = typeof navigator !== 'undefined' && navigator.userAgent?.includes("Safari/") && navigator.userAgent.match(/Version\/(\d+\.?\d*\.?\d*)/) ? humanReadableVersionToPacked(navigator.userAgent.match(/Version\/(\d+\.?\d*\.?\d*)/)[1]) : TARGET_NOT_SUPPORTED;
+  var userAgent = typeof navigator !== 'undefined' && navigator.userAgent;
+  if (!userAgent) {
+    return;
+  }
+
+  var currentSafariVersion = userAgent.includes("Safari/") && userAgent.match(/Version\/(\d+\.?\d*\.?\d*)/) ? humanReadableVersionToPacked(userAgent.match(/Version\/(\d+\.?\d*\.?\d*)/)[1]) : TARGET_NOT_SUPPORTED;
   if (currentSafariVersion < 150000) {
     throw new Error(`This emscripten-generated code requires Safari v${ packedVersionToHumanReadable(150000) } (detected v${currentSafariVersion})`);
   }
 
-  var currentFirefoxVersion = typeof navigator !== 'undefined' && navigator.userAgent?.match(/Firefox\/(\d+(?:\.\d+)?)/) ? parseFloat(navigator.userAgent.match(/Firefox\/(\d+(?:\.\d+)?)/)[1]) : TARGET_NOT_SUPPORTED;
+  var currentFirefoxVersion = userAgent.match(/Firefox\/(\d+(?:\.\d+)?)/) ? parseFloat(userAgent.match(/Firefox\/(\d+(?:\.\d+)?)/)[1]) : TARGET_NOT_SUPPORTED;
   if (currentFirefoxVersion < 79) {
     throw new Error(`This emscripten-generated code requires Firefox v79 (detected v${currentFirefoxVersion})`);
   }
 
-  var currentChromeVersion = typeof navigator !== 'undefined' && navigator.userAgent?.match(/Chrome\/(\d+(?:\.\d+)?)/) ? parseFloat(navigator.userAgent.match(/Chrome\/(\d+(?:\.\d+)?)/)[1]) : TARGET_NOT_SUPPORTED;
+  var currentChromeVersion = userAgent.match(/Chrome\/(\d+(?:\.\d+)?)/) ? parseFloat(userAgent.match(/Chrome\/(\d+(?:\.\d+)?)/)[1]) : TARGET_NOT_SUPPORTED;
   if (currentChromeVersion < 85) {
     throw new Error(`This emscripten-generated code requires Chrome v85 (detected v${currentChromeVersion})`);
   }
@@ -66,7 +71,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmpt_l24ger.js
+// include: /tmp/tmpmtmv7kr4.js
 
   if (!Module['expectedDataFileDownloads']) Module['expectedDataFileDownloads'] = 0;
   Module['expectedDataFileDownloads']++;
@@ -166,10 +171,10 @@ Module['FS_createPath']("/", "metadata", true, true);
 Module['FS_createPath']("/", "music", true, true);
 Module['FS_createPath']("/", "sound", true, true);
 
-      for (var file of metadata['files']) {
-        var name = file['filename']
-        Module['addRunDependency'](`fp ${name}`);
-      }
+    for (var file of metadata['files']) {
+      var name = file['filename']
+      Module['addRunDependency'](`fp ${name}`);
+    }
 
       async function processPackageData(arrayBuffer) {
         assert(arrayBuffer, 'Loading data file failed.');
@@ -181,8 +186,8 @@ Module['FS_createPath']("/", "sound", true, true);
             var name = file['filename'];
             var data = byteArray.subarray(file['start'], file['end']);
             // canOwn this data in the filesystem, it is a slice into the heap that will never change
-          Module['FS_createDataFile'](name, null, data, true, true, true);
-          Module['removeRunDependency'](`fp ${name}`);
+        Module['FS_createDataFile'](name, null, data, true, true, true);
+        Module['removeRunDependency'](`fp ${name}`);
           }
           Module['removeRunDependency']('datafile_./html/game.data');
       }
@@ -205,25 +210,25 @@ Module['FS_createPath']("/", "sound", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/Place_your_games_Source_directory_containing_assets_here", "start": 0, "end": 0}, {"filename": "/Source1/colors.ini", "start": 0, "end": 477}, {"filename": "/Source1/graphics/background.png", "start": 477, "end": 1982}, {"filename": "/Source1/graphics/box.png", "start": 1982, "end": 3318}, {"filename": "/Source1/graphics/empty.png", "start": 3318, "end": 3611}, {"filename": "/Source1/graphics/floor.png", "start": 3611, "end": 4401}, {"filename": "/Source1/graphics/player.png", "start": 4401, "end": 6282}, {"filename": "/Source1/graphics/spot.png", "start": 6282, "end": 6889}, {"filename": "/Source1/graphics/titlescreen.png", "start": 6889, "end": 14199}, {"filename": "/Source1/graphics/wall.png", "start": 14199, "end": 14774}, {"filename": "/System/Fonts/Asheville-Sans-14-Light.ttf", "start": 14774, "end": 62482}, {"filename": "/System/Fonts/Origin_of_fonts.txt", "start": 62482, "end": 62719}, {"filename": "/System/Fonts/Roobert-10-Bold.ttf", "start": 62719, "end": 73807}, {"filename": "/fonts/Roboto-Black-12-table-15-15.png", "start": 73807, "end": 97127}, {"filename": "/fonts/Roboto-Black-12.fnt", "start": 97127, "end": 101730}, {"filename": "/fonts/Roboto-Black-12.ttf", "start": 101730, "end": 107204}, {"filename": "/fonts/Roboto-Black-16-table-20-20.png", "start": 107204, "end": 144589}, {"filename": "/fonts/Roboto-Black-16.fnt", "start": 144589, "end": 149569}, {"filename": "/fonts/Roboto-Black-16.ttf", "start": 149569, "end": 158843}, {"filename": "/fonts/Roboto-Black-24-table-30-29.png", "start": 158843, "end": 225426}, {"filename": "/fonts/Roboto-Black-24.fnt", "start": 225426, "end": 230682}, {"filename": "/fonts/Roboto-Black-24.ttf", "start": 230682, "end": 245362}, {"filename": "/fonts/Roboto-Black.ttf", "start": 245362, "end": 413422}, {"filename": "/fonts/Roboto-LICENSE.txt", "start": 413422, "end": 424780}, {"filename": "/graphics/background.png", "start": 424780, "end": 425844}, {"filename": "/graphics/box.png", "start": 425844, "end": 426166}, {"filename": "/graphics/empty.png", "start": 426166, "end": 426459}, {"filename": "/graphics/floor.png", "start": 426459, "end": 426665}, {"filename": "/graphics/player.png", "start": 426665, "end": 427374}, {"filename": "/graphics/spot.png", "start": 427374, "end": 427590}, {"filename": "/graphics/titlescreen.png", "start": 427590, "end": 428521}, {"filename": "/graphics/wall.png", "start": 428521, "end": 428791}, {"filename": "/levelpacks/696.sok", "start": 428791, "end": 498041}, {"filename": "/levelpacks/Cosmonotes.sok", "start": 498041, "end": 502300}, {"filename": "/levelpacks/Cosmopoly.sok", "start": 502300, "end": 507046}, {"filename": "/levelpacks/Erim Sever Collection.sok", "start": 507046, "end": 540666}, {"filename": "/levelpacks/GRIGoRusha 2001.sok", "start": 540666, "end": 556589}, {"filename": "/levelpacks/GRIGoRusha 2002.sok", "start": 556589, "end": 563910}, {"filename": "/levelpacks/GRIGoRusha Remodel Club.sok", "start": 563910, "end": 598987}, {"filename": "/levelpacks/GRIGoRusha Special.sok", "start": 598987, "end": 606329}, {"filename": "/levelpacks/GRIGoRusha Star.sok", "start": 606329, "end": 611947}, {"filename": "/levelpacks/GRIGoRusha Sun.sok", "start": 611947, "end": 614133}, {"filename": "/levelpacks/LOMA.sok", "start": 614133, "end": 626841}, {"filename": "/levelpacks/Microcosmos.sok", "start": 626841, "end": 634254}, {"filename": "/levelpacks/Minicosmos.sok", "start": 634254, "end": 641455}, {"filename": "/levelpacks/Myriocosmos.sok", "start": 641455, "end": 644983}, {"filename": "/levelpacks/Nabokosmos.sok", "start": 644983, "end": 652412}, {"filename": "/levelpacks/Picokosmos.sok", "start": 652412, "end": 656637}, {"filename": "/levelpacks/SokEvo.sok", "start": 656637, "end": 668755}, {"filename": "/levelpacks/SokHard.sok", "start": 668755, "end": 696823}, {"filename": "/levelpacks/SokWhole.sok", "start": 696823, "end": 710056}, {"filename": "/levelpacks/pimpernel/credits.dat", "start": 710056, "end": 710086}, {"filename": "/levelpacks/pimpernel/level1.lev", "start": 710086, "end": 710503}, {"filename": "/levelpacks/pimpernel/level10.lev", "start": 710503, "end": 711175}, {"filename": "/levelpacks/pimpernel/level11.lev", "start": 711175, "end": 711910}, {"filename": "/levelpacks/pimpernel/level12.lev", "start": 711910, "end": 712465}, {"filename": "/levelpacks/pimpernel/level13.lev", "start": 712465, "end": 713029}, {"filename": "/levelpacks/pimpernel/level14.lev", "start": 713029, "end": 713698}, {"filename": "/levelpacks/pimpernel/level2.lev", "start": 713698, "end": 714157}, {"filename": "/levelpacks/pimpernel/level3.lev", "start": 714157, "end": 714568}, {"filename": "/levelpacks/pimpernel/level4.lev", "start": 714568, "end": 715273}, {"filename": "/levelpacks/pimpernel/level5.lev", "start": 715273, "end": 715771}, {"filename": "/levelpacks/pimpernel/level6.lev", "start": 715771, "end": 716182}, {"filename": "/levelpacks/pimpernel/level7.lev", "start": 716182, "end": 716644}, {"filename": "/levelpacks/pimpernel/level8.lev", "start": 716644, "end": 717214}, {"filename": "/levelpacks/pimpernel/level9.lev", "start": 717214, "end": 717844}, {"filename": "/main.lua", "start": 717844, "end": 717844}, {"filename": "/metadata/card.png", "start": 717844, "end": 718842}, {"filename": "/metadata/icon.png", "start": 718842, "end": 719228}, {"filename": "/music/041415calmbgm.ogg", "start": 719228, "end": 1414190}, {"filename": "/music/Puzzle_Game_3.ogg", "start": 1414190, "end": 2650747}, {"filename": "/music/periwinkle.ogg", "start": 2650747, "end": 3584947}, {"filename": "/music/title.ogg", "start": 3584947, "end": 4574358}, {"filename": "/pdxinfo", "start": 4574358, "end": 4574533}, {"filename": "/sound/back.ogg", "start": 4574533, "end": 4588652}, {"filename": "/sound/error.ogg", "start": 4588652, "end": 4619048}, {"filename": "/sound/menu.ogg", "start": 4619048, "end": 4630185}, {"filename": "/sound/move.ogg", "start": 4630185, "end": 4634122}, {"filename": "/sound/select.ogg", "start": 4634122, "end": 4649192}, {"filename": "/sound/stageend.ogg", "start": 4649192, "end": 4693285}], "remote_package_size": 4693285});
+    loadPackage({"files": [{"filename": "/Place_your_games_Source_directory_containing_assets_here", "start": 0, "end": 0}, {"filename": "/Source1/colors.ini", "start": 0, "end": 477}, {"filename": "/Source1/graphics/background.png", "start": 477, "end": 1982}, {"filename": "/Source1/graphics/box.png", "start": 1982, "end": 3318}, {"filename": "/Source1/graphics/empty.png", "start": 3318, "end": 3611}, {"filename": "/Source1/graphics/floor.png", "start": 3611, "end": 4401}, {"filename": "/Source1/graphics/player.png", "start": 4401, "end": 6282}, {"filename": "/Source1/graphics/spot.png", "start": 6282, "end": 6889}, {"filename": "/Source1/graphics/titlescreen.png", "start": 6889, "end": 14199}, {"filename": "/Source1/graphics/wall.png", "start": 14199, "end": 14774}, {"filename": "/System/Fonts/Asheville-Sans-14-Light.ttf", "start": 14774, "end": 62482}, {"filename": "/System/Fonts/Origin_of_fonts.txt", "start": 62482, "end": 62719}, {"filename": "/System/Fonts/Roobert-10-Bold.ttf", "start": 62719, "end": 73807}, {"filename": "/fonts/Roboto-Black-12-table-15-15.png", "start": 73807, "end": 97127}, {"filename": "/fonts/Roboto-Black-12.fnt", "start": 97127, "end": 101730}, {"filename": "/fonts/Roboto-Black-12.ttf", "start": 101730, "end": 107204}, {"filename": "/fonts/Roboto-Black-16-table-20-20.png", "start": 107204, "end": 144589}, {"filename": "/fonts/Roboto-Black-16.fnt", "start": 144589, "end": 149569}, {"filename": "/fonts/Roboto-Black-16.ttf", "start": 149569, "end": 158843}, {"filename": "/fonts/Roboto-Black-24-table-30-29.png", "start": 158843, "end": 225426}, {"filename": "/fonts/Roboto-Black-24.fnt", "start": 225426, "end": 230682}, {"filename": "/fonts/Roboto-Black-24.ttf", "start": 230682, "end": 245362}, {"filename": "/fonts/Roboto-Black.ttf", "start": 245362, "end": 413422}, {"filename": "/fonts/Roboto-LICENSE.txt", "start": 413422, "end": 424780}, {"filename": "/graphics/background.png", "start": 424780, "end": 425844}, {"filename": "/graphics/box.png", "start": 425844, "end": 426166}, {"filename": "/graphics/empty.png", "start": 426166, "end": 426459}, {"filename": "/graphics/floor.png", "start": 426459, "end": 426665}, {"filename": "/graphics/player.png", "start": 426665, "end": 427374}, {"filename": "/graphics/spot.png", "start": 427374, "end": 427590}, {"filename": "/graphics/titlescreen.png", "start": 427590, "end": 428521}, {"filename": "/graphics/wall.png", "start": 428521, "end": 428791}, {"filename": "/levelpacks/696.sok", "start": 428791, "end": 498041}, {"filename": "/levelpacks/Cosmonotes.sok", "start": 498041, "end": 502300}, {"filename": "/levelpacks/Cosmopoly.sok", "start": 502300, "end": 507046}, {"filename": "/levelpacks/Erim Sever Collection.sok", "start": 507046, "end": 540666}, {"filename": "/levelpacks/GRIGoRusha 2001.sok", "start": 540666, "end": 556589}, {"filename": "/levelpacks/GRIGoRusha 2002.sok", "start": 556589, "end": 563910}, {"filename": "/levelpacks/GRIGoRusha Remodel Club.sok", "start": 563910, "end": 598987}, {"filename": "/levelpacks/GRIGoRusha Special.sok", "start": 598987, "end": 606329}, {"filename": "/levelpacks/GRIGoRusha Star.sok", "start": 606329, "end": 611947}, {"filename": "/levelpacks/GRIGoRusha Sun.sok", "start": 611947, "end": 614133}, {"filename": "/levelpacks/LOMA.sok", "start": 614133, "end": 626841}, {"filename": "/levelpacks/Microcosmos.sok", "start": 626841, "end": 634254}, {"filename": "/levelpacks/Minicosmos.sok", "start": 634254, "end": 641455}, {"filename": "/levelpacks/Myriocosmos.sok", "start": 641455, "end": 644983}, {"filename": "/levelpacks/Nabokosmos.sok", "start": 644983, "end": 652412}, {"filename": "/levelpacks/Picokosmos.sok", "start": 652412, "end": 656637}, {"filename": "/levelpacks/SokEvo.sok", "start": 656637, "end": 668755}, {"filename": "/levelpacks/SokHard.sok", "start": 668755, "end": 696823}, {"filename": "/levelpacks/SokWhole.sok", "start": 696823, "end": 710056}, {"filename": "/levelpacks/pimpernel/credits.dat", "start": 710056, "end": 710066}, {"filename": "/levelpacks/pimpernel/level1.lev", "start": 710066, "end": 710483}, {"filename": "/levelpacks/pimpernel/level10.lev", "start": 710483, "end": 711155}, {"filename": "/levelpacks/pimpernel/level11.lev", "start": 711155, "end": 711890}, {"filename": "/levelpacks/pimpernel/level12.lev", "start": 711890, "end": 712445}, {"filename": "/levelpacks/pimpernel/level13.lev", "start": 712445, "end": 713009}, {"filename": "/levelpacks/pimpernel/level14.lev", "start": 713009, "end": 713678}, {"filename": "/levelpacks/pimpernel/level2.lev", "start": 713678, "end": 714137}, {"filename": "/levelpacks/pimpernel/level3.lev", "start": 714137, "end": 714548}, {"filename": "/levelpacks/pimpernel/level4.lev", "start": 714548, "end": 715253}, {"filename": "/levelpacks/pimpernel/level5.lev", "start": 715253, "end": 715751}, {"filename": "/levelpacks/pimpernel/level6.lev", "start": 715751, "end": 716162}, {"filename": "/levelpacks/pimpernel/level7.lev", "start": 716162, "end": 716624}, {"filename": "/levelpacks/pimpernel/level8.lev", "start": 716624, "end": 717194}, {"filename": "/levelpacks/pimpernel/level9.lev", "start": 717194, "end": 717824}, {"filename": "/main.lua", "start": 717824, "end": 717824}, {"filename": "/metadata/card.png", "start": 717824, "end": 718822}, {"filename": "/metadata/icon.png", "start": 718822, "end": 719208}, {"filename": "/music/041415calmbgm.ogg", "start": 719208, "end": 1414170}, {"filename": "/music/Puzzle_Game_3.ogg", "start": 1414170, "end": 2650727}, {"filename": "/music/periwinkle.ogg", "start": 2650727, "end": 3584927}, {"filename": "/music/title.ogg", "start": 3584927, "end": 4574338}, {"filename": "/pdxinfo", "start": 4574338, "end": 4574513}, {"filename": "/sound/back.ogg", "start": 4574513, "end": 4588632}, {"filename": "/sound/error.ogg", "start": 4588632, "end": 4619028}, {"filename": "/sound/menu.ogg", "start": 4619028, "end": 4630165}, {"filename": "/sound/move.ogg", "start": 4630165, "end": 4634102}, {"filename": "/sound/select.ogg", "start": 4634102, "end": 4649172}, {"filename": "/sound/stageend.ogg", "start": 4649172, "end": 4693265}], "remote_package_size": 4693265});
 
   })();
 
-// end include: /tmp/tmpt_l24ger.js
-// include: /tmp/tmpolwxbogw.js
+// end include: /tmp/tmpmtmv7kr4.js
+// include: /tmp/tmpwaf1edtw.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if ((typeof ENVIRONMENT_IS_WASM_WORKER != 'undefined' && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != 'undefined' && ENVIRONMENT_IS_AUDIO_WORKLET)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmpolwxbogw.js
-// include: /tmp/tmpmj0lc3lf.js
+  // end include: /tmp/tmpwaf1edtw.js
+// include: /tmp/tmpyemdzbqe.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmpmj0lc3lf.js
+  // end include: /tmp/tmpyemdzbqe.js
 
 
 var arguments_ = [];
@@ -6361,9 +6366,6 @@ async function createWasm() {
   var onExits = [];
   var addOnExit = (cb) => onExits.push(cb);
   var JSEvents = {
-  memcpy(target, src, size) {
-        HEAP8.set(HEAP8.subarray(src, src + size), target);
-      },
   removeAllEventListeners() {
         while (JSEvents.eventHandlers.length) {
           JSEvents._removeHandler(JSEvents.eventHandlers.length - 1);
@@ -6468,6 +6470,18 @@ async function createWasm() {
           }
         }
         return 0;
+      },
+  removeSingleHandler(eventHandler) {
+        for (var [i, handler] of JSEvents.eventHandlers.entries()) {
+          if (handler.target === eventHandler.target
+            && handler.eventTypeId === eventHandler.eventTypeId
+            && handler.callbackfunc === eventHandler.callbackfunc
+            && handler.userData === eventHandler.userData) {
+            JSEvents._removeHandler(i);
+            return 0;
+          }
+        }
+        return -5;
       },
   getNodeNameForTarget(target) {
         if (!target) return '';
@@ -8523,6 +8537,8 @@ async function createWasm() {
       var eventHandler = {
         target: findEventTarget(target),
         eventTypeString,
+        eventTypeId,
+        userData,
         callbackfunc,
         handlerFunc: beforeUnloadEventHandlerFunc,
         useCapture
@@ -8541,7 +8557,8 @@ async function createWasm() {
   
   
   var registerFocusEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
-      JSEvents.focusEvent ||= _malloc(256);
+      var eventSize = 256;
+      JSEvents.focusEvent ||= _malloc(eventSize);
   
       var focusEventHandlerFunc = (e = event) => {
         var nodeName = JSEvents.getNodeNameForTarget(e.target);
@@ -8557,6 +8574,8 @@ async function createWasm() {
       var eventHandler = {
         target: findEventTarget(target),
         eventTypeString,
+        eventTypeId,
+        userData,
         callbackfunc,
         handlerFunc: focusEventHandlerFunc,
         useCapture
@@ -8608,11 +8627,11 @@ async function createWasm() {
     };
   
   var registerFullscreenChangeEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
-      JSEvents.fullscreenChangeEvent ||= _malloc(276);
+      var eventSize = 276;
+      JSEvents.fullscreenChangeEvent ||= _malloc(eventSize);
   
       var fullscreenChangeEventhandlerFunc = (e = event) => {
         var fullscreenChangeEvent = JSEvents.fullscreenChangeEvent;
-  
         fillFullscreenChangeEventData(fullscreenChangeEvent);
   
         if (((a1, a2, a3) => dynCall_iiii(callbackfunc, a1, a2, a3))(eventTypeId, fullscreenChangeEvent, userData)) e.preventDefault();
@@ -8621,6 +8640,8 @@ async function createWasm() {
       var eventHandler = {
         target,
         eventTypeString,
+        eventTypeId,
+        userData,
         callbackfunc,
         handlerFunc: fullscreenChangeEventhandlerFunc,
         useCapture
@@ -8643,7 +8664,8 @@ async function createWasm() {
   
   
   var registerGamepadEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
-      JSEvents.gamepadEvent ||= _malloc(1240);
+      var eventSize = 1240;
+      JSEvents.gamepadEvent ||= _malloc(eventSize);
   
       var gamepadEventHandlerFunc = (e = event) => {
         var gamepadEvent = JSEvents.gamepadEvent;
@@ -8656,6 +8678,8 @@ async function createWasm() {
         target: findEventTarget(target),
         allowsDeferredCalls: true,
         eventTypeString,
+        eventTypeId,
+        userData,
         callbackfunc,
         handlerFunc: gamepadEventHandlerFunc,
         useCapture
@@ -8678,7 +8702,8 @@ async function createWasm() {
   
   
   var registerKeyEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
-      JSEvents.keyEvent ||= _malloc(160);
+      var eventSize = 160;
+      JSEvents.keyEvent ||= _malloc(eventSize);
   
       var keyEventHandlerFunc = (e) => {
         assert(e);
@@ -8708,6 +8733,8 @@ async function createWasm() {
       var eventHandler = {
         target: findEventTarget(target),
         eventTypeString,
+        eventTypeId,
+        userData,
         callbackfunc,
         handlerFunc: keyEventHandlerFunc,
         useCapture
@@ -8756,7 +8783,8 @@ async function createWasm() {
   
   
   var registerMouseEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
-      JSEvents.mouseEvent ||= _malloc(64);
+      var eventSize = 64;
+      JSEvents.mouseEvent ||= _malloc(eventSize);
       target = findEventTarget(target);
   
       var mouseEventHandlerFunc = (e = event) => {
@@ -8770,6 +8798,8 @@ async function createWasm() {
         target,
         allowsDeferredCalls: eventTypeString != 'mousemove' && eventTypeString != 'mouseenter' && eventTypeString != 'mouseleave', // Mouse move events do not allow fullscreen/pointer lock requests to be handled in them!
         eventTypeString,
+        eventTypeId,
+        userData,
         callbackfunc,
         handlerFunc: mouseEventHandlerFunc,
         useCapture
@@ -8806,7 +8836,8 @@ async function createWasm() {
     };
   
   var registerPointerlockChangeEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
-      JSEvents.pointerlockChangeEvent ||= _malloc(257);
+      var eventSize = 257;
+      JSEvents.pointerlockChangeEvent ||= _malloc(eventSize);
   
       var pointerlockChangeEventHandlerFunc = (e = event) => {
         var pointerlockChangeEvent = JSEvents.pointerlockChangeEvent;
@@ -8818,6 +8849,8 @@ async function createWasm() {
       var eventHandler = {
         target,
         eventTypeString,
+        eventTypeId,
+        userData,
         callbackfunc,
         handlerFunc: pointerlockChangeEventHandlerFunc,
         useCapture
@@ -8838,7 +8871,8 @@ async function createWasm() {
   
   
   var registerUiEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
-      JSEvents.uiEvent ||= _malloc(36);
+      var eventSize = 36;
+      JSEvents.uiEvent ||= _malloc(eventSize);
   
       target = findEventTarget(target);
   
@@ -8871,6 +8905,8 @@ async function createWasm() {
       var eventHandler = {
         target,
         eventTypeString,
+        eventTypeId,
+        userData,
         callbackfunc,
         handlerFunc: uiEventHandlerFunc,
         useCapture
@@ -8884,7 +8920,8 @@ async function createWasm() {
   
   
   var registerTouchEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
-      JSEvents.touchEvent ||= _malloc(1552);
+      var eventSize = 1552;
+      JSEvents.touchEvent ||= _malloc(eventSize);
   
       target = findEventTarget(target);
   
@@ -8949,6 +8986,8 @@ async function createWasm() {
         target,
         allowsDeferredCalls: eventTypeString == 'touchstart' || eventTypeString == 'touchend',
         eventTypeString,
+        eventTypeId,
+        userData,
         callbackfunc,
         handlerFunc: touchEventHandlerFunc,
         useCapture
@@ -8979,11 +9018,11 @@ async function createWasm() {
     };
   
   var registerVisibilityChangeEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
-      JSEvents.visibilityChangeEvent ||= _malloc(8);
+      var eventSize = 8;
+      JSEvents.visibilityChangeEvent ||= _malloc(eventSize);
   
       var visibilityChangeEventHandlerFunc = (e = event) => {
         var visibilityChangeEvent = JSEvents.visibilityChangeEvent;
-  
         fillVisibilityChangeEventData(visibilityChangeEvent);
   
         if (((a1, a2, a3) => dynCall_iiii(callbackfunc, a1, a2, a3))(eventTypeId, visibilityChangeEvent, userData)) e.preventDefault();
@@ -8992,6 +9031,8 @@ async function createWasm() {
       var eventHandler = {
         target,
         eventTypeString,
+        eventTypeId,
+        userData,
         callbackfunc,
         handlerFunc: visibilityChangeEventHandlerFunc,
         useCapture
@@ -9009,7 +9050,8 @@ async function createWasm() {
   
   
   var registerWheelEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString, targetThread) => {
-      JSEvents.wheelEvent ||= _malloc(96);
+      var eventSize = 96;
+      JSEvents.wheelEvent ||= _malloc(eventSize)
   
       // The DOM Level 3 events spec event 'wheel'
       var wheelHandlerFunc = (e = event) => {
@@ -9026,6 +9068,8 @@ async function createWasm() {
         target,
         allowsDeferredCalls: true,
         eventTypeString,
+        eventTypeId,
+        userData,
         callbackfunc,
         handlerFunc: wheelHandlerFunc,
         useCapture
@@ -10011,29 +10055,29 @@ function checkIncomingModuleAPI() {
   ignoredModuleProp('fetchSettings');
 }
 var ASM_CONSTS = {
-  643272: () => { var context; try { context = new AudioContext(); } catch (e) { context = new webkitAudioContext(); } return context.sampleRate; },  
- 643404: ($0) => { _pd_api_file_init_emscripten_done = 0; FS.mkdir('/saveddata.' + UTF8ToString($0)); FS.mount(IDBFS, {}, '/saveddata.' + UTF8ToString($0)); FS.syncfs(true, function (err) { if (err) console.log(err); _pd_api_file_init_emscripten_done = 1; }); },  
- 643649: () => { return _pd_api_file_init_emscripten_done },  
- 643690: () => { return _pd_api_file_init_emscripten_done },  
- 643731: () => { _pd_api_file_sync_emscripten_done = 0; FS.syncfs(false, function (err) { if (err) console.log("Error syncing files: " + err); _pd_api_file_sync_emscripten_done = 1; }); },  
- 643900: () => { return _pd_api_file_sync_emscripten_done },  
- 643941: () => { return _pd_api_file_sync_emscripten_done },  
- 643982: ($0) => { var str = UTF8ToString($0) + '\n\n' + 'Abort/Retry/Ignore/AlwaysIgnore? [ariA] :'; var reply = window.prompt(str, "i"); if (reply === null) { reply = "i"; } return reply.length === 1 ? reply.charCodeAt(0) : -1; },  
- 644197: () => { if (typeof(AudioContext) !== 'undefined') { return true; } else if (typeof(webkitAudioContext) !== 'undefined') { return true; } return false; },  
- 644344: () => { if ((typeof(navigator.mediaDevices) !== 'undefined') && (typeof(navigator.mediaDevices.getUserMedia) !== 'undefined')) { return true; } else if (typeof(navigator.webkitGetUserMedia) !== 'undefined') { return true; } return false; },  
- 644578: ($0) => { if(typeof(Module['SDL2']) === 'undefined') { Module['SDL2'] = {}; } var SDL2 = Module['SDL2']; if (!$0) { SDL2.audio = {}; } else { SDL2.capture = {}; } if (!SDL2.audioContext) { if (typeof(AudioContext) !== 'undefined') { SDL2.audioContext = new AudioContext(); } else if (typeof(webkitAudioContext) !== 'undefined') { SDL2.audioContext = new webkitAudioContext(); } if (SDL2.audioContext) { if ((typeof navigator.userActivation) === 'undefined') { autoResumeAudioContext(SDL2.audioContext); } } } return SDL2.audioContext === undefined ? -1 : 0; },  
- 645130: () => { var SDL2 = Module['SDL2']; return SDL2.audioContext.sampleRate; },  
- 645198: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; var have_microphone = function(stream) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); SDL2.capture.silenceTimer = undefined; SDL2.capture.silenceBuffer = undefined } SDL2.capture.mediaStreamNode = SDL2.audioContext.createMediaStreamSource(stream); SDL2.capture.scriptProcessorNode = SDL2.audioContext.createScriptProcessor($1, $0, 1); SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) { if ((SDL2 === undefined) || (SDL2.capture === undefined)) { return; } audioProcessingEvent.outputBuffer.getChannelData(0).fill(0.0); SDL2.capture.currentCaptureBuffer = audioProcessingEvent.inputBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.mediaStreamNode.connect(SDL2.capture.scriptProcessorNode); SDL2.capture.scriptProcessorNode.connect(SDL2.audioContext.destination); SDL2.capture.stream = stream; }; var no_microphone = function(error) { }; SDL2.capture.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.capture.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { SDL2.capture.currentCaptureBuffer = SDL2.capture.silenceBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); if ((navigator.mediaDevices !== undefined) && (navigator.mediaDevices.getUserMedia !== undefined)) { navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(have_microphone).catch(no_microphone); } else if (navigator.webkitGetUserMedia !== undefined) { navigator.webkitGetUserMedia({ audio: true, video: false }, have_microphone, no_microphone); } },  
- 646891: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; SDL2.audio.scriptProcessorNode = SDL2.audioContext['createScriptProcessor']($1, 0, $0); SDL2.audio.scriptProcessorNode['onaudioprocess'] = function (e) { if ((SDL2 === undefined) || (SDL2.audio === undefined)) { return; } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); SDL2.audio.silenceTimer = undefined; SDL2.audio.silenceBuffer = undefined; } SDL2.audio.currentOutputBuffer = e['outputBuffer']; dynCall('vp', $2, [$3]); }; SDL2.audio.scriptProcessorNode['connect'](SDL2.audioContext['destination']); if (SDL2.audioContext.state === 'suspended') { SDL2.audio.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.audio.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { if ((typeof navigator.userActivation) !== 'undefined') { if (navigator.userActivation.hasBeenActive) { SDL2.audioContext.resume(); } } SDL2.audio.currentOutputBuffer = SDL2.audio.silenceBuffer; dynCall('vp', $2, [$3]); SDL2.audio.currentOutputBuffer = undefined; }; SDL2.audio.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); } },  
- 648066: ($0, $1) => { var SDL2 = Module['SDL2']; var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.capture.currentCaptureBuffer.getChannelData(c); if (channelData.length != $1) { throw 'Web Audio capture buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } if (numChannels == 1) { for (var j = 0; j < $1; ++j) { setValue($0 + (j * 4), channelData[j], 'float'); } } else { for (var j = 0; j < $1; ++j) { setValue($0 + (((j * numChannels) + c) * 4), channelData[j], 'float'); } } } },  
- 648671: ($0, $1) => { var SDL2 = Module['SDL2']; var buf = $0 >>> 2; var numChannels = SDL2.audio.currentOutputBuffer['numberOfChannels']; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.audio.currentOutputBuffer['getChannelData'](c); if (channelData.length != $1) { throw 'Web Audio output buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } for (var j = 0; j < $1; ++j) { channelData[j] = HEAPF32[buf + (j*numChannels + c)]; } } },  
- 649160: ($0) => { var SDL2 = Module['SDL2']; if ($0) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); } if (SDL2.capture.stream !== undefined) { var tracks = SDL2.capture.stream.getAudioTracks(); for (var i = 0; i < tracks.length; i++) { SDL2.capture.stream.removeTrack(tracks[i]); } } if (SDL2.capture.scriptProcessorNode !== undefined) { SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) {}; SDL2.capture.scriptProcessorNode.disconnect(); } if (SDL2.capture.mediaStreamNode !== undefined) { SDL2.capture.mediaStreamNode.disconnect(); } SDL2.capture = undefined; } else { if (SDL2.audio.scriptProcessorNode != undefined) { SDL2.audio.scriptProcessorNode.disconnect(); } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); } SDL2.audio = undefined; } if ((SDL2.audioContext !== undefined) && (SDL2.audio === undefined) && (SDL2.capture === undefined)) { SDL2.audioContext.close(); SDL2.audioContext = undefined; } },  
- 650166: ($0, $1, $2) => { var w = $0; var h = $1; var pixels = $2; if (!Module['SDL2']) Module['SDL2'] = {}; var SDL2 = Module['SDL2']; if (SDL2.ctxCanvas !== Module['canvas']) { SDL2.ctx = Browser.createContext(Module['canvas'], false, true); SDL2.ctxCanvas = Module['canvas']; } if (SDL2.w !== w || SDL2.h !== h || SDL2.imageCtx !== SDL2.ctx) { SDL2.image = SDL2.ctx.createImageData(w, h); SDL2.w = w; SDL2.h = h; SDL2.imageCtx = SDL2.ctx; } var data = SDL2.image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = 0xff; src++; dst += 4; } } else { if (SDL2.data32Data !== data) { SDL2.data32 = new Int32Array(data.buffer); SDL2.data8 = new Uint8Array(data.buffer); SDL2.data32Data = data; } var data32 = SDL2.data32; num = data32.length; data32.set(HEAP32.subarray(src, src + num)); var data8 = SDL2.data8; var i = 3; var j = i + 4*num; if (num % 8 == 0) { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; } } else { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; } } } SDL2.ctx.putImageData(SDL2.image, 0, 0); },  
- 651632: ($0, $1, $2, $3, $4) => { var w = $0; var h = $1; var hot_x = $2; var hot_y = $3; var pixels = $4; var canvas = document.createElement("canvas"); canvas.width = w; canvas.height = h; var ctx = canvas.getContext("2d"); var image = ctx.createImageData(w, h); var data = image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = (val >> 24) & 0xff; src++; dst += 4; } } else { var data32 = new Int32Array(data.buffer); num = data32.length; data32.set(HEAP32.subarray(src, src + num)); } ctx.putImageData(image, 0, 0); var url = hot_x === 0 && hot_y === 0 ? "url(" + canvas.toDataURL() + "), auto" : "url(" + canvas.toDataURL() + ") " + hot_x + " " + hot_y + ", auto"; var urlBuf = _malloc(url.length + 1); stringToUTF8(url, urlBuf, url.length + 1); return urlBuf; },  
- 652620: ($0) => { if (Module['canvas']) { Module['canvas'].style['cursor'] = UTF8ToString($0); } },  
- 652703: () => { if (Module['canvas']) { Module['canvas'].style['cursor'] = 'none'; } },  
- 652772: () => { return window.innerWidth; },  
- 652802: () => { return window.innerHeight; }
+  647496: () => { var context; try { context = new AudioContext(); } catch (e) { context = new webkitAudioContext(); } return context.sampleRate; },  
+ 647628: ($0) => { _pd_api_file_init_emscripten_done = 0; FS.mkdir('/saveddata.' + UTF8ToString($0)); FS.mount(IDBFS, {}, '/saveddata.' + UTF8ToString($0)); FS.syncfs(true, function (err) { if (err) console.log(err); _pd_api_file_init_emscripten_done = 1; }); },  
+ 647873: () => { return _pd_api_file_init_emscripten_done },  
+ 647914: () => { return _pd_api_file_init_emscripten_done },  
+ 647955: () => { _pd_api_file_sync_emscripten_done = 0; FS.syncfs(false, function (err) { if (err) console.log("Error syncing files: " + err); _pd_api_file_sync_emscripten_done = 1; }); },  
+ 648124: () => { return _pd_api_file_sync_emscripten_done },  
+ 648165: () => { return _pd_api_file_sync_emscripten_done },  
+ 648206: ($0) => { var str = UTF8ToString($0) + '\n\n' + 'Abort/Retry/Ignore/AlwaysIgnore? [ariA] :'; var reply = window.prompt(str, "i"); if (reply === null) { reply = "i"; } return reply.length === 1 ? reply.charCodeAt(0) : -1; },  
+ 648421: () => { if (typeof(AudioContext) !== 'undefined') { return true; } else if (typeof(webkitAudioContext) !== 'undefined') { return true; } return false; },  
+ 648568: () => { if ((typeof(navigator.mediaDevices) !== 'undefined') && (typeof(navigator.mediaDevices.getUserMedia) !== 'undefined')) { return true; } else if (typeof(navigator.webkitGetUserMedia) !== 'undefined') { return true; } return false; },  
+ 648802: ($0) => { if(typeof(Module['SDL2']) === 'undefined') { Module['SDL2'] = {}; } var SDL2 = Module['SDL2']; if (!$0) { SDL2.audio = {}; } else { SDL2.capture = {}; } if (!SDL2.audioContext) { if (typeof(AudioContext) !== 'undefined') { SDL2.audioContext = new AudioContext(); } else if (typeof(webkitAudioContext) !== 'undefined') { SDL2.audioContext = new webkitAudioContext(); } if (SDL2.audioContext) { if ((typeof navigator.userActivation) === 'undefined') { autoResumeAudioContext(SDL2.audioContext); } } } return SDL2.audioContext === undefined ? -1 : 0; },  
+ 649354: () => { var SDL2 = Module['SDL2']; return SDL2.audioContext.sampleRate; },  
+ 649422: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; var have_microphone = function(stream) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); SDL2.capture.silenceTimer = undefined; SDL2.capture.silenceBuffer = undefined } SDL2.capture.mediaStreamNode = SDL2.audioContext.createMediaStreamSource(stream); SDL2.capture.scriptProcessorNode = SDL2.audioContext.createScriptProcessor($1, $0, 1); SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) { if ((SDL2 === undefined) || (SDL2.capture === undefined)) { return; } audioProcessingEvent.outputBuffer.getChannelData(0).fill(0.0); SDL2.capture.currentCaptureBuffer = audioProcessingEvent.inputBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.mediaStreamNode.connect(SDL2.capture.scriptProcessorNode); SDL2.capture.scriptProcessorNode.connect(SDL2.audioContext.destination); SDL2.capture.stream = stream; }; var no_microphone = function(error) { }; SDL2.capture.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.capture.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { SDL2.capture.currentCaptureBuffer = SDL2.capture.silenceBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); if ((navigator.mediaDevices !== undefined) && (navigator.mediaDevices.getUserMedia !== undefined)) { navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(have_microphone).catch(no_microphone); } else if (navigator.webkitGetUserMedia !== undefined) { navigator.webkitGetUserMedia({ audio: true, video: false }, have_microphone, no_microphone); } },  
+ 651115: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; SDL2.audio.scriptProcessorNode = SDL2.audioContext['createScriptProcessor']($1, 0, $0); SDL2.audio.scriptProcessorNode['onaudioprocess'] = function (e) { if ((SDL2 === undefined) || (SDL2.audio === undefined)) { return; } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); SDL2.audio.silenceTimer = undefined; SDL2.audio.silenceBuffer = undefined; } SDL2.audio.currentOutputBuffer = e['outputBuffer']; dynCall('vp', $2, [$3]); }; SDL2.audio.scriptProcessorNode['connect'](SDL2.audioContext['destination']); if (SDL2.audioContext.state === 'suspended') { SDL2.audio.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.audio.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { if ((typeof navigator.userActivation) !== 'undefined') { if (navigator.userActivation.hasBeenActive) { SDL2.audioContext.resume(); } } SDL2.audio.currentOutputBuffer = SDL2.audio.silenceBuffer; dynCall('vp', $2, [$3]); SDL2.audio.currentOutputBuffer = undefined; }; SDL2.audio.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); } },  
+ 652290: ($0, $1) => { var SDL2 = Module['SDL2']; var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.capture.currentCaptureBuffer.getChannelData(c); if (channelData.length != $1) { throw 'Web Audio capture buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } if (numChannels == 1) { for (var j = 0; j < $1; ++j) { setValue($0 + (j * 4), channelData[j], 'float'); } } else { for (var j = 0; j < $1; ++j) { setValue($0 + (((j * numChannels) + c) * 4), channelData[j], 'float'); } } } },  
+ 652895: ($0, $1) => { var SDL2 = Module['SDL2']; var buf = $0 >>> 2; var numChannels = SDL2.audio.currentOutputBuffer['numberOfChannels']; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.audio.currentOutputBuffer['getChannelData'](c); if (channelData.length != $1) { throw 'Web Audio output buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } for (var j = 0; j < $1; ++j) { channelData[j] = HEAPF32[buf + (j*numChannels + c)]; } } },  
+ 653384: ($0) => { var SDL2 = Module['SDL2']; if ($0) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); } if (SDL2.capture.stream !== undefined) { var tracks = SDL2.capture.stream.getAudioTracks(); for (var i = 0; i < tracks.length; i++) { SDL2.capture.stream.removeTrack(tracks[i]); } } if (SDL2.capture.scriptProcessorNode !== undefined) { SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) {}; SDL2.capture.scriptProcessorNode.disconnect(); } if (SDL2.capture.mediaStreamNode !== undefined) { SDL2.capture.mediaStreamNode.disconnect(); } SDL2.capture = undefined; } else { if (SDL2.audio.scriptProcessorNode != undefined) { SDL2.audio.scriptProcessorNode.disconnect(); } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); } SDL2.audio = undefined; } if ((SDL2.audioContext !== undefined) && (SDL2.audio === undefined) && (SDL2.capture === undefined)) { SDL2.audioContext.close(); SDL2.audioContext = undefined; } },  
+ 654390: ($0, $1, $2) => { var w = $0; var h = $1; var pixels = $2; if (!Module['SDL2']) Module['SDL2'] = {}; var SDL2 = Module['SDL2']; if (SDL2.ctxCanvas !== Module['canvas']) { SDL2.ctx = Browser.createContext(Module['canvas'], false, true); SDL2.ctxCanvas = Module['canvas']; } if (SDL2.w !== w || SDL2.h !== h || SDL2.imageCtx !== SDL2.ctx) { SDL2.image = SDL2.ctx.createImageData(w, h); SDL2.w = w; SDL2.h = h; SDL2.imageCtx = SDL2.ctx; } var data = SDL2.image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = 0xff; src++; dst += 4; } } else { if (SDL2.data32Data !== data) { SDL2.data32 = new Int32Array(data.buffer); SDL2.data8 = new Uint8Array(data.buffer); SDL2.data32Data = data; } var data32 = SDL2.data32; num = data32.length; data32.set(HEAP32.subarray(src, src + num)); var data8 = SDL2.data8; var i = 3; var j = i + 4*num; if (num % 8 == 0) { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; } } else { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; } } } SDL2.ctx.putImageData(SDL2.image, 0, 0); },  
+ 655856: ($0, $1, $2, $3, $4) => { var w = $0; var h = $1; var hot_x = $2; var hot_y = $3; var pixels = $4; var canvas = document.createElement("canvas"); canvas.width = w; canvas.height = h; var ctx = canvas.getContext("2d"); var image = ctx.createImageData(w, h); var data = image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = (val >> 24) & 0xff; src++; dst += 4; } } else { var data32 = new Int32Array(data.buffer); num = data32.length; data32.set(HEAP32.subarray(src, src + num)); } ctx.putImageData(image, 0, 0); var url = hot_x === 0 && hot_y === 0 ? "url(" + canvas.toDataURL() + "), auto" : "url(" + canvas.toDataURL() + ") " + hot_x + " " + hot_y + ", auto"; var urlBuf = _malloc(url.length + 1); stringToUTF8(url, urlBuf, url.length + 1); return urlBuf; },  
+ 656844: ($0) => { if (Module['canvas']) { Module['canvas'].style['cursor'] = UTF8ToString($0); } },  
+ 656927: () => { if (Module['canvas']) { Module['canvas'].style['cursor'] = 'none'; } },  
+ 656996: () => { return window.innerWidth; },  
+ 657026: () => { return window.innerHeight; }
 };
 
 // Imports from the Wasm binary.
@@ -10059,41 +10103,41 @@ var dynCall_iii = makeInvalidEarlyAccess('dynCall_iii');
 var dynCall_viiiiii = makeInvalidEarlyAccess('dynCall_viiiiii');
 var dynCall_iiiii = makeInvalidEarlyAccess('dynCall_iiiii');
 var dynCall_v = makeInvalidEarlyAccess('dynCall_v');
-var dynCall_f = makeInvalidEarlyAccess('dynCall_f');
-var dynCall_vf = makeInvalidEarlyAccess('dynCall_vf');
 var dynCall_i = makeInvalidEarlyAccess('dynCall_i');
+var dynCall_vf = makeInvalidEarlyAccess('dynCall_vf');
+var dynCall_f = makeInvalidEarlyAccess('dynCall_f');
 var dynCall_iiii = makeInvalidEarlyAccess('dynCall_iiii');
 var dynCall_viii = makeInvalidEarlyAccess('dynCall_viii');
+var dynCall_viff = makeInvalidEarlyAccess('dynCall_viff');
+var dynCall_viiii = makeInvalidEarlyAccess('dynCall_viiii');
 var dynCall_iifffi = makeInvalidEarlyAccess('dynCall_iifffi');
 var dynCall_viiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiii');
-var dynCall_iiiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiiii');
-var dynCall_viiiiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiiiii');
-var dynCall_viiifffff = makeInvalidEarlyAccess('dynCall_viiifffff');
-var dynCall_viiii = makeInvalidEarlyAccess('dynCall_viiii');
-var dynCall_iiiiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiiiii');
-var dynCall_iiiiii = makeInvalidEarlyAccess('dynCall_iiiiii');
-var dynCall_viiiff = makeInvalidEarlyAccess('dynCall_viiiff');
-var dynCall_viiiiffi = makeInvalidEarlyAccess('dynCall_viiiiffi');
-var dynCall_viiiiiffi = makeInvalidEarlyAccess('dynCall_viiiiiffi');
 var dynCall_viiiii = makeInvalidEarlyAccess('dynCall_viiiii');
-var dynCall_viff = makeInvalidEarlyAccess('dynCall_viff');
+var dynCall_viiiiiffi = makeInvalidEarlyAccess('dynCall_viiiiiffi');
+var dynCall_viiiiffi = makeInvalidEarlyAccess('dynCall_viiiiffi');
+var dynCall_viiiff = makeInvalidEarlyAccess('dynCall_viiiff');
+var dynCall_iiiiii = makeInvalidEarlyAccess('dynCall_iiiiii');
+var dynCall_iiiiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiiiii');
+var dynCall_viiifffff = makeInvalidEarlyAccess('dynCall_viiifffff');
+var dynCall_viiiiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiiiii');
+var dynCall_iiiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiiii');
 var dynCall_vid = makeInvalidEarlyAccess('dynCall_vid');
 var dynCall_fi = makeInvalidEarlyAccess('dynCall_fi');
-var dynCall_vif = makeInvalidEarlyAccess('dynCall_vif');
-var dynCall_viiif = makeInvalidEarlyAccess('dynCall_viiif');
-var dynCall_viffiii = makeInvalidEarlyAccess('dynCall_viffiii');
 var dynCall_iiif = makeInvalidEarlyAccess('dynCall_iiif');
+var dynCall_vif = makeInvalidEarlyAccess('dynCall_vif');
+var dynCall_viffiii = makeInvalidEarlyAccess('dynCall_viffiii');
+var dynCall_viiif = makeInvalidEarlyAccess('dynCall_viiif');
 var dynCall_iffff = makeInvalidEarlyAccess('dynCall_iffff');
-var dynCall_vifffi = makeInvalidEarlyAccess('dynCall_vifffi');
 var dynCall_viiiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiiii');
+var dynCall_vifffi = makeInvalidEarlyAccess('dynCall_vifffi');
 var dynCall_viifi = makeInvalidEarlyAccess('dynCall_viifi');
-var dynCall_vifi = makeInvalidEarlyAccess('dynCall_vifi');
 var dynCall_iiifff = makeInvalidEarlyAccess('dynCall_iiifff');
-var dynCall_iiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiii');
+var dynCall_vifi = makeInvalidEarlyAccess('dynCall_vifi');
 var dynCall_viif = makeInvalidEarlyAccess('dynCall_viif');
-var dynCall_iffffi = makeInvalidEarlyAccess('dynCall_iffffi');
-var dynCall_iffi = makeInvalidEarlyAccess('dynCall_iffi');
+var dynCall_iiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiii');
 var dynCall_iiffiii = makeInvalidEarlyAccess('dynCall_iiffiii');
+var dynCall_iffi = makeInvalidEarlyAccess('dynCall_iffi');
+var dynCall_iffffi = makeInvalidEarlyAccess('dynCall_iffffi');
 var dynCall_iiji = makeInvalidEarlyAccess('dynCall_iiji');
 var dynCall_iid = makeInvalidEarlyAccess('dynCall_iid');
 var dynCall_di = makeInvalidEarlyAccess('dynCall_di');
@@ -10121,162 +10165,162 @@ var wasmTable = makeInvalidEarlyAccess('wasmTable');
 
 function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['malloc'] != 'undefined', 'missing Wasm export: malloc');
-  _malloc = createExportWrapper('malloc', 1);
   assert(typeof wasmExports['free'] != 'undefined', 'missing Wasm export: free');
-  _free = createExportWrapper('free', 1);
   assert(typeof wasmExports['__main_argc_argv'] != 'undefined', 'missing Wasm export: __main_argc_argv');
-  _main = Module['_main'] = createExportWrapper('__main_argc_argv', 2);
   assert(typeof wasmExports['strerror'] != 'undefined', 'missing Wasm export: strerror');
-  _strerror = createExportWrapper('strerror', 1);
   assert(typeof wasmExports['fflush'] != 'undefined', 'missing Wasm export: fflush');
-  _fflush = createExportWrapper('fflush', 1);
   assert(typeof wasmExports['fileno'] != 'undefined', 'missing Wasm export: fileno');
-  _fileno = createExportWrapper('fileno', 1);
   assert(typeof wasmExports['emscripten_stack_get_end'] != 'undefined', 'missing Wasm export: emscripten_stack_get_end');
-  _emscripten_stack_get_end = wasmExports['emscripten_stack_get_end'];
   assert(typeof wasmExports['emscripten_stack_get_base'] != 'undefined', 'missing Wasm export: emscripten_stack_get_base');
-  _emscripten_stack_get_base = wasmExports['emscripten_stack_get_base'];
   assert(typeof wasmExports['emscripten_builtin_memalign'] != 'undefined', 'missing Wasm export: emscripten_builtin_memalign');
-  _emscripten_builtin_memalign = createExportWrapper('emscripten_builtin_memalign', 2);
   assert(typeof wasmExports['setThrew'] != 'undefined', 'missing Wasm export: setThrew');
-  _setThrew = createExportWrapper('setThrew', 2);
   assert(typeof wasmExports['emscripten_stack_init'] != 'undefined', 'missing Wasm export: emscripten_stack_init');
-  _emscripten_stack_init = wasmExports['emscripten_stack_init'];
   assert(typeof wasmExports['emscripten_stack_get_free'] != 'undefined', 'missing Wasm export: emscripten_stack_get_free');
-  _emscripten_stack_get_free = wasmExports['emscripten_stack_get_free'];
   assert(typeof wasmExports['_emscripten_stack_restore'] != 'undefined', 'missing Wasm export: _emscripten_stack_restore');
-  __emscripten_stack_restore = wasmExports['_emscripten_stack_restore'];
   assert(typeof wasmExports['_emscripten_stack_alloc'] != 'undefined', 'missing Wasm export: _emscripten_stack_alloc');
-  __emscripten_stack_alloc = wasmExports['_emscripten_stack_alloc'];
   assert(typeof wasmExports['emscripten_stack_get_current'] != 'undefined', 'missing Wasm export: emscripten_stack_get_current');
-  _emscripten_stack_get_current = wasmExports['emscripten_stack_get_current'];
   assert(typeof wasmExports['dynCall_vii'] != 'undefined', 'missing Wasm export: dynCall_vii');
-  dynCall_vii = dynCalls['vii'] = createExportWrapper('dynCall_vii', 3);
   assert(typeof wasmExports['dynCall_ii'] != 'undefined', 'missing Wasm export: dynCall_ii');
-  dynCall_ii = dynCalls['ii'] = createExportWrapper('dynCall_ii', 2);
   assert(typeof wasmExports['dynCall_vi'] != 'undefined', 'missing Wasm export: dynCall_vi');
-  dynCall_vi = dynCalls['vi'] = createExportWrapper('dynCall_vi', 2);
   assert(typeof wasmExports['dynCall_iii'] != 'undefined', 'missing Wasm export: dynCall_iii');
-  dynCall_iii = dynCalls['iii'] = createExportWrapper('dynCall_iii', 3);
   assert(typeof wasmExports['dynCall_viiiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiiii');
-  dynCall_viiiiii = dynCalls['viiiiii'] = createExportWrapper('dynCall_viiiiii', 7);
   assert(typeof wasmExports['dynCall_iiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiii');
-  dynCall_iiiii = dynCalls['iiiii'] = createExportWrapper('dynCall_iiiii', 5);
   assert(typeof wasmExports['dynCall_v'] != 'undefined', 'missing Wasm export: dynCall_v');
-  dynCall_v = dynCalls['v'] = createExportWrapper('dynCall_v', 1);
-  assert(typeof wasmExports['dynCall_f'] != 'undefined', 'missing Wasm export: dynCall_f');
-  dynCall_f = dynCalls['f'] = createExportWrapper('dynCall_f', 1);
-  assert(typeof wasmExports['dynCall_vf'] != 'undefined', 'missing Wasm export: dynCall_vf');
-  dynCall_vf = dynCalls['vf'] = createExportWrapper('dynCall_vf', 2);
   assert(typeof wasmExports['dynCall_i'] != 'undefined', 'missing Wasm export: dynCall_i');
-  dynCall_i = dynCalls['i'] = createExportWrapper('dynCall_i', 1);
+  assert(typeof wasmExports['dynCall_vf'] != 'undefined', 'missing Wasm export: dynCall_vf');
+  assert(typeof wasmExports['dynCall_f'] != 'undefined', 'missing Wasm export: dynCall_f');
   assert(typeof wasmExports['dynCall_iiii'] != 'undefined', 'missing Wasm export: dynCall_iiii');
-  dynCall_iiii = dynCalls['iiii'] = createExportWrapper('dynCall_iiii', 4);
   assert(typeof wasmExports['dynCall_viii'] != 'undefined', 'missing Wasm export: dynCall_viii');
-  dynCall_viii = dynCalls['viii'] = createExportWrapper('dynCall_viii', 4);
-  assert(typeof wasmExports['dynCall_iifffi'] != 'undefined', 'missing Wasm export: dynCall_iifffi');
-  dynCall_iifffi = dynCalls['iifffi'] = createExportWrapper('dynCall_iifffi', 6);
-  assert(typeof wasmExports['dynCall_viiiiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiiiii');
-  dynCall_viiiiiii = dynCalls['viiiiiii'] = createExportWrapper('dynCall_viiiiiii', 8);
-  assert(typeof wasmExports['dynCall_iiiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiiiiii');
-  dynCall_iiiiiiiii = dynCalls['iiiiiiiii'] = createExportWrapper('dynCall_iiiiiiiii', 9);
-  assert(typeof wasmExports['dynCall_viiiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiiiiiii');
-  dynCall_viiiiiiiii = dynCalls['viiiiiiiii'] = createExportWrapper('dynCall_viiiiiiiii', 10);
-  assert(typeof wasmExports['dynCall_viiifffff'] != 'undefined', 'missing Wasm export: dynCall_viiifffff');
-  dynCall_viiifffff = dynCalls['viiifffff'] = createExportWrapper('dynCall_viiifffff', 9);
-  assert(typeof wasmExports['dynCall_viiii'] != 'undefined', 'missing Wasm export: dynCall_viiii');
-  dynCall_viiii = dynCalls['viiii'] = createExportWrapper('dynCall_viiii', 5);
-  assert(typeof wasmExports['dynCall_iiiiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiiiiiii');
-  dynCall_iiiiiiiiii = dynCalls['iiiiiiiiii'] = createExportWrapper('dynCall_iiiiiiiiii', 10);
-  assert(typeof wasmExports['dynCall_iiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiii');
-  dynCall_iiiiii = dynCalls['iiiiii'] = createExportWrapper('dynCall_iiiiii', 6);
-  assert(typeof wasmExports['dynCall_viiiff'] != 'undefined', 'missing Wasm export: dynCall_viiiff');
-  dynCall_viiiff = dynCalls['viiiff'] = createExportWrapper('dynCall_viiiff', 6);
-  assert(typeof wasmExports['dynCall_viiiiffi'] != 'undefined', 'missing Wasm export: dynCall_viiiiffi');
-  dynCall_viiiiffi = dynCalls['viiiiffi'] = createExportWrapper('dynCall_viiiiffi', 8);
-  assert(typeof wasmExports['dynCall_viiiiiffi'] != 'undefined', 'missing Wasm export: dynCall_viiiiiffi');
-  dynCall_viiiiiffi = dynCalls['viiiiiffi'] = createExportWrapper('dynCall_viiiiiffi', 9);
-  assert(typeof wasmExports['dynCall_viiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiii');
-  dynCall_viiiii = dynCalls['viiiii'] = createExportWrapper('dynCall_viiiii', 6);
   assert(typeof wasmExports['dynCall_viff'] != 'undefined', 'missing Wasm export: dynCall_viff');
-  dynCall_viff = dynCalls['viff'] = createExportWrapper('dynCall_viff', 4);
+  assert(typeof wasmExports['dynCall_viiii'] != 'undefined', 'missing Wasm export: dynCall_viiii');
+  assert(typeof wasmExports['dynCall_iifffi'] != 'undefined', 'missing Wasm export: dynCall_iifffi');
+  assert(typeof wasmExports['dynCall_viiiiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiiiii');
+  assert(typeof wasmExports['dynCall_viiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiii');
+  assert(typeof wasmExports['dynCall_viiiiiffi'] != 'undefined', 'missing Wasm export: dynCall_viiiiiffi');
+  assert(typeof wasmExports['dynCall_viiiiffi'] != 'undefined', 'missing Wasm export: dynCall_viiiiffi');
+  assert(typeof wasmExports['dynCall_viiiff'] != 'undefined', 'missing Wasm export: dynCall_viiiff');
+  assert(typeof wasmExports['dynCall_iiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiii');
+  assert(typeof wasmExports['dynCall_iiiiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiiiiiii');
+  assert(typeof wasmExports['dynCall_viiifffff'] != 'undefined', 'missing Wasm export: dynCall_viiifffff');
+  assert(typeof wasmExports['dynCall_viiiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiiiiiii');
+  assert(typeof wasmExports['dynCall_iiiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiiiiii');
   assert(typeof wasmExports['dynCall_vid'] != 'undefined', 'missing Wasm export: dynCall_vid');
-  dynCall_vid = dynCalls['vid'] = createExportWrapper('dynCall_vid', 3);
   assert(typeof wasmExports['dynCall_fi'] != 'undefined', 'missing Wasm export: dynCall_fi');
-  dynCall_fi = dynCalls['fi'] = createExportWrapper('dynCall_fi', 2);
-  assert(typeof wasmExports['dynCall_vif'] != 'undefined', 'missing Wasm export: dynCall_vif');
-  dynCall_vif = dynCalls['vif'] = createExportWrapper('dynCall_vif', 3);
-  assert(typeof wasmExports['dynCall_viiif'] != 'undefined', 'missing Wasm export: dynCall_viiif');
-  dynCall_viiif = dynCalls['viiif'] = createExportWrapper('dynCall_viiif', 5);
-  assert(typeof wasmExports['dynCall_viffiii'] != 'undefined', 'missing Wasm export: dynCall_viffiii');
-  dynCall_viffiii = dynCalls['viffiii'] = createExportWrapper('dynCall_viffiii', 7);
   assert(typeof wasmExports['dynCall_iiif'] != 'undefined', 'missing Wasm export: dynCall_iiif');
-  dynCall_iiif = dynCalls['iiif'] = createExportWrapper('dynCall_iiif', 4);
+  assert(typeof wasmExports['dynCall_vif'] != 'undefined', 'missing Wasm export: dynCall_vif');
+  assert(typeof wasmExports['dynCall_viffiii'] != 'undefined', 'missing Wasm export: dynCall_viffiii');
+  assert(typeof wasmExports['dynCall_viiif'] != 'undefined', 'missing Wasm export: dynCall_viiif');
   assert(typeof wasmExports['dynCall_iffff'] != 'undefined', 'missing Wasm export: dynCall_iffff');
-  dynCall_iffff = dynCalls['iffff'] = createExportWrapper('dynCall_iffff', 5);
-  assert(typeof wasmExports['dynCall_vifffi'] != 'undefined', 'missing Wasm export: dynCall_vifffi');
-  dynCall_vifffi = dynCalls['vifffi'] = createExportWrapper('dynCall_vifffi', 6);
   assert(typeof wasmExports['dynCall_viiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiiiiii');
-  dynCall_viiiiiiii = dynCalls['viiiiiiii'] = createExportWrapper('dynCall_viiiiiiii', 9);
+  assert(typeof wasmExports['dynCall_vifffi'] != 'undefined', 'missing Wasm export: dynCall_vifffi');
   assert(typeof wasmExports['dynCall_viifi'] != 'undefined', 'missing Wasm export: dynCall_viifi');
-  dynCall_viifi = dynCalls['viifi'] = createExportWrapper('dynCall_viifi', 5);
-  assert(typeof wasmExports['dynCall_vifi'] != 'undefined', 'missing Wasm export: dynCall_vifi');
-  dynCall_vifi = dynCalls['vifi'] = createExportWrapper('dynCall_vifi', 4);
   assert(typeof wasmExports['dynCall_iiifff'] != 'undefined', 'missing Wasm export: dynCall_iiifff');
-  dynCall_iiifff = dynCalls['iiifff'] = createExportWrapper('dynCall_iiifff', 6);
-  assert(typeof wasmExports['dynCall_iiiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiiii');
-  dynCall_iiiiiii = dynCalls['iiiiiii'] = createExportWrapper('dynCall_iiiiiii', 7);
+  assert(typeof wasmExports['dynCall_vifi'] != 'undefined', 'missing Wasm export: dynCall_vifi');
   assert(typeof wasmExports['dynCall_viif'] != 'undefined', 'missing Wasm export: dynCall_viif');
-  dynCall_viif = dynCalls['viif'] = createExportWrapper('dynCall_viif', 4);
-  assert(typeof wasmExports['dynCall_iffffi'] != 'undefined', 'missing Wasm export: dynCall_iffffi');
-  dynCall_iffffi = dynCalls['iffffi'] = createExportWrapper('dynCall_iffffi', 6);
-  assert(typeof wasmExports['dynCall_iffi'] != 'undefined', 'missing Wasm export: dynCall_iffi');
-  dynCall_iffi = dynCalls['iffi'] = createExportWrapper('dynCall_iffi', 4);
+  assert(typeof wasmExports['dynCall_iiiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiiii');
   assert(typeof wasmExports['dynCall_iiffiii'] != 'undefined', 'missing Wasm export: dynCall_iiffiii');
-  dynCall_iiffiii = dynCalls['iiffiii'] = createExportWrapper('dynCall_iiffiii', 7);
+  assert(typeof wasmExports['dynCall_iffi'] != 'undefined', 'missing Wasm export: dynCall_iffi');
+  assert(typeof wasmExports['dynCall_iffffi'] != 'undefined', 'missing Wasm export: dynCall_iffffi');
   assert(typeof wasmExports['dynCall_iiji'] != 'undefined', 'missing Wasm export: dynCall_iiji');
-  dynCall_iiji = dynCalls['iiji'] = createExportWrapper('dynCall_iiji', 4);
   assert(typeof wasmExports['dynCall_iid'] != 'undefined', 'missing Wasm export: dynCall_iid');
-  dynCall_iid = dynCalls['iid'] = createExportWrapper('dynCall_iid', 3);
   assert(typeof wasmExports['dynCall_di'] != 'undefined', 'missing Wasm export: dynCall_di');
-  dynCall_di = dynCalls['di'] = createExportWrapper('dynCall_di', 2);
   assert(typeof wasmExports['dynCall_ji'] != 'undefined', 'missing Wasm export: dynCall_ji');
-  dynCall_ji = dynCalls['ji'] = createExportWrapper('dynCall_ji', 2);
   assert(typeof wasmExports['dynCall_jiji'] != 'undefined', 'missing Wasm export: dynCall_jiji');
-  dynCall_jiji = dynCalls['jiji'] = createExportWrapper('dynCall_jiji', 4);
   assert(typeof wasmExports['dynCall_iiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiiiii');
-  dynCall_iiiiiiii = dynCalls['iiiiiiii'] = createExportWrapper('dynCall_iiiiiiii', 8);
   assert(typeof wasmExports['dynCall_iiiiiiiiiiiiiiff'] != 'undefined', 'missing Wasm export: dynCall_iiiiiiiiiiiiiiff');
-  dynCall_iiiiiiiiiiiiiiff = dynCalls['iiiiiiiiiiiiiiff'] = createExportWrapper('dynCall_iiiiiiiiiiiiiiff', 16);
   assert(typeof wasmExports['dynCall_viiiiiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiiiiiiiii');
-  dynCall_viiiiiiiiiii = dynCalls['viiiiiiiiiii'] = createExportWrapper('dynCall_viiiiiiiiiii', 12);
   assert(typeof wasmExports['dynCall_iiiiiidiiff'] != 'undefined', 'missing Wasm export: dynCall_iiiiiidiiff');
-  dynCall_iiiiiidiiff = dynCalls['iiiiiidiiff'] = createExportWrapper('dynCall_iiiiiidiiff', 11);
   assert(typeof wasmExports['dynCall_vffff'] != 'undefined', 'missing Wasm export: dynCall_vffff');
-  dynCall_vffff = dynCalls['vffff'] = createExportWrapper('dynCall_vffff', 5);
   assert(typeof wasmExports['dynCall_vff'] != 'undefined', 'missing Wasm export: dynCall_vff');
-  dynCall_vff = dynCalls['vff'] = createExportWrapper('dynCall_vff', 3);
   assert(typeof wasmExports['dynCall_vfi'] != 'undefined', 'missing Wasm export: dynCall_vfi');
-  dynCall_vfi = dynCalls['vfi'] = createExportWrapper('dynCall_vfi', 3);
   assert(typeof wasmExports['dynCall_vifff'] != 'undefined', 'missing Wasm export: dynCall_vifff');
-  dynCall_vifff = dynCalls['vifff'] = createExportWrapper('dynCall_vifff', 5);
   assert(typeof wasmExports['dynCall_viffff'] != 'undefined', 'missing Wasm export: dynCall_viffff');
-  dynCall_viffff = dynCalls['viffff'] = createExportWrapper('dynCall_viffff', 6);
   assert(typeof wasmExports['dynCall_vfff'] != 'undefined', 'missing Wasm export: dynCall_vfff');
-  dynCall_vfff = dynCalls['vfff'] = createExportWrapper('dynCall_vfff', 4);
   assert(typeof wasmExports['dynCall_iidiiii'] != 'undefined', 'missing Wasm export: dynCall_iidiiii');
-  dynCall_iidiiii = dynCalls['iidiiii'] = createExportWrapper('dynCall_iidiiii', 7);
   assert(typeof wasmExports['asyncify_start_unwind'] != 'undefined', 'missing Wasm export: asyncify_start_unwind');
-  _asyncify_start_unwind = createExportWrapper('asyncify_start_unwind', 1);
   assert(typeof wasmExports['asyncify_stop_unwind'] != 'undefined', 'missing Wasm export: asyncify_stop_unwind');
-  _asyncify_stop_unwind = createExportWrapper('asyncify_stop_unwind', 0);
   assert(typeof wasmExports['asyncify_start_rewind'] != 'undefined', 'missing Wasm export: asyncify_start_rewind');
-  _asyncify_start_rewind = createExportWrapper('asyncify_start_rewind', 1);
   assert(typeof wasmExports['asyncify_stop_rewind'] != 'undefined', 'missing Wasm export: asyncify_stop_rewind');
-  _asyncify_stop_rewind = createExportWrapper('asyncify_stop_rewind', 0);
   assert(typeof wasmExports['memory'] != 'undefined', 'missing Wasm export: memory');
-  memory = wasmMemory = wasmExports['memory'];
   assert(typeof wasmExports['__indirect_function_table'] != 'undefined', 'missing Wasm export: __indirect_function_table');
+  _malloc = createExportWrapper('malloc', 1);
+  _free = createExportWrapper('free', 1);
+  _main = Module['_main'] = createExportWrapper('__main_argc_argv', 2);
+  _strerror = createExportWrapper('strerror', 1);
+  _fflush = createExportWrapper('fflush', 1);
+  _fileno = createExportWrapper('fileno', 1);
+  _emscripten_stack_get_end = wasmExports['emscripten_stack_get_end'];
+  _emscripten_stack_get_base = wasmExports['emscripten_stack_get_base'];
+  _emscripten_builtin_memalign = createExportWrapper('emscripten_builtin_memalign', 2);
+  _setThrew = createExportWrapper('setThrew', 2);
+  _emscripten_stack_init = wasmExports['emscripten_stack_init'];
+  _emscripten_stack_get_free = wasmExports['emscripten_stack_get_free'];
+  __emscripten_stack_restore = wasmExports['_emscripten_stack_restore'];
+  __emscripten_stack_alloc = wasmExports['_emscripten_stack_alloc'];
+  _emscripten_stack_get_current = wasmExports['emscripten_stack_get_current'];
+  dynCall_vii = dynCalls['vii'] = createExportWrapper('dynCall_vii', 3);
+  dynCall_ii = dynCalls['ii'] = createExportWrapper('dynCall_ii', 2);
+  dynCall_vi = dynCalls['vi'] = createExportWrapper('dynCall_vi', 2);
+  dynCall_iii = dynCalls['iii'] = createExportWrapper('dynCall_iii', 3);
+  dynCall_viiiiii = dynCalls['viiiiii'] = createExportWrapper('dynCall_viiiiii', 7);
+  dynCall_iiiii = dynCalls['iiiii'] = createExportWrapper('dynCall_iiiii', 5);
+  dynCall_v = dynCalls['v'] = createExportWrapper('dynCall_v', 1);
+  dynCall_i = dynCalls['i'] = createExportWrapper('dynCall_i', 1);
+  dynCall_vf = dynCalls['vf'] = createExportWrapper('dynCall_vf', 2);
+  dynCall_f = dynCalls['f'] = createExportWrapper('dynCall_f', 1);
+  dynCall_iiii = dynCalls['iiii'] = createExportWrapper('dynCall_iiii', 4);
+  dynCall_viii = dynCalls['viii'] = createExportWrapper('dynCall_viii', 4);
+  dynCall_viff = dynCalls['viff'] = createExportWrapper('dynCall_viff', 4);
+  dynCall_viiii = dynCalls['viiii'] = createExportWrapper('dynCall_viiii', 5);
+  dynCall_iifffi = dynCalls['iifffi'] = createExportWrapper('dynCall_iifffi', 6);
+  dynCall_viiiiiii = dynCalls['viiiiiii'] = createExportWrapper('dynCall_viiiiiii', 8);
+  dynCall_viiiii = dynCalls['viiiii'] = createExportWrapper('dynCall_viiiii', 6);
+  dynCall_viiiiiffi = dynCalls['viiiiiffi'] = createExportWrapper('dynCall_viiiiiffi', 9);
+  dynCall_viiiiffi = dynCalls['viiiiffi'] = createExportWrapper('dynCall_viiiiffi', 8);
+  dynCall_viiiff = dynCalls['viiiff'] = createExportWrapper('dynCall_viiiff', 6);
+  dynCall_iiiiii = dynCalls['iiiiii'] = createExportWrapper('dynCall_iiiiii', 6);
+  dynCall_iiiiiiiiii = dynCalls['iiiiiiiiii'] = createExportWrapper('dynCall_iiiiiiiiii', 10);
+  dynCall_viiifffff = dynCalls['viiifffff'] = createExportWrapper('dynCall_viiifffff', 9);
+  dynCall_viiiiiiiii = dynCalls['viiiiiiiii'] = createExportWrapper('dynCall_viiiiiiiii', 10);
+  dynCall_iiiiiiiii = dynCalls['iiiiiiiii'] = createExportWrapper('dynCall_iiiiiiiii', 9);
+  dynCall_vid = dynCalls['vid'] = createExportWrapper('dynCall_vid', 3);
+  dynCall_fi = dynCalls['fi'] = createExportWrapper('dynCall_fi', 2);
+  dynCall_iiif = dynCalls['iiif'] = createExportWrapper('dynCall_iiif', 4);
+  dynCall_vif = dynCalls['vif'] = createExportWrapper('dynCall_vif', 3);
+  dynCall_viffiii = dynCalls['viffiii'] = createExportWrapper('dynCall_viffiii', 7);
+  dynCall_viiif = dynCalls['viiif'] = createExportWrapper('dynCall_viiif', 5);
+  dynCall_iffff = dynCalls['iffff'] = createExportWrapper('dynCall_iffff', 5);
+  dynCall_viiiiiiii = dynCalls['viiiiiiii'] = createExportWrapper('dynCall_viiiiiiii', 9);
+  dynCall_vifffi = dynCalls['vifffi'] = createExportWrapper('dynCall_vifffi', 6);
+  dynCall_viifi = dynCalls['viifi'] = createExportWrapper('dynCall_viifi', 5);
+  dynCall_iiifff = dynCalls['iiifff'] = createExportWrapper('dynCall_iiifff', 6);
+  dynCall_vifi = dynCalls['vifi'] = createExportWrapper('dynCall_vifi', 4);
+  dynCall_viif = dynCalls['viif'] = createExportWrapper('dynCall_viif', 4);
+  dynCall_iiiiiii = dynCalls['iiiiiii'] = createExportWrapper('dynCall_iiiiiii', 7);
+  dynCall_iiffiii = dynCalls['iiffiii'] = createExportWrapper('dynCall_iiffiii', 7);
+  dynCall_iffi = dynCalls['iffi'] = createExportWrapper('dynCall_iffi', 4);
+  dynCall_iffffi = dynCalls['iffffi'] = createExportWrapper('dynCall_iffffi', 6);
+  dynCall_iiji = dynCalls['iiji'] = createExportWrapper('dynCall_iiji', 4);
+  dynCall_iid = dynCalls['iid'] = createExportWrapper('dynCall_iid', 3);
+  dynCall_di = dynCalls['di'] = createExportWrapper('dynCall_di', 2);
+  dynCall_ji = dynCalls['ji'] = createExportWrapper('dynCall_ji', 2);
+  dynCall_jiji = dynCalls['jiji'] = createExportWrapper('dynCall_jiji', 4);
+  dynCall_iiiiiiii = dynCalls['iiiiiiii'] = createExportWrapper('dynCall_iiiiiiii', 8);
+  dynCall_iiiiiiiiiiiiiiff = dynCalls['iiiiiiiiiiiiiiff'] = createExportWrapper('dynCall_iiiiiiiiiiiiiiff', 16);
+  dynCall_viiiiiiiiiii = dynCalls['viiiiiiiiiii'] = createExportWrapper('dynCall_viiiiiiiiiii', 12);
+  dynCall_iiiiiidiiff = dynCalls['iiiiiidiiff'] = createExportWrapper('dynCall_iiiiiidiiff', 11);
+  dynCall_vffff = dynCalls['vffff'] = createExportWrapper('dynCall_vffff', 5);
+  dynCall_vff = dynCalls['vff'] = createExportWrapper('dynCall_vff', 3);
+  dynCall_vfi = dynCalls['vfi'] = createExportWrapper('dynCall_vfi', 3);
+  dynCall_vifff = dynCalls['vifff'] = createExportWrapper('dynCall_vifff', 5);
+  dynCall_viffff = dynCalls['viffff'] = createExportWrapper('dynCall_viffff', 6);
+  dynCall_vfff = dynCalls['vfff'] = createExportWrapper('dynCall_vfff', 4);
+  dynCall_iidiiii = dynCalls['iidiiii'] = createExportWrapper('dynCall_iidiiii', 7);
+  _asyncify_start_unwind = createExportWrapper('asyncify_start_unwind', 1);
+  _asyncify_stop_unwind = createExportWrapper('asyncify_stop_unwind', 0);
+  _asyncify_start_rewind = createExportWrapper('asyncify_start_rewind', 1);
+  _asyncify_stop_rewind = createExportWrapper('asyncify_stop_rewind', 0);
+  memory = wasmMemory = wasmExports['memory'];
   __indirect_function_table = wasmTable = wasmExports['__indirect_function_table'];
 }
 
