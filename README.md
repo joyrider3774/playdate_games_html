@@ -20,7 +20,7 @@ GamePads are supported if your browser support it.
 Please see respective repo of each game to get more information about the games by clicking on the `Game Info` links
 
 ## Blips
-![Blockdude Screenshot 1](https://raw.githubusercontent.com/joyrider3774/blips_playdate/main/screenshots/screenshot1.png) ![Blips Screenshot 2](https://raw.githubusercontent.com/joyrider3774/blips_playdate/main/screenshots/screenshot9.png)
+![Blockdude Screenshot 1](https://raw.githubusercontent.com/joyrider3774/blips_playdate/main/screenshots/screenshot1.png) ![Blips Screenshot 2](https://raw.githubusercontent.com/joyrider3774/blips_playdate/main/screenshots/screenshot2.png)
 
 Blips is a remake of the dos bips game made by Bryant Brownell, its a sokoban style puzzle game but with exploding dynamite and collecting coins
 
