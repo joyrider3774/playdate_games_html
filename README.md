@@ -19,7 +19,16 @@ GamePads are supported if your browser support it.
 ## Games
 Please see respective repo of each game to get more information about the games by clicking on the `Game Info` links
 
-## Blockdude (Playdate)
+## Blips
+![Blockdude Screenshot 1](https://raw.githubusercontent.com/joyrider3774/blips_playdate/main/screenshots/screenshot1.png) ![Blips Screenshot 2](https://raw.githubusercontent.com/joyrider3774/blips_playdate/main/screenshots/screenshot9.png)
+
+Blips is a remake of the dos bips game made by Bryant Brownell, its a sokoban style puzzle game but with exploding dynamite and collecting coins
+
+[Game Info](https://joyrider3774.github.io/blips_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/blips)
+
+---
+
+## Blockdude
 ![Blockdude Screenshot 1](https://raw.githubusercontent.com/joyrider3774/blockdude_playdate/main/metadata/screenshots/screenshot1.png) ![Blockdude Screenshot 2](https://raw.githubusercontent.com/joyrider3774/blockdude_playdate/main/metadata/screenshots/screenshot9.png)
 
 Blokdude is a remake of the well known TI Caluculator game from Brandon Sterner as well as the blockman game from Soleau Software. This version of the game is based on the GP2X port of blockdude i made over a decade ago.
@@ -27,7 +36,6 @@ Blokdude is a remake of the well known TI Caluculator game from Brandon Sterner 
 [Game Info](https://joyrider3774.github.io/blockdude_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/blockdude)
 
 ---
-
 ## Checkers
 ![Checkers Screenshot 1](https://raw.githubusercontent.com/joyrider3774/checkers_playdate/main/metadata/screenshots/Checkers-screenshot1.gif) ![Checkers Screenshot 2](https://raw.githubusercontent.com/joyrider3774/checkers_playdate/main/metadata/screenshots/Checkers-screenshot5.png)
 
