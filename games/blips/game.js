@@ -71,7 +71,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmpav3cbl5m.js
+// include: /tmp/tmppkcnje8u.js
 
   if (!Module['expectedDataFileDownloads']) Module['expectedDataFileDownloads'] = 0;
   Module['expectedDataFileDownloads']++;
@@ -146,7 +146,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
       }
 
       var fetchPromise;
-      var fetched = Module['getPreloadedPackage']?.(REMOTE_PACKAGE_NAME, REMOTE_PACKAGE_SIZE);
+      var fetched = Module['getPreloadedPackage'] && Module['getPreloadedPackage'](REMOTE_PACKAGE_NAME, REMOTE_PACKAGE_SIZE);
 
       if (!fetched) {
         // Note that we don't use await here because we want to execute the
@@ -167,6 +167,9 @@ Module['FS_createPath']("/", "fonts", true, true);
 Module['FS_createPath']("/", "graphics", true, true);
 Module['FS_createPath']("/", "levelpacks", true, true);
 Module['FS_createPath']("/levelpacks", "bips", true, true);
+Module['FS_createPath']("/levelpacks", "bips_gold", true, true);
+Module['FS_createPath']("/levelpacks", "bips_gold_2_players", true, true);
+Module['FS_createPath']("/levelpacks", "bips_platinum", true, true);
 Module['FS_createPath']("/", "metadata", true, true);
 Module['FS_createPath']("/", "music", true, true);
 Module['FS_createPath']("/", "sound", true, true);
@@ -210,25 +213,25 @@ Module['FS_createPath']("/", "sound", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/Place_your_games_Source_directory_containing_assets_here", "start": 0, "end": 0}, {"filename": "/Source1/colors.ini", "start": 0, "end": 477}, {"filename": "/Source1/graphics/background - Copy.png", "start": 477, "end": 1982}, {"filename": "/Source1/graphics/background.png", "start": 1982, "end": 3487}, {"filename": "/Source1/graphics/bomb.png", "start": 3487, "end": 4260}, {"filename": "/Source1/graphics/box.png", "start": 4260, "end": 5075}, {"filename": "/Source1/graphics/diamond.png", "start": 5075, "end": 5719}, {"filename": "/Source1/graphics/empty.png", "start": 5719, "end": 6012}, {"filename": "/Source1/graphics/explosion.png", "start": 6012, "end": 10751}, {"filename": "/Source1/graphics/floor.png", "start": 10751, "end": 11541}, {"filename": "/Source1/graphics/intro1.png", "start": 11541, "end": 28670}, {"filename": "/Source1/graphics/intro2.png", "start": 28670, "end": 44679}, {"filename": "/Source1/graphics/intro3.png", "start": 44679, "end": 58010}, {"filename": "/Source1/graphics/player.png", "start": 58010, "end": 59891}, {"filename": "/Source1/graphics/spot.png", "start": 59891, "end": 60498}, {"filename": "/Source1/graphics/titlescreen.png", "start": 60498, "end": 65349}, {"filename": "/Source1/graphics/wall.png", "start": 65349, "end": 65924}, {"filename": "/System/Fonts/Asheville-Sans-14-Light.ttf", "start": 65924, "end": 113632}, {"filename": "/System/Fonts/Origin_of_fonts.txt", "start": 113632, "end": 113869}, {"filename": "/System/Fonts/Roobert-10-Bold.ttf", "start": 113869, "end": 124957}, {"filename": "/fonts/Roboto-Black-12-table-15-15.png", "start": 124957, "end": 148277}, {"filename": "/fonts/Roboto-Black-12.fnt", "start": 148277, "end": 152880}, {"filename": "/fonts/Roboto-Black-12.ttf", "start": 152880, "end": 158354}, {"filename": "/fonts/Roboto-Black-16-table-20-20.png", "start": 158354, "end": 195739}, {"filename": "/fonts/Roboto-Black-16.fnt", "start": 195739, "end": 200719}, {"filename": "/fonts/Roboto-Black-16.ttf", "start": 200719, "end": 209993}, {"filename": "/fonts/Roboto-Black-24-table-30-29.png", "start": 209993, "end": 276576}, {"filename": "/fonts/Roboto-Black-24.fnt", "start": 276576, "end": 281832}, {"filename": "/fonts/Roboto-Black-24.ttf", "start": 281832, "end": 296512}, {"filename": "/fonts/Roboto-Black.ttf", "start": 296512, "end": 464572}, {"filename": "/fonts/Roboto-LICENSE.txt", "start": 464572, "end": 475930}, {"filename": "/graphics/background.png", "start": 475930, "end": 476994}, {"filename": "/graphics/bomb.png", "start": 476994, "end": 477309}, {"filename": "/graphics/box.png", "start": 477309, "end": 477631}, {"filename": "/graphics/diamond.png", "start": 477631, "end": 477925}, {"filename": "/graphics/empty.png", "start": 477925, "end": 478218}, {"filename": "/graphics/explosion.png", "start": 478218, "end": 478758}, {"filename": "/graphics/floor.png", "start": 478758, "end": 478964}, {"filename": "/graphics/intro1.png", "start": 478964, "end": 486633}, {"filename": "/graphics/intro2.png", "start": 486633, "end": 493941}, {"filename": "/graphics/intro3.png", "start": 493941, "end": 500224}, {"filename": "/graphics/player.png", "start": 500224, "end": 500933}, {"filename": "/graphics/spot.png", "start": 500933, "end": 501149}, {"filename": "/graphics/titlescreen.png", "start": 501149, "end": 501889}, {"filename": "/graphics/wall.png", "start": 501889, "end": 502159}, {"filename": "/levelpacks/bips/credits.dat", "start": 502159, "end": 502174}, {"filename": "/levelpacks/bips/level1.lev", "start": 502174, "end": 503338}, {"filename": "/levelpacks/bips/level10.lev", "start": 503338, "end": 504586}, {"filename": "/levelpacks/bips/level11.lev", "start": 504586, "end": 505873}, {"filename": "/levelpacks/bips/level12.lev", "start": 505873, "end": 507118}, {"filename": "/levelpacks/bips/level13.lev", "start": 507118, "end": 508423}, {"filename": "/levelpacks/bips/level14.lev", "start": 508423, "end": 509701}, {"filename": "/levelpacks/bips/level15.lev", "start": 509701, "end": 511000}, {"filename": "/levelpacks/bips/level16.lev", "start": 511000, "end": 512320}, {"filename": "/levelpacks/bips/level17.lev", "start": 512320, "end": 513628}, {"filename": "/levelpacks/bips/level18.lev", "start": 513628, "end": 514861}, {"filename": "/levelpacks/bips/level19.lev", "start": 514861, "end": 516166}, {"filename": "/levelpacks/bips/level2.lev", "start": 516166, "end": 517318}, {"filename": "/levelpacks/bips/level20.lev", "start": 517318, "end": 518557}, {"filename": "/levelpacks/bips/level21.lev", "start": 518557, "end": 519823}, {"filename": "/levelpacks/bips/level22.lev", "start": 519823, "end": 521143}, {"filename": "/levelpacks/bips/level23.lev", "start": 521143, "end": 522493}, {"filename": "/levelpacks/bips/level24.lev", "start": 522493, "end": 523840}, {"filename": "/levelpacks/bips/level25.lev", "start": 523840, "end": 525079}, {"filename": "/levelpacks/bips/level26.lev", "start": 525079, "end": 526318}, {"filename": "/levelpacks/bips/level3.lev", "start": 526318, "end": 527515}, {"filename": "/levelpacks/bips/level4.lev", "start": 527515, "end": 528859}, {"filename": "/levelpacks/bips/level5.lev", "start": 528859, "end": 530017}, {"filename": "/levelpacks/bips/level6.lev", "start": 530017, "end": 531349}, {"filename": "/levelpacks/bips/level7.lev", "start": 531349, "end": 532561}, {"filename": "/levelpacks/bips/level8.lev", "start": 532561, "end": 533926}, {"filename": "/levelpacks/bips/level9.lev", "start": 533926, "end": 535246}, {"filename": "/main.lua", "start": 535246, "end": 535246}, {"filename": "/metadata/card.png", "start": 535246, "end": 536593}, {"filename": "/metadata/icon.png", "start": 536593, "end": 537048}, {"filename": "/music/title.ogg", "start": 537048, "end": 1764309}, {"filename": "/pdxinfo", "start": 1764309, "end": 1764477}, {"filename": "/sound/back.ogg", "start": 1764477, "end": 1778596}, {"filename": "/sound/collect.ogg", "start": 1778596, "end": 1783040}, {"filename": "/sound/error.ogg", "start": 1783040, "end": 1813436}, {"filename": "/sound/explode.ogg", "start": 1813436, "end": 1821654}, {"filename": "/sound/menu.ogg", "start": 1821654, "end": 1832791}, {"filename": "/sound/move.ogg", "start": 1832791, "end": 1836728}, {"filename": "/sound/select.ogg", "start": 1836728, "end": 1851798}, {"filename": "/sound/stageend.ogg", "start": 1851798, "end": 1895891}], "remote_package_size": 1895891});
+    loadPackage({"files": [{"filename": "/Place_your_games_Source_directory_containing_assets_here", "start": 0, "end": 0}, {"filename": "/Source1/colors.ini", "start": 0, "end": 477}, {"filename": "/Source1/graphics/background - Copy.png", "start": 477, "end": 1982}, {"filename": "/Source1/graphics/background.png", "start": 1982, "end": 3487}, {"filename": "/Source1/graphics/bomb.png", "start": 3487, "end": 4260}, {"filename": "/Source1/graphics/box.png", "start": 4260, "end": 7110}, {"filename": "/Source1/graphics/diamond.png", "start": 7110, "end": 7754}, {"filename": "/Source1/graphics/empty.png", "start": 7754, "end": 8047}, {"filename": "/Source1/graphics/explosion.png", "start": 8047, "end": 12786}, {"filename": "/Source1/graphics/floor.png", "start": 12786, "end": 13576}, {"filename": "/Source1/graphics/intro1.png", "start": 13576, "end": 30705}, {"filename": "/Source1/graphics/intro2.png", "start": 30705, "end": 46714}, {"filename": "/Source1/graphics/intro3.png", "start": 46714, "end": 60045}, {"filename": "/Source1/graphics/player.png", "start": 60045, "end": 61926}, {"filename": "/Source1/graphics/player2.png", "start": 61926, "end": 63768}, {"filename": "/Source1/graphics/titlescreen.png", "start": 63768, "end": 68619}, {"filename": "/Source1/graphics/wall.png", "start": 68619, "end": 69660}, {"filename": "/System/Fonts/Asheville-Sans-14-Light.ttf", "start": 69660, "end": 117368}, {"filename": "/System/Fonts/Origin_of_fonts.txt", "start": 117368, "end": 117605}, {"filename": "/System/Fonts/Roobert-10-Bold.ttf", "start": 117605, "end": 128693}, {"filename": "/fonts/Roboto-Black-12-table-15-15.png", "start": 128693, "end": 152013}, {"filename": "/fonts/Roboto-Black-12.fnt", "start": 152013, "end": 156616}, {"filename": "/fonts/Roboto-Black-12.ttf", "start": 156616, "end": 162090}, {"filename": "/fonts/Roboto-Black-16-table-20-20.png", "start": 162090, "end": 199475}, {"filename": "/fonts/Roboto-Black-16.fnt", "start": 199475, "end": 204455}, {"filename": "/fonts/Roboto-Black-16.ttf", "start": 204455, "end": 213729}, {"filename": "/fonts/Roboto-Black-24-table-30-29.png", "start": 213729, "end": 280312}, {"filename": "/fonts/Roboto-Black-24.fnt", "start": 280312, "end": 285568}, {"filename": "/fonts/Roboto-Black-24.ttf", "start": 285568, "end": 300248}, {"filename": "/fonts/Roboto-Black.ttf", "start": 300248, "end": 468308}, {"filename": "/fonts/Roboto-LICENSE.txt", "start": 468308, "end": 479666}, {"filename": "/graphics/background.png", "start": 479666, "end": 480730}, {"filename": "/graphics/bomb.png", "start": 480730, "end": 481045}, {"filename": "/graphics/box.png", "start": 481045, "end": 481453}, {"filename": "/graphics/diamond.png", "start": 481453, "end": 481747}, {"filename": "/graphics/empty.png", "start": 481747, "end": 482040}, {"filename": "/graphics/explosion.png", "start": 482040, "end": 482580}, {"filename": "/graphics/floor.png", "start": 482580, "end": 482786}, {"filename": "/graphics/intro1.png", "start": 482786, "end": 490455}, {"filename": "/graphics/intro2.png", "start": 490455, "end": 497763}, {"filename": "/graphics/intro3.png", "start": 497763, "end": 504046}, {"filename": "/graphics/player.png", "start": 504046, "end": 504755}, {"filename": "/graphics/player2.png", "start": 504755, "end": 505514}, {"filename": "/graphics/titlescreen.png", "start": 505514, "end": 506254}, {"filename": "/graphics/wall.png", "start": 506254, "end": 506578}, {"filename": "/levelpacks/bips/credits.dat", "start": 506578, "end": 506593}, {"filename": "/levelpacks/bips/level1.lev", "start": 506593, "end": 507757}, {"filename": "/levelpacks/bips/level10.lev", "start": 507757, "end": 509005}, {"filename": "/levelpacks/bips/level11.lev", "start": 509005, "end": 510292}, {"filename": "/levelpacks/bips/level12.lev", "start": 510292, "end": 511537}, {"filename": "/levelpacks/bips/level13.lev", "start": 511537, "end": 512842}, {"filename": "/levelpacks/bips/level14.lev", "start": 512842, "end": 514120}, {"filename": "/levelpacks/bips/level15.lev", "start": 514120, "end": 515419}, {"filename": "/levelpacks/bips/level16.lev", "start": 515419, "end": 516739}, {"filename": "/levelpacks/bips/level17.lev", "start": 516739, "end": 518047}, {"filename": "/levelpacks/bips/level18.lev", "start": 518047, "end": 519280}, {"filename": "/levelpacks/bips/level19.lev", "start": 519280, "end": 520585}, {"filename": "/levelpacks/bips/level2.lev", "start": 520585, "end": 521737}, {"filename": "/levelpacks/bips/level20.lev", "start": 521737, "end": 522976}, {"filename": "/levelpacks/bips/level21.lev", "start": 522976, "end": 524242}, {"filename": "/levelpacks/bips/level22.lev", "start": 524242, "end": 525562}, {"filename": "/levelpacks/bips/level23.lev", "start": 525562, "end": 526912}, {"filename": "/levelpacks/bips/level24.lev", "start": 526912, "end": 528259}, {"filename": "/levelpacks/bips/level25.lev", "start": 528259, "end": 529498}, {"filename": "/levelpacks/bips/level26.lev", "start": 529498, "end": 530737}, {"filename": "/levelpacks/bips/level3.lev", "start": 530737, "end": 531934}, {"filename": "/levelpacks/bips/level4.lev", "start": 531934, "end": 533278}, {"filename": "/levelpacks/bips/level5.lev", "start": 533278, "end": 534436}, {"filename": "/levelpacks/bips/level6.lev", "start": 534436, "end": 535768}, {"filename": "/levelpacks/bips/level7.lev", "start": 535768, "end": 536980}, {"filename": "/levelpacks/bips/level8.lev", "start": 536980, "end": 538345}, {"filename": "/levelpacks/bips/level9.lev", "start": 538345, "end": 539665}, {"filename": "/levelpacks/bips_gold/credits.dat", "start": 539665, "end": 539680}, {"filename": "/levelpacks/bips_gold/level1.lev", "start": 539680, "end": 540877}, {"filename": "/levelpacks/bips_gold/level2.lev", "start": 540877, "end": 542134}, {"filename": "/levelpacks/bips_gold/level3.lev", "start": 542134, "end": 543415}, {"filename": "/levelpacks/bips_gold/level4.lev", "start": 543415, "end": 544612}, {"filename": "/levelpacks/bips_gold/level5.lev", "start": 544612, "end": 546226}, {"filename": "/levelpacks/bips_gold/level6.lev", "start": 546226, "end": 547450}, {"filename": "/levelpacks/bips_gold/level7.lev", "start": 547450, "end": 548698}, {"filename": "/levelpacks/bips_gold/level8.lev", "start": 548698, "end": 550084}, {"filename": "/levelpacks/bips_gold/level9.lev", "start": 550084, "end": 551437}, {"filename": "/levelpacks/bips_gold_2_players/credits.dat", "start": 551437, "end": 551452}, {"filename": "/levelpacks/bips_gold_2_players/level1.lev", "start": 551452, "end": 552760}, {"filename": "/levelpacks/bips_gold_2_players/level2.lev", "start": 552760, "end": 553900}, {"filename": "/levelpacks/bips_gold_2_players/level3.lev", "start": 553900, "end": 555205}, {"filename": "/levelpacks/bips_gold_2_players/level4.lev", "start": 555205, "end": 556465}, {"filename": "/levelpacks/bips_gold_2_players/level5.lev", "start": 556465, "end": 557749}, {"filename": "/levelpacks/bips_gold_2_players/level6.lev", "start": 557749, "end": 558970}, {"filename": "/levelpacks/bips_gold_2_players/level7.lev", "start": 558970, "end": 560317}, {"filename": "/levelpacks/bips_gold_2_players/level8.lev", "start": 560317, "end": 561583}, {"filename": "/levelpacks/bips_gold_2_players/level9.lev", "start": 561583, "end": 562903}, {"filename": "/levelpacks/bips_platinum/credits.dat", "start": 562903, "end": 562918}, {"filename": "/levelpacks/bips_platinum/level1.lev", "start": 562918, "end": 564124}, {"filename": "/levelpacks/bips_platinum/level10.lev", "start": 564124, "end": 565351}, {"filename": "/levelpacks/bips_platinum/level11.lev", "start": 565351, "end": 566533}, {"filename": "/levelpacks/bips_platinum/level12.lev", "start": 566533, "end": 567964}, {"filename": "/levelpacks/bips_platinum/level13.lev", "start": 567964, "end": 569185}, {"filename": "/levelpacks/bips_platinum/level14.lev", "start": 569185, "end": 570427}, {"filename": "/levelpacks/bips_platinum/level15.lev", "start": 570427, "end": 571717}, {"filename": "/levelpacks/bips_platinum/level16.lev", "start": 571717, "end": 572908}, {"filename": "/levelpacks/bips_platinum/level17.lev", "start": 572908, "end": 574159}, {"filename": "/levelpacks/bips_platinum/level18.lev", "start": 574159, "end": 575491}, {"filename": "/levelpacks/bips_platinum/level19.lev", "start": 575491, "end": 576727}, {"filename": "/levelpacks/bips_platinum/level2.lev", "start": 576727, "end": 577909}, {"filename": "/levelpacks/bips_platinum/level20.lev", "start": 577909, "end": 579286}, {"filename": "/levelpacks/bips_platinum/level21.lev", "start": 579286, "end": 580510}, {"filename": "/levelpacks/bips_platinum/level22.lev", "start": 580510, "end": 581803}, {"filename": "/levelpacks/bips_platinum/level23.lev", "start": 581803, "end": 583036}, {"filename": "/levelpacks/bips_platinum/level24.lev", "start": 583036, "end": 584242}, {"filename": "/levelpacks/bips_platinum/level25.lev", "start": 584242, "end": 585559}, {"filename": "/levelpacks/bips_platinum/level3.lev", "start": 585559, "end": 586777}, {"filename": "/levelpacks/bips_platinum/level4.lev", "start": 586777, "end": 587971}, {"filename": "/levelpacks/bips_platinum/level5.lev", "start": 587971, "end": 589171}, {"filename": "/levelpacks/bips_platinum/level6.lev", "start": 589171, "end": 590386}, {"filename": "/levelpacks/bips_platinum/level7.lev", "start": 590386, "end": 591568}, {"filename": "/levelpacks/bips_platinum/level8.lev", "start": 591568, "end": 592798}, {"filename": "/levelpacks/bips_platinum/level9.lev", "start": 592798, "end": 594400}, {"filename": "/main.lua", "start": 594400, "end": 594400}, {"filename": "/metadata/card.png", "start": 594400, "end": 595747}, {"filename": "/metadata/icon.png", "start": 595747, "end": 596202}, {"filename": "/music/title.ogg", "start": 596202, "end": 1823463}, {"filename": "/pdxinfo", "start": 1823463, "end": 1823631}, {"filename": "/sound/back.ogg", "start": 1823631, "end": 1837750}, {"filename": "/sound/collect.ogg", "start": 1837750, "end": 1842194}, {"filename": "/sound/error.ogg", "start": 1842194, "end": 1872590}, {"filename": "/sound/explode.ogg", "start": 1872590, "end": 1880808}, {"filename": "/sound/menu.ogg", "start": 1880808, "end": 1891945}, {"filename": "/sound/move.ogg", "start": 1891945, "end": 1895882}, {"filename": "/sound/select.ogg", "start": 1895882, "end": 1910952}, {"filename": "/sound/stageend.ogg", "start": 1910952, "end": 1955045}], "remote_package_size": 1955045});
 
   })();
 
-// end include: /tmp/tmpav3cbl5m.js
-// include: /tmp/tmpwud83fu9.js
+// end include: /tmp/tmppkcnje8u.js
+// include: /tmp/tmpwutj2czg.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if ((typeof ENVIRONMENT_IS_WASM_WORKER != 'undefined' && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != 'undefined' && ENVIRONMENT_IS_AUDIO_WORKLET)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmpwud83fu9.js
-// include: /tmp/tmpinimbh9d.js
+  // end include: /tmp/tmpwutj2czg.js
+// include: /tmp/tmp6ya6lz7e.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmpinimbh9d.js
+  // end include: /tmp/tmp6ya6lz7e.js
 
 
 var arguments_ = [];
@@ -6007,7 +6010,6 @@ async function createWasm() {
 
   
   var _eglSwapBuffers = (dpy, surface) => {
-  
       if (!EGL.defaultDisplayInitialized) {
         EGL.setErrorCode(0x3001 /* EGL_NOT_INITIALIZED */);
       } else if (!GLctx) {
@@ -6472,16 +6474,19 @@ async function createWasm() {
         return 0;
       },
   removeSingleHandler(eventHandler) {
-        for (var [i, handler] of JSEvents.eventHandlers.entries()) {
+        let success = false;
+        for (let i = 0; i < JSEvents.eventHandlers.length; ++i) {
+          const handler = JSEvents.eventHandlers[i];
           if (handler.target === eventHandler.target
             && handler.eventTypeId === eventHandler.eventTypeId
             && handler.callbackfunc === eventHandler.callbackfunc
             && handler.userData === eventHandler.userData) {
-            JSEvents._removeHandler(i);
-            return 0;
+            // in some very rare cases (ex: Safari / fullscreen events), there is more than 1 handler (eventTypeString is different)
+            JSEvents._removeHandler(i--);
+            success = true;
           }
         }
-        return -5;
+        return success ? 0 : -5;
       },
   getNodeNameForTarget(target) {
         if (!target) return '';
@@ -6499,7 +6504,7 @@ async function createWasm() {
   };
   
   /** @type {Object} */
-  var specialHTMLTargets = [0, typeof document != 'undefined' ? document : 0, typeof window != 'undefined' ? window : 0];
+  var specialHTMLTargets = [0, globalThis.document ?? 0, globalThis.window ?? 0];
   
   
   var maybeCStringToJsString = (cString) => {
@@ -6512,7 +6517,7 @@ async function createWasm() {
   
   var findEventTarget = (target) => {
       target = maybeCStringToJsString(target);
-      var domElement = specialHTMLTargets[target] || (typeof document != 'undefined' ? document.querySelector(target) : null);
+      var domElement = specialHTMLTargets[target] || globalThis.document?.querySelector(target);
       return domElement;
     };
   var findCanvasEventTarget = findEventTarget;
@@ -6775,7 +6780,7 @@ async function createWasm() {
     };
 
   var _emscripten_get_device_pixel_ratio = () => {
-      return (typeof devicePixelRatio == 'number' && devicePixelRatio) || 1.0;
+      return globalThis.devicePixelRatio ?? 1.0;
     };
 
   
@@ -8520,7 +8525,7 @@ async function createWasm() {
   
   
   var registerBeforeUnloadEventCallback = (target, userData, useCapture, callbackfunc, eventTypeId, eventTypeString) => {
-      var beforeUnloadEventHandlerFunc = (e = event) => {
+      var beforeUnloadEventHandlerFunc = (e) => {
         // Note: This is always called on the main browser thread, since it needs synchronously return a value!
         var confirmationMessage = ((a1, a2, a3) => dynCall_iiii(callbackfunc, a1, a2, a3))(eventTypeId, 0, userData);
   
@@ -8560,7 +8565,7 @@ async function createWasm() {
       var eventSize = 256;
       JSEvents.focusEvent ||= _malloc(eventSize);
   
-      var focusEventHandlerFunc = (e = event) => {
+      var focusEventHandlerFunc = (e) => {
         var nodeName = JSEvents.getNodeNameForTarget(e.target);
         var id = e.target.id ? e.target.id : '';
   
@@ -8630,7 +8635,7 @@ async function createWasm() {
       var eventSize = 276;
       JSEvents.fullscreenChangeEvent ||= _malloc(eventSize);
   
-      var fullscreenChangeEventhandlerFunc = (e = event) => {
+      var fullscreenChangeEventhandlerFunc = (e) => {
         var fullscreenChangeEvent = JSEvents.fullscreenChangeEvent;
         fillFullscreenChangeEventData(fullscreenChangeEvent);
   
@@ -8655,6 +8660,7 @@ async function createWasm() {
       if (!target) return -4;
   
       // As of Safari 13.0.3 on macOS Catalina 10.15.1 still ships with prefixed webkitfullscreenchange. TODO: revisit this check once Safari ships unprefixed version.
+      // TODO: When this block is removed, also change test/test_html5_remove_event_listener.c test expectation on emscripten_set_fullscreenchange_callback().
       registerFullscreenChangeEventCallback(target, userData, useCapture, callbackfunc, 19, "webkitfullscreenchange", targetThread);
   
       return registerFullscreenChangeEventCallback(target, userData, useCapture, callbackfunc, 19, "fullscreenchange", targetThread);
@@ -8667,7 +8673,7 @@ async function createWasm() {
       var eventSize = 1240;
       JSEvents.gamepadEvent ||= _malloc(eventSize);
   
-      var gamepadEventHandlerFunc = (e = event) => {
+      var gamepadEventHandlerFunc = (e) => {
         var gamepadEvent = JSEvents.gamepadEvent;
         fillGamepadEventData(gamepadEvent, e["gamepad"]);
   
@@ -8787,7 +8793,7 @@ async function createWasm() {
       JSEvents.mouseEvent ||= _malloc(eventSize);
       target = findEventTarget(target);
   
-      var mouseEventHandlerFunc = (e = event) => {
+      var mouseEventHandlerFunc = (e) => {
         // TODO: Make this access thread safe, or this could update live while app is reading it.
         fillMouseEventData(JSEvents.mouseEvent, e, target);
   
@@ -8839,7 +8845,7 @@ async function createWasm() {
       var eventSize = 257;
       JSEvents.pointerlockChangeEvent ||= _malloc(eventSize);
   
-      var pointerlockChangeEventHandlerFunc = (e = event) => {
+      var pointerlockChangeEventHandlerFunc = (e) => {
         var pointerlockChangeEvent = JSEvents.pointerlockChangeEvent;
         fillPointerlockChangeEventData(pointerlockChangeEvent);
   
@@ -8876,7 +8882,7 @@ async function createWasm() {
   
       target = findEventTarget(target);
   
-      var uiEventHandlerFunc = (e = event) => {
+      var uiEventHandlerFunc = (e) => {
         if (e.target != target) {
           // Never take ui events such as scroll via a 'bubbled' route, but always from the direct element that
           // was targeted. Otherwise e.g. if app logs a message in response to a page scroll, the Emscripten log
@@ -9021,7 +9027,7 @@ async function createWasm() {
       var eventSize = 8;
       JSEvents.visibilityChangeEvent ||= _malloc(eventSize);
   
-      var visibilityChangeEventHandlerFunc = (e = event) => {
+      var visibilityChangeEventHandlerFunc = (e) => {
         var visibilityChangeEvent = JSEvents.visibilityChangeEvent;
         fillVisibilityChangeEventData(visibilityChangeEvent);
   
@@ -9054,7 +9060,7 @@ async function createWasm() {
       JSEvents.wheelEvent ||= _malloc(eventSize)
   
       // The DOM Level 3 events spec event 'wheel'
-      var wheelHandlerFunc = (e = event) => {
+      var wheelHandlerFunc = (e) => {
         var wheelEvent = JSEvents.wheelEvent;
         fillMouseEventData(wheelEvent, e, target);
         HEAPF64[(((wheelEvent)+(64))>>3)] = e["deltaX"];
@@ -9101,7 +9107,7 @@ async function createWasm() {
       if (!getEnvStrings.strings) {
         // Default values.
         // Browser language detection #8751
-        var lang = ((typeof navigator == 'object' && navigator.language) || 'C').replace('-', '_') + '.UTF-8';
+        var lang = (globalThis.navigator?.language ?? 'C').replace('-', '_') + '.UTF-8';
         var env = {
           'USER': 'web_user',
           'LOGNAME': 'web_user',
@@ -10055,29 +10061,29 @@ function checkIncomingModuleAPI() {
   ignoredModuleProp('fetchSettings');
 }
 var ASM_CONSTS = {
-  647384: () => { var context; try { context = new AudioContext(); } catch (e) { context = new webkitAudioContext(); } return context.sampleRate; },  
- 647516: ($0) => { _pd_api_file_init_emscripten_done = 0; FS.mkdir('/saveddata.' + UTF8ToString($0)); FS.mount(IDBFS, {}, '/saveddata.' + UTF8ToString($0)); FS.syncfs(true, function (err) { if (err) console.log(err); _pd_api_file_init_emscripten_done = 1; }); },  
- 647761: () => { return _pd_api_file_init_emscripten_done },  
- 647802: () => { return _pd_api_file_init_emscripten_done },  
- 647843: () => { _pd_api_file_sync_emscripten_done = 0; FS.syncfs(false, function (err) { if (err) console.log("Error syncing files: " + err); _pd_api_file_sync_emscripten_done = 1; }); },  
- 648012: () => { return _pd_api_file_sync_emscripten_done },  
- 648053: () => { return _pd_api_file_sync_emscripten_done },  
- 648094: ($0) => { var str = UTF8ToString($0) + '\n\n' + 'Abort/Retry/Ignore/AlwaysIgnore? [ariA] :'; var reply = window.prompt(str, "i"); if (reply === null) { reply = "i"; } return reply.length === 1 ? reply.charCodeAt(0) : -1; },  
- 648309: () => { if (typeof(AudioContext) !== 'undefined') { return true; } else if (typeof(webkitAudioContext) !== 'undefined') { return true; } return false; },  
- 648456: () => { if ((typeof(navigator.mediaDevices) !== 'undefined') && (typeof(navigator.mediaDevices.getUserMedia) !== 'undefined')) { return true; } else if (typeof(navigator.webkitGetUserMedia) !== 'undefined') { return true; } return false; },  
- 648690: ($0) => { if(typeof(Module['SDL2']) === 'undefined') { Module['SDL2'] = {}; } var SDL2 = Module['SDL2']; if (!$0) { SDL2.audio = {}; } else { SDL2.capture = {}; } if (!SDL2.audioContext) { if (typeof(AudioContext) !== 'undefined') { SDL2.audioContext = new AudioContext(); } else if (typeof(webkitAudioContext) !== 'undefined') { SDL2.audioContext = new webkitAudioContext(); } if (SDL2.audioContext) { if ((typeof navigator.userActivation) === 'undefined') { autoResumeAudioContext(SDL2.audioContext); } } } return SDL2.audioContext === undefined ? -1 : 0; },  
- 649242: () => { var SDL2 = Module['SDL2']; return SDL2.audioContext.sampleRate; },  
- 649310: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; var have_microphone = function(stream) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); SDL2.capture.silenceTimer = undefined; SDL2.capture.silenceBuffer = undefined } SDL2.capture.mediaStreamNode = SDL2.audioContext.createMediaStreamSource(stream); SDL2.capture.scriptProcessorNode = SDL2.audioContext.createScriptProcessor($1, $0, 1); SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) { if ((SDL2 === undefined) || (SDL2.capture === undefined)) { return; } audioProcessingEvent.outputBuffer.getChannelData(0).fill(0.0); SDL2.capture.currentCaptureBuffer = audioProcessingEvent.inputBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.mediaStreamNode.connect(SDL2.capture.scriptProcessorNode); SDL2.capture.scriptProcessorNode.connect(SDL2.audioContext.destination); SDL2.capture.stream = stream; }; var no_microphone = function(error) { }; SDL2.capture.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.capture.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { SDL2.capture.currentCaptureBuffer = SDL2.capture.silenceBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); if ((navigator.mediaDevices !== undefined) && (navigator.mediaDevices.getUserMedia !== undefined)) { navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(have_microphone).catch(no_microphone); } else if (navigator.webkitGetUserMedia !== undefined) { navigator.webkitGetUserMedia({ audio: true, video: false }, have_microphone, no_microphone); } },  
- 651003: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; SDL2.audio.scriptProcessorNode = SDL2.audioContext['createScriptProcessor']($1, 0, $0); SDL2.audio.scriptProcessorNode['onaudioprocess'] = function (e) { if ((SDL2 === undefined) || (SDL2.audio === undefined)) { return; } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); SDL2.audio.silenceTimer = undefined; SDL2.audio.silenceBuffer = undefined; } SDL2.audio.currentOutputBuffer = e['outputBuffer']; dynCall('vp', $2, [$3]); }; SDL2.audio.scriptProcessorNode['connect'](SDL2.audioContext['destination']); if (SDL2.audioContext.state === 'suspended') { SDL2.audio.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.audio.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { if ((typeof navigator.userActivation) !== 'undefined') { if (navigator.userActivation.hasBeenActive) { SDL2.audioContext.resume(); } } SDL2.audio.currentOutputBuffer = SDL2.audio.silenceBuffer; dynCall('vp', $2, [$3]); SDL2.audio.currentOutputBuffer = undefined; }; SDL2.audio.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); } },  
- 652178: ($0, $1) => { var SDL2 = Module['SDL2']; var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.capture.currentCaptureBuffer.getChannelData(c); if (channelData.length != $1) { throw 'Web Audio capture buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } if (numChannels == 1) { for (var j = 0; j < $1; ++j) { setValue($0 + (j * 4), channelData[j], 'float'); } } else { for (var j = 0; j < $1; ++j) { setValue($0 + (((j * numChannels) + c) * 4), channelData[j], 'float'); } } } },  
- 652783: ($0, $1) => { var SDL2 = Module['SDL2']; var buf = $0 >>> 2; var numChannels = SDL2.audio.currentOutputBuffer['numberOfChannels']; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.audio.currentOutputBuffer['getChannelData'](c); if (channelData.length != $1) { throw 'Web Audio output buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } for (var j = 0; j < $1; ++j) { channelData[j] = HEAPF32[buf + (j*numChannels + c)]; } } },  
- 653272: ($0) => { var SDL2 = Module['SDL2']; if ($0) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); } if (SDL2.capture.stream !== undefined) { var tracks = SDL2.capture.stream.getAudioTracks(); for (var i = 0; i < tracks.length; i++) { SDL2.capture.stream.removeTrack(tracks[i]); } } if (SDL2.capture.scriptProcessorNode !== undefined) { SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) {}; SDL2.capture.scriptProcessorNode.disconnect(); } if (SDL2.capture.mediaStreamNode !== undefined) { SDL2.capture.mediaStreamNode.disconnect(); } SDL2.capture = undefined; } else { if (SDL2.audio.scriptProcessorNode != undefined) { SDL2.audio.scriptProcessorNode.disconnect(); } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); } SDL2.audio = undefined; } if ((SDL2.audioContext !== undefined) && (SDL2.audio === undefined) && (SDL2.capture === undefined)) { SDL2.audioContext.close(); SDL2.audioContext = undefined; } },  
- 654278: ($0, $1, $2) => { var w = $0; var h = $1; var pixels = $2; if (!Module['SDL2']) Module['SDL2'] = {}; var SDL2 = Module['SDL2']; if (SDL2.ctxCanvas !== Module['canvas']) { SDL2.ctx = Browser.createContext(Module['canvas'], false, true); SDL2.ctxCanvas = Module['canvas']; } if (SDL2.w !== w || SDL2.h !== h || SDL2.imageCtx !== SDL2.ctx) { SDL2.image = SDL2.ctx.createImageData(w, h); SDL2.w = w; SDL2.h = h; SDL2.imageCtx = SDL2.ctx; } var data = SDL2.image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = 0xff; src++; dst += 4; } } else { if (SDL2.data32Data !== data) { SDL2.data32 = new Int32Array(data.buffer); SDL2.data8 = new Uint8Array(data.buffer); SDL2.data32Data = data; } var data32 = SDL2.data32; num = data32.length; data32.set(HEAP32.subarray(src, src + num)); var data8 = SDL2.data8; var i = 3; var j = i + 4*num; if (num % 8 == 0) { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; } } else { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; } } } SDL2.ctx.putImageData(SDL2.image, 0, 0); },  
- 655744: ($0, $1, $2, $3, $4) => { var w = $0; var h = $1; var hot_x = $2; var hot_y = $3; var pixels = $4; var canvas = document.createElement("canvas"); canvas.width = w; canvas.height = h; var ctx = canvas.getContext("2d"); var image = ctx.createImageData(w, h); var data = image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = (val >> 24) & 0xff; src++; dst += 4; } } else { var data32 = new Int32Array(data.buffer); num = data32.length; data32.set(HEAP32.subarray(src, src + num)); } ctx.putImageData(image, 0, 0); var url = hot_x === 0 && hot_y === 0 ? "url(" + canvas.toDataURL() + "), auto" : "url(" + canvas.toDataURL() + ") " + hot_x + " " + hot_y + ", auto"; var urlBuf = _malloc(url.length + 1); stringToUTF8(url, urlBuf, url.length + 1); return urlBuf; },  
- 656732: ($0) => { if (Module['canvas']) { Module['canvas'].style['cursor'] = UTF8ToString($0); } },  
- 656815: () => { if (Module['canvas']) { Module['canvas'].style['cursor'] = 'none'; } },  
- 656884: () => { return window.innerWidth; },  
- 656914: () => { return window.innerHeight; }
+  647368: () => { var context; try { context = new AudioContext(); } catch (e) { context = new webkitAudioContext(); } return context.sampleRate; },  
+ 647500: ($0) => { _pd_api_file_init_emscripten_done = 0; FS.mkdir('/saveddata.' + UTF8ToString($0)); FS.mount(IDBFS, {}, '/saveddata.' + UTF8ToString($0)); FS.syncfs(true, function (err) { if (err) console.log(err); _pd_api_file_init_emscripten_done = 1; }); },  
+ 647745: () => { return _pd_api_file_init_emscripten_done },  
+ 647786: () => { return _pd_api_file_init_emscripten_done },  
+ 647827: () => { _pd_api_file_sync_emscripten_done = 0; FS.syncfs(false, function (err) { if (err) console.log("Error syncing files: " + err); _pd_api_file_sync_emscripten_done = 1; }); },  
+ 647996: () => { return _pd_api_file_sync_emscripten_done },  
+ 648037: () => { return _pd_api_file_sync_emscripten_done },  
+ 648078: ($0) => { var str = UTF8ToString($0) + '\n\n' + 'Abort/Retry/Ignore/AlwaysIgnore? [ariA] :'; var reply = window.prompt(str, "i"); if (reply === null) { reply = "i"; } return reply.length === 1 ? reply.charCodeAt(0) : -1; },  
+ 648293: () => { if (typeof(AudioContext) !== 'undefined') { return true; } else if (typeof(webkitAudioContext) !== 'undefined') { return true; } return false; },  
+ 648440: () => { if ((typeof(navigator.mediaDevices) !== 'undefined') && (typeof(navigator.mediaDevices.getUserMedia) !== 'undefined')) { return true; } else if (typeof(navigator.webkitGetUserMedia) !== 'undefined') { return true; } return false; },  
+ 648674: ($0) => { if(typeof(Module['SDL2']) === 'undefined') { Module['SDL2'] = {}; } var SDL2 = Module['SDL2']; if (!$0) { SDL2.audio = {}; } else { SDL2.capture = {}; } if (!SDL2.audioContext) { if (typeof(AudioContext) !== 'undefined') { SDL2.audioContext = new AudioContext(); } else if (typeof(webkitAudioContext) !== 'undefined') { SDL2.audioContext = new webkitAudioContext(); } if (SDL2.audioContext) { if ((typeof navigator.userActivation) === 'undefined') { autoResumeAudioContext(SDL2.audioContext); } } } return SDL2.audioContext === undefined ? -1 : 0; },  
+ 649226: () => { var SDL2 = Module['SDL2']; return SDL2.audioContext.sampleRate; },  
+ 649294: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; var have_microphone = function(stream) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); SDL2.capture.silenceTimer = undefined; SDL2.capture.silenceBuffer = undefined } SDL2.capture.mediaStreamNode = SDL2.audioContext.createMediaStreamSource(stream); SDL2.capture.scriptProcessorNode = SDL2.audioContext.createScriptProcessor($1, $0, 1); SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) { if ((SDL2 === undefined) || (SDL2.capture === undefined)) { return; } audioProcessingEvent.outputBuffer.getChannelData(0).fill(0.0); SDL2.capture.currentCaptureBuffer = audioProcessingEvent.inputBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.mediaStreamNode.connect(SDL2.capture.scriptProcessorNode); SDL2.capture.scriptProcessorNode.connect(SDL2.audioContext.destination); SDL2.capture.stream = stream; }; var no_microphone = function(error) { }; SDL2.capture.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.capture.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { SDL2.capture.currentCaptureBuffer = SDL2.capture.silenceBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); if ((navigator.mediaDevices !== undefined) && (navigator.mediaDevices.getUserMedia !== undefined)) { navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(have_microphone).catch(no_microphone); } else if (navigator.webkitGetUserMedia !== undefined) { navigator.webkitGetUserMedia({ audio: true, video: false }, have_microphone, no_microphone); } },  
+ 650987: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; SDL2.audio.scriptProcessorNode = SDL2.audioContext['createScriptProcessor']($1, 0, $0); SDL2.audio.scriptProcessorNode['onaudioprocess'] = function (e) { if ((SDL2 === undefined) || (SDL2.audio === undefined)) { return; } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); SDL2.audio.silenceTimer = undefined; SDL2.audio.silenceBuffer = undefined; } SDL2.audio.currentOutputBuffer = e['outputBuffer']; dynCall('vp', $2, [$3]); }; SDL2.audio.scriptProcessorNode['connect'](SDL2.audioContext['destination']); if (SDL2.audioContext.state === 'suspended') { SDL2.audio.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.audio.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { if ((typeof navigator.userActivation) !== 'undefined') { if (navigator.userActivation.hasBeenActive) { SDL2.audioContext.resume(); } } SDL2.audio.currentOutputBuffer = SDL2.audio.silenceBuffer; dynCall('vp', $2, [$3]); SDL2.audio.currentOutputBuffer = undefined; }; SDL2.audio.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); } },  
+ 652162: ($0, $1) => { var SDL2 = Module['SDL2']; var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.capture.currentCaptureBuffer.getChannelData(c); if (channelData.length != $1) { throw 'Web Audio capture buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } if (numChannels == 1) { for (var j = 0; j < $1; ++j) { setValue($0 + (j * 4), channelData[j], 'float'); } } else { for (var j = 0; j < $1; ++j) { setValue($0 + (((j * numChannels) + c) * 4), channelData[j], 'float'); } } } },  
+ 652767: ($0, $1) => { var SDL2 = Module['SDL2']; var buf = $0 >>> 2; var numChannels = SDL2.audio.currentOutputBuffer['numberOfChannels']; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.audio.currentOutputBuffer['getChannelData'](c); if (channelData.length != $1) { throw 'Web Audio output buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } for (var j = 0; j < $1; ++j) { channelData[j] = HEAPF32[buf + (j*numChannels + c)]; } } },  
+ 653256: ($0) => { var SDL2 = Module['SDL2']; if ($0) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); } if (SDL2.capture.stream !== undefined) { var tracks = SDL2.capture.stream.getAudioTracks(); for (var i = 0; i < tracks.length; i++) { SDL2.capture.stream.removeTrack(tracks[i]); } } if (SDL2.capture.scriptProcessorNode !== undefined) { SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) {}; SDL2.capture.scriptProcessorNode.disconnect(); } if (SDL2.capture.mediaStreamNode !== undefined) { SDL2.capture.mediaStreamNode.disconnect(); } SDL2.capture = undefined; } else { if (SDL2.audio.scriptProcessorNode != undefined) { SDL2.audio.scriptProcessorNode.disconnect(); } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); } SDL2.audio = undefined; } if ((SDL2.audioContext !== undefined) && (SDL2.audio === undefined) && (SDL2.capture === undefined)) { SDL2.audioContext.close(); SDL2.audioContext = undefined; } },  
+ 654262: ($0, $1, $2) => { var w = $0; var h = $1; var pixels = $2; if (!Module['SDL2']) Module['SDL2'] = {}; var SDL2 = Module['SDL2']; if (SDL2.ctxCanvas !== Module['canvas']) { SDL2.ctx = Browser.createContext(Module['canvas'], false, true); SDL2.ctxCanvas = Module['canvas']; } if (SDL2.w !== w || SDL2.h !== h || SDL2.imageCtx !== SDL2.ctx) { SDL2.image = SDL2.ctx.createImageData(w, h); SDL2.w = w; SDL2.h = h; SDL2.imageCtx = SDL2.ctx; } var data = SDL2.image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = 0xff; src++; dst += 4; } } else { if (SDL2.data32Data !== data) { SDL2.data32 = new Int32Array(data.buffer); SDL2.data8 = new Uint8Array(data.buffer); SDL2.data32Data = data; } var data32 = SDL2.data32; num = data32.length; data32.set(HEAP32.subarray(src, src + num)); var data8 = SDL2.data8; var i = 3; var j = i + 4*num; if (num % 8 == 0) { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; } } else { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; } } } SDL2.ctx.putImageData(SDL2.image, 0, 0); },  
+ 655728: ($0, $1, $2, $3, $4) => { var w = $0; var h = $1; var hot_x = $2; var hot_y = $3; var pixels = $4; var canvas = document.createElement("canvas"); canvas.width = w; canvas.height = h; var ctx = canvas.getContext("2d"); var image = ctx.createImageData(w, h); var data = image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = (val >> 24) & 0xff; src++; dst += 4; } } else { var data32 = new Int32Array(data.buffer); num = data32.length; data32.set(HEAP32.subarray(src, src + num)); } ctx.putImageData(image, 0, 0); var url = hot_x === 0 && hot_y === 0 ? "url(" + canvas.toDataURL() + "), auto" : "url(" + canvas.toDataURL() + ") " + hot_x + " " + hot_y + ", auto"; var urlBuf = _malloc(url.length + 1); stringToUTF8(url, urlBuf, url.length + 1); return urlBuf; },  
+ 656716: ($0) => { if (Module['canvas']) { Module['canvas'].style['cursor'] = UTF8ToString($0); } },  
+ 656799: () => { if (Module['canvas']) { Module['canvas'].style['cursor'] = 'none'; } },  
+ 656868: () => { return window.innerWidth; },  
+ 656898: () => { return window.innerHeight; }
 };
 
 // Imports from the Wasm binary.
