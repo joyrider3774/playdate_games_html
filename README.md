@@ -22,7 +22,7 @@ Please see respective repo of each game to get more information about the games 
 ## Blips
 ![Blockdude Screenshot 1](https://raw.githubusercontent.com/joyrider3774/blips_playdate/main/screenshots/screenshot1.png) ![Blips Screenshot 2](https://raw.githubusercontent.com/joyrider3774/blips_playdate/main/screenshots/screenshot2.png)
 
-Blips is a remake of the dos bips game made by Bryant Brownell, its a sokoban style puzzle game but with exploding dynamite and collecting coins
+Blips is a remake of the dos bips, bips gold and bips platinum game made by Bryant Brownell, its a sokoban style puzzle game but with exploding dynamite, special boxes and collecting coins
 
 [Game Info](https://joyrider3774.github.io/blips_playdate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/blips)
 
