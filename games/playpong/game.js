@@ -71,7 +71,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmp3xf68kbn.js
+// include: /tmp/tmp2x_1d3iz.js
 
   if (!Module['expectedDataFileDownloads']) Module['expectedDataFileDownloads'] = 0;
   Module['expectedDataFileDownloads']++;
@@ -211,21 +211,21 @@ Module['FS_createPath']("/data/sprites", "numbers", true, true);
 
   })();
 
-// end include: /tmp/tmp3xf68kbn.js
-// include: /tmp/tmp99tk4ctr.js
+// end include: /tmp/tmp2x_1d3iz.js
+// include: /tmp/tmpiny2j3yd.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if ((typeof ENVIRONMENT_IS_WASM_WORKER != 'undefined' && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != 'undefined' && ENVIRONMENT_IS_AUDIO_WORKLET)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmp99tk4ctr.js
-// include: /tmp/tmpoqmletbz.js
+  // end include: /tmp/tmpiny2j3yd.js
+// include: /tmp/tmpjnedd3hr.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmpoqmletbz.js
+  // end include: /tmp/tmpjnedd3hr.js
 
 
 var arguments_ = [];
