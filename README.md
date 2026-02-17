@@ -19,6 +19,17 @@ GamePads are supported if your browser support it.
 ## Games
 Please see respective repo of each game to get more information about the games by clicking on the `Game Info` links
 
+## Bifusion
+![Bifusion Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/bifusion-screenshot1.png) ![Bifusion Screenshot 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/bifusion-screenshot2.png)
+
+Puzzle Bobble (Bust-a-Move) meets 2048 with some extra sauce.
+
+Note: Audio does not work due to unimplemented sound functions in sdl2api, requires crank (F7/F8)
+
+[Game Info](https://github.com/Hegodi/Playdate-Stellarator) - [Play](https://joyrider3774.github.io/playdate_games_html/games/bifusion)
+
+---
+
 ## Blips
 ![Blockdude Screenshot 1](https://raw.githubusercontent.com/joyrider3774/blips_playdate/main/screenshots/screenshot1.png) ![Blips Screenshot 2](https://raw.githubusercontent.com/joyrider3774/blips_playdate/main/screenshots/screenshot2.png)
 
@@ -78,6 +89,26 @@ A Flip Puzzle game
 Mazethingie which is a maze generator / player.
 
 [Game Info](https://joyrider3774.github.io/mazethingie_playdate/) - [Play](https://joyrider3774.github.io/playdate_games_html/games/mazethingie)
+
+---
+
+## Pac Date
+![Pac Date Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/pacdate-screenshot1.png) ![Pac Date Screenshot 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/pacdate-screenshot2.png)
+
+A Maze implementation similar to Pac Man game on Playdate.
+
+Note: sdl2api does not support partial circle and filled circle draws, but the game is playable
+
+[Game Info](https://github.com/darkusagi99/PacDate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/pacdate)
+
+---
+
+## Play 2048 Date
+![Pac Date Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/play2048date-screenshot1.png) ![Pac Date Screenshot 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/play2048date-screenshot2.png)
+
+A free implementation of the game 2048 for the Playdate.
+
+[Game Info](https://github.com/darkusagi99/play2048date) - [Play](https://joyrider3774.github.io/playdate_games_html/games/play2048date)
 
 ---
 
