@@ -97,7 +97,6 @@ Mazethingie which is a maze generator / player.
 
 A Maze implementation similar to Pac Man game on Playdate.
 
-Note: sdl2api does not support partial circle and filled circle draws, but the game is playable
 
 [Game Info](https://github.com/darkusagi99/PacDate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/pacdate)
 
