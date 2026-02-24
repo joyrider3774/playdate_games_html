@@ -7,7 +7,7 @@ jobs:
   build:
     name: ${{ matrix.output }}
     strategy:
-      max-parallel: 20
+      max-parallel: 10
       matrix:
         include:
           - { repo: 'joyrider3774/formula1_playdate',           runs-on: 'ubuntu-latest',  output: 'formula_1',            patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: 'FORMULA1_PLAYDATE_CODEKEY', codesecretfile: 'src/codekey.h', makecommand: '"SRC_C_DIR=src/srcgame src/srcgame/scoresubmit" SCREENRESX=320 SCREENRESY=240 SCALINGMODE=0'}
