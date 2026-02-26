@@ -192,6 +192,15 @@ Simple game made for the Playdate in C. You control a squirrel climbing a tree a
 
 ---
 
+## Twin Racer Date
+![Twin Racer Date Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/twinracerdate-screenshot1.png) ![Twin Racer Date Screenshot 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/twinracerdate-screenshot2.png)
+
+A classic style racing game for Playdate..
+
+
+[Game Info](https://github.com/darkusagi99/twinracerDate) - [Play](https://joyrider3774.github.io/playdate_games_html/games/twinracerdate)
+
+---
 ## Waternet
 ![Waternet Screenshot 1](https://raw.githubusercontent.com/joyrider3774/waternet_playdate/main/metadata/screenshots/Waternet-screenshot1.gif) ![Waternet Screenshot 2](https://raw.githubusercontent.com/joyrider3774/waternet_playdate/main/metadata/screenshots/Waternet-screenshot7.png)
 
