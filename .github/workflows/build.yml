@@ -7,7 +7,7 @@ jobs:
   build:
     name: ${{ matrix.output }}
     strategy:
-      max-parallel: 10
+      max-parallel: 15
       matrix:
         include:
           - { repo: 'joyrider3774/formula1_playdate',           runs-on: 'ubuntu-latest',  output: 'formula_1',            patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: 'FORMULA1_PLAYDATE_CODEKEY', codesecretfile: 'src/codekey.h', makecommand: '"SRC_C_DIR=src/srcgame src/srcgame/scoresubmit" SCREENRESX=320 SCREENRESY=240 SCALINGMODE=0'}
@@ -31,6 +31,8 @@ jobs:
           - { repo: 'Hegodi/Playdate-Stellarator',              runs-on: 'ubuntu-latest',  output: 'bifusion',             patch: 'mv tmp/code tmp/src', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
           - { repo: 'darkusagi99/play2048date',                 runs-on: 'ubuntu-latest',  output: 'play2048date',         patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
           - { repo: 'darkusagi99/PacDate',                      runs-on: 'ubuntu-latest',  output: 'pacdate',              patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
+          - { repo: 'darkusagi99/twinRacerDate',                runs-on: 'ubuntu-latest',  output: 'twinracerdate',        patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
+
 
     runs-on: ${{ matrix.runs-on }}
     steps:
