@@ -10,6 +10,8 @@ jobs:
       max-parallel: 15
       matrix:
         include:
+          - { repo: 'uguu-org/slime-ascension',                 runs-on: 'ubuntu-latest',  output: 'cranktheworld',        patch: 'mkdir tmp/src && rm -rf tmp/source/common_test.c && mv tmp/source/*.h tmp/src && mv tmp/source/*.c tmp/src && mv tmp/source tmp/Source', downloadsecret: '',downloadsecretcmd: '',codesecret: '', codesecretfile: '', makecommand: ''}
+          - { repo: 'aras-p/demo-pd-cranktheworld',             runs-on: 'ubuntu-latest',  output: 'cranktheworld',        patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: 'SRC_C_DIR=src/srcgame src/srcgame/effects src/srcgame/external/aheasing src/srcgame/mini3d src/srcgame/util CFLAGS_EXTRA=-DBUILD_PLATFORM_PLAYDATE'}
           - { repo: 'joyrider3774/formula1_playdate',           runs-on: 'ubuntu-latest',  output: 'formula_1',            patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: 'FORMULA1_PLAYDATE_CODEKEY', codesecretfile: 'src/codekey.h', makecommand: '"SRC_C_DIR=src/srcgame src/srcgame/scoresubmit" SCREENRESX=320 SCREENRESY=240 SCALINGMODE=0'}
           - { repo: 'joyrider3774/checkers_playdate',           runs-on: 'ubuntu-latest',  output: 'checkers',             patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: 'CPP_BUILD=1 SCREENRESX=320 SCREENRESY=240 SCALINGMODE=0'}
           - { repo: 'joyrider3774/dynamate_playdate',           runs-on: 'ubuntu-latest',  output: 'dynamate',             patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: 'CPP_BUILD=1 SCREENRESX=320 SCREENRESY=240 SCALINGMODE=0'}
@@ -32,7 +34,6 @@ jobs:
           - { repo: 'darkusagi99/play2048date',                 runs-on: 'ubuntu-latest',  output: 'play2048date',         patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
           - { repo: 'darkusagi99/PacDate',                      runs-on: 'ubuntu-latest',  output: 'pacdate',              patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: ''}
           - { repo: 'darkusagi99/twinRacerDate',                runs-on: 'ubuntu-latest',  output: 'twinracerdate',        patch: '', downloadsecret: '',                 downloadsecretcmd: '',                                        codesecret: '',                          codesecretfile: '',              makecommand: 'MASKPRIMITIVES=0'}
-
 
     runs-on: ${{ matrix.runs-on }}
     steps:
