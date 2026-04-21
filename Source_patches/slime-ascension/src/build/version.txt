@@ -1,1 +1,0 @@
-static const char kVersion[] = "Slime Ascension v0.2";

@@ -219,17 +219,6 @@ Rubido is a little chinese checkers or solitaire game with four difficulties.
 
 ---
 
-## Slime Ascension
-![Slime Ascension Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/Slime-Ascension-screenshot1.png) ![DSlime Ascension Screenshot 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/Slime-Ascension-screenshot2.png)
-
-Climb up game Created for PlayJam 8 "Ascension".
-
-Note: requires crank (F7/F8 or joystick)
-
-[Game Info](https://github.com/uguu-org/slime-ascension) - [Play](https://joyrider3774.github.io/playdate_games_html/games/slime-ascension)
-
----
-
 ## Tree Squirrel
 ![Tree Squirrel Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/tree-squirrel-screenshot1.png) ![Tree Squirrel Screenshot 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/tree-squirrel-screenshot2.png)
 
