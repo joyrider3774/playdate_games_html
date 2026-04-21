@@ -10,6 +10,8 @@ GamePads are supported if your browser support it and are best used for crank co
 | Directional keys | movement, selecting in menu's etc |
 | A or X | A Button as mentioned in the games for functionality of each game please check each game's repository |
 | B or C | B Button as mentioned in the games for functionality of each game please check each game's repository |
+| F | Full screen |
+| Enter | System menu, menu's can vary per game and location in the games |
 | F5 | Dock crank |
 | F6 | Undock crank |
 | F7 | Simulate crank move backwards movement, in my games usually used in the level editors to select previous piece. In other games consult game's repository to know the functionality |

@@ -17,8 +17,8 @@
   // Note: We use a typeof check here instead of optional chaining using
   // globalThis because older browsers might not have globalThis defined.
   var currentNodeVersion = typeof process !== 'undefined' && process.versions?.node ? humanReadableVersionToPacked(process.versions.node) : TARGET_NOT_SUPPORTED;
-  if (currentNodeVersion < 160000) {
-    throw new Error(`This emscripten-generated code requires node v${ packedVersionToHumanReadable(160000) } (detected v${packedVersionToHumanReadable(currentNodeVersion)})`);
+  if (currentNodeVersion < 180300) {
+    throw new Error(`This emscripten-generated code requires node v${ packedVersionToHumanReadable(180300) } (detected v${packedVersionToHumanReadable(currentNodeVersion)})`);
   }
 
   var userAgent = typeof navigator !== 'undefined' && navigator.userAgent;
@@ -71,7 +71,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmpij7ws_2s.js
+// include: /tmp/tmp449xl3vq.js
 
   if (!Module['expectedDataFileDownloads']) Module['expectedDataFileDownloads'] = 0;
   Module['expectedDataFileDownloads']++;
@@ -223,25 +223,25 @@ Module['FS_createPath']("/", "sound", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/Place_your_games_Source_directory_containing_assets_here", "start": 0, "end": 0}, {"filename": "/Source1/skins/Default/background.png", "start": 0, "end": 26957}, {"filename": "/Source1/skins/Default/box-table-16-16.png", "start": 26957, "end": 32572}, {"filename": "/Source1/skins/Default/door-table-16-16.png", "start": 32572, "end": 37682}, {"filename": "/Source1/skins/Default/earthgrassleft-table-16-16.png", "start": 37682, "end": 39207}, {"filename": "/Source1/skins/Default/earthgrassright-table-16-16.png", "start": 39207, "end": 40732}, {"filename": "/Source1/skins/Default/earthleft-table-16-16.png", "start": 40732, "end": 47659}, {"filename": "/Source1/skins/Default/earthmiddle-table-16-16.png", "start": 47659, "end": 49184}, {"filename": "/Source1/skins/Default/earthright-table-16-16.png", "start": 49184, "end": 56172}, {"filename": "/Source1/skins/Default/empty-table-16-16.png", "start": 56172, "end": 61192}, {"filename": "/Source1/skins/Default/floatingfloor-table-16-16.png", "start": 61192, "end": 66665}, {"filename": "/Source1/skins/Default/floatingfloorleft-table-16-16.png", "start": 66665, "end": 72117}, {"filename": "/Source1/skins/Default/floatingfloormiddle-table-16-16.png", "start": 72117, "end": 77470}, {"filename": "/Source1/skins/Default/floatingfloorright-table-16-16.png", "start": 77470, "end": 83008}, {"filename": "/Source1/skins/Default/floor-table-16-16.png", "start": 83008, "end": 84415}, {"filename": "/Source1/skins/Default/floorleft-table-16-16.png", "start": 84415, "end": 90942}, {"filename": "/Source1/skins/Default/floorright-table-16-16.png", "start": 90942, "end": 97498}, {"filename": "/Source1/skins/Default/intro1.png", "start": 97498, "end": 143061}, {"filename": "/Source1/skins/Default/intro2.png", "start": 143061, "end": 194314}, {"filename": "/Source1/skins/Default/intro3.png", "start": 194314, "end": 235962}, {"filename": "/Source1/skins/Default/intro4.png", "start": 235962, "end": 272460}, {"filename": "/Source1/skins/Default/player-table-16-16.png", "start": 272460, "end": 281132}, {"filename": "/Source1/skins/Default/roof1-table-16-16.png", "start": 281132, "end": 287962}, {"filename": "/Source1/skins/Default/roof2-table-16-16.png", "start": 287962, "end": 294804}, {"filename": "/Source1/skins/Default/roofcornerboth-table-16-16.png", "start": 294804, "end": 301847}, {"filename": "/Source1/skins/Default/roofcornerleft-table-16-16.png", "start": 301847, "end": 308863}, {"filename": "/Source1/skins/Default/roofcornerright-table-16-16.png", "start": 308863, "end": 315888}, {"filename": "/Source1/skins/Default/roofdownleft-table-16-16.png", "start": 315888, "end": 322683}, {"filename": "/Source1/skins/Default/roofdownright-table-16-16.png", "start": 322683, "end": 329424}, {"filename": "/Source1/skins/Default/selection.png", "start": 329424, "end": 334593}, {"filename": "/Source1/skins/Default/starttower-table-16-16.png", "start": 334593, "end": 336118}, {"filename": "/Source1/skins/Default/titlescreen.png", "start": 336118, "end": 387520}, {"filename": "/Source1/skins/Default/tower-table-16-16.png", "start": 387520, "end": 394028}, {"filename": "/Source1/skins/Default/towershaft-table-16-16.png", "start": 394028, "end": 400743}, {"filename": "/Source1/skins/Flat/background.png", "start": 400743, "end": 427700}, {"filename": "/Source1/skins/Flat/box-table-16-16.png", "start": 427700, "end": 433315}, {"filename": "/Source1/skins/Flat/door-table-16-16.png", "start": 433315, "end": 438464}, {"filename": "/Source1/skins/Flat/earthgrassleft-table-16-16.png", "start": 438464, "end": 438707}, {"filename": "/Source1/skins/Flat/earthgrassright-table-16-16.png", "start": 438707, "end": 438959}, {"filename": "/Source1/skins/Flat/earthleft-table-16-16.png", "start": 438959, "end": 444033}, {"filename": "/Source1/skins/Flat/earthmiddle-table-16-16.png", "start": 444033, "end": 444228}, {"filename": "/Source1/skins/Flat/earthright-table-16-16.png", "start": 444228, "end": 449322}, {"filename": "/Source1/skins/Flat/empty-table-16-16.png", "start": 449322, "end": 454342}, {"filename": "/Source1/skins/Flat/floatingfloor-table-16-16.png", "start": 454342, "end": 459816}, {"filename": "/Source1/skins/Flat/floatingfloorleft-table-16-16.png", "start": 459816, "end": 465268}, {"filename": "/Source1/skins/Flat/floatingfloormiddle-table-16-16.png", "start": 465268, "end": 470617}, {"filename": "/Source1/skins/Flat/floatingfloorright-table-16-16.png", "start": 470617, "end": 476156}, {"filename": "/Source1/skins/Flat/floor-table-16-16.png", "start": 476156, "end": 476459}, {"filename": "/Source1/skins/Flat/floorleft-table-16-16.png", "start": 476459, "end": 482033}, {"filename": "/Source1/skins/Flat/floorright-table-16-16.png", "start": 482033, "end": 487699}, {"filename": "/Source1/skins/Flat/intro1.png", "start": 487699, "end": 533262}, {"filename": "/Source1/skins/Flat/intro2.png", "start": 533262, "end": 584515}, {"filename": "/Source1/skins/Flat/intro3.png", "start": 584515, "end": 626163}, {"filename": "/Source1/skins/Flat/intro4.png", "start": 626163, "end": 662661}, {"filename": "/Source1/skins/Flat/player-table-16-16.png", "start": 662661, "end": 671333}, {"filename": "/Source1/skins/Flat/roof1-table-16-16.png", "start": 671333, "end": 676329}, {"filename": "/Source1/skins/Flat/roof2-table-16-16.png", "start": 676329, "end": 681366}, {"filename": "/Source1/skins/Flat/roofcornerboth-table-16-16.png", "start": 681366, "end": 686364}, {"filename": "/Source1/skins/Flat/roofcornerleft-table-16-16.png", "start": 686364, "end": 691281}, {"filename": "/Source1/skins/Flat/roofcornerright-table-16-16.png", "start": 691281, "end": 696232}, {"filename": "/Source1/skins/Flat/roofdownleft-table-16-16.png", "start": 696232, "end": 701471}, {"filename": "/Source1/skins/Flat/roofdownright-table-16-16.png", "start": 701471, "end": 706685}, {"filename": "/Source1/skins/Flat/selection.png", "start": 706685, "end": 711854}, {"filename": "/Source1/skins/Flat/starttower-table-16-16.png", "start": 711854, "end": 712131}, {"filename": "/Source1/skins/Flat/titlescreen.png", "start": 712131, "end": 764363}, {"filename": "/Source1/skins/Flat/tower-table-16-16.png", "start": 764363, "end": 769946}, {"filename": "/Source1/skins/Flat/towershaft-table-16-16.png", "start": 769946, "end": 775039}, {"filename": "/Source1/skins/Tech/background.png", "start": 775039, "end": 795905}, {"filename": "/Source1/skins/Tech/box-table-16-16.png", "start": 795905, "end": 797262}, {"filename": "/Source1/skins/Tech/door-table-16-16.png", "start": 797262, "end": 803271}, {"filename": "/Source1/skins/Tech/earthgrassleft-table-16-16.png", "start": 803271, "end": 804620}, {"filename": "/Source1/skins/Tech/earthgrassright-table-16-16.png", "start": 804620, "end": 805969}, {"filename": "/Source1/skins/Tech/earthleft-table-16-16.png", "start": 805969, "end": 812119}, {"filename": "/Source1/skins/Tech/earthmiddle-table-16-16.png", "start": 812119, "end": 818301}, {"filename": "/Source1/skins/Tech/earthright-table-16-16.png", "start": 818301, "end": 824153}, {"filename": "/Source1/skins/Tech/empty-table-16-16.png", "start": 824153, "end": 829173}, {"filename": "/Source1/skins/Tech/floatingfloor-table-16-16.png", "start": 829173, "end": 835443}, {"filename": "/Source1/skins/Tech/floatingfloorleft-table-16-16.png", "start": 835443, "end": 841674}, {"filename": "/Source1/skins/Tech/floatingfloormiddle-table-16-16.png", "start": 841674, "end": 847823}, {"filename": "/Source1/skins/Tech/floatingfloorright-table-16-16.png", "start": 847823, "end": 854040}, {"filename": "/Source1/skins/Tech/floor-table-16-16.png", "start": 854040, "end": 855389}, {"filename": "/Source1/skins/Tech/floorleft-table-16-16.png", "start": 855389, "end": 861599}, {"filename": "/Source1/skins/Tech/floorright-table-16-16.png", "start": 861599, "end": 867764}, {"filename": "/Source1/skins/Tech/intro1.png", "start": 867764, "end": 888880}, {"filename": "/Source1/skins/Tech/intro2.png", "start": 888880, "end": 913965}, {"filename": "/Source1/skins/Tech/intro3.png", "start": 913965, "end": 933912}, {"filename": "/Source1/skins/Tech/intro4.png", "start": 933912, "end": 955478}, {"filename": "/Source1/skins/Tech/player-table-16-16.png", "start": 955478, "end": 963476}, {"filename": "/Source1/skins/Tech/roof1-table-16-16.png", "start": 963476, "end": 969680}, {"filename": "/Source1/skins/Tech/roof2-table-16-16.png", "start": 969680, "end": 975571}, {"filename": "/Source1/skins/Tech/roofcornerboth-table-16-16.png", "start": 975571, "end": 981866}, {"filename": "/Source1/skins/Tech/roofcornerleft-table-16-16.png", "start": 981866, "end": 988145}, {"filename": "/Source1/skins/Tech/roofcornerright-table-16-16.png", "start": 988145, "end": 994539}, {"filename": "/Source1/skins/Tech/roofdownleft-table-16-16.png", "start": 994539, "end": 1000764}, {"filename": "/Source1/skins/Tech/roofdownright-table-16-16.png", "start": 1000764, "end": 1006959}, {"filename": "/Source1/skins/Tech/selection.png", "start": 1006959, "end": 1012206}, {"filename": "/Source1/skins/Tech/starttower-table-16-16.png", "start": 1012206, "end": 1013561}, {"filename": "/Source1/skins/Tech/titlescreen.png", "start": 1013561, "end": 1045093}, {"filename": "/Source1/skins/Tech/tower-table-16-16.png", "start": 1045093, "end": 1051345}, {"filename": "/Source1/skins/Tech/towershaft-table-16-16.png", "start": 1051345, "end": 1057419}, {"filename": "/Source1/skins/Ti-83/background.png", "start": 1057419, "end": 1063083}, {"filename": "/Source1/skins/Ti-83/box-table-16-16.png", "start": 1063083, "end": 1063292}, {"filename": "/Source1/skins/Ti-83/door-table-16-16.png", "start": 1063292, "end": 1063524}, {"filename": "/Source1/skins/Ti-83/earthgrassleft-table-16-16.png", "start": 1063524, "end": 1063743}, {"filename": "/Source1/skins/Ti-83/earthgrassright-table-16-16.png", "start": 1063743, "end": 1063962}, {"filename": "/Source1/skins/Ti-83/earthleft-table-16-16.png", "start": 1063962, "end": 1064181}, {"filename": "/Source1/skins/Ti-83/earthmiddle-table-16-16.png", "start": 1064181, "end": 1064400}, {"filename": "/Source1/skins/Ti-83/earthright-table-16-16.png", "start": 1064400, "end": 1064619}, {"filename": "/Source1/skins/Ti-83/empty-table-16-16.png", "start": 1064619, "end": 1069639}, {"filename": "/Source1/skins/Ti-83/floatingfloor-table-16-16.png", "start": 1069639, "end": 1069858}, {"filename": "/Source1/skins/Ti-83/floatingfloorleft-table-16-16.png", "start": 1069858, "end": 1070077}, {"filename": "/Source1/skins/Ti-83/floatingfloormiddle-table-16-16.png", "start": 1070077, "end": 1070296}, {"filename": "/Source1/skins/Ti-83/floatingfloorright-table-16-16.png", "start": 1070296, "end": 1070515}, {"filename": "/Source1/skins/Ti-83/floor-table-16-16.png", "start": 1070515, "end": 1070734}, {"filename": "/Source1/skins/Ti-83/floorleft-table-16-16.png", "start": 1070734, "end": 1070953}, {"filename": "/Source1/skins/Ti-83/floorright-table-16-16.png", "start": 1070953, "end": 1071172}, {"filename": "/Source1/skins/Ti-83/intro1.png", "start": 1071172, "end": 1085636}, {"filename": "/Source1/skins/Ti-83/intro2.png", "start": 1085636, "end": 1103253}, {"filename": "/Source1/skins/Ti-83/intro3.png", "start": 1103253, "end": 1116348}, {"filename": "/Source1/skins/Ti-83/intro4.png", "start": 1116348, "end": 1134297}, {"filename": "/Source1/skins/Ti-83/player-table-16-16.png", "start": 1134297, "end": 1140532}, {"filename": "/Source1/skins/Ti-83/roof1-table-16-16.png", "start": 1140532, "end": 1140751}, {"filename": "/Source1/skins/Ti-83/roof2-table-16-16.png", "start": 1140751, "end": 1140970}, {"filename": "/Source1/skins/Ti-83/roofcornerboth-table-16-16.png", "start": 1140970, "end": 1141189}, {"filename": "/Source1/skins/Ti-83/roofcornerleft-table-16-16.png", "start": 1141189, "end": 1141408}, {"filename": "/Source1/skins/Ti-83/roofcornerright-table-16-16.png", "start": 1141408, "end": 1141627}, {"filename": "/Source1/skins/Ti-83/roofdownleft-table-16-16.png", "start": 1141627, "end": 1141846}, {"filename": "/Source1/skins/Ti-83/roofdownright-table-16-16.png", "start": 1141846, "end": 1142065}, {"filename": "/Source1/skins/Ti-83/selection.png", "start": 1142065, "end": 1147234}, {"filename": "/Source1/skins/Ti-83/starttower-table-16-16.png", "start": 1147234, "end": 1147453}, {"filename": "/Source1/skins/Ti-83/titlescreen.png", "start": 1147453, "end": 1169334}, {"filename": "/Source1/skins/Ti-83/tower-table-16-16.png", "start": 1169334, "end": 1169553}, {"filename": "/Source1/skins/Ti-83/towershaft-table-16-16.png", "start": 1169553, "end": 1169772}, {"filename": "/System/Fonts/Asheville-Sans-14-Light.ttf", "start": 1169772, "end": 1217480}, {"filename": "/System/Fonts/Origin_of_fonts.txt", "start": 1217480, "end": 1217717}, {"filename": "/System/Fonts/Roobert-10-Bold.ttf", "start": 1217717, "end": 1228805}, {"filename": "/fonts/Mini Sans 2X/Mini Sans 2X-table-18-20.png", "start": 1228805, "end": 1230639}, {"filename": "/fonts/Mini Sans 2X/Mini Sans 2X.fnt", "start": 1230639, "end": 1231255}, {"filename": "/fonts/Mini Sans 2X/Mini Sans 2X.ttf", "start": 1231255, "end": 1248779}, {"filename": "/fonts/Mini Sans/Mini Sans-table-9-10.png", "start": 1248779, "end": 1251121}, {"filename": "/fonts/Mini Sans/Mini Sans.fnt", "start": 1251121, "end": 1251656}, {"filename": "/fonts/Mini Sans/Mini Sans.ttf", "start": 1251656, "end": 1258688}, {"filename": "/fonts/Nano Sans/Nano Sans-table-6-10.png", "start": 1258688, "end": 1260129}, {"filename": "/fonts/Nano Sans/Nano Sans.fnt", "start": 1260129, "end": 1260664}, {"filename": "/fonts/Nano Sans/Nano Sans.ttf", "start": 1260664, "end": 1271084}, {"filename": "/levels/davy/level1.lev", "start": 1271084, "end": 1272029}, {"filename": "/levels/davy/level2.lev", "start": 1272029, "end": 1272572}, {"filename": "/levels/davy/level3.lev", "start": 1272572, "end": 1273148}, {"filename": "/levels/davy/level4.lev", "start": 1273148, "end": 1274054}, {"filename": "/levels/level1.lev", "start": 1274054, "end": 1274852}, {"filename": "/levels/level10.lev", "start": 1274852, "end": 1275611}, {"filename": "/levels/level11.lev", "start": 1275611, "end": 1276514}, {"filename": "/levels/level12.lev", "start": 1276514, "end": 1277204}, {"filename": "/levels/level13.lev", "start": 1277204, "end": 1277813}, {"filename": "/levels/level14.lev", "start": 1277813, "end": 1278476}, {"filename": "/levels/level15.lev", "start": 1278476, "end": 1279214}, {"filename": "/levels/level16.lev", "start": 1279214, "end": 1279916}, {"filename": "/levels/level17.lev", "start": 1279916, "end": 1280684}, {"filename": "/levels/level18.lev", "start": 1280684, "end": 1281332}, {"filename": "/levels/level19.lev", "start": 1281332, "end": 1282115}, {"filename": "/levels/level2.lev", "start": 1282115, "end": 1282943}, {"filename": "/levels/level20.lev", "start": 1282943, "end": 1283585}, {"filename": "/levels/level21.lev", "start": 1283585, "end": 1284275}, {"filename": "/levels/level3.lev", "start": 1284275, "end": 1285166}, {"filename": "/levels/level4.lev", "start": 1285166, "end": 1285880}, {"filename": "/levels/level5.lev", "start": 1285880, "end": 1286600}, {"filename": "/levels/level6.lev", "start": 1286600, "end": 1287398}, {"filename": "/levels/level7.lev", "start": 1287398, "end": 1288124}, {"filename": "/levels/level8.lev", "start": 1288124, "end": 1288673}, {"filename": "/levels/level9.lev", "start": 1288673, "end": 1289480}, {"filename": "/main.lua", "start": 1289480, "end": 1289480}, {"filename": "/metadata/card.png", "start": 1289480, "end": 1298056}, {"filename": "/metadata/icon-highlighted/1.png", "start": 1298056, "end": 1298764}, {"filename": "/metadata/icon-highlighted/2.png", "start": 1298764, "end": 1299467}, {"filename": "/metadata/icon-highlighted/3.png", "start": 1299467, "end": 1300176}, {"filename": "/metadata/icon-highlighted/4.png", "start": 1300176, "end": 1300879}, {"filename": "/metadata/icon-highlighted/animation.txt", "start": 1300879, "end": 1300904}, {"filename": "/metadata/icon.png", "start": 1300904, "end": 1301607}, {"filename": "/music/title.ogg", "start": 1301607, "end": 2481405}, {"filename": "/pdex.bin", "start": 2481405, "end": 2508969}, {"filename": "/pdxinfo", "start": 2508969, "end": 2509210}, {"filename": "/skins/Default/background.png", "start": 2509210, "end": 2514869}, {"filename": "/skins/Default/box-table-16-16.png", "start": 2514869, "end": 2520065}, {"filename": "/skins/Default/door-table-16-16.png", "start": 2520065, "end": 2525518}, {"filename": "/skins/Default/earthgrassleft-table-16-16.png", "start": 2525518, "end": 2530459}, {"filename": "/skins/Default/earthgrassright-table-16-16.png", "start": 2530459, "end": 2535253}, {"filename": "/skins/Default/earthleft-table-16-16.png", "start": 2535253, "end": 2540437}, {"filename": "/skins/Default/earthmiddle-table-16-16.png", "start": 2540437, "end": 2545379}, {"filename": "/skins/Default/earthright-table-16-16.png", "start": 2545379, "end": 2550429}, {"filename": "/skins/Default/empty-table-16-16.png", "start": 2550429, "end": 2555596}, {"filename": "/skins/Default/floatingfloor-table-16-16.png", "start": 2555596, "end": 2560778}, {"filename": "/skins/Default/floatingfloorleft-table-16-16.png", "start": 2560778, "end": 2565946}, {"filename": "/skins/Default/floatingfloormiddle-table-16-16.png", "start": 2565946, "end": 2571075}, {"filename": "/skins/Default/floatingfloorright-table-16-16.png", "start": 2571075, "end": 2576242}, {"filename": "/skins/Default/floor-table-16-16.png", "start": 2576242, "end": 2581096}, {"filename": "/skins/Default/floorleft-table-16-16.png", "start": 2581096, "end": 2586255}, {"filename": "/skins/Default/floorright-table-16-16.png", "start": 2586255, "end": 2591440}, {"filename": "/skins/Default/grid.png", "start": 2591440, "end": 2616437}, {"filename": "/skins/Default/intro1.png", "start": 2616437, "end": 2628986}, {"filename": "/skins/Default/intro2.png", "start": 2628986, "end": 2644247}, {"filename": "/skins/Default/intro3.png", "start": 2644247, "end": 2655487}, {"filename": "/skins/Default/intro4.png", "start": 2655487, "end": 2672894}, {"filename": "/skins/Default/player-table-16-16.png", "start": 2672894, "end": 2681016}, {"filename": "/skins/Default/roof1-table-16-16.png", "start": 2681016, "end": 2685947}, {"filename": "/skins/Default/roof2-table-16-16.png", "start": 2685947, "end": 2690893}, {"filename": "/skins/Default/roofcornerboth-table-16-16.png", "start": 2690893, "end": 2695866}, {"filename": "/skins/Default/roofcornerleft-table-16-16.png", "start": 2695866, "end": 2700836}, {"filename": "/skins/Default/roofcornerright-table-16-16.png", "start": 2700836, "end": 2705804}, {"filename": "/skins/Default/roofdownleft-table-16-16.png", "start": 2705804, "end": 2710749}, {"filename": "/skins/Default/roofdownright-table-16-16.png", "start": 2710749, "end": 2715680}, {"filename": "/skins/Default/selection.png", "start": 2715680, "end": 2720849}, {"filename": "/skins/Default/starttower-table-16-16.png", "start": 2720849, "end": 2725803}, {"filename": "/skins/Default/titlescreen.png", "start": 2725803, "end": 2747758}, {"filename": "/skins/Default/tower-table-16-16.png", "start": 2747758, "end": 2752696}, {"filename": "/skins/Default/towershaft-table-16-16.png", "start": 2752696, "end": 2757654}, {"filename": "/skins/Flat/background.png", "start": 2757654, "end": 2763313}, {"filename": "/skins/Flat/box-table-16-16.png", "start": 2763313, "end": 2768519}, {"filename": "/skins/Flat/door-table-16-16.png", "start": 2768519, "end": 2773972}, {"filename": "/skins/Flat/earthgrassleft-table-16-16.png", "start": 2773972, "end": 2779025}, {"filename": "/skins/Flat/earthgrassright-table-16-16.png", "start": 2779025, "end": 2783855}, {"filename": "/skins/Flat/earthleft-table-16-16.png", "start": 2783855, "end": 2788976}, {"filename": "/skins/Flat/earthmiddle-table-16-16.png", "start": 2788976, "end": 2793739}, {"filename": "/skins/Flat/earthright-table-16-16.png", "start": 2793739, "end": 2798645}, {"filename": "/skins/Flat/empty-table-16-16.png", "start": 2798645, "end": 2803812}, {"filename": "/skins/Flat/floatingfloor-table-16-16.png", "start": 2803812, "end": 2808731}, {"filename": "/skins/Flat/floatingfloorleft-table-16-16.png", "start": 2808731, "end": 2813554}, {"filename": "/skins/Flat/floatingfloormiddle-table-16-16.png", "start": 2813554, "end": 2818415}, {"filename": "/skins/Flat/floatingfloorright-table-16-16.png", "start": 2818415, "end": 2823242}, {"filename": "/skins/Flat/floor-table-16-16.png", "start": 2823242, "end": 2828076}, {"filename": "/skins/Flat/floorleft-table-16-16.png", "start": 2828076, "end": 2833120}, {"filename": "/skins/Flat/floorright-table-16-16.png", "start": 2833120, "end": 2838334}, {"filename": "/skins/Flat/grid.png", "start": 2838334, "end": 2863331}, {"filename": "/skins/Flat/intro1.png", "start": 2863331, "end": 2875880}, {"filename": "/skins/Flat/intro2.png", "start": 2875880, "end": 2891141}, {"filename": "/skins/Flat/intro3.png", "start": 2891141, "end": 2902381}, {"filename": "/skins/Flat/intro4.png", "start": 2902381, "end": 2919788}, {"filename": "/skins/Flat/player-table-16-16.png", "start": 2919788, "end": 2927910}, {"filename": "/skins/Flat/roof1-table-16-16.png", "start": 2927910, "end": 2932970}, {"filename": "/skins/Flat/roof2-table-16-16.png", "start": 2932970, "end": 2938028}, {"filename": "/skins/Flat/roofcornerboth-table-16-16.png", "start": 2938028, "end": 2943083}, {"filename": "/skins/Flat/roofcornerleft-table-16-16.png", "start": 2943083, "end": 2948318}, {"filename": "/skins/Flat/roofcornerright-table-16-16.png", "start": 2948318, "end": 2953372}, {"filename": "/skins/Flat/roofdownleft-table-16-16.png", "start": 2953372, "end": 2958520}, {"filename": "/skins/Flat/roofdownright-table-16-16.png", "start": 2958520, "end": 2963999}, {"filename": "/skins/Flat/selection.png", "start": 2963999, "end": 2969168}, {"filename": "/skins/Flat/starttower-table-16-16.png", "start": 2969168, "end": 2974462}, {"filename": "/skins/Flat/titlescreen.png", "start": 2974462, "end": 2996766}, {"filename": "/skins/Flat/tower-table-16-16.png", "start": 2996766, "end": 3002581}, {"filename": "/skins/Flat/towershaft-table-16-16.png", "start": 3002581, "end": 3008169}, {"filename": "/skins/Kenney/background.png", "start": 3008169, "end": 3014051}, {"filename": "/skins/Kenney/box-table-16-16.png", "start": 3014051, "end": 3014189}, {"filename": "/skins/Kenney/door-table-16-16.png", "start": 3014189, "end": 3014324}, {"filename": "/skins/Kenney/earthgrassleft-table-16-16.png", "start": 3014324, "end": 3019679}, {"filename": "/skins/Kenney/earthgrassright-table-16-16.png", "start": 3019679, "end": 3025028}, {"filename": "/skins/Kenney/earthleft-table-16-16.png", "start": 3025028, "end": 3025168}, {"filename": "/skins/Kenney/earthmiddle-table-16-16.png", "start": 3025168, "end": 3025318}, {"filename": "/skins/Kenney/earthright-table-16-16.png", "start": 3025318, "end": 3025461}, {"filename": "/skins/Kenney/empty-table-16-16.png", "start": 3025461, "end": 3030733}, {"filename": "/skins/Kenney/floatingfloor-table-16-16.png", "start": 3030733, "end": 3030880}, {"filename": "/skins/Kenney/floatingfloorleft-table-16-16.png", "start": 3030880, "end": 3031027}, {"filename": "/skins/Kenney/floatingfloormiddle-table-16-16.png", "start": 3031027, "end": 3031169}, {"filename": "/skins/Kenney/floatingfloorright-table-16-16.png", "start": 3031169, "end": 3031316}, {"filename": "/skins/Kenney/floor-table-16-16.png", "start": 3031316, "end": 3031458}, {"filename": "/skins/Kenney/floorleft-table-16-16.png", "start": 3031458, "end": 3031608}, {"filename": "/skins/Kenney/floorright-table-16-16.png", "start": 3031608, "end": 3031760}, {"filename": "/skins/Kenney/grid.png", "start": 3031760, "end": 3055872}, {"filename": "/skins/Kenney/intro1.png", "start": 3055872, "end": 3068421}, {"filename": "/skins/Kenney/intro2.png", "start": 3068421, "end": 3083682}, {"filename": "/skins/Kenney/intro3.png", "start": 3083682, "end": 3094922}, {"filename": "/skins/Kenney/intro4.png", "start": 3094922, "end": 3112329}, {"filename": "/skins/Kenney/player-table-16-16.png", "start": 3112329, "end": 3120533}, {"filename": "/skins/Kenney/roof1-table-16-16.png", "start": 3120533, "end": 3120673}, {"filename": "/skins/Kenney/roof2-table-16-16.png", "start": 3120673, "end": 3120813}, {"filename": "/skins/Kenney/roofcornerboth-table-16-16.png", "start": 3120813, "end": 3125704}, {"filename": "/skins/Kenney/roofcornerleft-table-16-16.png", "start": 3125704, "end": 3130817}, {"filename": "/skins/Kenney/roofcornerright-table-16-16.png", "start": 3130817, "end": 3135941}, {"filename": "/skins/Kenney/roofdownleft-table-16-16.png", "start": 3135941, "end": 3136085}, {"filename": "/skins/Kenney/roofdownright-table-16-16.png", "start": 3136085, "end": 3136235}, {"filename": "/skins/Kenney/selection.png", "start": 3136235, "end": 3141482}, {"filename": "/skins/Kenney/starttower-table-16-16.png", "start": 3141482, "end": 3146836}, {"filename": "/skins/Kenney/titlescreen.png", "start": 3146836, "end": 3169238}, {"filename": "/skins/Kenney/tower-table-16-16.png", "start": 3169238, "end": 3174186}, {"filename": "/skins/Kenney/towershaft-table-16-16.png", "start": 3174186, "end": 3179379}, {"filename": "/skins/Tech/background.png", "start": 3179379, "end": 3185261}, {"filename": "/skins/Tech/box-table-16-16.png", "start": 3185261, "end": 3190228}, {"filename": "/skins/Tech/door-table-16-16.png", "start": 3190228, "end": 3195355}, {"filename": "/skins/Tech/earthgrassleft-table-16-16.png", "start": 3195355, "end": 3200305}, {"filename": "/skins/Tech/earthgrassright-table-16-16.png", "start": 3200305, "end": 3205263}, {"filename": "/skins/Tech/earthleft-table-16-16.png", "start": 3205263, "end": 3210242}, {"filename": "/skins/Tech/earthmiddle-table-16-16.png", "start": 3210242, "end": 3215218}, {"filename": "/skins/Tech/earthright-table-16-16.png", "start": 3215218, "end": 3220199}, {"filename": "/skins/Tech/empty-table-16-16.png", "start": 3220199, "end": 3225471}, {"filename": "/skins/Tech/floatingfloor-table-16-16.png", "start": 3225471, "end": 3230441}, {"filename": "/skins/Tech/floatingfloorleft-table-16-16.png", "start": 3230441, "end": 3235423}, {"filename": "/skins/Tech/floatingfloormiddle-table-16-16.png", "start": 3235423, "end": 3240362}, {"filename": "/skins/Tech/floatingfloorright-table-16-16.png", "start": 3240362, "end": 3245306}, {"filename": "/skins/Tech/floor-table-16-16.png", "start": 3245306, "end": 3250254}, {"filename": "/skins/Tech/floorleft-table-16-16.png", "start": 3250254, "end": 3255241}, {"filename": "/skins/Tech/floorright-table-16-16.png", "start": 3255241, "end": 3260230}, {"filename": "/skins/Tech/grid.png", "start": 3260230, "end": 3284342}, {"filename": "/skins/Tech/intro1.png", "start": 3284342, "end": 3296891}, {"filename": "/skins/Tech/intro2.png", "start": 3296891, "end": 3312152}, {"filename": "/skins/Tech/intro3.png", "start": 3312152, "end": 3323392}, {"filename": "/skins/Tech/intro4.png", "start": 3323392, "end": 3340799}, {"filename": "/skins/Tech/player-table-16-16.png", "start": 3340799, "end": 3348659}, {"filename": "/skins/Tech/roof1-table-16-16.png", "start": 3348659, "end": 3353624}, {"filename": "/skins/Tech/roof2-table-16-16.png", "start": 3353624, "end": 3358535}, {"filename": "/skins/Tech/roofcornerboth-table-16-16.png", "start": 3358535, "end": 3363371}, {"filename": "/skins/Tech/roofcornerleft-table-16-16.png", "start": 3363371, "end": 3368363}, {"filename": "/skins/Tech/roofcornerright-table-16-16.png", "start": 3368363, "end": 3373344}, {"filename": "/skins/Tech/roofdownleft-table-16-16.png", "start": 3373344, "end": 3378305}, {"filename": "/skins/Tech/roofdownright-table-16-16.png", "start": 3378305, "end": 3383253}, {"filename": "/skins/Tech/selection.png", "start": 3383253, "end": 3388500}, {"filename": "/skins/Tech/starttower-table-16-16.png", "start": 3388500, "end": 3393443}, {"filename": "/skins/Tech/titlescreen.png", "start": 3393443, "end": 3405097}, {"filename": "/skins/Tech/tower-table-16-16.png", "start": 3405097, "end": 3410091}, {"filename": "/skins/Tech/towershaft-table-16-16.png", "start": 3410091, "end": 3415067}, {"filename": "/skins/Ti-83/background.png", "start": 3415067, "end": 3420726}, {"filename": "/skins/Ti-83/box-table-16-16.png", "start": 3420726, "end": 3425599}, {"filename": "/skins/Ti-83/door-table-16-16.png", "start": 3425599, "end": 3430503}, {"filename": "/skins/Ti-83/earthgrassleft-table-16-16.png", "start": 3430503, "end": 3435376}, {"filename": "/skins/Ti-83/earthgrassright-table-16-16.png", "start": 3435376, "end": 3440249}, {"filename": "/skins/Ti-83/earthleft-table-16-16.png", "start": 3440249, "end": 3445122}, {"filename": "/skins/Ti-83/earthmiddle-table-16-16.png", "start": 3445122, "end": 3449995}, {"filename": "/skins/Ti-83/earthright-table-16-16.png", "start": 3449995, "end": 3454868}, {"filename": "/skins/Ti-83/empty-table-16-16.png", "start": 3454868, "end": 3460035}, {"filename": "/skins/Ti-83/floatingfloor-table-16-16.png", "start": 3460035, "end": 3464908}, {"filename": "/skins/Ti-83/floatingfloorleft-table-16-16.png", "start": 3464908, "end": 3469781}, {"filename": "/skins/Ti-83/floatingfloormiddle-table-16-16.png", "start": 3469781, "end": 3474654}, {"filename": "/skins/Ti-83/floatingfloorright-table-16-16.png", "start": 3474654, "end": 3479527}, {"filename": "/skins/Ti-83/floor-table-16-16.png", "start": 3479527, "end": 3484400}, {"filename": "/skins/Ti-83/floorleft-table-16-16.png", "start": 3484400, "end": 3489178}, {"filename": "/skins/Ti-83/floorright-table-16-16.png", "start": 3489178, "end": 3494051}, {"filename": "/skins/Ti-83/grid.png", "start": 3494051, "end": 3515732}, {"filename": "/skins/Ti-83/intro1.png", "start": 3515732, "end": 3528281}, {"filename": "/skins/Ti-83/intro2.png", "start": 3528281, "end": 3543542}, {"filename": "/skins/Ti-83/intro3.png", "start": 3543542, "end": 3554782}, {"filename": "/skins/Ti-83/intro4.png", "start": 3554782, "end": 3572189}, {"filename": "/skins/Ti-83/player-table-16-16.png", "start": 3572189, "end": 3578377}, {"filename": "/skins/Ti-83/roof1-table-16-16.png", "start": 3578377, "end": 3583250}, {"filename": "/skins/Ti-83/roof2-table-16-16.png", "start": 3583250, "end": 3588123}, {"filename": "/skins/Ti-83/roofcornerboth-table-16-16.png", "start": 3588123, "end": 3592996}, {"filename": "/skins/Ti-83/roofcornerleft-table-16-16.png", "start": 3592996, "end": 3597869}, {"filename": "/skins/Ti-83/roofcornerright-table-16-16.png", "start": 3597869, "end": 3602742}, {"filename": "/skins/Ti-83/roofdownleft-table-16-16.png", "start": 3602742, "end": 3607615}, {"filename": "/skins/Ti-83/roofdownright-table-16-16.png", "start": 3607615, "end": 3612488}, {"filename": "/skins/Ti-83/selection.png", "start": 3612488, "end": 3617657}, {"filename": "/skins/Ti-83/starttower-table-16-16.png", "start": 3617657, "end": 3622530}, {"filename": "/skins/Ti-83/titlescreen.png", "start": 3622530, "end": 3644442}, {"filename": "/skins/Ti-83/tower-table-16-16.png", "start": 3644442, "end": 3649315}, {"filename": "/skins/Ti-83/towershaft-table-16-16.png", "start": 3649315, "end": 3654188}, {"filename": "/sound/back.ogg", "start": 3654188, "end": 3659141}, {"filename": "/sound/drop.ogg", "start": 3659141, "end": 3675734}, {"filename": "/sound/error.ogg", "start": 3675734, "end": 3680383}, {"filename": "/sound/fall.ogg", "start": 3680383, "end": 3685086}, {"filename": "/sound/jump.ogg", "start": 3685086, "end": 3690204}, {"filename": "/sound/menu.ogg", "start": 3690204, "end": 3695559}, {"filename": "/sound/pickup.ogg", "start": 3695559, "end": 3711533}, {"filename": "/sound/select.ogg", "start": 3711533, "end": 3716487}, {"filename": "/sound/stageend.ogg", "start": 3716487, "end": 3767548}, {"filename": "/sound/walk.ogg", "start": 3767548, "end": 3772651}], "remote_package_size": 3772651});
+    loadPackage({"files": [{"filename": "/Place_your_games_Source_directory_containing_assets_here", "start": 0, "end": 0}, {"filename": "/Source1/skins/Default/background.png", "start": 0, "end": 26957}, {"filename": "/Source1/skins/Default/box-table-16-16.png", "start": 26957, "end": 32572}, {"filename": "/Source1/skins/Default/door-table-16-16.png", "start": 32572, "end": 37682}, {"filename": "/Source1/skins/Default/earthgrassleft-table-16-16.png", "start": 37682, "end": 39207}, {"filename": "/Source1/skins/Default/earthgrassright-table-16-16.png", "start": 39207, "end": 40732}, {"filename": "/Source1/skins/Default/earthleft-table-16-16.png", "start": 40732, "end": 47659}, {"filename": "/Source1/skins/Default/earthmiddle-table-16-16.png", "start": 47659, "end": 49184}, {"filename": "/Source1/skins/Default/earthright-table-16-16.png", "start": 49184, "end": 56172}, {"filename": "/Source1/skins/Default/empty-table-16-16.png", "start": 56172, "end": 61192}, {"filename": "/Source1/skins/Default/floatingfloor-table-16-16.png", "start": 61192, "end": 66665}, {"filename": "/Source1/skins/Default/floatingfloorleft-table-16-16.png", "start": 66665, "end": 72117}, {"filename": "/Source1/skins/Default/floatingfloormiddle-table-16-16.png", "start": 72117, "end": 77470}, {"filename": "/Source1/skins/Default/floatingfloorright-table-16-16.png", "start": 77470, "end": 83008}, {"filename": "/Source1/skins/Default/floor-table-16-16.png", "start": 83008, "end": 84415}, {"filename": "/Source1/skins/Default/floorleft-table-16-16.png", "start": 84415, "end": 90942}, {"filename": "/Source1/skins/Default/floorright-table-16-16.png", "start": 90942, "end": 97498}, {"filename": "/Source1/skins/Default/intro1.png", "start": 97498, "end": 143061}, {"filename": "/Source1/skins/Default/intro2.png", "start": 143061, "end": 194314}, {"filename": "/Source1/skins/Default/intro3.png", "start": 194314, "end": 235962}, {"filename": "/Source1/skins/Default/intro4.png", "start": 235962, "end": 272460}, {"filename": "/Source1/skins/Default/player-table-16-16.png", "start": 272460, "end": 281132}, {"filename": "/Source1/skins/Default/roof1-table-16-16.png", "start": 281132, "end": 287962}, {"filename": "/Source1/skins/Default/roof2-table-16-16.png", "start": 287962, "end": 294804}, {"filename": "/Source1/skins/Default/roofcornerboth-table-16-16.png", "start": 294804, "end": 301847}, {"filename": "/Source1/skins/Default/roofcornerleft-table-16-16.png", "start": 301847, "end": 308863}, {"filename": "/Source1/skins/Default/roofcornerright-table-16-16.png", "start": 308863, "end": 315888}, {"filename": "/Source1/skins/Default/roofdownleft-table-16-16.png", "start": 315888, "end": 322683}, {"filename": "/Source1/skins/Default/roofdownright-table-16-16.png", "start": 322683, "end": 329424}, {"filename": "/Source1/skins/Default/selection.png", "start": 329424, "end": 334593}, {"filename": "/Source1/skins/Default/starttower-table-16-16.png", "start": 334593, "end": 336118}, {"filename": "/Source1/skins/Default/titlescreen.png", "start": 336118, "end": 387520}, {"filename": "/Source1/skins/Default/tower-table-16-16.png", "start": 387520, "end": 394028}, {"filename": "/Source1/skins/Default/towershaft-table-16-16.png", "start": 394028, "end": 400743}, {"filename": "/Source1/skins/Flat/background.png", "start": 400743, "end": 427700}, {"filename": "/Source1/skins/Flat/box-table-16-16.png", "start": 427700, "end": 433315}, {"filename": "/Source1/skins/Flat/door-table-16-16.png", "start": 433315, "end": 438464}, {"filename": "/Source1/skins/Flat/earthgrassleft-table-16-16.png", "start": 438464, "end": 438707}, {"filename": "/Source1/skins/Flat/earthgrassright-table-16-16.png", "start": 438707, "end": 438959}, {"filename": "/Source1/skins/Flat/earthleft-table-16-16.png", "start": 438959, "end": 444033}, {"filename": "/Source1/skins/Flat/earthmiddle-table-16-16.png", "start": 444033, "end": 444228}, {"filename": "/Source1/skins/Flat/earthright-table-16-16.png", "start": 444228, "end": 449322}, {"filename": "/Source1/skins/Flat/empty-table-16-16.png", "start": 449322, "end": 454342}, {"filename": "/Source1/skins/Flat/floatingfloor-table-16-16.png", "start": 454342, "end": 459816}, {"filename": "/Source1/skins/Flat/floatingfloorleft-table-16-16.png", "start": 459816, "end": 465268}, {"filename": "/Source1/skins/Flat/floatingfloormiddle-table-16-16.png", "start": 465268, "end": 470617}, {"filename": "/Source1/skins/Flat/floatingfloorright-table-16-16.png", "start": 470617, "end": 476156}, {"filename": "/Source1/skins/Flat/floor-table-16-16.png", "start": 476156, "end": 476459}, {"filename": "/Source1/skins/Flat/floorleft-table-16-16.png", "start": 476459, "end": 482033}, {"filename": "/Source1/skins/Flat/floorright-table-16-16.png", "start": 482033, "end": 487699}, {"filename": "/Source1/skins/Flat/intro1.png", "start": 487699, "end": 533262}, {"filename": "/Source1/skins/Flat/intro2.png", "start": 533262, "end": 584515}, {"filename": "/Source1/skins/Flat/intro3.png", "start": 584515, "end": 626163}, {"filename": "/Source1/skins/Flat/intro4.png", "start": 626163, "end": 662661}, {"filename": "/Source1/skins/Flat/player-table-16-16.png", "start": 662661, "end": 671333}, {"filename": "/Source1/skins/Flat/roof1-table-16-16.png", "start": 671333, "end": 676329}, {"filename": "/Source1/skins/Flat/roof2-table-16-16.png", "start": 676329, "end": 681366}, {"filename": "/Source1/skins/Flat/roofcornerboth-table-16-16.png", "start": 681366, "end": 686364}, {"filename": "/Source1/skins/Flat/roofcornerleft-table-16-16.png", "start": 686364, "end": 691281}, {"filename": "/Source1/skins/Flat/roofcornerright-table-16-16.png", "start": 691281, "end": 696232}, {"filename": "/Source1/skins/Flat/roofdownleft-table-16-16.png", "start": 696232, "end": 701471}, {"filename": "/Source1/skins/Flat/roofdownright-table-16-16.png", "start": 701471, "end": 706685}, {"filename": "/Source1/skins/Flat/selection.png", "start": 706685, "end": 711854}, {"filename": "/Source1/skins/Flat/starttower-table-16-16.png", "start": 711854, "end": 712131}, {"filename": "/Source1/skins/Flat/titlescreen.png", "start": 712131, "end": 764363}, {"filename": "/Source1/skins/Flat/tower-table-16-16.png", "start": 764363, "end": 769946}, {"filename": "/Source1/skins/Flat/towershaft-table-16-16.png", "start": 769946, "end": 775039}, {"filename": "/Source1/skins/Tech/background.png", "start": 775039, "end": 795905}, {"filename": "/Source1/skins/Tech/box-table-16-16.png", "start": 795905, "end": 797262}, {"filename": "/Source1/skins/Tech/door-table-16-16.png", "start": 797262, "end": 803271}, {"filename": "/Source1/skins/Tech/earthgrassleft-table-16-16.png", "start": 803271, "end": 804620}, {"filename": "/Source1/skins/Tech/earthgrassright-table-16-16.png", "start": 804620, "end": 805969}, {"filename": "/Source1/skins/Tech/earthleft-table-16-16.png", "start": 805969, "end": 812119}, {"filename": "/Source1/skins/Tech/earthmiddle-table-16-16.png", "start": 812119, "end": 818301}, {"filename": "/Source1/skins/Tech/earthright-table-16-16.png", "start": 818301, "end": 824153}, {"filename": "/Source1/skins/Tech/empty-table-16-16.png", "start": 824153, "end": 829173}, {"filename": "/Source1/skins/Tech/floatingfloor-table-16-16.png", "start": 829173, "end": 835443}, {"filename": "/Source1/skins/Tech/floatingfloorleft-table-16-16.png", "start": 835443, "end": 841674}, {"filename": "/Source1/skins/Tech/floatingfloormiddle-table-16-16.png", "start": 841674, "end": 847823}, {"filename": "/Source1/skins/Tech/floatingfloorright-table-16-16.png", "start": 847823, "end": 854040}, {"filename": "/Source1/skins/Tech/floor-table-16-16.png", "start": 854040, "end": 855389}, {"filename": "/Source1/skins/Tech/floorleft-table-16-16.png", "start": 855389, "end": 861599}, {"filename": "/Source1/skins/Tech/floorright-table-16-16.png", "start": 861599, "end": 867764}, {"filename": "/Source1/skins/Tech/intro1.png", "start": 867764, "end": 888880}, {"filename": "/Source1/skins/Tech/intro2.png", "start": 888880, "end": 913965}, {"filename": "/Source1/skins/Tech/intro3.png", "start": 913965, "end": 933912}, {"filename": "/Source1/skins/Tech/intro4.png", "start": 933912, "end": 955478}, {"filename": "/Source1/skins/Tech/player-table-16-16.png", "start": 955478, "end": 963476}, {"filename": "/Source1/skins/Tech/roof1-table-16-16.png", "start": 963476, "end": 969680}, {"filename": "/Source1/skins/Tech/roof2-table-16-16.png", "start": 969680, "end": 975571}, {"filename": "/Source1/skins/Tech/roofcornerboth-table-16-16.png", "start": 975571, "end": 981866}, {"filename": "/Source1/skins/Tech/roofcornerleft-table-16-16.png", "start": 981866, "end": 988145}, {"filename": "/Source1/skins/Tech/roofcornerright-table-16-16.png", "start": 988145, "end": 994539}, {"filename": "/Source1/skins/Tech/roofdownleft-table-16-16.png", "start": 994539, "end": 1000764}, {"filename": "/Source1/skins/Tech/roofdownright-table-16-16.png", "start": 1000764, "end": 1006959}, {"filename": "/Source1/skins/Tech/selection.png", "start": 1006959, "end": 1012206}, {"filename": "/Source1/skins/Tech/starttower-table-16-16.png", "start": 1012206, "end": 1013561}, {"filename": "/Source1/skins/Tech/titlescreen.png", "start": 1013561, "end": 1045093}, {"filename": "/Source1/skins/Tech/tower-table-16-16.png", "start": 1045093, "end": 1051345}, {"filename": "/Source1/skins/Tech/towershaft-table-16-16.png", "start": 1051345, "end": 1057419}, {"filename": "/Source1/skins/Ti-83/background.png", "start": 1057419, "end": 1063083}, {"filename": "/Source1/skins/Ti-83/box-table-16-16.png", "start": 1063083, "end": 1063292}, {"filename": "/Source1/skins/Ti-83/door-table-16-16.png", "start": 1063292, "end": 1063524}, {"filename": "/Source1/skins/Ti-83/earthgrassleft-table-16-16.png", "start": 1063524, "end": 1063743}, {"filename": "/Source1/skins/Ti-83/earthgrassright-table-16-16.png", "start": 1063743, "end": 1063962}, {"filename": "/Source1/skins/Ti-83/earthleft-table-16-16.png", "start": 1063962, "end": 1064181}, {"filename": "/Source1/skins/Ti-83/earthmiddle-table-16-16.png", "start": 1064181, "end": 1064400}, {"filename": "/Source1/skins/Ti-83/earthright-table-16-16.png", "start": 1064400, "end": 1064619}, {"filename": "/Source1/skins/Ti-83/empty-table-16-16.png", "start": 1064619, "end": 1069639}, {"filename": "/Source1/skins/Ti-83/floatingfloor-table-16-16.png", "start": 1069639, "end": 1069858}, {"filename": "/Source1/skins/Ti-83/floatingfloorleft-table-16-16.png", "start": 1069858, "end": 1070077}, {"filename": "/Source1/skins/Ti-83/floatingfloormiddle-table-16-16.png", "start": 1070077, "end": 1070296}, {"filename": "/Source1/skins/Ti-83/floatingfloorright-table-16-16.png", "start": 1070296, "end": 1070515}, {"filename": "/Source1/skins/Ti-83/floor-table-16-16.png", "start": 1070515, "end": 1070734}, {"filename": "/Source1/skins/Ti-83/floorleft-table-16-16.png", "start": 1070734, "end": 1070953}, {"filename": "/Source1/skins/Ti-83/floorright-table-16-16.png", "start": 1070953, "end": 1071172}, {"filename": "/Source1/skins/Ti-83/intro1.png", "start": 1071172, "end": 1085636}, {"filename": "/Source1/skins/Ti-83/intro2.png", "start": 1085636, "end": 1103253}, {"filename": "/Source1/skins/Ti-83/intro3.png", "start": 1103253, "end": 1116348}, {"filename": "/Source1/skins/Ti-83/intro4.png", "start": 1116348, "end": 1134297}, {"filename": "/Source1/skins/Ti-83/player-table-16-16.png", "start": 1134297, "end": 1140532}, {"filename": "/Source1/skins/Ti-83/roof1-table-16-16.png", "start": 1140532, "end": 1140751}, {"filename": "/Source1/skins/Ti-83/roof2-table-16-16.png", "start": 1140751, "end": 1140970}, {"filename": "/Source1/skins/Ti-83/roofcornerboth-table-16-16.png", "start": 1140970, "end": 1141189}, {"filename": "/Source1/skins/Ti-83/roofcornerleft-table-16-16.png", "start": 1141189, "end": 1141408}, {"filename": "/Source1/skins/Ti-83/roofcornerright-table-16-16.png", "start": 1141408, "end": 1141627}, {"filename": "/Source1/skins/Ti-83/roofdownleft-table-16-16.png", "start": 1141627, "end": 1141846}, {"filename": "/Source1/skins/Ti-83/roofdownright-table-16-16.png", "start": 1141846, "end": 1142065}, {"filename": "/Source1/skins/Ti-83/selection.png", "start": 1142065, "end": 1147234}, {"filename": "/Source1/skins/Ti-83/starttower-table-16-16.png", "start": 1147234, "end": 1147453}, {"filename": "/Source1/skins/Ti-83/titlescreen.png", "start": 1147453, "end": 1169334}, {"filename": "/Source1/skins/Ti-83/tower-table-16-16.png", "start": 1169334, "end": 1169553}, {"filename": "/Source1/skins/Ti-83/towershaft-table-16-16.png", "start": 1169553, "end": 1169772}, {"filename": "/System/Fonts/Asheville-Sans-14-Light-table-20-20.png", "start": 1169772, "end": 1176973}, {"filename": "/System/Fonts/Asheville-Sans-14-Light.fnt", "start": 1176973, "end": 1179086}, {"filename": "/System/Fonts/Asheville-Sans-14-Light.ttf", "start": 1179086, "end": 1226794}, {"filename": "/System/Fonts/Origin_of_fonts.txt", "start": 1226794, "end": 1227031}, {"filename": "/System/Fonts/Roobert-10-Bold-table-12-14.png", "start": 1227031, "end": 1231816}, {"filename": "/System/Fonts/Roobert-10-Bold.fnt", "start": 1231816, "end": 1240839}, {"filename": "/System/Fonts/Roobert-10-Bold.ttf", "start": 1240839, "end": 1251927}, {"filename": "/fonts/Mini Sans 2X/Mini Sans 2X-table-18-20.png", "start": 1251927, "end": 1253761}, {"filename": "/fonts/Mini Sans 2X/Mini Sans 2X.fnt", "start": 1253761, "end": 1254377}, {"filename": "/fonts/Mini Sans 2X/Mini Sans 2X.ttf", "start": 1254377, "end": 1271901}, {"filename": "/fonts/Mini Sans/Mini Sans-table-9-10.png", "start": 1271901, "end": 1274243}, {"filename": "/fonts/Mini Sans/Mini Sans.fnt", "start": 1274243, "end": 1274778}, {"filename": "/fonts/Mini Sans/Mini Sans.ttf", "start": 1274778, "end": 1281810}, {"filename": "/fonts/Nano Sans/Nano Sans-table-6-10.png", "start": 1281810, "end": 1283251}, {"filename": "/fonts/Nano Sans/Nano Sans.fnt", "start": 1283251, "end": 1283786}, {"filename": "/fonts/Nano Sans/Nano Sans.ttf", "start": 1283786, "end": 1294206}, {"filename": "/levels/davy/level1.lev", "start": 1294206, "end": 1295151}, {"filename": "/levels/davy/level2.lev", "start": 1295151, "end": 1295694}, {"filename": "/levels/davy/level3.lev", "start": 1295694, "end": 1296270}, {"filename": "/levels/davy/level4.lev", "start": 1296270, "end": 1297176}, {"filename": "/levels/level1.lev", "start": 1297176, "end": 1297974}, {"filename": "/levels/level10.lev", "start": 1297974, "end": 1298733}, {"filename": "/levels/level11.lev", "start": 1298733, "end": 1299636}, {"filename": "/levels/level12.lev", "start": 1299636, "end": 1300326}, {"filename": "/levels/level13.lev", "start": 1300326, "end": 1300935}, {"filename": "/levels/level14.lev", "start": 1300935, "end": 1301598}, {"filename": "/levels/level15.lev", "start": 1301598, "end": 1302336}, {"filename": "/levels/level16.lev", "start": 1302336, "end": 1303038}, {"filename": "/levels/level17.lev", "start": 1303038, "end": 1303806}, {"filename": "/levels/level18.lev", "start": 1303806, "end": 1304454}, {"filename": "/levels/level19.lev", "start": 1304454, "end": 1305237}, {"filename": "/levels/level2.lev", "start": 1305237, "end": 1306065}, {"filename": "/levels/level20.lev", "start": 1306065, "end": 1306707}, {"filename": "/levels/level21.lev", "start": 1306707, "end": 1307397}, {"filename": "/levels/level3.lev", "start": 1307397, "end": 1308288}, {"filename": "/levels/level4.lev", "start": 1308288, "end": 1309002}, {"filename": "/levels/level5.lev", "start": 1309002, "end": 1309722}, {"filename": "/levels/level6.lev", "start": 1309722, "end": 1310520}, {"filename": "/levels/level7.lev", "start": 1310520, "end": 1311246}, {"filename": "/levels/level8.lev", "start": 1311246, "end": 1311795}, {"filename": "/levels/level9.lev", "start": 1311795, "end": 1312602}, {"filename": "/main.lua", "start": 1312602, "end": 1312602}, {"filename": "/metadata/card.png", "start": 1312602, "end": 1321178}, {"filename": "/metadata/icon-highlighted/1.png", "start": 1321178, "end": 1321886}, {"filename": "/metadata/icon-highlighted/2.png", "start": 1321886, "end": 1322589}, {"filename": "/metadata/icon-highlighted/3.png", "start": 1322589, "end": 1323298}, {"filename": "/metadata/icon-highlighted/4.png", "start": 1323298, "end": 1324001}, {"filename": "/metadata/icon-highlighted/animation.txt", "start": 1324001, "end": 1324026}, {"filename": "/metadata/icon.png", "start": 1324026, "end": 1324729}, {"filename": "/music/title.ogg", "start": 1324729, "end": 2504527}, {"filename": "/pdex.bin", "start": 2504527, "end": 2532091}, {"filename": "/pdxinfo", "start": 2532091, "end": 2532332}, {"filename": "/skins/Default/background.png", "start": 2532332, "end": 2537991}, {"filename": "/skins/Default/box-table-16-16.png", "start": 2537991, "end": 2543187}, {"filename": "/skins/Default/door-table-16-16.png", "start": 2543187, "end": 2548640}, {"filename": "/skins/Default/earthgrassleft-table-16-16.png", "start": 2548640, "end": 2553581}, {"filename": "/skins/Default/earthgrassright-table-16-16.png", "start": 2553581, "end": 2558375}, {"filename": "/skins/Default/earthleft-table-16-16.png", "start": 2558375, "end": 2563559}, {"filename": "/skins/Default/earthmiddle-table-16-16.png", "start": 2563559, "end": 2568501}, {"filename": "/skins/Default/earthright-table-16-16.png", "start": 2568501, "end": 2573551}, {"filename": "/skins/Default/empty-table-16-16.png", "start": 2573551, "end": 2578718}, {"filename": "/skins/Default/floatingfloor-table-16-16.png", "start": 2578718, "end": 2583900}, {"filename": "/skins/Default/floatingfloorleft-table-16-16.png", "start": 2583900, "end": 2589068}, {"filename": "/skins/Default/floatingfloormiddle-table-16-16.png", "start": 2589068, "end": 2594197}, {"filename": "/skins/Default/floatingfloorright-table-16-16.png", "start": 2594197, "end": 2599364}, {"filename": "/skins/Default/floor-table-16-16.png", "start": 2599364, "end": 2604218}, {"filename": "/skins/Default/floorleft-table-16-16.png", "start": 2604218, "end": 2609377}, {"filename": "/skins/Default/floorright-table-16-16.png", "start": 2609377, "end": 2614562}, {"filename": "/skins/Default/grid.png", "start": 2614562, "end": 2639559}, {"filename": "/skins/Default/intro1.png", "start": 2639559, "end": 2652108}, {"filename": "/skins/Default/intro2.png", "start": 2652108, "end": 2667369}, {"filename": "/skins/Default/intro3.png", "start": 2667369, "end": 2678609}, {"filename": "/skins/Default/intro4.png", "start": 2678609, "end": 2696016}, {"filename": "/skins/Default/player-table-16-16.png", "start": 2696016, "end": 2704138}, {"filename": "/skins/Default/roof1-table-16-16.png", "start": 2704138, "end": 2709069}, {"filename": "/skins/Default/roof2-table-16-16.png", "start": 2709069, "end": 2714015}, {"filename": "/skins/Default/roofcornerboth-table-16-16.png", "start": 2714015, "end": 2718988}, {"filename": "/skins/Default/roofcornerleft-table-16-16.png", "start": 2718988, "end": 2723958}, {"filename": "/skins/Default/roofcornerright-table-16-16.png", "start": 2723958, "end": 2728926}, {"filename": "/skins/Default/roofdownleft-table-16-16.png", "start": 2728926, "end": 2733871}, {"filename": "/skins/Default/roofdownright-table-16-16.png", "start": 2733871, "end": 2738802}, {"filename": "/skins/Default/selection.png", "start": 2738802, "end": 2743971}, {"filename": "/skins/Default/starttower-table-16-16.png", "start": 2743971, "end": 2748925}, {"filename": "/skins/Default/titlescreen.png", "start": 2748925, "end": 2770880}, {"filename": "/skins/Default/tower-table-16-16.png", "start": 2770880, "end": 2775818}, {"filename": "/skins/Default/towershaft-table-16-16.png", "start": 2775818, "end": 2780776}, {"filename": "/skins/Flat/background.png", "start": 2780776, "end": 2786435}, {"filename": "/skins/Flat/box-table-16-16.png", "start": 2786435, "end": 2791641}, {"filename": "/skins/Flat/door-table-16-16.png", "start": 2791641, "end": 2797094}, {"filename": "/skins/Flat/earthgrassleft-table-16-16.png", "start": 2797094, "end": 2802147}, {"filename": "/skins/Flat/earthgrassright-table-16-16.png", "start": 2802147, "end": 2806977}, {"filename": "/skins/Flat/earthleft-table-16-16.png", "start": 2806977, "end": 2812098}, {"filename": "/skins/Flat/earthmiddle-table-16-16.png", "start": 2812098, "end": 2816861}, {"filename": "/skins/Flat/earthright-table-16-16.png", "start": 2816861, "end": 2821767}, {"filename": "/skins/Flat/empty-table-16-16.png", "start": 2821767, "end": 2826934}, {"filename": "/skins/Flat/floatingfloor-table-16-16.png", "start": 2826934, "end": 2831853}, {"filename": "/skins/Flat/floatingfloorleft-table-16-16.png", "start": 2831853, "end": 2836676}, {"filename": "/skins/Flat/floatingfloormiddle-table-16-16.png", "start": 2836676, "end": 2841537}, {"filename": "/skins/Flat/floatingfloorright-table-16-16.png", "start": 2841537, "end": 2846364}, {"filename": "/skins/Flat/floor-table-16-16.png", "start": 2846364, "end": 2851198}, {"filename": "/skins/Flat/floorleft-table-16-16.png", "start": 2851198, "end": 2856242}, {"filename": "/skins/Flat/floorright-table-16-16.png", "start": 2856242, "end": 2861456}, {"filename": "/skins/Flat/grid.png", "start": 2861456, "end": 2886453}, {"filename": "/skins/Flat/intro1.png", "start": 2886453, "end": 2899002}, {"filename": "/skins/Flat/intro2.png", "start": 2899002, "end": 2914263}, {"filename": "/skins/Flat/intro3.png", "start": 2914263, "end": 2925503}, {"filename": "/skins/Flat/intro4.png", "start": 2925503, "end": 2942910}, {"filename": "/skins/Flat/player-table-16-16.png", "start": 2942910, "end": 2951032}, {"filename": "/skins/Flat/roof1-table-16-16.png", "start": 2951032, "end": 2956092}, {"filename": "/skins/Flat/roof2-table-16-16.png", "start": 2956092, "end": 2961150}, {"filename": "/skins/Flat/roofcornerboth-table-16-16.png", "start": 2961150, "end": 2966205}, {"filename": "/skins/Flat/roofcornerleft-table-16-16.png", "start": 2966205, "end": 2971440}, {"filename": "/skins/Flat/roofcornerright-table-16-16.png", "start": 2971440, "end": 2976494}, {"filename": "/skins/Flat/roofdownleft-table-16-16.png", "start": 2976494, "end": 2981642}, {"filename": "/skins/Flat/roofdownright-table-16-16.png", "start": 2981642, "end": 2987121}, {"filename": "/skins/Flat/selection.png", "start": 2987121, "end": 2992290}, {"filename": "/skins/Flat/starttower-table-16-16.png", "start": 2992290, "end": 2997584}, {"filename": "/skins/Flat/titlescreen.png", "start": 2997584, "end": 3019888}, {"filename": "/skins/Flat/tower-table-16-16.png", "start": 3019888, "end": 3025703}, {"filename": "/skins/Flat/towershaft-table-16-16.png", "start": 3025703, "end": 3031291}, {"filename": "/skins/Kenney/background.png", "start": 3031291, "end": 3037173}, {"filename": "/skins/Kenney/box-table-16-16.png", "start": 3037173, "end": 3037311}, {"filename": "/skins/Kenney/door-table-16-16.png", "start": 3037311, "end": 3037446}, {"filename": "/skins/Kenney/earthgrassleft-table-16-16.png", "start": 3037446, "end": 3042801}, {"filename": "/skins/Kenney/earthgrassright-table-16-16.png", "start": 3042801, "end": 3048150}, {"filename": "/skins/Kenney/earthleft-table-16-16.png", "start": 3048150, "end": 3048290}, {"filename": "/skins/Kenney/earthmiddle-table-16-16.png", "start": 3048290, "end": 3048440}, {"filename": "/skins/Kenney/earthright-table-16-16.png", "start": 3048440, "end": 3048583}, {"filename": "/skins/Kenney/empty-table-16-16.png", "start": 3048583, "end": 3053855}, {"filename": "/skins/Kenney/floatingfloor-table-16-16.png", "start": 3053855, "end": 3054002}, {"filename": "/skins/Kenney/floatingfloorleft-table-16-16.png", "start": 3054002, "end": 3054149}, {"filename": "/skins/Kenney/floatingfloormiddle-table-16-16.png", "start": 3054149, "end": 3054291}, {"filename": "/skins/Kenney/floatingfloorright-table-16-16.png", "start": 3054291, "end": 3054438}, {"filename": "/skins/Kenney/floor-table-16-16.png", "start": 3054438, "end": 3054580}, {"filename": "/skins/Kenney/floorleft-table-16-16.png", "start": 3054580, "end": 3054730}, {"filename": "/skins/Kenney/floorright-table-16-16.png", "start": 3054730, "end": 3054882}, {"filename": "/skins/Kenney/grid.png", "start": 3054882, "end": 3078994}, {"filename": "/skins/Kenney/intro1.png", "start": 3078994, "end": 3091543}, {"filename": "/skins/Kenney/intro2.png", "start": 3091543, "end": 3106804}, {"filename": "/skins/Kenney/intro3.png", "start": 3106804, "end": 3118044}, {"filename": "/skins/Kenney/intro4.png", "start": 3118044, "end": 3135451}, {"filename": "/skins/Kenney/player-table-16-16.png", "start": 3135451, "end": 3143655}, {"filename": "/skins/Kenney/roof1-table-16-16.png", "start": 3143655, "end": 3143795}, {"filename": "/skins/Kenney/roof2-table-16-16.png", "start": 3143795, "end": 3143935}, {"filename": "/skins/Kenney/roofcornerboth-table-16-16.png", "start": 3143935, "end": 3148826}, {"filename": "/skins/Kenney/roofcornerleft-table-16-16.png", "start": 3148826, "end": 3153939}, {"filename": "/skins/Kenney/roofcornerright-table-16-16.png", "start": 3153939, "end": 3159063}, {"filename": "/skins/Kenney/roofdownleft-table-16-16.png", "start": 3159063, "end": 3159207}, {"filename": "/skins/Kenney/roofdownright-table-16-16.png", "start": 3159207, "end": 3159357}, {"filename": "/skins/Kenney/selection.png", "start": 3159357, "end": 3164604}, {"filename": "/skins/Kenney/starttower-table-16-16.png", "start": 3164604, "end": 3169958}, {"filename": "/skins/Kenney/titlescreen.png", "start": 3169958, "end": 3192360}, {"filename": "/skins/Kenney/tower-table-16-16.png", "start": 3192360, "end": 3197308}, {"filename": "/skins/Kenney/towershaft-table-16-16.png", "start": 3197308, "end": 3202501}, {"filename": "/skins/Tech/background.png", "start": 3202501, "end": 3208383}, {"filename": "/skins/Tech/box-table-16-16.png", "start": 3208383, "end": 3213350}, {"filename": "/skins/Tech/door-table-16-16.png", "start": 3213350, "end": 3218477}, {"filename": "/skins/Tech/earthgrassleft-table-16-16.png", "start": 3218477, "end": 3223427}, {"filename": "/skins/Tech/earthgrassright-table-16-16.png", "start": 3223427, "end": 3228385}, {"filename": "/skins/Tech/earthleft-table-16-16.png", "start": 3228385, "end": 3233364}, {"filename": "/skins/Tech/earthmiddle-table-16-16.png", "start": 3233364, "end": 3238340}, {"filename": "/skins/Tech/earthright-table-16-16.png", "start": 3238340, "end": 3243321}, {"filename": "/skins/Tech/empty-table-16-16.png", "start": 3243321, "end": 3248593}, {"filename": "/skins/Tech/floatingfloor-table-16-16.png", "start": 3248593, "end": 3253563}, {"filename": "/skins/Tech/floatingfloorleft-table-16-16.png", "start": 3253563, "end": 3258545}, {"filename": "/skins/Tech/floatingfloormiddle-table-16-16.png", "start": 3258545, "end": 3263484}, {"filename": "/skins/Tech/floatingfloorright-table-16-16.png", "start": 3263484, "end": 3268428}, {"filename": "/skins/Tech/floor-table-16-16.png", "start": 3268428, "end": 3273376}, {"filename": "/skins/Tech/floorleft-table-16-16.png", "start": 3273376, "end": 3278363}, {"filename": "/skins/Tech/floorright-table-16-16.png", "start": 3278363, "end": 3283352}, {"filename": "/skins/Tech/grid.png", "start": 3283352, "end": 3307464}, {"filename": "/skins/Tech/intro1.png", "start": 3307464, "end": 3320013}, {"filename": "/skins/Tech/intro2.png", "start": 3320013, "end": 3335274}, {"filename": "/skins/Tech/intro3.png", "start": 3335274, "end": 3346514}, {"filename": "/skins/Tech/intro4.png", "start": 3346514, "end": 3363921}, {"filename": "/skins/Tech/player-table-16-16.png", "start": 3363921, "end": 3371781}, {"filename": "/skins/Tech/roof1-table-16-16.png", "start": 3371781, "end": 3376746}, {"filename": "/skins/Tech/roof2-table-16-16.png", "start": 3376746, "end": 3381657}, {"filename": "/skins/Tech/roofcornerboth-table-16-16.png", "start": 3381657, "end": 3386493}, {"filename": "/skins/Tech/roofcornerleft-table-16-16.png", "start": 3386493, "end": 3391485}, {"filename": "/skins/Tech/roofcornerright-table-16-16.png", "start": 3391485, "end": 3396466}, {"filename": "/skins/Tech/roofdownleft-table-16-16.png", "start": 3396466, "end": 3401427}, {"filename": "/skins/Tech/roofdownright-table-16-16.png", "start": 3401427, "end": 3406375}, {"filename": "/skins/Tech/selection.png", "start": 3406375, "end": 3411622}, {"filename": "/skins/Tech/starttower-table-16-16.png", "start": 3411622, "end": 3416565}, {"filename": "/skins/Tech/titlescreen.png", "start": 3416565, "end": 3428219}, {"filename": "/skins/Tech/tower-table-16-16.png", "start": 3428219, "end": 3433213}, {"filename": "/skins/Tech/towershaft-table-16-16.png", "start": 3433213, "end": 3438189}, {"filename": "/skins/Ti-83/background.png", "start": 3438189, "end": 3443848}, {"filename": "/skins/Ti-83/box-table-16-16.png", "start": 3443848, "end": 3448721}, {"filename": "/skins/Ti-83/door-table-16-16.png", "start": 3448721, "end": 3453625}, {"filename": "/skins/Ti-83/earthgrassleft-table-16-16.png", "start": 3453625, "end": 3458498}, {"filename": "/skins/Ti-83/earthgrassright-table-16-16.png", "start": 3458498, "end": 3463371}, {"filename": "/skins/Ti-83/earthleft-table-16-16.png", "start": 3463371, "end": 3468244}, {"filename": "/skins/Ti-83/earthmiddle-table-16-16.png", "start": 3468244, "end": 3473117}, {"filename": "/skins/Ti-83/earthright-table-16-16.png", "start": 3473117, "end": 3477990}, {"filename": "/skins/Ti-83/empty-table-16-16.png", "start": 3477990, "end": 3483157}, {"filename": "/skins/Ti-83/floatingfloor-table-16-16.png", "start": 3483157, "end": 3488030}, {"filename": "/skins/Ti-83/floatingfloorleft-table-16-16.png", "start": 3488030, "end": 3492903}, {"filename": "/skins/Ti-83/floatingfloormiddle-table-16-16.png", "start": 3492903, "end": 3497776}, {"filename": "/skins/Ti-83/floatingfloorright-table-16-16.png", "start": 3497776, "end": 3502649}, {"filename": "/skins/Ti-83/floor-table-16-16.png", "start": 3502649, "end": 3507522}, {"filename": "/skins/Ti-83/floorleft-table-16-16.png", "start": 3507522, "end": 3512300}, {"filename": "/skins/Ti-83/floorright-table-16-16.png", "start": 3512300, "end": 3517173}, {"filename": "/skins/Ti-83/grid.png", "start": 3517173, "end": 3538854}, {"filename": "/skins/Ti-83/intro1.png", "start": 3538854, "end": 3551403}, {"filename": "/skins/Ti-83/intro2.png", "start": 3551403, "end": 3566664}, {"filename": "/skins/Ti-83/intro3.png", "start": 3566664, "end": 3577904}, {"filename": "/skins/Ti-83/intro4.png", "start": 3577904, "end": 3595311}, {"filename": "/skins/Ti-83/player-table-16-16.png", "start": 3595311, "end": 3601499}, {"filename": "/skins/Ti-83/roof1-table-16-16.png", "start": 3601499, "end": 3606372}, {"filename": "/skins/Ti-83/roof2-table-16-16.png", "start": 3606372, "end": 3611245}, {"filename": "/skins/Ti-83/roofcornerboth-table-16-16.png", "start": 3611245, "end": 3616118}, {"filename": "/skins/Ti-83/roofcornerleft-table-16-16.png", "start": 3616118, "end": 3620991}, {"filename": "/skins/Ti-83/roofcornerright-table-16-16.png", "start": 3620991, "end": 3625864}, {"filename": "/skins/Ti-83/roofdownleft-table-16-16.png", "start": 3625864, "end": 3630737}, {"filename": "/skins/Ti-83/roofdownright-table-16-16.png", "start": 3630737, "end": 3635610}, {"filename": "/skins/Ti-83/selection.png", "start": 3635610, "end": 3640779}, {"filename": "/skins/Ti-83/starttower-table-16-16.png", "start": 3640779, "end": 3645652}, {"filename": "/skins/Ti-83/titlescreen.png", "start": 3645652, "end": 3667564}, {"filename": "/skins/Ti-83/tower-table-16-16.png", "start": 3667564, "end": 3672437}, {"filename": "/skins/Ti-83/towershaft-table-16-16.png", "start": 3672437, "end": 3677310}, {"filename": "/sound/back.ogg", "start": 3677310, "end": 3682263}, {"filename": "/sound/drop.ogg", "start": 3682263, "end": 3698856}, {"filename": "/sound/error.ogg", "start": 3698856, "end": 3703505}, {"filename": "/sound/fall.ogg", "start": 3703505, "end": 3708208}, {"filename": "/sound/jump.ogg", "start": 3708208, "end": 3713326}, {"filename": "/sound/menu.ogg", "start": 3713326, "end": 3718681}, {"filename": "/sound/pickup.ogg", "start": 3718681, "end": 3734655}, {"filename": "/sound/select.ogg", "start": 3734655, "end": 3739609}, {"filename": "/sound/stageend.ogg", "start": 3739609, "end": 3790670}, {"filename": "/sound/walk.ogg", "start": 3790670, "end": 3795773}], "remote_package_size": 3795773});
 
   })();
 
-// end include: /tmp/tmpij7ws_2s.js
-// include: /tmp/tmpznuervn6.js
+// end include: /tmp/tmp449xl3vq.js
+// include: /tmp/tmp2kuugosg.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if ((typeof ENVIRONMENT_IS_WASM_WORKER != 'undefined' && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != 'undefined' && ENVIRONMENT_IS_AUDIO_WORKLET)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmpznuervn6.js
-// include: /tmp/tmp6errusik.js
+  // end include: /tmp/tmp2kuugosg.js
+// include: /tmp/tmprcidtlc3.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmp6errusik.js
+  // end include: /tmp/tmprcidtlc3.js
 
 
 var arguments_ = [];
@@ -492,6 +492,11 @@ function checkStackCookie() {
 }
 // end include: runtime_stack_check.js
 // include: runtime_exceptions.js
+// Base Emscripten EH error class
+class EmscriptenEH {}
+
+class EmscriptenSjLj extends EmscriptenEH {}
+
 // end include: runtime_exceptions.js
 // include: runtime_debug.js
 var runtimeDebug = true; // Switch to false at runtime to disable logging at the right times
@@ -619,31 +624,6 @@ function unexportedRuntimeSymbol(sym) {
 
 // end include: runtime_debug.js
 // Memory management
-var
-/** @type {!Int8Array} */
-  HEAP8,
-/** @type {!Uint8Array} */
-  HEAPU8,
-/** @type {!Int16Array} */
-  HEAP16,
-/** @type {!Uint16Array} */
-  HEAPU16,
-/** @type {!Int32Array} */
-  HEAP32,
-/** @type {!Uint32Array} */
-  HEAPU32,
-/** @type {!Float32Array} */
-  HEAPF32,
-/** @type {!Float64Array} */
-  HEAPF64;
-
-// BigInt64Array type is not correctly defined in closure
-var
-/** not-@type {!BigInt64Array} */
-  HEAP64,
-/* BigUint64Array type is not correctly defined in closure
-/** not-@type {!BigUint64Array} */
-  HEAPU64;
 
 var runtimeInitialized = false;
 
@@ -722,11 +702,13 @@ function postRun() {
   // End ATPOSTRUNS hooks
 }
 
-/** @param {string|number=} what */
+/**
+ * @param {string|number=} what
+ */
 function abort(what) {
   Module['onAbort']?.(what);
 
-  what = 'Aborted(' + what + ')';
+  what = `Aborted(${what})`;
   // TODO(sbc): Should we remove printing and leave it up to whoever
   // catches the exception?
   err(what);
@@ -936,6 +918,36 @@ async function createWasm() {
       }
     }
 
+  /** @type {!Int16Array} */
+  var HEAP16;
+
+  /** @type {!Int32Array} */
+  var HEAP32;
+
+  /** not-@type {!BigInt64Array} */
+  var HEAP64;
+
+  /** @type {!Int8Array} */
+  var HEAP8;
+
+  /** @type {!Float32Array} */
+  var HEAPF32;
+
+  /** @type {!Float64Array} */
+  var HEAPF64;
+
+  /** @type {!Uint16Array} */
+  var HEAPU16;
+
+  /** @type {!Uint32Array} */
+  var HEAPU32;
+
+  /** not-@type {!BigUint64Array} */
+  var HEAPU64;
+
+  /** @type {!Uint8Array} */
+  var HEAPU8;
+
   var callRuntimeCallbacks = (callbacks) => {
       while (callbacks.length > 0) {
         // Pass the module as the first argument.
@@ -1064,12 +1076,12 @@ async function createWasm() {
 
   var noExitRuntime = true;
 
-  var ptrToString = (ptr) => {
+  function ptrToString(ptr) {
       assert(typeof ptr === 'number', `ptrToString expects a number, got ${typeof ptr}`);
       // Convert to 32-bit unsigned value
       ptr >>>= 0;
       return '0x' + ptr.toString(16).padStart(8, '0');
-    };
+    }
 
 
   
@@ -1107,6 +1119,86 @@ async function createWasm() {
     };
 
   
+
+  var UTF8Decoder = globalThis.TextDecoder && new TextDecoder();
+  
+  var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
+      var maxIdx = idx + maxBytesToRead;
+      if (ignoreNul) return maxIdx;
+      // TextDecoder needs to know the byte length in advance, it doesn't stop on
+      // null terminator by itself.
+      // As a tiny code save trick, compare idx against maxIdx using a negation,
+      // so that maxBytesToRead=undefined/NaN means Infinity.
+      while (heapOrArray[idx] && !(idx >= maxIdx)) ++idx;
+      return idx;
+    };
+  
+  
+    /**
+   * Given a pointer 'idx' to a null-terminated UTF8-encoded string in the given
+   * array that contains uint8 values, returns a copy of that string as a
+   * Javascript String object.
+   * heapOrArray is either a regular array, or a JavaScript typed array view.
+   * @param {number=} idx
+   * @param {number=} maxBytesToRead
+   * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
+   * @return {string}
+   */
+  var UTF8ArrayToString = (heapOrArray, idx = 0, maxBytesToRead, ignoreNul) => {
+  
+      var endPtr = findStringEnd(heapOrArray, idx, maxBytesToRead, ignoreNul);
+  
+      // When using conditional TextDecoder, skip it for short strings as the overhead of the native call is not worth it.
+      if (endPtr - idx > 16 && heapOrArray.buffer && UTF8Decoder) {
+        return UTF8Decoder.decode(heapOrArray.subarray(idx, endPtr));
+      }
+      var str = '';
+      while (idx < endPtr) {
+        // For UTF8 byte structure, see:
+        // http://en.wikipedia.org/wiki/UTF-8#Description
+        // https://www.ietf.org/rfc/rfc2279.txt
+        // https://tools.ietf.org/html/rfc3629
+        var u0 = heapOrArray[idx++];
+        if (!(u0 & 0x80)) { str += String.fromCharCode(u0); continue; }
+        var u1 = heapOrArray[idx++] & 63;
+        if ((u0 & 0xE0) == 0xC0) { str += String.fromCharCode(((u0 & 31) << 6) | u1); continue; }
+        var u2 = heapOrArray[idx++] & 63;
+        if ((u0 & 0xF0) == 0xE0) {
+          u0 = ((u0 & 15) << 12) | (u1 << 6) | u2;
+        } else {
+          if ((u0 & 0xF8) != 0xF0) warnOnce(`Invalid UTF-8 leading byte ${ptrToString(u0)} encountered when deserializing a UTF-8 string in wasm memory to a JS string!`);
+          u0 = ((u0 & 7) << 18) | (u1 << 12) | (u2 << 6) | (heapOrArray[idx++] & 63);
+        }
+  
+        if (u0 < 0x10000) {
+          str += String.fromCharCode(u0);
+        } else {
+          var ch = u0 - 0x10000;
+          str += String.fromCharCode(0xD800 | (ch >> 10), 0xDC00 | (ch & 0x3FF));
+        }
+      }
+      return str;
+    };
+  
+    /**
+   * Given a pointer 'ptr' to a null-terminated UTF8-encoded string in the
+   * emscripten HEAP, returns a copy of that string as a Javascript String object.
+   *
+   * @param {number} ptr
+   * @param {number=} maxBytesToRead - An optional length that specifies the
+   *   maximum number of bytes to read. You can omit this parameter to scan the
+   *   string until the first 0 byte. If maxBytesToRead is passed, and the string
+   *   at [ptr, ptr+maxBytesToReadr[ contains a null byte in the middle, then the
+   *   string will cut short at that byte index.
+   * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
+   * @return {string}
+   */
+  var UTF8ToString = (ptr, maxBytesToRead, ignoreNul) => {
+      assert(typeof ptr == 'number', `UTF8ToString expects a number (got ${typeof ptr})`);
+      return ptr ? UTF8ArrayToString(HEAPU8, ptr, maxBytesToRead, ignoreNul) : '';
+    };
+  var ___assert_fail = (condition, filename, line, func) =>
+      abort(`Assertion failed: ${UTF8ToString(condition)}, at: ` + [filename ? UTF8ToString(filename) : 'unknown filename', line, func ? UTF8ToString(func) : 'unknown function']);
 
   class ExceptionInfo {
       // excPtr - Thrown object pointer to wrap. Metadata pointer is calculated from it.
@@ -1165,14 +1257,11 @@ async function createWasm() {
       }
     }
   
-  var exceptionLast = 0;
-  
   var uncaughtExceptionCount = 0;
   var ___cxa_throw = (ptr, type, destructor) => {
       var info = new ExceptionInfo(ptr);
       // Initialize ExceptionInfo content after it was allocated in __cxa_allocate_exception.
       info.init(type, destructor);
-      exceptionLast = ptr;
       uncaughtExceptionCount++;
       assert(false, 'Exception thrown, but exception catching is not enabled. Compile with -sNO_DISABLE_EXCEPTION_CATCHING or -sEXCEPTION_CATCHING_ALLOWED=[..] to catch.');
     };
@@ -1255,12 +1344,9 @@ var initRandomFill = () => {
       return (view) => nodeCrypto.randomFillSync(view);
     }
 
-    return (view) => crypto.getRandomValues(view);
+    return (view) => (crypto.getRandomValues(view), 0);
   };
-var randomFill = (view) => {
-    // Lazily init on the first invocation.
-    (randomFill = initRandomFill())(view);
-  };
+var randomFill = (view) => (randomFill = initRandomFill())(view);
 
 
 
@@ -1319,132 +1405,73 @@ relative:(from, to) => {
 };
 
 
-var UTF8Decoder = globalThis.TextDecoder && new TextDecoder();
 
-var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
-    var maxIdx = idx + maxBytesToRead;
-    if (ignoreNul) return maxIdx;
-    // TextDecoder needs to know the byte length in advance, it doesn't stop on
-    // null terminator by itself.
-    // As a tiny code save trick, compare idx against maxIdx using a negation,
-    // so that maxBytesToRead=undefined/NaN means Infinity.
-    while (heapOrArray[idx] && !(idx >= maxIdx)) ++idx;
-    return idx;
+var FS_stdin_getChar_buffer = [];
+
+var lengthBytesUTF8 = (str) => {
+    var len = 0;
+    for (var i = 0; i < str.length; ++i) {
+      // Gotcha: charCodeAt returns a 16-bit word that is a UTF-16 encoded code
+      // unit, not a Unicode code point of the character! So decode
+      // UTF16->UTF32->UTF8.
+      // See http://unicode.org/faq/utf_bom.html#utf16-3
+      var c = str.charCodeAt(i); // possibly a lead surrogate
+      if (c <= 0x7F) {
+        len++;
+      } else if (c <= 0x7FF) {
+        len += 2;
+      } else if (c >= 0xD800 && c <= 0xDFFF) {
+        len += 4; ++i;
+      } else {
+        len += 3;
+      }
+    }
+    return len;
   };
 
+var stringToUTF8Array = (str, heap, outIdx, maxBytesToWrite) => {
+    assert(typeof str === 'string', `stringToUTF8Array expects a string (got ${typeof str})`);
+    // Parameter maxBytesToWrite is not optional. Negative values, 0, null,
+    // undefined and false each don't write out any bytes.
+    if (!(maxBytesToWrite > 0))
+      return 0;
 
-  /**
-   * Given a pointer 'idx' to a null-terminated UTF8-encoded string in the given
-   * array that contains uint8 values, returns a copy of that string as a
-   * Javascript String object.
-   * heapOrArray is either a regular array, or a JavaScript typed array view.
-   * @param {number=} idx
-   * @param {number=} maxBytesToRead
-   * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
-   * @return {string}
-   */
-  var UTF8ArrayToString = (heapOrArray, idx = 0, maxBytesToRead, ignoreNul) => {
-  
-      var endPtr = findStringEnd(heapOrArray, idx, maxBytesToRead, ignoreNul);
-  
-      // When using conditional TextDecoder, skip it for short strings as the overhead of the native call is not worth it.
-      if (endPtr - idx > 16 && heapOrArray.buffer && UTF8Decoder) {
-        return UTF8Decoder.decode(heapOrArray.subarray(idx, endPtr));
+    var startIdx = outIdx;
+    var endIdx = outIdx + maxBytesToWrite - 1; // -1 for string null terminator.
+    for (var i = 0; i < str.length; ++i) {
+      // For UTF8 byte structure, see http://en.wikipedia.org/wiki/UTF-8#Description
+      // and https://www.ietf.org/rfc/rfc2279.txt
+      // and https://tools.ietf.org/html/rfc3629
+      var u = str.codePointAt(i);
+      if (u <= 0x7F) {
+        if (outIdx >= endIdx) break;
+        heap[outIdx++] = u;
+      } else if (u <= 0x7FF) {
+        if (outIdx + 1 >= endIdx) break;
+        heap[outIdx++] = 0xC0 | (u >> 6);
+        heap[outIdx++] = 0x80 | (u & 63);
+      } else if (u <= 0xFFFF) {
+        if (outIdx + 2 >= endIdx) break;
+        heap[outIdx++] = 0xE0 | (u >> 12);
+        heap[outIdx++] = 0x80 | ((u >> 6) & 63);
+        heap[outIdx++] = 0x80 | (u & 63);
+      } else {
+        if (outIdx + 3 >= endIdx) break;
+        if (u > 0x10FFFF) warnOnce(`Invalid Unicode code point ${ptrToString(u)} encountered when serializing a JS string to a UTF-8 string in wasm memory! (Valid unicode code points should be in range 0-0x10FFFF).`);
+        heap[outIdx++] = 0xF0 | (u >> 18);
+        heap[outIdx++] = 0x80 | ((u >> 12) & 63);
+        heap[outIdx++] = 0x80 | ((u >> 6) & 63);
+        heap[outIdx++] = 0x80 | (u & 63);
+        // Gotcha: if codePoint is over 0xFFFF, it is represented as a surrogate pair in UTF-16.
+        // We need to manually skip over the second code unit for correct iteration.
+        i++;
       }
-      var str = '';
-      while (idx < endPtr) {
-        // For UTF8 byte structure, see:
-        // http://en.wikipedia.org/wiki/UTF-8#Description
-        // https://www.ietf.org/rfc/rfc2279.txt
-        // https://tools.ietf.org/html/rfc3629
-        var u0 = heapOrArray[idx++];
-        if (!(u0 & 0x80)) { str += String.fromCharCode(u0); continue; }
-        var u1 = heapOrArray[idx++] & 63;
-        if ((u0 & 0xE0) == 0xC0) { str += String.fromCharCode(((u0 & 31) << 6) | u1); continue; }
-        var u2 = heapOrArray[idx++] & 63;
-        if ((u0 & 0xF0) == 0xE0) {
-          u0 = ((u0 & 15) << 12) | (u1 << 6) | u2;
-        } else {
-          if ((u0 & 0xF8) != 0xF0) warnOnce('Invalid UTF-8 leading byte ' + ptrToString(u0) + ' encountered when deserializing a UTF-8 string in wasm memory to a JS string!');
-          u0 = ((u0 & 7) << 18) | (u1 << 12) | (u2 << 6) | (heapOrArray[idx++] & 63);
-        }
-  
-        if (u0 < 0x10000) {
-          str += String.fromCharCode(u0);
-        } else {
-          var ch = u0 - 0x10000;
-          str += String.fromCharCode(0xD800 | (ch >> 10), 0xDC00 | (ch & 0x3FF));
-        }
-      }
-      return str;
-    };
-  
-  var FS_stdin_getChar_buffer = [];
-  
-  var lengthBytesUTF8 = (str) => {
-      var len = 0;
-      for (var i = 0; i < str.length; ++i) {
-        // Gotcha: charCodeAt returns a 16-bit word that is a UTF-16 encoded code
-        // unit, not a Unicode code point of the character! So decode
-        // UTF16->UTF32->UTF8.
-        // See http://unicode.org/faq/utf_bom.html#utf16-3
-        var c = str.charCodeAt(i); // possibly a lead surrogate
-        if (c <= 0x7F) {
-          len++;
-        } else if (c <= 0x7FF) {
-          len += 2;
-        } else if (c >= 0xD800 && c <= 0xDFFF) {
-          len += 4; ++i;
-        } else {
-          len += 3;
-        }
-      }
-      return len;
-    };
-  
-  var stringToUTF8Array = (str, heap, outIdx, maxBytesToWrite) => {
-      assert(typeof str === 'string', `stringToUTF8Array expects a string (got ${typeof str})`);
-      // Parameter maxBytesToWrite is not optional. Negative values, 0, null,
-      // undefined and false each don't write out any bytes.
-      if (!(maxBytesToWrite > 0))
-        return 0;
-  
-      var startIdx = outIdx;
-      var endIdx = outIdx + maxBytesToWrite - 1; // -1 for string null terminator.
-      for (var i = 0; i < str.length; ++i) {
-        // For UTF8 byte structure, see http://en.wikipedia.org/wiki/UTF-8#Description
-        // and https://www.ietf.org/rfc/rfc2279.txt
-        // and https://tools.ietf.org/html/rfc3629
-        var u = str.codePointAt(i);
-        if (u <= 0x7F) {
-          if (outIdx >= endIdx) break;
-          heap[outIdx++] = u;
-        } else if (u <= 0x7FF) {
-          if (outIdx + 1 >= endIdx) break;
-          heap[outIdx++] = 0xC0 | (u >> 6);
-          heap[outIdx++] = 0x80 | (u & 63);
-        } else if (u <= 0xFFFF) {
-          if (outIdx + 2 >= endIdx) break;
-          heap[outIdx++] = 0xE0 | (u >> 12);
-          heap[outIdx++] = 0x80 | ((u >> 6) & 63);
-          heap[outIdx++] = 0x80 | (u & 63);
-        } else {
-          if (outIdx + 3 >= endIdx) break;
-          if (u > 0x10FFFF) warnOnce('Invalid Unicode code point ' + ptrToString(u) + ' encountered when serializing a JS string to a UTF-8 string in wasm memory! (Valid unicode code points should be in range 0-0x10FFFF).');
-          heap[outIdx++] = 0xF0 | (u >> 18);
-          heap[outIdx++] = 0x80 | ((u >> 12) & 63);
-          heap[outIdx++] = 0x80 | ((u >> 6) & 63);
-          heap[outIdx++] = 0x80 | (u & 63);
-          // Gotcha: if codePoint is over 0xFFFF, it is represented as a surrogate pair in UTF-16.
-          // We need to manually skip over the second code unit for correct iteration.
-          i++;
-        }
-      }
-      // Null-terminate the pointer to the buffer.
-      heap[outIdx] = 0;
-      return outIdx - startIdx;
-    };
-  /** @type {function(string, boolean=, number=)} */
+    }
+    // Null-terminate the pointer to the buffer.
+    heap[outIdx] = 0;
+    return outIdx - startIdx;
+  };
+/** @type {function(string, boolean=, number=)} */
   var intArrayFromString = (stringy, dontAddNull, length) => {
       var len = length > 0 ? length : lengthBytesUTF8(stringy)+1;
       var u8array = new Array(len);
@@ -1718,11 +1745,14 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         } else if (FS.isFile(node.mode)) {
           node.node_ops = MEMFS.ops_table.file.node;
           node.stream_ops = MEMFS.ops_table.file.stream;
-          node.usedBytes = 0; // The actual number of bytes used in the typed array, as opposed to contents.length which gives the whole capacity.
-          // When the byte data of the file is populated, this will point to either a typed array, or a normal JS array. Typed arrays are preferred
-          // for performance, and used by default. However, typed arrays are not resizable like normal JS arrays are, so there is a small disk size
-          // penalty involved for appending file writes that continuously grow a file similar to std::vector capacity vs used -scheme.
-          node.contents = null; 
+          // The actual number of bytes used in the typed array, as opposed to
+          // contents.length which gives the whole capacity.
+          node.usedBytes = 0;
+          // The byte data of the file is stored in a typed array.
+          // Note: typed arrays are not resizable like normal JS arrays are, so
+          // there is a small penalty involved for appending file writes that
+          // continuously grow a file similar to std::vector capacity vs used.
+          node.contents = MEMFS.emptyFileContents ??= new Uint8Array(0);
         } else if (FS.isLink(node.mode)) {
           node.node_ops = MEMFS.ops_table.link.node;
           node.stream_ops = MEMFS.ops_table.link.stream;
@@ -1739,36 +1769,30 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         return node;
       },
   getFileDataAsTypedArray(node) {
-        if (!node.contents) return new Uint8Array(0);
-        if (node.contents.subarray) return node.contents.subarray(0, node.usedBytes); // Make sure to not return excess unused bytes.
-        return new Uint8Array(node.contents);
+        assert(FS.isFile(node.mode), 'getFileDataAsTypedArray called on non-file');
+        return node.contents.subarray(0, node.usedBytes); // Make sure to not return excess unused bytes.
       },
   expandFileStorage(node, newCapacity) {
-        var prevCapacity = node.contents ? node.contents.length : 0;
+        var prevCapacity = node.contents.length;
         if (prevCapacity >= newCapacity) return; // No need to expand, the storage was already large enough.
-        // Don't expand strictly to the given requested limit if it's only a very small increase, but instead geometrically grow capacity.
-        // For small filesizes (<1MB), perform size*2 geometric increase, but for large sizes, do a much more conservative size*1.125 increase to
-        // avoid overshooting the allocation cap by a very large margin.
+        // Don't expand strictly to the given requested limit if it's only a very
+        // small increase, but instead geometrically grow capacity.
+        // For small filesizes (<1MB), perform size*2 geometric increase, but for
+        // large sizes, do a much more conservative size*1.125 increase to avoid
+        // overshooting the allocation cap by a very large margin.
         var CAPACITY_DOUBLING_MAX = 1024 * 1024;
         newCapacity = Math.max(newCapacity, (prevCapacity * (prevCapacity < CAPACITY_DOUBLING_MAX ? 2.0 : 1.125)) >>> 0);
-        if (prevCapacity != 0) newCapacity = Math.max(newCapacity, 256); // At minimum allocate 256b for each file when expanding.
-        var oldContents = node.contents;
+        if (prevCapacity) newCapacity = Math.max(newCapacity, 256); // At minimum allocate 256b for each file when expanding.
+        var oldContents = MEMFS.getFileDataAsTypedArray(node);
         node.contents = new Uint8Array(newCapacity); // Allocate new storage.
-        if (node.usedBytes > 0) node.contents.set(oldContents.subarray(0, node.usedBytes), 0); // Copy old data over to the new storage.
+        node.contents.set(oldContents);
       },
   resizeFileStorage(node, newSize) {
         if (node.usedBytes == newSize) return;
-        if (newSize == 0) {
-          node.contents = null; // Fully decommit when requesting a resize to zero.
-          node.usedBytes = 0;
-        } else {
-          var oldContents = node.contents;
-          node.contents = new Uint8Array(newSize); // Allocate new storage.
-          if (oldContents) {
-            node.contents.set(oldContents.subarray(0, Math.min(newSize, node.usedBytes))); // Copy old data over to the new storage.
-          }
-          node.usedBytes = newSize;
-        }
+        var oldContents = node.contents;
+        node.contents = new Uint8Array(newSize); // Allocate new storage.
+        node.contents.set(oldContents.subarray(0, Math.min(newSize, node.usedBytes))); // Copy old data over to the new storage.
+        node.usedBytes = newSize;
       },
   node_ops:{
   getattr(node) {
@@ -1868,48 +1892,29 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
           if (position >= stream.node.usedBytes) return 0;
           var size = Math.min(stream.node.usedBytes - position, length);
           assert(size >= 0);
-          if (size > 8 && contents.subarray) { // non-trivial, and typed array
-            buffer.set(contents.subarray(position, position + size), offset);
-          } else {
-            for (var i = 0; i < size; i++) buffer[offset + i] = contents[position + i];
-          }
+          buffer.set(contents.subarray(position, position + size), offset);
           return size;
         },
   write(stream, buffer, offset, length, position, canOwn) {
-          // The data buffer should be a typed array view
-          assert(!(buffer instanceof ArrayBuffer));
+          assert(buffer.subarray, 'FS.write expects a TypedArray');
   
           if (!length) return 0;
           var node = stream.node;
           node.mtime = node.ctime = Date.now();
   
-          if (buffer.subarray && (!node.contents || node.contents.subarray)) { // This write is from a typed array to a typed array?
-            if (canOwn) {
-              assert(position === 0, 'canOwn must imply no weird position inside the file');
-              node.contents = buffer.subarray(offset, offset + length);
-              node.usedBytes = length;
-              return length;
-            } else if (node.usedBytes === 0 && position === 0) { // If this is a simple first write to an empty file, do a fast set since we don't need to care about old data.
-              node.contents = buffer.slice(offset, offset + length);
-              node.usedBytes = length;
-              return length;
-            } else if (position + length <= node.usedBytes) { // Writing to an already allocated and used subrange of the file?
-              node.contents.set(buffer.subarray(offset, offset + length), position);
-              return length;
-            }
-          }
-  
-          // Appending to an existing file and we need to reallocate, or source data did not come as a typed array.
-          MEMFS.expandFileStorage(node, position+length);
-          if (node.contents.subarray && buffer.subarray) {
+          if (canOwn) {
+            assert(position === 0, 'canOwn must imply no weird position inside the file');
+            node.contents = buffer.subarray(offset, offset + length);
+            node.usedBytes = length;
+          } else if (node.usedBytes === 0 && position === 0) { // If this is a simple first write to an empty file, do a fast set since we don't need to care about old data.
+            node.contents = buffer.slice(offset, offset + length);
+            node.usedBytes = length;
+          } else {
+            MEMFS.expandFileStorage(node, position+length);
             // Use typed array write which is available.
             node.contents.set(buffer.subarray(offset, offset + length), position);
-          } else {
-            for (var i = 0; i < length; i++) {
-             node.contents[position + i] = buffer[offset + i]; // Or fall back to manual write if not.
-            }
+            node.usedBytes = Math.max(node.usedBytes, position + length);
           }
-          node.usedBytes = Math.max(node.usedBytes, position + length);
           return length;
         },
   llseek(stream, offset, whence) {
@@ -1934,7 +1939,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
           var allocated;
           var contents = stream.node.contents;
           // Only make a new copy when MAP_PRIVATE is specified.
-          if (!(flags & 2) && contents && contents.buffer === HEAP8.buffer) {
+          if (!(flags & 2) && contents.buffer === HEAP8.buffer) {
             // We can't emulate MAP_SHARED when the file is not backed by the
             // buffer we're mapping to (e.g. the HEAP buffer).
             allocated = false;
@@ -1968,6 +1973,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
   };
   
   var FS_modeStringToFlags = (str) => {
+      if (typeof str != 'string') return str;
       var flagModes = {
         'r': 0,
         'r+': 2,
@@ -1981,6 +1987,16 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         throw new Error(`Unknown file open mode: ${str}`);
       }
       return flags;
+    };
+  
+  var FS_fileDataToTypedArray = (data) => {
+      if (typeof data == 'string') {
+        data = intArrayFromString(data, true);
+      }
+      if (!data.subarray) {
+        data = new Uint8Array(data);
+      }
+      return data;
     };
   
   var FS_getMode = (canRead, canWrite) => {
@@ -2158,7 +2174,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
           var stat;
   
           try {
-            stat = FS.stat(path);
+            stat = FS.lstat(path);
           } catch (e) {
             return callback(e);
           }
@@ -2210,13 +2226,15 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         try {
           var lookup = FS.lookupPath(path);
           node = lookup.node;
-          stat = FS.stat(path);
+          stat = FS.lstat(path);
         } catch (e) {
           return callback(e);
         }
   
         if (FS.isDir(stat.mode)) {
           return callback(null, { 'timestamp': stat.mtime, 'mode': stat.mode });
+        } else if (FS.isLink(stat.mode)) {
+          return callback(null, { 'timestamp': stat.mtime, 'mode': stat.mode, 'link': node.link, });
         } else if (FS.isFile(stat.mode)) {
           // Performance consideration: storing a normal JavaScript array to a IndexedDB is much slower than storing a typed array.
           // Therefore always convert the file contents to a typed array first before writing the data to IndexedDB.
@@ -2230,6 +2248,8 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         try {
           if (FS.isDir(entry['mode'])) {
             FS.mkdirTree(path, entry['mode']);
+          } else if (FS.isLink(entry['mode'])) {
+            FS.symlink(entry['link'], path);
           } else if (FS.isFile(entry['mode'])) {
             FS.writeFile(path, entry['contents'], { canOwn: true });
           } else {
@@ -2246,11 +2266,11 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
       },
   removeLocalEntry:(path, callback) => {
         try {
-          var stat = FS.stat(path);
+          var stat = FS.lstat(path);
   
           if (FS.isDir(stat.mode)) {
             FS.rmdir(path);
-          } else if (FS.isFile(stat.mode)) {
+          } else {
             FS.unlink(path);
           }
         } catch (e) {
@@ -2365,24 +2385,6 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
   };
   
   
-  
-    /**
-   * Given a pointer 'ptr' to a null-terminated UTF8-encoded string in the
-   * emscripten HEAP, returns a copy of that string as a Javascript String object.
-   *
-   * @param {number} ptr
-   * @param {number=} maxBytesToRead - An optional length that specifies the
-   *   maximum number of bytes to read. You can omit this parameter to scan the
-   *   string until the first 0 byte. If maxBytesToRead is passed, and the string
-   *   at [ptr, ptr+maxBytesToReadr[ contains a null byte in the middle, then the
-   *   string will cut short at that byte index.
-   * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
-   * @return {string}
-   */
-  var UTF8ToString = (ptr, maxBytesToRead, ignoreNul) => {
-      assert(typeof ptr == 'number', `UTF8ToString expects a number (got ${typeof ptr})`);
-      return ptr ? UTF8ArrayToString(HEAPU8, ptr, maxBytesToRead, ignoreNul) : '';
-    };
   
   var strError = (errno) => UTF8ToString(_strerror(errno));
   
@@ -3496,7 +3498,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         if (path === "") {
           throw new FS.ErrnoError(44);
         }
-        flags = typeof flags == 'string' ? FS_modeStringToFlags(flags) : flags;
+        flags = FS_modeStringToFlags(flags);
         if ((flags & 64)) {
           mode = (mode & 4095) | 32768;
         } else {
@@ -3647,6 +3649,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
       },
   write(stream, buffer, offset, length, position, canOwn) {
         assert(offset >= 0);
+        assert(buffer.subarray, 'FS.write expects a TypedArray');
         if (length < 0 || position < 0) {
           throw new FS.ErrnoError(28);
         }
@@ -3732,14 +3735,8 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
   writeFile(path, data, opts = {}) {
         opts.flags = opts.flags || 577;
         var stream = FS.open(path, opts.flags, opts.mode);
-        if (typeof data == 'string') {
-          data = new Uint8Array(intArrayFromString(data, true));
-        }
-        if (ArrayBuffer.isView(data)) {
-          FS.write(stream, data, 0, data.byteLength, undefined, opts.canOwn);
-        } else {
-          abort('Unsupported data type');
-        }
+        data = FS_fileDataToTypedArray(data);
+        FS.write(stream, data, 0, data.byteLength, undefined, opts.canOwn);
         FS.close(stream);
       },
   cwd:() => FS.currentPath,
@@ -3965,11 +3962,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         var mode = FS_getMode(canRead, canWrite);
         var node = FS.create(path, mode);
         if (data) {
-          if (typeof data == 'string') {
-            var arr = new Array(data.length);
-            for (var i = 0, len = data.length; i < len; ++i) arr[i] = data.charCodeAt(i);
-            data = arr;
-          }
+          data = FS_fileDataToTypedArray(data);
           // make sure we can write to the file
           FS.chmod(node, mode | 146);
           var stream = FS.open(node, 577);
@@ -4204,24 +4197,6 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         node.stream_ops = stream_ops;
         return node;
       },
-  absolutePath() {
-        abort('FS.absolutePath has been removed; use PATH_FS.resolve instead');
-      },
-  createFolder() {
-        abort('FS.createFolder has been removed; use FS.mkdir instead');
-      },
-  createLink() {
-        abort('FS.createLink has been removed; use FS.symlink instead');
-      },
-  joinPath() {
-        abort('FS.joinPath has been removed; use PATH.join instead');
-      },
-  mmapAlloc() {
-        abort('FS.mmapAlloc has been replaced by the top level function mmapAlloc');
-      },
-  standardizePath() {
-        abort('FS.standardizePath has been removed; use PATH.normalize instead');
-      },
   };
   
   var SYSCALLS = {
@@ -4349,6 +4324,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_fstat64(fd, buf) {
   try {
@@ -4359,6 +4335,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   var stringToUTF8 = (str, outPtr, maxBytesToWrite) => {
       assert(typeof maxBytesToWrite == 'number', 'stringToUTF8(str, outPtr, maxBytesToWrite) is missing the third parameter that specifies the length of the output buffer!');
@@ -4423,6 +4400,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   
   function ___syscall_ioctl(fd, op, varargs) {
@@ -4520,6 +4498,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_lstat64(path, buf) {
   try {
@@ -4531,6 +4510,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_mkdirat(dirfd, path, mode) {
   try {
@@ -4544,6 +4524,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_newfstatat(dirfd, path, buf, flags) {
   try {
@@ -4560,6 +4541,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   
   function ___syscall_openat(dirfd, path, flags, varargs) {
@@ -4575,6 +4557,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_renameat(olddirfd, oldpath, newdirfd, newpath) {
   try {
@@ -4590,6 +4573,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_rmdir(path) {
   try {
@@ -4602,6 +4586,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_stat64(path, buf) {
   try {
@@ -4613,6 +4598,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_unlinkat(dirfd, path, flags) {
   try {
@@ -4632,12 +4618,13 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   var __abort_js = () =>
       abort('native code called abort()');
 
   var __emscripten_throw_longjmp = () => {
-      throw Infinity;
+      throw new EmscriptenSjLj;
     };
 
   var INT53_MAX = 9007199254740992;
@@ -4659,6 +4646,45 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
       var start = Date.UTC(date.getUTCFullYear(), 0, 1, 0, 0, 0, 0);
       var yday = ((date.getTime() - start) / (1000 * 60 * 60 * 24))|0;
       HEAP32[(((tmPtr)+(28))>>2)] = yday;
+    ;
+  }
+
+  var isLeapYear = (year) => year%4 === 0 && (year%100 !== 0 || year%400 === 0);
+  
+  var MONTH_DAYS_LEAP_CUMULATIVE = [0,31,60,91,121,152,182,213,244,274,305,335];
+  
+  var MONTH_DAYS_REGULAR_CUMULATIVE = [0,31,59,90,120,151,181,212,243,273,304,334];
+  var ydayFromDate = (date) => {
+      var leap = isLeapYear(date.getFullYear());
+      var monthDaysCumulative = (leap ? MONTH_DAYS_LEAP_CUMULATIVE : MONTH_DAYS_REGULAR_CUMULATIVE);
+      var yday = monthDaysCumulative[date.getMonth()] + date.getDate() - 1; // -1 since it's days since Jan 1
+  
+      return yday;
+    };
+  
+  function __localtime_js(time, tmPtr) {
+    time = bigintToI53Checked(time);
+  
+  
+      var date = new Date(time*1000);
+      HEAP32[((tmPtr)>>2)] = date.getSeconds();
+      HEAP32[(((tmPtr)+(4))>>2)] = date.getMinutes();
+      HEAP32[(((tmPtr)+(8))>>2)] = date.getHours();
+      HEAP32[(((tmPtr)+(12))>>2)] = date.getDate();
+      HEAP32[(((tmPtr)+(16))>>2)] = date.getMonth();
+      HEAP32[(((tmPtr)+(20))>>2)] = date.getFullYear()-1900;
+      HEAP32[(((tmPtr)+(24))>>2)] = date.getDay();
+  
+      var yday = ydayFromDate(date)|0;
+      HEAP32[(((tmPtr)+(28))>>2)] = yday;
+      HEAP32[(((tmPtr)+(36))>>2)] = -(date.getTimezoneOffset() * 60);
+  
+      // Attention: DST is in December in South, and some regions don't have DST at all.
+      var start = new Date(date.getFullYear(), 0, 1);
+      var summerOffset = new Date(date.getFullYear(), 6, 1).getTimezoneOffset();
+      var winterOffset = start.getTimezoneOffset();
+      var dst = (summerOffset != winterOffset && date.getTimezoneOffset() == Math.min(winterOffset, summerOffset))|0;
+      HEAP32[(((tmPtr)+(32))>>2)] = dst;
     ;
   }
 
@@ -6398,7 +6424,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
           argsList
         });
   
-        JSEvents.deferredCalls.sort((x,y) => x.precedence < y.precedence);
+        JSEvents.deferredCalls.sort((x,y) => x.precedence - y.precedence);
       },
   removeDeferredCalls(targetFunction) {
         JSEvents.deferredCalls = JSEvents.deferredCalls.filter((call) => call.targetFunction != targetFunction);
@@ -9185,6 +9211,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return e.errno;
   }
   }
+  
 
   /** @param {number=} offset */
   var doReadv = (stream, iov, iovcnt, offset) => {
@@ -9216,6 +9243,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return e.errno;
   }
   }
+  
 
   
   function _fd_seek(fd, offset, whence, newOffset) {
@@ -9270,6 +9298,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return e.errno;
   }
   }
+  
 
 
 
@@ -9738,9 +9767,9 @@ if (Module['wasmBinary']) wasmBinary = Module['wasmBinary'];
   'idsToPromises',
   'makePromiseCallback',
   'findMatchingCatch',
+  'incrementUncaughtExceptionCount',
+  'decrementUncaughtExceptionCount',
   'Browser_asyncPrepareDataCounter',
-  'isLeapYear',
-  'ydayFromDate',
   'arraySum',
   'addDays',
   'getSocketFromFD',
@@ -9769,16 +9798,6 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'callMain',
   'abort',
   'wasmExports',
-  'HEAPF32',
-  'HEAPF64',
-  'HEAP8',
-  'HEAPU8',
-  'HEAP16',
-  'HEAPU16',
-  'HEAP32',
-  'HEAPU32',
-  'HEAP64',
-  'HEAPU64',
   'writeStackCookie',
   'checkStackCookie',
   'writeI53ToI64',
@@ -9787,6 +9806,16 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'INT53_MAX',
   'INT53_MIN',
   'bigintToI53Checked',
+  'HEAP8',
+  'HEAPU8',
+  'HEAP16',
+  'HEAPU16',
+  'HEAP32',
+  'HEAPU32',
+  'HEAPF32',
+  'HEAPF64',
+  'HEAP64',
+  'HEAPU64',
   'stackSave',
   'stackRestore',
   'stackAlloc',
@@ -9891,7 +9920,6 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'emClearImmediate',
   'promiseMap',
   'uncaughtExceptionCount',
-  'exceptionLast',
   'exceptionCaught',
   'ExceptionInfo',
   'Browser',
@@ -9905,11 +9933,14 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'MONTH_DAYS_LEAP',
   'MONTH_DAYS_REGULAR_CUMULATIVE',
   'MONTH_DAYS_LEAP_CUMULATIVE',
+  'isLeapYear',
+  'ydayFromDate',
   'SYSCALLS',
   'preloadPlugins',
   'FS_createPreloadedFile',
   'FS_modeStringToFlags',
   'FS_getMode',
+  'FS_fileDataToTypedArray',
   'FS_stdin_getChar_buffer',
   'FS_stdin_getChar',
   'FS_readFile',
@@ -10017,12 +10048,6 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'FS_analyzePath',
   'FS_createFile',
   'FS_forceLoadFile',
-  'FS_absolutePath',
-  'FS_createFolder',
-  'FS_createLink',
-  'FS_joinPath',
-  'FS_mmapAlloc',
-  'FS_standardizePath',
   'MEMFS',
   'TTY',
   'PIPEFS',
@@ -10075,31 +10100,35 @@ function checkIncomingModuleAPI() {
   ignoredModuleProp('fetchSettings');
   ignoredModuleProp('logReadFiles');
   ignoredModuleProp('loadSplitModule');
+  ignoredModuleProp('onMalloc');
+  ignoredModuleProp('onRealloc');
+  ignoredModuleProp('onFree');
+  ignoredModuleProp('onSbrkGrow');
 }
 var ASM_CONSTS = {
-  649240: () => { var context; try { context = new AudioContext(); } catch (e) { context = new webkitAudioContext(); } return context.sampleRate; },  
- 649372: ($0) => { _pd_api_file_init_emscripten_done = 0; FS.mkdir('/saveddata.' + UTF8ToString($0)); FS.mount(IDBFS, {}, '/saveddata.' + UTF8ToString($0)); FS.syncfs(true, function (err) { if (err) console.log(err); _pd_api_file_init_emscripten_done = 1; }); },  
- 649617: () => { return _pd_api_file_init_emscripten_done },  
- 649658: () => { return _pd_api_file_init_emscripten_done },  
- 649699: () => { _pd_api_file_sync_emscripten_done = 0; FS.syncfs(false, function (err) { if (err) console.log("Error syncing files: " + err); _pd_api_file_sync_emscripten_done = 1; }); },  
- 649868: () => { return _pd_api_file_sync_emscripten_done },  
- 649909: () => { return _pd_api_file_sync_emscripten_done },  
- 649950: ($0) => { var str = UTF8ToString($0) + '\n\n' + 'Abort/Retry/Ignore/AlwaysIgnore? [ariA] :'; var reply = window.prompt(str, "i"); if (reply === null) { reply = "i"; } return reply.length === 1 ? reply.charCodeAt(0) : -1; },  
- 650165: () => { if (typeof(AudioContext) !== 'undefined') { return true; } else if (typeof(webkitAudioContext) !== 'undefined') { return true; } return false; },  
- 650312: () => { if ((typeof(navigator.mediaDevices) !== 'undefined') && (typeof(navigator.mediaDevices.getUserMedia) !== 'undefined')) { return true; } else if (typeof(navigator.webkitGetUserMedia) !== 'undefined') { return true; } return false; },  
- 650546: ($0) => { if(typeof(Module['SDL2']) === 'undefined') { Module['SDL2'] = {}; } var SDL2 = Module['SDL2']; if (!$0) { SDL2.audio = {}; } else { SDL2.capture = {}; } if (!SDL2.audioContext) { if (typeof(AudioContext) !== 'undefined') { SDL2.audioContext = new AudioContext(); } else if (typeof(webkitAudioContext) !== 'undefined') { SDL2.audioContext = new webkitAudioContext(); } if (SDL2.audioContext) { if ((typeof navigator.userActivation) === 'undefined') { autoResumeAudioContext(SDL2.audioContext); } } } return SDL2.audioContext === undefined ? -1 : 0; },  
- 651098: () => { var SDL2 = Module['SDL2']; return SDL2.audioContext.sampleRate; },  
- 651166: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; var have_microphone = function(stream) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); SDL2.capture.silenceTimer = undefined; SDL2.capture.silenceBuffer = undefined } SDL2.capture.mediaStreamNode = SDL2.audioContext.createMediaStreamSource(stream); SDL2.capture.scriptProcessorNode = SDL2.audioContext.createScriptProcessor($1, $0, 1); SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) { if ((SDL2 === undefined) || (SDL2.capture === undefined)) { return; } audioProcessingEvent.outputBuffer.getChannelData(0).fill(0.0); SDL2.capture.currentCaptureBuffer = audioProcessingEvent.inputBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.mediaStreamNode.connect(SDL2.capture.scriptProcessorNode); SDL2.capture.scriptProcessorNode.connect(SDL2.audioContext.destination); SDL2.capture.stream = stream; }; var no_microphone = function(error) { }; SDL2.capture.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.capture.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { SDL2.capture.currentCaptureBuffer = SDL2.capture.silenceBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); if ((navigator.mediaDevices !== undefined) && (navigator.mediaDevices.getUserMedia !== undefined)) { navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(have_microphone).catch(no_microphone); } else if (navigator.webkitGetUserMedia !== undefined) { navigator.webkitGetUserMedia({ audio: true, video: false }, have_microphone, no_microphone); } },  
- 652859: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; SDL2.audio.scriptProcessorNode = SDL2.audioContext['createScriptProcessor']($1, 0, $0); SDL2.audio.scriptProcessorNode['onaudioprocess'] = function (e) { if ((SDL2 === undefined) || (SDL2.audio === undefined)) { return; } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); SDL2.audio.silenceTimer = undefined; SDL2.audio.silenceBuffer = undefined; } SDL2.audio.currentOutputBuffer = e['outputBuffer']; dynCall('vp', $2, [$3]); }; SDL2.audio.scriptProcessorNode['connect'](SDL2.audioContext['destination']); if (SDL2.audioContext.state === 'suspended') { SDL2.audio.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.audio.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { if ((typeof navigator.userActivation) !== 'undefined') { if (navigator.userActivation.hasBeenActive) { SDL2.audioContext.resume(); } } SDL2.audio.currentOutputBuffer = SDL2.audio.silenceBuffer; dynCall('vp', $2, [$3]); SDL2.audio.currentOutputBuffer = undefined; }; SDL2.audio.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); } },  
- 654034: ($0, $1) => { var SDL2 = Module['SDL2']; var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.capture.currentCaptureBuffer.getChannelData(c); if (channelData.length != $1) { throw 'Web Audio capture buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } if (numChannels == 1) { for (var j = 0; j < $1; ++j) { setValue($0 + (j * 4), channelData[j], 'float'); } } else { for (var j = 0; j < $1; ++j) { setValue($0 + (((j * numChannels) + c) * 4), channelData[j], 'float'); } } } },  
- 654639: ($0, $1) => { var SDL2 = Module['SDL2']; var buf = $0 >>> 2; var numChannels = SDL2.audio.currentOutputBuffer['numberOfChannels']; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.audio.currentOutputBuffer['getChannelData'](c); if (channelData.length != $1) { throw 'Web Audio output buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } for (var j = 0; j < $1; ++j) { channelData[j] = HEAPF32[buf + (j*numChannels + c)]; } } },  
- 655128: ($0) => { var SDL2 = Module['SDL2']; if ($0) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); } if (SDL2.capture.stream !== undefined) { var tracks = SDL2.capture.stream.getAudioTracks(); for (var i = 0; i < tracks.length; i++) { SDL2.capture.stream.removeTrack(tracks[i]); } } if (SDL2.capture.scriptProcessorNode !== undefined) { SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) {}; SDL2.capture.scriptProcessorNode.disconnect(); } if (SDL2.capture.mediaStreamNode !== undefined) { SDL2.capture.mediaStreamNode.disconnect(); } SDL2.capture = undefined; } else { if (SDL2.audio.scriptProcessorNode != undefined) { SDL2.audio.scriptProcessorNode.disconnect(); } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); } SDL2.audio = undefined; } if ((SDL2.audioContext !== undefined) && (SDL2.audio === undefined) && (SDL2.capture === undefined)) { SDL2.audioContext.close(); SDL2.audioContext = undefined; } },  
- 656134: ($0, $1, $2) => { var w = $0; var h = $1; var pixels = $2; if (!Module['SDL2']) Module['SDL2'] = {}; var SDL2 = Module['SDL2']; if (SDL2.ctxCanvas !== Module['canvas']) { SDL2.ctx = Browser.createContext(Module['canvas'], false, true); SDL2.ctxCanvas = Module['canvas']; } if (SDL2.w !== w || SDL2.h !== h || SDL2.imageCtx !== SDL2.ctx) { SDL2.image = SDL2.ctx.createImageData(w, h); SDL2.w = w; SDL2.h = h; SDL2.imageCtx = SDL2.ctx; } var data = SDL2.image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = 0xff; src++; dst += 4; } } else { if (SDL2.data32Data !== data) { SDL2.data32 = new Int32Array(data.buffer); SDL2.data8 = new Uint8Array(data.buffer); SDL2.data32Data = data; } var data32 = SDL2.data32; num = data32.length; data32.set(HEAP32.subarray(src, src + num)); var data8 = SDL2.data8; var i = 3; var j = i + 4*num; if (num % 8 == 0) { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; } } else { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; } } } SDL2.ctx.putImageData(SDL2.image, 0, 0); },  
- 657600: ($0, $1, $2, $3, $4) => { var w = $0; var h = $1; var hot_x = $2; var hot_y = $3; var pixels = $4; var canvas = document.createElement("canvas"); canvas.width = w; canvas.height = h; var ctx = canvas.getContext("2d"); var image = ctx.createImageData(w, h); var data = image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = (val >> 24) & 0xff; src++; dst += 4; } } else { var data32 = new Int32Array(data.buffer); num = data32.length; data32.set(HEAP32.subarray(src, src + num)); } ctx.putImageData(image, 0, 0); var url = hot_x === 0 && hot_y === 0 ? "url(" + canvas.toDataURL() + "), auto" : "url(" + canvas.toDataURL() + ") " + hot_x + " " + hot_y + ", auto"; var urlBuf = _malloc(url.length + 1); stringToUTF8(url, urlBuf, url.length + 1); return urlBuf; },  
- 658588: ($0) => { if (Module['canvas']) { Module['canvas'].style['cursor'] = UTF8ToString($0); } },  
- 658671: () => { if (Module['canvas']) { Module['canvas'].style['cursor'] = 'none'; } },  
- 658740: () => { return window.innerWidth; },  
- 658770: () => { return window.innerHeight; }
+  672116: () => { var context; try { context = new AudioContext(); } catch (e) { context = new webkitAudioContext(); } return context.sampleRate; },  
+ 672248: ($0) => { _pd_api_file_init_emscripten_done = 0; FS.mkdir('/saveddata.' + UTF8ToString($0)); FS.mount(IDBFS, {}, '/saveddata.' + UTF8ToString($0)); FS.syncfs(true, function (err) { if (err) console.log(err); _pd_api_file_init_emscripten_done = 1; }); },  
+ 672493: () => { return _pd_api_file_init_emscripten_done },  
+ 672534: () => { return _pd_api_file_init_emscripten_done },  
+ 672575: () => { _pd_api_file_sync_emscripten_done = 0; FS.syncfs(false, function (err) { if (err) console.log("Error syncing files: " + err); _pd_api_file_sync_emscripten_done = 1; }); },  
+ 672744: () => { return _pd_api_file_sync_emscripten_done },  
+ 672785: () => { return _pd_api_file_sync_emscripten_done },  
+ 672826: ($0) => { var str = UTF8ToString($0) + '\n\n' + 'Abort/Retry/Ignore/AlwaysIgnore? [ariA] :'; var reply = window.prompt(str, "i"); if (reply === null) { reply = "i"; } return reply.length === 1 ? reply.charCodeAt(0) : -1; },  
+ 673041: () => { if (typeof(AudioContext) !== 'undefined') { return true; } else if (typeof(webkitAudioContext) !== 'undefined') { return true; } return false; },  
+ 673188: () => { if ((typeof(navigator.mediaDevices) !== 'undefined') && (typeof(navigator.mediaDevices.getUserMedia) !== 'undefined')) { return true; } else if (typeof(navigator.webkitGetUserMedia) !== 'undefined') { return true; } return false; },  
+ 673422: ($0) => { if(typeof(Module['SDL2']) === 'undefined') { Module['SDL2'] = {}; } var SDL2 = Module['SDL2']; if (!$0) { SDL2.audio = {}; } else { SDL2.capture = {}; } if (!SDL2.audioContext) { if (typeof(AudioContext) !== 'undefined') { SDL2.audioContext = new AudioContext(); } else if (typeof(webkitAudioContext) !== 'undefined') { SDL2.audioContext = new webkitAudioContext(); } if (SDL2.audioContext) { if ((typeof navigator.userActivation) === 'undefined') { autoResumeAudioContext(SDL2.audioContext); } } } return SDL2.audioContext === undefined ? -1 : 0; },  
+ 673974: () => { var SDL2 = Module['SDL2']; return SDL2.audioContext.sampleRate; },  
+ 674042: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; var have_microphone = function(stream) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); SDL2.capture.silenceTimer = undefined; SDL2.capture.silenceBuffer = undefined } SDL2.capture.mediaStreamNode = SDL2.audioContext.createMediaStreamSource(stream); SDL2.capture.scriptProcessorNode = SDL2.audioContext.createScriptProcessor($1, $0, 1); SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) { if ((SDL2 === undefined) || (SDL2.capture === undefined)) { return; } audioProcessingEvent.outputBuffer.getChannelData(0).fill(0.0); SDL2.capture.currentCaptureBuffer = audioProcessingEvent.inputBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.mediaStreamNode.connect(SDL2.capture.scriptProcessorNode); SDL2.capture.scriptProcessorNode.connect(SDL2.audioContext.destination); SDL2.capture.stream = stream; }; var no_microphone = function(error) { }; SDL2.capture.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.capture.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { SDL2.capture.currentCaptureBuffer = SDL2.capture.silenceBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); if ((navigator.mediaDevices !== undefined) && (navigator.mediaDevices.getUserMedia !== undefined)) { navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(have_microphone).catch(no_microphone); } else if (navigator.webkitGetUserMedia !== undefined) { navigator.webkitGetUserMedia({ audio: true, video: false }, have_microphone, no_microphone); } },  
+ 675735: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; SDL2.audio.scriptProcessorNode = SDL2.audioContext['createScriptProcessor']($1, 0, $0); SDL2.audio.scriptProcessorNode['onaudioprocess'] = function (e) { if ((SDL2 === undefined) || (SDL2.audio === undefined)) { return; } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); SDL2.audio.silenceTimer = undefined; SDL2.audio.silenceBuffer = undefined; } SDL2.audio.currentOutputBuffer = e['outputBuffer']; dynCall('vp', $2, [$3]); }; SDL2.audio.scriptProcessorNode['connect'](SDL2.audioContext['destination']); if (SDL2.audioContext.state === 'suspended') { SDL2.audio.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.audio.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { if ((typeof navigator.userActivation) !== 'undefined') { if (navigator.userActivation.hasBeenActive) { SDL2.audioContext.resume(); } } SDL2.audio.currentOutputBuffer = SDL2.audio.silenceBuffer; dynCall('vp', $2, [$3]); SDL2.audio.currentOutputBuffer = undefined; }; SDL2.audio.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); } },  
+ 676910: ($0, $1) => { var SDL2 = Module['SDL2']; var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.capture.currentCaptureBuffer.getChannelData(c); if (channelData.length != $1) { throw 'Web Audio capture buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } if (numChannels == 1) { for (var j = 0; j < $1; ++j) { setValue($0 + (j * 4), channelData[j], 'float'); } } else { for (var j = 0; j < $1; ++j) { setValue($0 + (((j * numChannels) + c) * 4), channelData[j], 'float'); } } } },  
+ 677515: ($0, $1) => { var SDL2 = Module['SDL2']; var buf = $0 >>> 2; var numChannels = SDL2.audio.currentOutputBuffer['numberOfChannels']; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.audio.currentOutputBuffer['getChannelData'](c); if (channelData.length != $1) { throw 'Web Audio output buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } for (var j = 0; j < $1; ++j) { channelData[j] = HEAPF32[buf + (j*numChannels + c)]; } } },  
+ 678004: ($0) => { var SDL2 = Module['SDL2']; if ($0) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); } if (SDL2.capture.stream !== undefined) { var tracks = SDL2.capture.stream.getAudioTracks(); for (var i = 0; i < tracks.length; i++) { SDL2.capture.stream.removeTrack(tracks[i]); } } if (SDL2.capture.scriptProcessorNode !== undefined) { SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) {}; SDL2.capture.scriptProcessorNode.disconnect(); } if (SDL2.capture.mediaStreamNode !== undefined) { SDL2.capture.mediaStreamNode.disconnect(); } SDL2.capture = undefined; } else { if (SDL2.audio.scriptProcessorNode != undefined) { SDL2.audio.scriptProcessorNode.disconnect(); } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); } SDL2.audio = undefined; } if ((SDL2.audioContext !== undefined) && (SDL2.audio === undefined) && (SDL2.capture === undefined)) { SDL2.audioContext.close(); SDL2.audioContext = undefined; } },  
+ 679010: ($0, $1, $2) => { var w = $0; var h = $1; var pixels = $2; if (!Module['SDL2']) Module['SDL2'] = {}; var SDL2 = Module['SDL2']; if (SDL2.ctxCanvas !== Module['canvas']) { SDL2.ctx = Browser.createContext(Module['canvas'], false, true); SDL2.ctxCanvas = Module['canvas']; } if (SDL2.w !== w || SDL2.h !== h || SDL2.imageCtx !== SDL2.ctx) { SDL2.image = SDL2.ctx.createImageData(w, h); SDL2.w = w; SDL2.h = h; SDL2.imageCtx = SDL2.ctx; } var data = SDL2.image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = 0xff; src++; dst += 4; } } else { if (SDL2.data32Data !== data) { SDL2.data32 = new Int32Array(data.buffer); SDL2.data8 = new Uint8Array(data.buffer); SDL2.data32Data = data; } var data32 = SDL2.data32; num = data32.length; data32.set(HEAP32.subarray(src, src + num)); var data8 = SDL2.data8; var i = 3; var j = i + 4*num; if (num % 8 == 0) { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; } } else { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; } } } SDL2.ctx.putImageData(SDL2.image, 0, 0); },  
+ 680476: ($0, $1, $2, $3, $4) => { var w = $0; var h = $1; var hot_x = $2; var hot_y = $3; var pixels = $4; var canvas = document.createElement("canvas"); canvas.width = w; canvas.height = h; var ctx = canvas.getContext("2d"); var image = ctx.createImageData(w, h); var data = image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = (val >> 24) & 0xff; src++; dst += 4; } } else { var data32 = new Int32Array(data.buffer); num = data32.length; data32.set(HEAP32.subarray(src, src + num)); } ctx.putImageData(image, 0, 0); var url = hot_x === 0 && hot_y === 0 ? "url(" + canvas.toDataURL() + "), auto" : "url(" + canvas.toDataURL() + ") " + hot_x + " " + hot_y + ", auto"; var urlBuf = _malloc(url.length + 1); stringToUTF8(url, urlBuf, url.length + 1); return urlBuf; },  
+ 681464: ($0) => { if (Module['canvas']) { Module['canvas'].style['cursor'] = UTF8ToString($0); } },  
+ 681547: () => { if (Module['canvas']) { Module['canvas'].style['cursor'] = 'none'; } },  
+ 681616: () => { return window.innerWidth; },  
+ 681646: () => { return window.innerHeight; }
 };
 
 // Imports from the Wasm binary.
@@ -10125,11 +10154,11 @@ var dynCall_iii = makeInvalidEarlyAccess('dynCall_iii');
 var dynCall_viiiiii = makeInvalidEarlyAccess('dynCall_viiiiii');
 var dynCall_iiiii = makeInvalidEarlyAccess('dynCall_iiiii');
 var dynCall_v = makeInvalidEarlyAccess('dynCall_v');
+var dynCall_viii = makeInvalidEarlyAccess('dynCall_viii');
 var dynCall_i = makeInvalidEarlyAccess('dynCall_i');
 var dynCall_vf = makeInvalidEarlyAccess('dynCall_vf');
 var dynCall_f = makeInvalidEarlyAccess('dynCall_f');
 var dynCall_iiii = makeInvalidEarlyAccess('dynCall_iiii');
-var dynCall_viii = makeInvalidEarlyAccess('dynCall_viii');
 var dynCall_viff = makeInvalidEarlyAccess('dynCall_viff');
 var dynCall_viiii = makeInvalidEarlyAccess('dynCall_viiii');
 var dynCall_iifffi = makeInvalidEarlyAccess('dynCall_iifffi');
@@ -10176,6 +10205,11 @@ var dynCall_vifff = makeInvalidEarlyAccess('dynCall_vifff');
 var dynCall_viffff = makeInvalidEarlyAccess('dynCall_viffff');
 var dynCall_vfff = makeInvalidEarlyAccess('dynCall_vfff');
 var dynCall_iidiiii = makeInvalidEarlyAccess('dynCall_iidiiii');
+var dynCall_viijii = makeInvalidEarlyAccess('dynCall_viijii');
+var dynCall_iiiiij = makeInvalidEarlyAccess('dynCall_iiiiij');
+var dynCall_iiiiid = makeInvalidEarlyAccess('dynCall_iiiiid');
+var dynCall_iiiiijj = makeInvalidEarlyAccess('dynCall_iiiiijj');
+var dynCall_iiiiiijj = makeInvalidEarlyAccess('dynCall_iiiiiijj');
 var _asyncify_start_unwind = makeInvalidEarlyAccess('_asyncify_start_unwind');
 var _asyncify_stop_unwind = makeInvalidEarlyAccess('_asyncify_stop_unwind');
 var _asyncify_start_rewind = makeInvalidEarlyAccess('_asyncify_start_rewind');
@@ -10208,11 +10242,11 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['dynCall_viiiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiiii');
   assert(typeof wasmExports['dynCall_iiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiii');
   assert(typeof wasmExports['dynCall_v'] != 'undefined', 'missing Wasm export: dynCall_v');
+  assert(typeof wasmExports['dynCall_viii'] != 'undefined', 'missing Wasm export: dynCall_viii');
   assert(typeof wasmExports['dynCall_i'] != 'undefined', 'missing Wasm export: dynCall_i');
   assert(typeof wasmExports['dynCall_vf'] != 'undefined', 'missing Wasm export: dynCall_vf');
   assert(typeof wasmExports['dynCall_f'] != 'undefined', 'missing Wasm export: dynCall_f');
   assert(typeof wasmExports['dynCall_iiii'] != 'undefined', 'missing Wasm export: dynCall_iiii');
-  assert(typeof wasmExports['dynCall_viii'] != 'undefined', 'missing Wasm export: dynCall_viii');
   assert(typeof wasmExports['dynCall_viff'] != 'undefined', 'missing Wasm export: dynCall_viff');
   assert(typeof wasmExports['dynCall_viiii'] != 'undefined', 'missing Wasm export: dynCall_viiii');
   assert(typeof wasmExports['dynCall_iifffi'] != 'undefined', 'missing Wasm export: dynCall_iifffi');
@@ -10259,6 +10293,11 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['dynCall_viffff'] != 'undefined', 'missing Wasm export: dynCall_viffff');
   assert(typeof wasmExports['dynCall_vfff'] != 'undefined', 'missing Wasm export: dynCall_vfff');
   assert(typeof wasmExports['dynCall_iidiiii'] != 'undefined', 'missing Wasm export: dynCall_iidiiii');
+  assert(typeof wasmExports['dynCall_viijii'] != 'undefined', 'missing Wasm export: dynCall_viijii');
+  assert(typeof wasmExports['dynCall_iiiiij'] != 'undefined', 'missing Wasm export: dynCall_iiiiij');
+  assert(typeof wasmExports['dynCall_iiiiid'] != 'undefined', 'missing Wasm export: dynCall_iiiiid');
+  assert(typeof wasmExports['dynCall_iiiiijj'] != 'undefined', 'missing Wasm export: dynCall_iiiiijj');
+  assert(typeof wasmExports['dynCall_iiiiiijj'] != 'undefined', 'missing Wasm export: dynCall_iiiiiijj');
   assert(typeof wasmExports['asyncify_start_unwind'] != 'undefined', 'missing Wasm export: asyncify_start_unwind');
   assert(typeof wasmExports['asyncify_stop_unwind'] != 'undefined', 'missing Wasm export: asyncify_stop_unwind');
   assert(typeof wasmExports['asyncify_start_rewind'] != 'undefined', 'missing Wasm export: asyncify_start_rewind');
@@ -10287,11 +10326,11 @@ function assignWasmExports(wasmExports) {
   dynCall_viiiiii = dynCalls['viiiiii'] = createExportWrapper('dynCall_viiiiii', 7);
   dynCall_iiiii = dynCalls['iiiii'] = createExportWrapper('dynCall_iiiii', 5);
   dynCall_v = dynCalls['v'] = createExportWrapper('dynCall_v', 1);
+  dynCall_viii = dynCalls['viii'] = createExportWrapper('dynCall_viii', 4);
   dynCall_i = dynCalls['i'] = createExportWrapper('dynCall_i', 1);
   dynCall_vf = dynCalls['vf'] = createExportWrapper('dynCall_vf', 2);
   dynCall_f = dynCalls['f'] = createExportWrapper('dynCall_f', 1);
   dynCall_iiii = dynCalls['iiii'] = createExportWrapper('dynCall_iiii', 4);
-  dynCall_viii = dynCalls['viii'] = createExportWrapper('dynCall_viii', 4);
   dynCall_viff = dynCalls['viff'] = createExportWrapper('dynCall_viff', 4);
   dynCall_viiii = dynCalls['viiii'] = createExportWrapper('dynCall_viiii', 5);
   dynCall_iifffi = dynCalls['iifffi'] = createExportWrapper('dynCall_iifffi', 6);
@@ -10338,6 +10377,11 @@ function assignWasmExports(wasmExports) {
   dynCall_viffff = dynCalls['viffff'] = createExportWrapper('dynCall_viffff', 6);
   dynCall_vfff = dynCalls['vfff'] = createExportWrapper('dynCall_vfff', 4);
   dynCall_iidiiii = dynCalls['iidiiii'] = createExportWrapper('dynCall_iidiiii', 7);
+  dynCall_viijii = dynCalls['viijii'] = createExportWrapper('dynCall_viijii', 6);
+  dynCall_iiiiij = dynCalls['iiiiij'] = createExportWrapper('dynCall_iiiiij', 6);
+  dynCall_iiiiid = dynCalls['iiiiid'] = createExportWrapper('dynCall_iiiiid', 6);
+  dynCall_iiiiijj = dynCalls['iiiiijj'] = createExportWrapper('dynCall_iiiiijj', 7);
+  dynCall_iiiiiijj = dynCalls['iiiiiijj'] = createExportWrapper('dynCall_iiiiiijj', 8);
   _asyncify_start_unwind = createExportWrapper('asyncify_start_unwind', 1);
   _asyncify_stop_unwind = createExportWrapper('asyncify_stop_unwind', 0);
   _asyncify_start_rewind = createExportWrapper('asyncify_start_rewind', 1);
@@ -10347,6 +10391,8 @@ function assignWasmExports(wasmExports) {
 }
 
 var wasmImports = {
+  /** @export */
+  __assert_fail: ___assert_fail,
   /** @export */
   __cxa_throw: ___cxa_throw,
   /** @export */
@@ -10379,6 +10425,8 @@ var wasmImports = {
   _emscripten_throw_longjmp: __emscripten_throw_longjmp,
   /** @export */
   _gmtime_js: __gmtime_js,
+  /** @export */
+  _localtime_js: __localtime_js,
   /** @export */
   _mmap_js: __mmap_js,
   /** @export */
@@ -10901,7 +10949,7 @@ function invoke_ji(index,a1) {
     return dynCall_ji(index,a1);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
     return 0n;
   }
@@ -10913,7 +10961,7 @@ function invoke_ii(index,a1) {
     return dynCall_ii(index,a1);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -10924,7 +10972,7 @@ function invoke_iiiii(index,a1,a2,a3,a4) {
     return dynCall_iiiii(index,a1,a2,a3,a4);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -10935,7 +10983,7 @@ function invoke_iiii(index,a1,a2,a3) {
     return dynCall_iiii(index,a1,a2,a3);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -10946,7 +10994,7 @@ function invoke_vi(index,a1) {
     dynCall_vi(index,a1);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -10957,7 +11005,7 @@ function invoke_jiji(index,a1,a2,a3) {
     return dynCall_jiji(index,a1,a2,a3);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
     return 0n;
   }
@@ -10969,7 +11017,7 @@ function invoke_iii(index,a1,a2) {
     return dynCall_iii(index,a1,a2);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -10980,7 +11028,7 @@ function invoke_viii(index,a1,a2,a3) {
     dynCall_viii(index,a1,a2,a3);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -10991,7 +11039,7 @@ function invoke_vii(index,a1,a2) {
     dynCall_vii(index,a1,a2);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -11002,7 +11050,7 @@ function invoke_iiiiiiiiii(index,a1,a2,a3,a4,a5,a6,a7,a8,a9) {
     return dynCall_iiiiiiiiii(index,a1,a2,a3,a4,a5,a6,a7,a8,a9);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -11013,7 +11061,7 @@ function invoke_iiiiii(index,a1,a2,a3,a4,a5) {
     return dynCall_iiiiii(index,a1,a2,a3,a4,a5);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -11024,7 +11072,7 @@ function invoke_iiiiiiiii(index,a1,a2,a3,a4,a5,a6,a7,a8) {
     return dynCall_iiiiiiiii(index,a1,a2,a3,a4,a5,a6,a7,a8);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -11035,7 +11083,7 @@ function invoke_i(index) {
     return dynCall_i(index);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -11046,7 +11094,7 @@ function invoke_viiii(index,a1,a2,a3,a4) {
     dynCall_viiii(index,a1,a2,a3,a4);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -11057,7 +11105,7 @@ function invoke_v(index) {
     dynCall_v(index);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }

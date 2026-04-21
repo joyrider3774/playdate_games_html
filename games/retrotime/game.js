@@ -17,8 +17,8 @@
   // Note: We use a typeof check here instead of optional chaining using
   // globalThis because older browsers might not have globalThis defined.
   var currentNodeVersion = typeof process !== 'undefined' && process.versions?.node ? humanReadableVersionToPacked(process.versions.node) : TARGET_NOT_SUPPORTED;
-  if (currentNodeVersion < 160000) {
-    throw new Error(`This emscripten-generated code requires node v${ packedVersionToHumanReadable(160000) } (detected v${packedVersionToHumanReadable(currentNodeVersion)})`);
+  if (currentNodeVersion < 180300) {
+    throw new Error(`This emscripten-generated code requires node v${ packedVersionToHumanReadable(180300) } (detected v${packedVersionToHumanReadable(currentNodeVersion)})`);
   }
 
   var userAgent = typeof navigator !== 'undefined' && navigator.userAgent;
@@ -71,7 +71,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmp6_t_v_vc.js
+// include: /tmp/tmpg1b2wkvz.js
 
   if (!Module['expectedDataFileDownloads']) Module['expectedDataFileDownloads'] = 0;
   Module['expectedDataFileDownloads']++;
@@ -241,25 +241,25 @@ Module['FS_createPath']("/sound", "snakey", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/Licences/LICENSE.Roboto.font.txt", "start": 0, "end": 11358}, {"filename": "/Place_your_games_Source_directory_containing_assets_here", "start": 11358, "end": 11358}, {"filename": "/Source1/colors.ini", "start": 11358, "end": 11835}, {"filename": "/Source1/graphics/blockstacker/background.png", "start": 11835, "end": 34693}, {"filename": "/Source1/graphics/breakout/background.png", "start": 34693, "end": 69436}, {"filename": "/Source1/graphics/breakout/ball.png", "start": 69436, "end": 74374}, {"filename": "/Source1/graphics/breakout/ball_4x4.png", "start": 74374, "end": 74609}, {"filename": "/Source1/graphics/breakout/blocks.png", "start": 74609, "end": 86845}, {"filename": "/Source1/graphics/breakout/blocks_120x11.png", "start": 86845, "end": 88995}, {"filename": "/Source1/graphics/breakout/paddle.png", "start": 88995, "end": 94600}, {"filename": "/Source1/graphics/breakout/paddle_25x7.png", "start": 94600, "end": 95066}, {"filename": "/Source1/graphics/fasterdave/Character_character_climb.png", "start": 95066, "end": 1066621}, {"filename": "/Source1/graphics/fasterdave/Character_character_climb_23x432.png", "start": 1066621, "end": 1087797}, {"filename": "/Source1/graphics/fasterdave/Character_character_idle.png", "start": 1087797, "end": 2347368}, {"filename": "/Source1/graphics/fasterdave/Character_character_idle_20x420.png", "start": 2347368, "end": 2364164}, {"filename": "/Source1/graphics/fasterdave/Character_character_jump_up.png", "start": 2364164, "end": 2881785}, {"filename": "/Source1/graphics/fasterdave/Character_character_jump_up_22x170.png", "start": 2881785, "end": 2889402}, {"filename": "/Source1/graphics/fasterdave/Character_character_run.png", "start": 2889402, "end": 3458250}, {"filename": "/Source1/graphics/fasterdave/Character_character_run_22x210.png", "start": 3458250, "end": 3474244}, {"filename": "/Source1/graphics/fasterdave/background.png", "start": 3474244, "end": 3554545}, {"filename": "/Source1/graphics/fasterdave/enemy.png", "start": 3554545, "end": 3576288}, {"filename": "/Source1/graphics/fasterdave/enemy_45x60.png", "start": 3576288, "end": 3577189}, {"filename": "/Source1/graphics/fasterdave/enemy_90x120.png", "start": 3577189, "end": 3578908}, {"filename": "/Source1/graphics/fasterdave/floortileset.png", "start": 3578908, "end": 3606185}, {"filename": "/Source1/graphics/fasterdave/floortileset_4500x54.png", "start": 3606185, "end": 3608562}, {"filename": "/Source1/graphics/fasterdave/key.png", "start": 3608562, "end": 3611484}, {"filename": "/Source1/graphics/fasterdave/key_20x10.png", "start": 3611484, "end": 3612083}, {"filename": "/Source1/graphics/fasterdave/key_64x31.png", "start": 3612083, "end": 3615005}, {"filename": "/Source1/graphics/fasterdave/ladder.png", "start": 3615005, "end": 3615731}, {"filename": "/Source1/graphics/fasterdave/ladder_40x54.png", "start": 3615731, "end": 3616116}, {"filename": "/Source1/graphics/fasterdave/orbs.png", "start": 3616116, "end": 3648353}, {"filename": "/Source1/graphics/fasterdave/orbs_94x19.png", "start": 3648353, "end": 3649907}, {"filename": "/Source1/graphics/frog/ambulance.png", "start": 3649907, "end": 3661607}, {"filename": "/Source1/graphics/frog/ambulance_27x14.png", "start": 3661607, "end": 3662294}, {"filename": "/Source1/graphics/frog/ambulance_66x29.png", "start": 3662294, "end": 3673994}, {"filename": "/Source1/graphics/frog/apple.png", "start": 3673994, "end": 3674475}, {"filename": "/Source1/graphics/frog/apple_16x16.png", "start": 3674475, "end": 3674861}, {"filename": "/Source1/graphics/frog/apple_8x8.png", "start": 3674861, "end": 3675159}, {"filename": "/Source1/graphics/frog/background.png", "start": 3675159, "end": 3775445}, {"filename": "/Source1/graphics/frog/carblue.png", "start": 3775445, "end": 3787060}, {"filename": "/Source1/graphics/frog/carblue_27x14.png", "start": 3787060, "end": 3787973}, {"filename": "/Source1/graphics/frog/carblue_78x29.png", "start": 3787973, "end": 3799588}, {"filename": "/Source1/graphics/frog/cherry.png", "start": 3799588, "end": 3800056}, {"filename": "/Source1/graphics/frog/cherry_16x16.png", "start": 3800056, "end": 3800442}, {"filename": "/Source1/graphics/frog/cherry_8x8.png", "start": 3800442, "end": 3800766}, {"filename": "/Source1/graphics/frog/garbagetruck.png", "start": 3800766, "end": 3812233}, {"filename": "/Source1/graphics/frog/garbagetruck_27x14.png", "start": 3812233, "end": 3812998}, {"filename": "/Source1/graphics/frog/garbagetruck_66x29.png", "start": 3812998, "end": 3824465}, {"filename": "/Source1/graphics/frog/lemon.png", "start": 3824465, "end": 3824832}, {"filename": "/Source1/graphics/frog/lemon_16x16.png", "start": 3824832, "end": 3825166}, {"filename": "/Source1/graphics/frog/lemon_8x8.png", "start": 3825166, "end": 3825456}, {"filename": "/Source1/graphics/frog/player.png", "start": 3825456, "end": 3828519}, {"filename": "/Source1/graphics/frog/player_41x54.png", "start": 3828519, "end": 3829119}, {"filename": "/Source1/graphics/frog/player_96x128.png", "start": 3829119, "end": 3832182}, {"filename": "/Source1/graphics/frog/police.png", "start": 3832182, "end": 3844339}, {"filename": "/Source1/graphics/frog/police_27x14.png", "start": 3844339, "end": 3845293}, {"filename": "/Source1/graphics/frog/police_74x29.png", "start": 3845293, "end": 3857450}, {"filename": "/Source1/graphics/frog/taxi.png", "start": 3857450, "end": 3870057}, {"filename": "/Source1/graphics/frog/taxi_27x14.png", "start": 3870057, "end": 3871017}, {"filename": "/Source1/graphics/frog/taxi_78x29.png", "start": 3871017, "end": 3883624}, {"filename": "/Source1/graphics/frog/watergrass.png", "start": 3883624, "end": 3886278}, {"filename": "/Source1/graphics/frog/watergrass_2240x48.png", "start": 3886278, "end": 3888932}, {"filename": "/Source1/graphics/frog/waterplant.png", "start": 3888932, "end": 3890064}, {"filename": "/Source1/graphics/frog/waterplant_32x16.png", "start": 3890064, "end": 3890479}, {"filename": "/Source1/graphics/invaders/asteroid-01_10x9.png", "start": 3890479, "end": 3890757}, {"filename": "/Source1/graphics/invaders/asteroid-01_11x10.png", "start": 3890757, "end": 3891036}, {"filename": "/Source1/graphics/invaders/asteroid-01_12x11.png", "start": 3891036, "end": 3891324}, {"filename": "/Source1/graphics/invaders/asteroid-01_13x12.png", "start": 3891324, "end": 3891617}, {"filename": "/Source1/graphics/invaders/asteroid-01_14x13.png", "start": 3891617, "end": 3891913}, {"filename": "/Source1/graphics/invaders/asteroid-01_15x14.png", "start": 3891913, "end": 3892219}, {"filename": "/Source1/graphics/invaders/asteroid-01_16x15.png", "start": 3892219, "end": 3892532}, {"filename": "/Source1/graphics/invaders/asteroid-01_17x16.png", "start": 3892532, "end": 3892851}, {"filename": "/Source1/graphics/invaders/asteroid-01_18x17.png", "start": 3892851, "end": 3893181}, {"filename": "/Source1/graphics/invaders/asteroid-01_19x18.png", "start": 3893181, "end": 3893516}, {"filename": "/Source1/graphics/invaders/asteroid-01_20x19.png", "start": 3893516, "end": 3893861}, {"filename": "/Source1/graphics/invaders/asteroid-01_21x20.png", "start": 3893861, "end": 3894213}, {"filename": "/Source1/graphics/invaders/asteroid-01_22x21.png", "start": 3894213, "end": 3894569}, {"filename": "/Source1/graphics/invaders/asteroid-01_24x22.png", "start": 3894569, "end": 3894934}, {"filename": "/Source1/graphics/invaders/asteroid-01_25x23.png", "start": 3894934, "end": 3895310}, {"filename": "/Source1/graphics/invaders/asteroid-01_26x24.png", "start": 3895310, "end": 3895692}, {"filename": "/Source1/graphics/invaders/asteroid-01_27x25.png", "start": 3895692, "end": 3896077}, {"filename": "/Source1/graphics/invaders/asteroid-01_28x26.png", "start": 3896077, "end": 3896471}, {"filename": "/Source1/graphics/invaders/asteroid-01_29x27.png", "start": 3896471, "end": 3896874}, {"filename": "/Source1/graphics/invaders/asteroid-01_2x1.png", "start": 3896874, "end": 3897089}, {"filename": "/Source1/graphics/invaders/asteroid-01_30x28.png", "start": 3897089, "end": 3897493}, {"filename": "/Source1/graphics/invaders/asteroid-01_31x29.png", "start": 3897493, "end": 3897910}, {"filename": "/Source1/graphics/invaders/asteroid-01_32x30.png", "start": 3897910, "end": 3898334}, {"filename": "/Source1/graphics/invaders/asteroid-01_33x31.png", "start": 3898334, "end": 3898772}, {"filename": "/Source1/graphics/invaders/asteroid-01_34x32.png", "start": 3898772, "end": 3899215}, {"filename": "/Source1/graphics/invaders/asteroid-01_35x33.png", "start": 3899215, "end": 3899662}, {"filename": "/Source1/graphics/invaders/asteroid-01_36x34.png", "start": 3899662, "end": 3900130}, {"filename": "/Source1/graphics/invaders/asteroid-01_37x35.png", "start": 3900130, "end": 3900595}, {"filename": "/Source1/graphics/invaders/asteroid-01_38x36.png", "start": 3900595, "end": 3901058}, {"filename": "/Source1/graphics/invaders/asteroid-01_39x37.png", "start": 3901058, "end": 3901544}, {"filename": "/Source1/graphics/invaders/asteroid-01_3x2.png", "start": 3901544, "end": 3901780}, {"filename": "/Source1/graphics/invaders/asteroid-01_40x38.png", "start": 3901780, "end": 3902278}, {"filename": "/Source1/graphics/invaders/asteroid-01_41x39.png", "start": 3902278, "end": 3902771}, {"filename": "/Source1/graphics/invaders/asteroid-01_42x40.png", "start": 3902771, "end": 3903275}, {"filename": "/Source1/graphics/invaders/asteroid-01_43x41.png", "start": 3903275, "end": 3903793}, {"filename": "/Source1/graphics/invaders/asteroid-01_44x42.png", "start": 3903793, "end": 3904314}, {"filename": "/Source1/graphics/invaders/asteroid-01_46x43.png", "start": 3904314, "end": 3904847}, {"filename": "/Source1/graphics/invaders/asteroid-01_47x44.png", "start": 3904847, "end": 3905399}, {"filename": "/Source1/graphics/invaders/asteroid-01_48x45.png", "start": 3905399, "end": 3905956}, {"filename": "/Source1/graphics/invaders/asteroid-01_49x46.png", "start": 3905956, "end": 3906515}, {"filename": "/Source1/graphics/invaders/asteroid-01_4x3.png", "start": 3906515, "end": 3906759}, {"filename": "/Source1/graphics/invaders/asteroid-01_50x47.png", "start": 3906759, "end": 3907325}, {"filename": "/Source1/graphics/invaders/asteroid-01_51x48.png", "start": 3907325, "end": 3907915}, {"filename": "/Source1/graphics/invaders/asteroid-01_52x49.png", "start": 3907915, "end": 3908502}, {"filename": "/Source1/graphics/invaders/asteroid-01_53x50.png", "start": 3908502, "end": 3909109}, {"filename": "/Source1/graphics/invaders/asteroid-01_5x4.png", "start": 3909109, "end": 3909362}, {"filename": "/Source1/graphics/invaders/asteroid-01_67x63.png", "start": 3909362, "end": 3910116}, {"filename": "/Source1/graphics/invaders/asteroid-01_6x5.png", "start": 3910116, "end": 3910373}, {"filename": "/Source1/graphics/invaders/asteroid-01_7x6.png", "start": 3910373, "end": 3910635}, {"filename": "/Source1/graphics/invaders/asteroid-01_8x7.png", "start": 3910635, "end": 3910903}, {"filename": "/Source1/graphics/invaders/asteroid-01_9x8.png", "start": 3910903, "end": 3911176}, {"filename": "/Source1/graphics/invaders/background.png", "start": 3911176, "end": 3955644}, {"filename": "/Source1/graphics/invaders/bullet.png", "start": 3955644, "end": 3955904}, {"filename": "/Source1/graphics/invaders/bullet_15x5.png", "start": 3955904, "end": 3956163}, {"filename": "/Source1/graphics/invaders/bullet_32x10.png", "start": 3956163, "end": 3956443}, {"filename": "/Source1/graphics/invaders/enemy1.png", "start": 3956443, "end": 3958772}, {"filename": "/Source1/graphics/invaders/enemy1_113x24.png", "start": 3958772, "end": 3959415}, {"filename": "/Source1/graphics/invaders/enemy1_240x48.png", "start": 3959415, "end": 3960727}, {"filename": "/Source1/graphics/invaders/enemy2.png", "start": 3960727, "end": 3962391}, {"filename": "/Source1/graphics/invaders/enemy2_192x48.png", "start": 3962391, "end": 3963245}, {"filename": "/Source1/graphics/invaders/enemy2_90x24.png", "start": 3963245, "end": 3963810}, {"filename": "/Source1/graphics/invaders/enemy3.png", "start": 3963810, "end": 3965958}, {"filename": "/Source1/graphics/invaders/enemy3_192x48.png", "start": 3965958, "end": 3966911}, {"filename": "/Source1/graphics/invaders/enemy3_90x24.png", "start": 3966911, "end": 3967477}, {"filename": "/Source1/graphics/invaders/explosion.png", "start": 3967477, "end": 3972689}, {"filename": "/Source1/graphics/invaders/explosion_263x40.png", "start": 3972689, "end": 3973865}, {"filename": "/Source1/graphics/invaders/explosion_560x80.png", "start": 3973865, "end": 3976843}, {"filename": "/Source1/graphics/invaders/player.png", "start": 3976843, "end": 3979071}, {"filename": "/Source1/graphics/invaders/player_113x24.png", "start": 3979071, "end": 3979716}, {"filename": "/Source1/graphics/invaders/player_240x48.png", "start": 3979716, "end": 3980890}, {"filename": "/Source1/graphics/main/frame.png", "start": 3980890, "end": 3987085}, {"filename": "/Source1/graphics/main/medal.png", "start": 3987085, "end": 3989202}, {"filename": "/Source1/graphics/pang/background.png", "start": 3989202, "end": 4092696}, {"filename": "/Source1/graphics/pang/ball.png", "start": 4092696, "end": 4103604}, {"filename": "/Source1/graphics/pang/ball_23x23.png", "start": 4103604, "end": 4114302}, {"filename": "/Source1/graphics/pang/ball_45x45.png", "start": 4114302, "end": 4125304}, {"filename": "/Source1/graphics/pang/ball_68x68.png", "start": 4125304, "end": 4127705}, {"filename": "/Source1/graphics/pang/character.png", "start": 4127705, "end": 4175582}, {"filename": "/Source1/graphics/pang/character_416x384.png", "start": 4175582, "end": 4196159}, {"filename": "/Source1/graphics/pang/weapon.png", "start": 4196159, "end": 4234037}, {"filename": "/Source1/graphics/pang/weapon_267x18.png", "start": 4234037, "end": 4237325}, {"filename": "/System/Fonts/Asheville-Sans-14-Light.ttf", "start": 4237325, "end": 4285033}, {"filename": "/System/Fonts/Origin_of_fonts.txt", "start": 4285033, "end": 4285270}, {"filename": "/System/Fonts/Roobert-10-Bold.ttf", "start": 4285270, "end": 4296358}, {"filename": "/fonts/Roboto-Regular.ttf", "start": 4296358, "end": 4467630}, {"filename": "/fonts/Roboto-Regular_11-table-12-13.png", "start": 4467630, "end": 4483198}, {"filename": "/fonts/Roboto-Regular_11.fnt", "start": 4483198, "end": 4487714}, {"filename": "/fonts/Roboto-Regular_11.otb", "start": 4487714, "end": 4493562}, {"filename": "/fonts/Roboto-Regular_11.ttf", "start": 4493562, "end": 4499894}, {"filename": "/fonts/Roboto-Regular_12-table-13-14.png", "start": 4499894, "end": 4517978}, {"filename": "/fonts/Roboto-Regular_12.fnt", "start": 4517978, "end": 4522535}, {"filename": "/fonts/Roboto-Regular_12.otb", "start": 4522535, "end": 4529067}, {"filename": "/fonts/Roboto-Regular_12.ttf", "start": 4529067, "end": 4536083}, {"filename": "/fonts/Roboto-Regular_13-table-14-15.png", "start": 4536083, "end": 4556929}, {"filename": "/fonts/Roboto-Regular_13.fnt", "start": 4556929, "end": 4561526}, {"filename": "/fonts/Roboto-Regular_13.otb", "start": 4561526, "end": 4568694}, {"filename": "/fonts/Roboto-Regular_13.ttf", "start": 4568694, "end": 4576346}, {"filename": "/fonts/Roboto-Regular_16-table-19-20.png", "start": 4576346, "end": 4610293}, {"filename": "/fonts/Roboto-Regular_16.fnt", "start": 4610293, "end": 4615280}, {"filename": "/fonts/Roboto-Regular_16.otb", "start": 4615280, "end": 4625592}, {"filename": "/fonts/Roboto-Regular_16.ttf", "start": 4625592, "end": 4636388}, {"filename": "/fonts/Roboto-Regular_20-table-24-25.png", "start": 4636388, "end": 4683474}, {"filename": "/fonts/Roboto-Regular_20.fnt", "start": 4683474, "end": 4688703}, {"filename": "/fonts/Roboto-Regular_20.otb", "start": 4688703, "end": 4702455}, {"filename": "/fonts/Roboto-Regular_20.ttf", "start": 4702455, "end": 4716691}, {"filename": "/fonts/Roboto-Regular_23-table-27-28.png", "start": 4716691, "end": 4774100}, {"filename": "/fonts/Roboto-Regular_23.fnt", "start": 4774100, "end": 4779343}, {"filename": "/fonts/Roboto-Regular_23.otb", "start": 4779343, "end": 4796703}, {"filename": "/fonts/Roboto-Regular_23.ttf", "start": 4796703, "end": 4814575}, {"filename": "/fonts/Roboto-Regular_26-table-31-32.png", "start": 4814575, "end": 4885527}, {"filename": "/fonts/Roboto-Regular_26.fnt", "start": 4885527, "end": 4890782}, {"filename": "/fonts/Roboto-Regular_26.otb", "start": 4890782, "end": 4912014}, {"filename": "/fonts/Roboto-Regular_26.ttf", "start": 4912014, "end": 4933730}, {"filename": "/graphics/blockstacker/background.png", "start": 4933730, "end": 4938885}, {"filename": "/graphics/breakout/background.png", "start": 4938885, "end": 4944631}, {"filename": "/graphics/breakout/ball.png", "start": 4944631, "end": 4944898}, {"filename": "/graphics/breakout/ball_4x4.png", "start": 4944898, "end": 4945116}, {"filename": "/graphics/breakout/blocks.png", "start": 4945116, "end": 4945570}, {"filename": "/graphics/breakout/blocks_120x11.png", "start": 4945570, "end": 4945872}, {"filename": "/graphics/breakout/paddle.png", "start": 4945872, "end": 4946116}, {"filename": "/graphics/breakout/paddle_25x7.png", "start": 4946116, "end": 4946356}, {"filename": "/graphics/fasterdave/Character_character_climb.png", "start": 4946356, "end": 5090678}, {"filename": "/graphics/fasterdave/Character_character_climb_23x432.png", "start": 5090678, "end": 5100153}, {"filename": "/graphics/fasterdave/Character_character_idle.png", "start": 5100153, "end": 5258057}, {"filename": "/graphics/fasterdave/Character_character_idle_20x420.png", "start": 5258057, "end": 5260946}, {"filename": "/graphics/fasterdave/Character_character_jump_up.png", "start": 5260946, "end": 5327475}, {"filename": "/graphics/fasterdave/Character_character_jump_up_22x170.png", "start": 5327475, "end": 5328964}, {"filename": "/graphics/fasterdave/Character_character_run.png", "start": 5328964, "end": 5400301}, {"filename": "/graphics/fasterdave/Character_character_run_22x210.png", "start": 5400301, "end": 5409621}, {"filename": "/graphics/fasterdave/background.png", "start": 5409621, "end": 5437096}, {"filename": "/graphics/fasterdave/enemy.png", "start": 5437096, "end": 5438234}, {"filename": "/graphics/fasterdave/enemy_45x60.png", "start": 5438234, "end": 5438785}, {"filename": "/graphics/fasterdave/enemy_90x120.png", "start": 5438785, "end": 5439827}, {"filename": "/graphics/fasterdave/floortileset.png", "start": 5439827, "end": 5446792}, {"filename": "/graphics/fasterdave/floortileset_4500x54.png", "start": 5446792, "end": 5448422}, {"filename": "/graphics/fasterdave/key.png", "start": 5448422, "end": 5449270}, {"filename": "/graphics/fasterdave/key_20x10.png", "start": 5449270, "end": 5449574}, {"filename": "/graphics/fasterdave/key_64x31.png", "start": 5449574, "end": 5450422}, {"filename": "/graphics/fasterdave/ladder.png", "start": 5450422, "end": 5450804}, {"filename": "/graphics/fasterdave/ladder_40x54.png", "start": 5450804, "end": 5451096}, {"filename": "/graphics/fasterdave/orbs.png", "start": 5451096, "end": 5454240}, {"filename": "/graphics/fasterdave/orbs_94x19.png", "start": 5454240, "end": 5460219}, {"filename": "/graphics/frog/ambulance.png", "start": 5460219, "end": 5460957}, {"filename": "/graphics/frog/ambulance_27x14.png", "start": 5460957, "end": 5461296}, {"filename": "/graphics/frog/ambulance_66x29.png", "start": 5461296, "end": 5462034}, {"filename": "/graphics/frog/apple.png", "start": 5462034, "end": 5462279}, {"filename": "/graphics/frog/apple_16x16.png", "start": 5462279, "end": 5462524}, {"filename": "/graphics/frog/apple_8x8.png", "start": 5462524, "end": 5462746}, {"filename": "/graphics/frog/background.png", "start": 5462746, "end": 5481956}, {"filename": "/graphics/frog/carblue.png", "start": 5481956, "end": 5482787}, {"filename": "/graphics/frog/carblue_27x14.png", "start": 5482787, "end": 5483193}, {"filename": "/graphics/frog/carblue_78x29.png", "start": 5483193, "end": 5484024}, {"filename": "/graphics/frog/cherry.png", "start": 5484024, "end": 5484275}, {"filename": "/graphics/frog/cherry_16x16.png", "start": 5484275, "end": 5484526}, {"filename": "/graphics/frog/cherry_8x8.png", "start": 5484526, "end": 5484750}, {"filename": "/graphics/frog/garbagetruck.png", "start": 5484750, "end": 5485590}, {"filename": "/graphics/frog/garbagetruck_27x14.png", "start": 5485590, "end": 5485968}, {"filename": "/graphics/frog/garbagetruck_66x29.png", "start": 5485968, "end": 5486808}, {"filename": "/graphics/frog/lemon.png", "start": 5486808, "end": 5487046}, {"filename": "/graphics/frog/lemon_16x16.png", "start": 5487046, "end": 5487284}, {"filename": "/graphics/frog/lemon_8x8.png", "start": 5487284, "end": 5487508}, {"filename": "/graphics/frog/player.png", "start": 5487508, "end": 5488594}, {"filename": "/graphics/frog/player_41x54.png", "start": 5488594, "end": 5489151}, {"filename": "/graphics/frog/player_96x128.png", "start": 5489151, "end": 5490237}, {"filename": "/graphics/frog/police.png", "start": 5490237, "end": 5491013}, {"filename": "/graphics/frog/police_27x14.png", "start": 5491013, "end": 5491383}, {"filename": "/graphics/frog/police_74x29.png", "start": 5491383, "end": 5492159}, {"filename": "/graphics/frog/taxi.png", "start": 5492159, "end": 5492987}, {"filename": "/graphics/frog/taxi_27x14.png", "start": 5492987, "end": 5493409}, {"filename": "/graphics/frog/taxi_78x29.png", "start": 5493409, "end": 5494237}, {"filename": "/graphics/frog/watergrass.png", "start": 5494237, "end": 5496053}, {"filename": "/graphics/frog/watergrass_2240x48.png", "start": 5496053, "end": 5497869}, {"filename": "/graphics/frog/waterplant.png", "start": 5497869, "end": 5498195}, {"filename": "/graphics/frog/waterplant_32x16.png", "start": 5498195, "end": 5498521}, {"filename": "/graphics/invaders/asteroid-01.png", "start": 5498521, "end": 5499120}, {"filename": "/graphics/invaders/asteroid-01_10x9.png", "start": 5499120, "end": 5499360}, {"filename": "/graphics/invaders/asteroid-01_11x10.png", "start": 5499360, "end": 5499604}, {"filename": "/graphics/invaders/asteroid-01_12x11.png", "start": 5499604, "end": 5499854}, {"filename": "/graphics/invaders/asteroid-01_13x12.png", "start": 5499854, "end": 5500105}, {"filename": "/graphics/invaders/asteroid-01_14x13.png", "start": 5500105, "end": 5500363}, {"filename": "/graphics/invaders/asteroid-01_15x14.png", "start": 5500363, "end": 5500629}, {"filename": "/graphics/invaders/asteroid-01_16x15.png", "start": 5500629, "end": 5500901}, {"filename": "/graphics/invaders/asteroid-01_17x16.png", "start": 5500901, "end": 5501176}, {"filename": "/graphics/invaders/asteroid-01_18x17.png", "start": 5501176, "end": 5501458}, {"filename": "/graphics/invaders/asteroid-01_19x18.png", "start": 5501458, "end": 5501747}, {"filename": "/graphics/invaders/asteroid-01_20x19.png", "start": 5501747, "end": 5502039}, {"filename": "/graphics/invaders/asteroid-01_21x20.png", "start": 5502039, "end": 5502340}, {"filename": "/graphics/invaders/asteroid-01_22x21.png", "start": 5502340, "end": 5502637}, {"filename": "/graphics/invaders/asteroid-01_24x22.png", "start": 5502637, "end": 5502954}, {"filename": "/graphics/invaders/asteroid-01_25x23.png", "start": 5502954, "end": 5503270}, {"filename": "/graphics/invaders/asteroid-01_26x24.png", "start": 5503270, "end": 5503601}, {"filename": "/graphics/invaders/asteroid-01_27x25.png", "start": 5503601, "end": 5503924}, {"filename": "/graphics/invaders/asteroid-01_28x26.png", "start": 5503924, "end": 5504263}, {"filename": "/graphics/invaders/asteroid-01_29x27.png", "start": 5504263, "end": 5504611}, {"filename": "/graphics/invaders/asteroid-01_2x1.png", "start": 5504611, "end": 5504809}, {"filename": "/graphics/invaders/asteroid-01_30x28.png", "start": 5504809, "end": 5505147}, {"filename": "/graphics/invaders/asteroid-01_31x29.png", "start": 5505147, "end": 5505499}, {"filename": "/graphics/invaders/asteroid-01_32x30.png", "start": 5505499, "end": 5505865}, {"filename": "/graphics/invaders/asteroid-01_33x31.png", "start": 5505865, "end": 5506237}, {"filename": "/graphics/invaders/asteroid-01_34x32.png", "start": 5506237, "end": 5506607}, {"filename": "/graphics/invaders/asteroid-01_35x33.png", "start": 5506607, "end": 5506978}, {"filename": "/graphics/invaders/asteroid-01_36x34.png", "start": 5506978, "end": 5507373}, {"filename": "/graphics/invaders/asteroid-01_37x35.png", "start": 5507373, "end": 5507769}, {"filename": "/graphics/invaders/asteroid-01_38x36.png", "start": 5507769, "end": 5508159}, {"filename": "/graphics/invaders/asteroid-01_39x37.png", "start": 5508159, "end": 5508569}, {"filename": "/graphics/invaders/asteroid-01_3x2.png", "start": 5508569, "end": 5508778}, {"filename": "/graphics/invaders/asteroid-01_40x38.png", "start": 5508778, "end": 5509210}, {"filename": "/graphics/invaders/asteroid-01_41x39.png", "start": 5509210, "end": 5509627}, {"filename": "/graphics/invaders/asteroid-01_42x40.png", "start": 5509627, "end": 5510044}, {"filename": "/graphics/invaders/asteroid-01_43x41.png", "start": 5510044, "end": 5510483}, {"filename": "/graphics/invaders/asteroid-01_44x42.png", "start": 5510483, "end": 5510932}, {"filename": "/graphics/invaders/asteroid-01_46x43.png", "start": 5510932, "end": 5511383}, {"filename": "/graphics/invaders/asteroid-01_47x44.png", "start": 5511383, "end": 5511848}, {"filename": "/graphics/invaders/asteroid-01_48x45.png", "start": 5511848, "end": 5512311}, {"filename": "/graphics/invaders/asteroid-01_49x46.png", "start": 5512311, "end": 5512782}, {"filename": "/graphics/invaders/asteroid-01_4x3.png", "start": 5512782, "end": 5512991}, {"filename": "/graphics/invaders/asteroid-01_50x47.png", "start": 5512991, "end": 5513466}, {"filename": "/graphics/invaders/asteroid-01_51x48.png", "start": 5513466, "end": 5513947}, {"filename": "/graphics/invaders/asteroid-01_52x49.png", "start": 5513947, "end": 5514438}, {"filename": "/graphics/invaders/asteroid-01_53x50.png", "start": 5514438, "end": 5514949}, {"filename": "/graphics/invaders/asteroid-01_5x4.png", "start": 5514949, "end": 5515164}, {"filename": "/graphics/invaders/asteroid-01_67x63.png", "start": 5515164, "end": 5515763}, {"filename": "/graphics/invaders/asteroid-01_6x5.png", "start": 5515763, "end": 5515987}, {"filename": "/graphics/invaders/asteroid-01_7x6.png", "start": 5515987, "end": 5516215}, {"filename": "/graphics/invaders/asteroid-01_8x7.png", "start": 5516215, "end": 5516448}, {"filename": "/graphics/invaders/asteroid-01_9x8.png", "start": 5516448, "end": 5516685}, {"filename": "/graphics/invaders/background.png", "start": 5516685, "end": 5530393}, {"filename": "/graphics/invaders/bullet.png", "start": 5530393, "end": 5530628}, {"filename": "/graphics/invaders/bullet_15x5.png", "start": 5530628, "end": 5530853}, {"filename": "/graphics/invaders/bullet_32x10.png", "start": 5530853, "end": 5531088}, {"filename": "/graphics/invaders/enemy1.png", "start": 5531088, "end": 5532163}, {"filename": "/graphics/invaders/enemy1_113x24.png", "start": 5532163, "end": 5532669}, {"filename": "/graphics/invaders/enemy1_240x48.png", "start": 5532669, "end": 5533744}, {"filename": "/graphics/invaders/enemy2.png", "start": 5533744, "end": 5534574}, {"filename": "/graphics/invaders/enemy2_192x48.png", "start": 5534574, "end": 5535404}, {"filename": "/graphics/invaders/enemy2_90x24.png", "start": 5535404, "end": 5535876}, {"filename": "/graphics/invaders/enemy3.png", "start": 5535876, "end": 5536744}, {"filename": "/graphics/invaders/enemy3_192x48.png", "start": 5536744, "end": 5537612}, {"filename": "/graphics/invaders/enemy3_90x24.png", "start": 5537612, "end": 5538075}, {"filename": "/graphics/invaders/explosion.png", "start": 5538075, "end": 5541034}, {"filename": "/graphics/invaders/explosion_263x40.png", "start": 5541034, "end": 5542269}, {"filename": "/graphics/invaders/explosion_560x80.png", "start": 5542269, "end": 5545228}, {"filename": "/graphics/invaders/player.png", "start": 5545228, "end": 5546236}, {"filename": "/graphics/invaders/player_113x24.png", "start": 5546236, "end": 5546760}, {"filename": "/graphics/invaders/player_240x48.png", "start": 5546760, "end": 5547768}, {"filename": "/graphics/main/frame.png", "start": 5547768, "end": 5548023}, {"filename": "/graphics/main/medal.png", "start": 5548023, "end": 5548761}, {"filename": "/graphics/pang/background.png", "start": 5548761, "end": 5576977}, {"filename": "/graphics/pang/ball.png", "start": 5576977, "end": 5584563}, {"filename": "/graphics/pang/ball_23x23.png", "start": 5584563, "end": 5591037}, {"filename": "/graphics/pang/ball_45x45.png", "start": 5591037, "end": 5598623}, {"filename": "/graphics/pang/ball_68x68.png", "start": 5598623, "end": 5605870}, {"filename": "/graphics/pang/character.png", "start": 5605870, "end": 5619557}, {"filename": "/graphics/pang/character_416x384.png", "start": 5619557, "end": 5632506}, {"filename": "/graphics/pang/weapon.png", "start": 5632506, "end": 5643826}, {"filename": "/graphics/pang/weapon_267x18.png", "start": 5643826, "end": 5645732}, {"filename": "/main.lua", "start": 5645732, "end": 5645732}, {"filename": "/metadata/card.png", "start": 5645732, "end": 5654967}, {"filename": "/metadata/icon.png", "start": 5654967, "end": 5660947}, {"filename": "/music/blockstacker/music.ogg", "start": 5660947, "end": 7478374}, {"filename": "/music/breakout/music.ogg", "start": 7478374, "end": 8887480}, {"filename": "/music/fasterdave/music.ogg", "start": 8887480, "end": 12015134}, {"filename": "/music/frog/music.ogg", "start": 12015134, "end": 12831329}, {"filename": "/music/invaders/music.ogg", "start": 12831329, "end": 14242747}, {"filename": "/music/main/music.ogg", "start": 14242747, "end": 15798244}, {"filename": "/music/pang/music.ogg", "start": 15798244, "end": 17262324}, {"filename": "/music/ramit/music.ogg", "start": 17262324, "end": 18289992}, {"filename": "/music/snakey/music.ogg", "start": 18289992, "end": 18891473}, {"filename": "/pdxinfo", "start": 18891473, "end": 18891683}, {"filename": "/sound/blockstacker/drop.ogg", "start": 18891683, "end": 18898874}, {"filename": "/sound/blockstacker/lineclear.ogg", "start": 18898874, "end": 18924686}, {"filename": "/sound/blockstacker/rotate.ogg", "start": 18924686, "end": 18930650}, {"filename": "/sound/breakout/bat.ogg", "start": 18930650, "end": 18937290}, {"filename": "/sound/breakout/brick.ogg", "start": 18937290, "end": 18950891}, {"filename": "/sound/common/coin.ogg", "start": 18950891, "end": 18963293}, {"filename": "/sound/common/die.ogg", "start": 18963293, "end": 18974112}, {"filename": "/sound/common/one.ogg", "start": 18974112, "end": 18979483}, {"filename": "/sound/common/oneminute.ogg", "start": 18979483, "end": 18990231}, {"filename": "/sound/common/readygo.ogg", "start": 18990231, "end": 19000260}, {"filename": "/sound/common/succes.ogg", "start": 19000260, "end": 19025701}, {"filename": "/sound/common/three.ogg", "start": 19025701, "end": 19031790}, {"filename": "/sound/common/timeover.ogg", "start": 19031790, "end": 19041382}, {"filename": "/sound/common/two.ogg", "start": 19041382, "end": 19047148}, {"filename": "/sound/frog/move.ogg", "start": 19047148, "end": 19052310}, {"filename": "/sound/invaders/enemydeath.ogg", "start": 19052310, "end": 19069061}, {"filename": "/sound/invaders/enemyshoot.ogg", "start": 19069061, "end": 19074869}, {"filename": "/sound/invaders/playerdeath.ogg", "start": 19074869, "end": 19097676}, {"filename": "/sound/invaders/playershoot.ogg", "start": 19097676, "end": 19104268}, {"filename": "/sound/main/back.ogg", "start": 19104268, "end": 19128713}, {"filename": "/sound/main/confirm.ogg", "start": 19128713, "end": 19154839}, {"filename": "/sound/main/score.ogg", "start": 19154839, "end": 19173011}, {"filename": "/sound/main/select.ogg", "start": 19173011, "end": 19178533}, {"filename": "/sound/pang/pop.ogg", "start": 19178533, "end": 19186478}, {"filename": "/sound/pang/shoot.ogg", "start": 19186478, "end": 19202181}, {"filename": "/sound/ramit/hit.ogg", "start": 19202181, "end": 19208183}, {"filename": "/sound/ramit/shoot.ogg", "start": 19208183, "end": 19214099}, {"filename": "/sound/snakey/food.ogg", "start": 19214099, "end": 19219021}], "remote_package_size": 19219021});
+    loadPackage({"files": [{"filename": "/Licences/LICENSE.Roboto.font.txt", "start": 0, "end": 11358}, {"filename": "/Place_your_games_Source_directory_containing_assets_here", "start": 11358, "end": 11358}, {"filename": "/Source1/colors.ini", "start": 11358, "end": 11835}, {"filename": "/Source1/graphics/blockstacker/background.png", "start": 11835, "end": 34693}, {"filename": "/Source1/graphics/breakout/background.png", "start": 34693, "end": 69436}, {"filename": "/Source1/graphics/breakout/ball.png", "start": 69436, "end": 74374}, {"filename": "/Source1/graphics/breakout/ball_4x4.png", "start": 74374, "end": 74609}, {"filename": "/Source1/graphics/breakout/blocks.png", "start": 74609, "end": 86845}, {"filename": "/Source1/graphics/breakout/blocks_120x11.png", "start": 86845, "end": 88995}, {"filename": "/Source1/graphics/breakout/paddle.png", "start": 88995, "end": 94600}, {"filename": "/Source1/graphics/breakout/paddle_25x7.png", "start": 94600, "end": 95066}, {"filename": "/Source1/graphics/fasterdave/Character_character_climb.png", "start": 95066, "end": 1066621}, {"filename": "/Source1/graphics/fasterdave/Character_character_climb_23x432.png", "start": 1066621, "end": 1087797}, {"filename": "/Source1/graphics/fasterdave/Character_character_idle.png", "start": 1087797, "end": 2347368}, {"filename": "/Source1/graphics/fasterdave/Character_character_idle_20x420.png", "start": 2347368, "end": 2364164}, {"filename": "/Source1/graphics/fasterdave/Character_character_jump_up.png", "start": 2364164, "end": 2881785}, {"filename": "/Source1/graphics/fasterdave/Character_character_jump_up_22x170.png", "start": 2881785, "end": 2889402}, {"filename": "/Source1/graphics/fasterdave/Character_character_run.png", "start": 2889402, "end": 3458250}, {"filename": "/Source1/graphics/fasterdave/Character_character_run_22x210.png", "start": 3458250, "end": 3474244}, {"filename": "/Source1/graphics/fasterdave/background.png", "start": 3474244, "end": 3554545}, {"filename": "/Source1/graphics/fasterdave/enemy.png", "start": 3554545, "end": 3576288}, {"filename": "/Source1/graphics/fasterdave/enemy_45x60.png", "start": 3576288, "end": 3577189}, {"filename": "/Source1/graphics/fasterdave/enemy_90x120.png", "start": 3577189, "end": 3578908}, {"filename": "/Source1/graphics/fasterdave/floortileset.png", "start": 3578908, "end": 3606185}, {"filename": "/Source1/graphics/fasterdave/floortileset_4500x54.png", "start": 3606185, "end": 3608562}, {"filename": "/Source1/graphics/fasterdave/key.png", "start": 3608562, "end": 3611484}, {"filename": "/Source1/graphics/fasterdave/key_20x10.png", "start": 3611484, "end": 3612083}, {"filename": "/Source1/graphics/fasterdave/key_64x31.png", "start": 3612083, "end": 3615005}, {"filename": "/Source1/graphics/fasterdave/ladder.png", "start": 3615005, "end": 3615731}, {"filename": "/Source1/graphics/fasterdave/ladder_40x54.png", "start": 3615731, "end": 3616116}, {"filename": "/Source1/graphics/fasterdave/orbs.png", "start": 3616116, "end": 3648353}, {"filename": "/Source1/graphics/fasterdave/orbs_94x19.png", "start": 3648353, "end": 3649907}, {"filename": "/Source1/graphics/frog/ambulance.png", "start": 3649907, "end": 3661607}, {"filename": "/Source1/graphics/frog/ambulance_27x14.png", "start": 3661607, "end": 3662294}, {"filename": "/Source1/graphics/frog/ambulance_66x29.png", "start": 3662294, "end": 3673994}, {"filename": "/Source1/graphics/frog/apple.png", "start": 3673994, "end": 3674475}, {"filename": "/Source1/graphics/frog/apple_16x16.png", "start": 3674475, "end": 3674861}, {"filename": "/Source1/graphics/frog/apple_8x8.png", "start": 3674861, "end": 3675159}, {"filename": "/Source1/graphics/frog/background.png", "start": 3675159, "end": 3775445}, {"filename": "/Source1/graphics/frog/carblue.png", "start": 3775445, "end": 3787060}, {"filename": "/Source1/graphics/frog/carblue_27x14.png", "start": 3787060, "end": 3787973}, {"filename": "/Source1/graphics/frog/carblue_78x29.png", "start": 3787973, "end": 3799588}, {"filename": "/Source1/graphics/frog/cherry.png", "start": 3799588, "end": 3800056}, {"filename": "/Source1/graphics/frog/cherry_16x16.png", "start": 3800056, "end": 3800442}, {"filename": "/Source1/graphics/frog/cherry_8x8.png", "start": 3800442, "end": 3800766}, {"filename": "/Source1/graphics/frog/garbagetruck.png", "start": 3800766, "end": 3812233}, {"filename": "/Source1/graphics/frog/garbagetruck_27x14.png", "start": 3812233, "end": 3812998}, {"filename": "/Source1/graphics/frog/garbagetruck_66x29.png", "start": 3812998, "end": 3824465}, {"filename": "/Source1/graphics/frog/lemon.png", "start": 3824465, "end": 3824832}, {"filename": "/Source1/graphics/frog/lemon_16x16.png", "start": 3824832, "end": 3825166}, {"filename": "/Source1/graphics/frog/lemon_8x8.png", "start": 3825166, "end": 3825456}, {"filename": "/Source1/graphics/frog/player.png", "start": 3825456, "end": 3828519}, {"filename": "/Source1/graphics/frog/player_41x54.png", "start": 3828519, "end": 3829119}, {"filename": "/Source1/graphics/frog/player_96x128.png", "start": 3829119, "end": 3832182}, {"filename": "/Source1/graphics/frog/police.png", "start": 3832182, "end": 3844339}, {"filename": "/Source1/graphics/frog/police_27x14.png", "start": 3844339, "end": 3845293}, {"filename": "/Source1/graphics/frog/police_74x29.png", "start": 3845293, "end": 3857450}, {"filename": "/Source1/graphics/frog/taxi.png", "start": 3857450, "end": 3870057}, {"filename": "/Source1/graphics/frog/taxi_27x14.png", "start": 3870057, "end": 3871017}, {"filename": "/Source1/graphics/frog/taxi_78x29.png", "start": 3871017, "end": 3883624}, {"filename": "/Source1/graphics/frog/watergrass.png", "start": 3883624, "end": 3886278}, {"filename": "/Source1/graphics/frog/watergrass_2240x48.png", "start": 3886278, "end": 3888932}, {"filename": "/Source1/graphics/frog/waterplant.png", "start": 3888932, "end": 3890064}, {"filename": "/Source1/graphics/frog/waterplant_32x16.png", "start": 3890064, "end": 3890479}, {"filename": "/Source1/graphics/invaders/asteroid-01_10x9.png", "start": 3890479, "end": 3890757}, {"filename": "/Source1/graphics/invaders/asteroid-01_11x10.png", "start": 3890757, "end": 3891036}, {"filename": "/Source1/graphics/invaders/asteroid-01_12x11.png", "start": 3891036, "end": 3891324}, {"filename": "/Source1/graphics/invaders/asteroid-01_13x12.png", "start": 3891324, "end": 3891617}, {"filename": "/Source1/graphics/invaders/asteroid-01_14x13.png", "start": 3891617, "end": 3891913}, {"filename": "/Source1/graphics/invaders/asteroid-01_15x14.png", "start": 3891913, "end": 3892219}, {"filename": "/Source1/graphics/invaders/asteroid-01_16x15.png", "start": 3892219, "end": 3892532}, {"filename": "/Source1/graphics/invaders/asteroid-01_17x16.png", "start": 3892532, "end": 3892851}, {"filename": "/Source1/graphics/invaders/asteroid-01_18x17.png", "start": 3892851, "end": 3893181}, {"filename": "/Source1/graphics/invaders/asteroid-01_19x18.png", "start": 3893181, "end": 3893516}, {"filename": "/Source1/graphics/invaders/asteroid-01_20x19.png", "start": 3893516, "end": 3893861}, {"filename": "/Source1/graphics/invaders/asteroid-01_21x20.png", "start": 3893861, "end": 3894213}, {"filename": "/Source1/graphics/invaders/asteroid-01_22x21.png", "start": 3894213, "end": 3894569}, {"filename": "/Source1/graphics/invaders/asteroid-01_24x22.png", "start": 3894569, "end": 3894934}, {"filename": "/Source1/graphics/invaders/asteroid-01_25x23.png", "start": 3894934, "end": 3895310}, {"filename": "/Source1/graphics/invaders/asteroid-01_26x24.png", "start": 3895310, "end": 3895692}, {"filename": "/Source1/graphics/invaders/asteroid-01_27x25.png", "start": 3895692, "end": 3896077}, {"filename": "/Source1/graphics/invaders/asteroid-01_28x26.png", "start": 3896077, "end": 3896471}, {"filename": "/Source1/graphics/invaders/asteroid-01_29x27.png", "start": 3896471, "end": 3896874}, {"filename": "/Source1/graphics/invaders/asteroid-01_2x1.png", "start": 3896874, "end": 3897089}, {"filename": "/Source1/graphics/invaders/asteroid-01_30x28.png", "start": 3897089, "end": 3897493}, {"filename": "/Source1/graphics/invaders/asteroid-01_31x29.png", "start": 3897493, "end": 3897910}, {"filename": "/Source1/graphics/invaders/asteroid-01_32x30.png", "start": 3897910, "end": 3898334}, {"filename": "/Source1/graphics/invaders/asteroid-01_33x31.png", "start": 3898334, "end": 3898772}, {"filename": "/Source1/graphics/invaders/asteroid-01_34x32.png", "start": 3898772, "end": 3899215}, {"filename": "/Source1/graphics/invaders/asteroid-01_35x33.png", "start": 3899215, "end": 3899662}, {"filename": "/Source1/graphics/invaders/asteroid-01_36x34.png", "start": 3899662, "end": 3900130}, {"filename": "/Source1/graphics/invaders/asteroid-01_37x35.png", "start": 3900130, "end": 3900595}, {"filename": "/Source1/graphics/invaders/asteroid-01_38x36.png", "start": 3900595, "end": 3901058}, {"filename": "/Source1/graphics/invaders/asteroid-01_39x37.png", "start": 3901058, "end": 3901544}, {"filename": "/Source1/graphics/invaders/asteroid-01_3x2.png", "start": 3901544, "end": 3901780}, {"filename": "/Source1/graphics/invaders/asteroid-01_40x38.png", "start": 3901780, "end": 3902278}, {"filename": "/Source1/graphics/invaders/asteroid-01_41x39.png", "start": 3902278, "end": 3902771}, {"filename": "/Source1/graphics/invaders/asteroid-01_42x40.png", "start": 3902771, "end": 3903275}, {"filename": "/Source1/graphics/invaders/asteroid-01_43x41.png", "start": 3903275, "end": 3903793}, {"filename": "/Source1/graphics/invaders/asteroid-01_44x42.png", "start": 3903793, "end": 3904314}, {"filename": "/Source1/graphics/invaders/asteroid-01_46x43.png", "start": 3904314, "end": 3904847}, {"filename": "/Source1/graphics/invaders/asteroid-01_47x44.png", "start": 3904847, "end": 3905399}, {"filename": "/Source1/graphics/invaders/asteroid-01_48x45.png", "start": 3905399, "end": 3905956}, {"filename": "/Source1/graphics/invaders/asteroid-01_49x46.png", "start": 3905956, "end": 3906515}, {"filename": "/Source1/graphics/invaders/asteroid-01_4x3.png", "start": 3906515, "end": 3906759}, {"filename": "/Source1/graphics/invaders/asteroid-01_50x47.png", "start": 3906759, "end": 3907325}, {"filename": "/Source1/graphics/invaders/asteroid-01_51x48.png", "start": 3907325, "end": 3907915}, {"filename": "/Source1/graphics/invaders/asteroid-01_52x49.png", "start": 3907915, "end": 3908502}, {"filename": "/Source1/graphics/invaders/asteroid-01_53x50.png", "start": 3908502, "end": 3909109}, {"filename": "/Source1/graphics/invaders/asteroid-01_5x4.png", "start": 3909109, "end": 3909362}, {"filename": "/Source1/graphics/invaders/asteroid-01_67x63.png", "start": 3909362, "end": 3910116}, {"filename": "/Source1/graphics/invaders/asteroid-01_6x5.png", "start": 3910116, "end": 3910373}, {"filename": "/Source1/graphics/invaders/asteroid-01_7x6.png", "start": 3910373, "end": 3910635}, {"filename": "/Source1/graphics/invaders/asteroid-01_8x7.png", "start": 3910635, "end": 3910903}, {"filename": "/Source1/graphics/invaders/asteroid-01_9x8.png", "start": 3910903, "end": 3911176}, {"filename": "/Source1/graphics/invaders/background.png", "start": 3911176, "end": 3955644}, {"filename": "/Source1/graphics/invaders/bullet.png", "start": 3955644, "end": 3955904}, {"filename": "/Source1/graphics/invaders/bullet_15x5.png", "start": 3955904, "end": 3956163}, {"filename": "/Source1/graphics/invaders/bullet_32x10.png", "start": 3956163, "end": 3956443}, {"filename": "/Source1/graphics/invaders/enemy1.png", "start": 3956443, "end": 3958772}, {"filename": "/Source1/graphics/invaders/enemy1_113x24.png", "start": 3958772, "end": 3959415}, {"filename": "/Source1/graphics/invaders/enemy1_240x48.png", "start": 3959415, "end": 3960727}, {"filename": "/Source1/graphics/invaders/enemy2.png", "start": 3960727, "end": 3962391}, {"filename": "/Source1/graphics/invaders/enemy2_192x48.png", "start": 3962391, "end": 3963245}, {"filename": "/Source1/graphics/invaders/enemy2_90x24.png", "start": 3963245, "end": 3963810}, {"filename": "/Source1/graphics/invaders/enemy3.png", "start": 3963810, "end": 3965958}, {"filename": "/Source1/graphics/invaders/enemy3_192x48.png", "start": 3965958, "end": 3966911}, {"filename": "/Source1/graphics/invaders/enemy3_90x24.png", "start": 3966911, "end": 3967477}, {"filename": "/Source1/graphics/invaders/explosion.png", "start": 3967477, "end": 3972689}, {"filename": "/Source1/graphics/invaders/explosion_263x40.png", "start": 3972689, "end": 3973865}, {"filename": "/Source1/graphics/invaders/explosion_560x80.png", "start": 3973865, "end": 3976843}, {"filename": "/Source1/graphics/invaders/player.png", "start": 3976843, "end": 3979071}, {"filename": "/Source1/graphics/invaders/player_113x24.png", "start": 3979071, "end": 3979716}, {"filename": "/Source1/graphics/invaders/player_240x48.png", "start": 3979716, "end": 3980890}, {"filename": "/Source1/graphics/main/frame.png", "start": 3980890, "end": 3987085}, {"filename": "/Source1/graphics/main/medal.png", "start": 3987085, "end": 3989202}, {"filename": "/Source1/graphics/pang/background.png", "start": 3989202, "end": 4092696}, {"filename": "/Source1/graphics/pang/ball.png", "start": 4092696, "end": 4103604}, {"filename": "/Source1/graphics/pang/ball_23x23.png", "start": 4103604, "end": 4114302}, {"filename": "/Source1/graphics/pang/ball_45x45.png", "start": 4114302, "end": 4125304}, {"filename": "/Source1/graphics/pang/ball_68x68.png", "start": 4125304, "end": 4127705}, {"filename": "/Source1/graphics/pang/character.png", "start": 4127705, "end": 4175582}, {"filename": "/Source1/graphics/pang/character_416x384.png", "start": 4175582, "end": 4196159}, {"filename": "/Source1/graphics/pang/weapon.png", "start": 4196159, "end": 4234037}, {"filename": "/Source1/graphics/pang/weapon_267x18.png", "start": 4234037, "end": 4237325}, {"filename": "/System/Fonts/Asheville-Sans-14-Light-table-20-20.png", "start": 4237325, "end": 4244526}, {"filename": "/System/Fonts/Asheville-Sans-14-Light.fnt", "start": 4244526, "end": 4246639}, {"filename": "/System/Fonts/Asheville-Sans-14-Light.ttf", "start": 4246639, "end": 4294347}, {"filename": "/System/Fonts/Origin_of_fonts.txt", "start": 4294347, "end": 4294584}, {"filename": "/System/Fonts/Roobert-10-Bold-table-12-14.png", "start": 4294584, "end": 4299369}, {"filename": "/System/Fonts/Roobert-10-Bold.fnt", "start": 4299369, "end": 4308392}, {"filename": "/System/Fonts/Roobert-10-Bold.ttf", "start": 4308392, "end": 4319480}, {"filename": "/fonts/Roboto-Regular.ttf", "start": 4319480, "end": 4490752}, {"filename": "/fonts/Roboto-Regular_11-table-12-13.png", "start": 4490752, "end": 4506320}, {"filename": "/fonts/Roboto-Regular_11.fnt", "start": 4506320, "end": 4510836}, {"filename": "/fonts/Roboto-Regular_11.otb", "start": 4510836, "end": 4516684}, {"filename": "/fonts/Roboto-Regular_11.ttf", "start": 4516684, "end": 4523016}, {"filename": "/fonts/Roboto-Regular_12-table-13-14.png", "start": 4523016, "end": 4541100}, {"filename": "/fonts/Roboto-Regular_12.fnt", "start": 4541100, "end": 4545657}, {"filename": "/fonts/Roboto-Regular_12.otb", "start": 4545657, "end": 4552189}, {"filename": "/fonts/Roboto-Regular_12.ttf", "start": 4552189, "end": 4559205}, {"filename": "/fonts/Roboto-Regular_13-table-14-15.png", "start": 4559205, "end": 4580051}, {"filename": "/fonts/Roboto-Regular_13.fnt", "start": 4580051, "end": 4584648}, {"filename": "/fonts/Roboto-Regular_13.otb", "start": 4584648, "end": 4591816}, {"filename": "/fonts/Roboto-Regular_13.ttf", "start": 4591816, "end": 4599468}, {"filename": "/fonts/Roboto-Regular_16-table-19-20.png", "start": 4599468, "end": 4633415}, {"filename": "/fonts/Roboto-Regular_16.fnt", "start": 4633415, "end": 4638402}, {"filename": "/fonts/Roboto-Regular_16.otb", "start": 4638402, "end": 4648714}, {"filename": "/fonts/Roboto-Regular_16.ttf", "start": 4648714, "end": 4659510}, {"filename": "/fonts/Roboto-Regular_20-table-24-25.png", "start": 4659510, "end": 4706596}, {"filename": "/fonts/Roboto-Regular_20.fnt", "start": 4706596, "end": 4711825}, {"filename": "/fonts/Roboto-Regular_20.otb", "start": 4711825, "end": 4725577}, {"filename": "/fonts/Roboto-Regular_20.ttf", "start": 4725577, "end": 4739813}, {"filename": "/fonts/Roboto-Regular_23-table-27-28.png", "start": 4739813, "end": 4797222}, {"filename": "/fonts/Roboto-Regular_23.fnt", "start": 4797222, "end": 4802465}, {"filename": "/fonts/Roboto-Regular_23.otb", "start": 4802465, "end": 4819825}, {"filename": "/fonts/Roboto-Regular_23.ttf", "start": 4819825, "end": 4837697}, {"filename": "/fonts/Roboto-Regular_26-table-31-32.png", "start": 4837697, "end": 4908649}, {"filename": "/fonts/Roboto-Regular_26.fnt", "start": 4908649, "end": 4913904}, {"filename": "/fonts/Roboto-Regular_26.otb", "start": 4913904, "end": 4935136}, {"filename": "/fonts/Roboto-Regular_26.ttf", "start": 4935136, "end": 4956852}, {"filename": "/graphics/blockstacker/background.png", "start": 4956852, "end": 4962007}, {"filename": "/graphics/breakout/background.png", "start": 4962007, "end": 4967753}, {"filename": "/graphics/breakout/ball.png", "start": 4967753, "end": 4968020}, {"filename": "/graphics/breakout/ball_4x4.png", "start": 4968020, "end": 4968238}, {"filename": "/graphics/breakout/blocks.png", "start": 4968238, "end": 4968692}, {"filename": "/graphics/breakout/blocks_120x11.png", "start": 4968692, "end": 4968994}, {"filename": "/graphics/breakout/paddle.png", "start": 4968994, "end": 4969238}, {"filename": "/graphics/breakout/paddle_25x7.png", "start": 4969238, "end": 4969478}, {"filename": "/graphics/fasterdave/Character_character_climb.png", "start": 4969478, "end": 5113800}, {"filename": "/graphics/fasterdave/Character_character_climb_23x432.png", "start": 5113800, "end": 5123275}, {"filename": "/graphics/fasterdave/Character_character_idle.png", "start": 5123275, "end": 5281179}, {"filename": "/graphics/fasterdave/Character_character_idle_20x420.png", "start": 5281179, "end": 5284068}, {"filename": "/graphics/fasterdave/Character_character_jump_up.png", "start": 5284068, "end": 5350597}, {"filename": "/graphics/fasterdave/Character_character_jump_up_22x170.png", "start": 5350597, "end": 5352086}, {"filename": "/graphics/fasterdave/Character_character_run.png", "start": 5352086, "end": 5423423}, {"filename": "/graphics/fasterdave/Character_character_run_22x210.png", "start": 5423423, "end": 5432743}, {"filename": "/graphics/fasterdave/background.png", "start": 5432743, "end": 5460218}, {"filename": "/graphics/fasterdave/enemy.png", "start": 5460218, "end": 5461356}, {"filename": "/graphics/fasterdave/enemy_45x60.png", "start": 5461356, "end": 5461907}, {"filename": "/graphics/fasterdave/enemy_90x120.png", "start": 5461907, "end": 5462949}, {"filename": "/graphics/fasterdave/floortileset.png", "start": 5462949, "end": 5469914}, {"filename": "/graphics/fasterdave/floortileset_4500x54.png", "start": 5469914, "end": 5471544}, {"filename": "/graphics/fasterdave/key.png", "start": 5471544, "end": 5472392}, {"filename": "/graphics/fasterdave/key_20x10.png", "start": 5472392, "end": 5472696}, {"filename": "/graphics/fasterdave/key_64x31.png", "start": 5472696, "end": 5473544}, {"filename": "/graphics/fasterdave/ladder.png", "start": 5473544, "end": 5473926}, {"filename": "/graphics/fasterdave/ladder_40x54.png", "start": 5473926, "end": 5474218}, {"filename": "/graphics/fasterdave/orbs.png", "start": 5474218, "end": 5477362}, {"filename": "/graphics/fasterdave/orbs_94x19.png", "start": 5477362, "end": 5483341}, {"filename": "/graphics/frog/ambulance.png", "start": 5483341, "end": 5484079}, {"filename": "/graphics/frog/ambulance_27x14.png", "start": 5484079, "end": 5484418}, {"filename": "/graphics/frog/ambulance_66x29.png", "start": 5484418, "end": 5485156}, {"filename": "/graphics/frog/apple.png", "start": 5485156, "end": 5485401}, {"filename": "/graphics/frog/apple_16x16.png", "start": 5485401, "end": 5485646}, {"filename": "/graphics/frog/apple_8x8.png", "start": 5485646, "end": 5485868}, {"filename": "/graphics/frog/background.png", "start": 5485868, "end": 5505078}, {"filename": "/graphics/frog/carblue.png", "start": 5505078, "end": 5505909}, {"filename": "/graphics/frog/carblue_27x14.png", "start": 5505909, "end": 5506315}, {"filename": "/graphics/frog/carblue_78x29.png", "start": 5506315, "end": 5507146}, {"filename": "/graphics/frog/cherry.png", "start": 5507146, "end": 5507397}, {"filename": "/graphics/frog/cherry_16x16.png", "start": 5507397, "end": 5507648}, {"filename": "/graphics/frog/cherry_8x8.png", "start": 5507648, "end": 5507872}, {"filename": "/graphics/frog/garbagetruck.png", "start": 5507872, "end": 5508712}, {"filename": "/graphics/frog/garbagetruck_27x14.png", "start": 5508712, "end": 5509090}, {"filename": "/graphics/frog/garbagetruck_66x29.png", "start": 5509090, "end": 5509930}, {"filename": "/graphics/frog/lemon.png", "start": 5509930, "end": 5510168}, {"filename": "/graphics/frog/lemon_16x16.png", "start": 5510168, "end": 5510406}, {"filename": "/graphics/frog/lemon_8x8.png", "start": 5510406, "end": 5510630}, {"filename": "/graphics/frog/player.png", "start": 5510630, "end": 5511716}, {"filename": "/graphics/frog/player_41x54.png", "start": 5511716, "end": 5512273}, {"filename": "/graphics/frog/player_96x128.png", "start": 5512273, "end": 5513359}, {"filename": "/graphics/frog/police.png", "start": 5513359, "end": 5514135}, {"filename": "/graphics/frog/police_27x14.png", "start": 5514135, "end": 5514505}, {"filename": "/graphics/frog/police_74x29.png", "start": 5514505, "end": 5515281}, {"filename": "/graphics/frog/taxi.png", "start": 5515281, "end": 5516109}, {"filename": "/graphics/frog/taxi_27x14.png", "start": 5516109, "end": 5516531}, {"filename": "/graphics/frog/taxi_78x29.png", "start": 5516531, "end": 5517359}, {"filename": "/graphics/frog/watergrass.png", "start": 5517359, "end": 5519175}, {"filename": "/graphics/frog/watergrass_2240x48.png", "start": 5519175, "end": 5520991}, {"filename": "/graphics/frog/waterplant.png", "start": 5520991, "end": 5521317}, {"filename": "/graphics/frog/waterplant_32x16.png", "start": 5521317, "end": 5521643}, {"filename": "/graphics/invaders/asteroid-01.png", "start": 5521643, "end": 5522242}, {"filename": "/graphics/invaders/asteroid-01_10x9.png", "start": 5522242, "end": 5522482}, {"filename": "/graphics/invaders/asteroid-01_11x10.png", "start": 5522482, "end": 5522726}, {"filename": "/graphics/invaders/asteroid-01_12x11.png", "start": 5522726, "end": 5522976}, {"filename": "/graphics/invaders/asteroid-01_13x12.png", "start": 5522976, "end": 5523227}, {"filename": "/graphics/invaders/asteroid-01_14x13.png", "start": 5523227, "end": 5523485}, {"filename": "/graphics/invaders/asteroid-01_15x14.png", "start": 5523485, "end": 5523751}, {"filename": "/graphics/invaders/asteroid-01_16x15.png", "start": 5523751, "end": 5524023}, {"filename": "/graphics/invaders/asteroid-01_17x16.png", "start": 5524023, "end": 5524298}, {"filename": "/graphics/invaders/asteroid-01_18x17.png", "start": 5524298, "end": 5524580}, {"filename": "/graphics/invaders/asteroid-01_19x18.png", "start": 5524580, "end": 5524869}, {"filename": "/graphics/invaders/asteroid-01_20x19.png", "start": 5524869, "end": 5525161}, {"filename": "/graphics/invaders/asteroid-01_21x20.png", "start": 5525161, "end": 5525462}, {"filename": "/graphics/invaders/asteroid-01_22x21.png", "start": 5525462, "end": 5525759}, {"filename": "/graphics/invaders/asteroid-01_24x22.png", "start": 5525759, "end": 5526076}, {"filename": "/graphics/invaders/asteroid-01_25x23.png", "start": 5526076, "end": 5526392}, {"filename": "/graphics/invaders/asteroid-01_26x24.png", "start": 5526392, "end": 5526723}, {"filename": "/graphics/invaders/asteroid-01_27x25.png", "start": 5526723, "end": 5527046}, {"filename": "/graphics/invaders/asteroid-01_28x26.png", "start": 5527046, "end": 5527385}, {"filename": "/graphics/invaders/asteroid-01_29x27.png", "start": 5527385, "end": 5527733}, {"filename": "/graphics/invaders/asteroid-01_2x1.png", "start": 5527733, "end": 5527931}, {"filename": "/graphics/invaders/asteroid-01_30x28.png", "start": 5527931, "end": 5528269}, {"filename": "/graphics/invaders/asteroid-01_31x29.png", "start": 5528269, "end": 5528621}, {"filename": "/graphics/invaders/asteroid-01_32x30.png", "start": 5528621, "end": 5528987}, {"filename": "/graphics/invaders/asteroid-01_33x31.png", "start": 5528987, "end": 5529359}, {"filename": "/graphics/invaders/asteroid-01_34x32.png", "start": 5529359, "end": 5529729}, {"filename": "/graphics/invaders/asteroid-01_35x33.png", "start": 5529729, "end": 5530100}, {"filename": "/graphics/invaders/asteroid-01_36x34.png", "start": 5530100, "end": 5530495}, {"filename": "/graphics/invaders/asteroid-01_37x35.png", "start": 5530495, "end": 5530891}, {"filename": "/graphics/invaders/asteroid-01_38x36.png", "start": 5530891, "end": 5531281}, {"filename": "/graphics/invaders/asteroid-01_39x37.png", "start": 5531281, "end": 5531691}, {"filename": "/graphics/invaders/asteroid-01_3x2.png", "start": 5531691, "end": 5531900}, {"filename": "/graphics/invaders/asteroid-01_40x38.png", "start": 5531900, "end": 5532332}, {"filename": "/graphics/invaders/asteroid-01_41x39.png", "start": 5532332, "end": 5532749}, {"filename": "/graphics/invaders/asteroid-01_42x40.png", "start": 5532749, "end": 5533166}, {"filename": "/graphics/invaders/asteroid-01_43x41.png", "start": 5533166, "end": 5533605}, {"filename": "/graphics/invaders/asteroid-01_44x42.png", "start": 5533605, "end": 5534054}, {"filename": "/graphics/invaders/asteroid-01_46x43.png", "start": 5534054, "end": 5534505}, {"filename": "/graphics/invaders/asteroid-01_47x44.png", "start": 5534505, "end": 5534970}, {"filename": "/graphics/invaders/asteroid-01_48x45.png", "start": 5534970, "end": 5535433}, {"filename": "/graphics/invaders/asteroid-01_49x46.png", "start": 5535433, "end": 5535904}, {"filename": "/graphics/invaders/asteroid-01_4x3.png", "start": 5535904, "end": 5536113}, {"filename": "/graphics/invaders/asteroid-01_50x47.png", "start": 5536113, "end": 5536588}, {"filename": "/graphics/invaders/asteroid-01_51x48.png", "start": 5536588, "end": 5537069}, {"filename": "/graphics/invaders/asteroid-01_52x49.png", "start": 5537069, "end": 5537560}, {"filename": "/graphics/invaders/asteroid-01_53x50.png", "start": 5537560, "end": 5538071}, {"filename": "/graphics/invaders/asteroid-01_5x4.png", "start": 5538071, "end": 5538286}, {"filename": "/graphics/invaders/asteroid-01_67x63.png", "start": 5538286, "end": 5538885}, {"filename": "/graphics/invaders/asteroid-01_6x5.png", "start": 5538885, "end": 5539109}, {"filename": "/graphics/invaders/asteroid-01_7x6.png", "start": 5539109, "end": 5539337}, {"filename": "/graphics/invaders/asteroid-01_8x7.png", "start": 5539337, "end": 5539570}, {"filename": "/graphics/invaders/asteroid-01_9x8.png", "start": 5539570, "end": 5539807}, {"filename": "/graphics/invaders/background.png", "start": 5539807, "end": 5553515}, {"filename": "/graphics/invaders/bullet.png", "start": 5553515, "end": 5553750}, {"filename": "/graphics/invaders/bullet_15x5.png", "start": 5553750, "end": 5553975}, {"filename": "/graphics/invaders/bullet_32x10.png", "start": 5553975, "end": 5554210}, {"filename": "/graphics/invaders/enemy1.png", "start": 5554210, "end": 5555285}, {"filename": "/graphics/invaders/enemy1_113x24.png", "start": 5555285, "end": 5555791}, {"filename": "/graphics/invaders/enemy1_240x48.png", "start": 5555791, "end": 5556866}, {"filename": "/graphics/invaders/enemy2.png", "start": 5556866, "end": 5557696}, {"filename": "/graphics/invaders/enemy2_192x48.png", "start": 5557696, "end": 5558526}, {"filename": "/graphics/invaders/enemy2_90x24.png", "start": 5558526, "end": 5558998}, {"filename": "/graphics/invaders/enemy3.png", "start": 5558998, "end": 5559866}, {"filename": "/graphics/invaders/enemy3_192x48.png", "start": 5559866, "end": 5560734}, {"filename": "/graphics/invaders/enemy3_90x24.png", "start": 5560734, "end": 5561197}, {"filename": "/graphics/invaders/explosion.png", "start": 5561197, "end": 5564156}, {"filename": "/graphics/invaders/explosion_263x40.png", "start": 5564156, "end": 5565391}, {"filename": "/graphics/invaders/explosion_560x80.png", "start": 5565391, "end": 5568350}, {"filename": "/graphics/invaders/player.png", "start": 5568350, "end": 5569358}, {"filename": "/graphics/invaders/player_113x24.png", "start": 5569358, "end": 5569882}, {"filename": "/graphics/invaders/player_240x48.png", "start": 5569882, "end": 5570890}, {"filename": "/graphics/main/frame.png", "start": 5570890, "end": 5571145}, {"filename": "/graphics/main/medal.png", "start": 5571145, "end": 5571883}, {"filename": "/graphics/pang/background.png", "start": 5571883, "end": 5600099}, {"filename": "/graphics/pang/ball.png", "start": 5600099, "end": 5607685}, {"filename": "/graphics/pang/ball_23x23.png", "start": 5607685, "end": 5614159}, {"filename": "/graphics/pang/ball_45x45.png", "start": 5614159, "end": 5621745}, {"filename": "/graphics/pang/ball_68x68.png", "start": 5621745, "end": 5628992}, {"filename": "/graphics/pang/character.png", "start": 5628992, "end": 5642679}, {"filename": "/graphics/pang/character_416x384.png", "start": 5642679, "end": 5655628}, {"filename": "/graphics/pang/weapon.png", "start": 5655628, "end": 5666948}, {"filename": "/graphics/pang/weapon_267x18.png", "start": 5666948, "end": 5668854}, {"filename": "/main.lua", "start": 5668854, "end": 5668854}, {"filename": "/metadata/card.png", "start": 5668854, "end": 5678089}, {"filename": "/metadata/icon.png", "start": 5678089, "end": 5684069}, {"filename": "/music/blockstacker/music.ogg", "start": 5684069, "end": 7501496}, {"filename": "/music/breakout/music.ogg", "start": 7501496, "end": 8910602}, {"filename": "/music/fasterdave/music.ogg", "start": 8910602, "end": 12038256}, {"filename": "/music/frog/music.ogg", "start": 12038256, "end": 12854451}, {"filename": "/music/invaders/music.ogg", "start": 12854451, "end": 14265869}, {"filename": "/music/main/music.ogg", "start": 14265869, "end": 15821366}, {"filename": "/music/pang/music.ogg", "start": 15821366, "end": 17285446}, {"filename": "/music/ramit/music.ogg", "start": 17285446, "end": 18313114}, {"filename": "/music/snakey/music.ogg", "start": 18313114, "end": 18914595}, {"filename": "/pdxinfo", "start": 18914595, "end": 18914805}, {"filename": "/sound/blockstacker/drop.ogg", "start": 18914805, "end": 18921996}, {"filename": "/sound/blockstacker/lineclear.ogg", "start": 18921996, "end": 18947808}, {"filename": "/sound/blockstacker/rotate.ogg", "start": 18947808, "end": 18953772}, {"filename": "/sound/breakout/bat.ogg", "start": 18953772, "end": 18960412}, {"filename": "/sound/breakout/brick.ogg", "start": 18960412, "end": 18974013}, {"filename": "/sound/common/coin.ogg", "start": 18974013, "end": 18986415}, {"filename": "/sound/common/die.ogg", "start": 18986415, "end": 18997234}, {"filename": "/sound/common/one.ogg", "start": 18997234, "end": 19002605}, {"filename": "/sound/common/oneminute.ogg", "start": 19002605, "end": 19013353}, {"filename": "/sound/common/readygo.ogg", "start": 19013353, "end": 19023382}, {"filename": "/sound/common/succes.ogg", "start": 19023382, "end": 19048823}, {"filename": "/sound/common/three.ogg", "start": 19048823, "end": 19054912}, {"filename": "/sound/common/timeover.ogg", "start": 19054912, "end": 19064504}, {"filename": "/sound/common/two.ogg", "start": 19064504, "end": 19070270}, {"filename": "/sound/frog/move.ogg", "start": 19070270, "end": 19075432}, {"filename": "/sound/invaders/enemydeath.ogg", "start": 19075432, "end": 19092183}, {"filename": "/sound/invaders/enemyshoot.ogg", "start": 19092183, "end": 19097991}, {"filename": "/sound/invaders/playerdeath.ogg", "start": 19097991, "end": 19120798}, {"filename": "/sound/invaders/playershoot.ogg", "start": 19120798, "end": 19127390}, {"filename": "/sound/main/back.ogg", "start": 19127390, "end": 19151835}, {"filename": "/sound/main/confirm.ogg", "start": 19151835, "end": 19177961}, {"filename": "/sound/main/score.ogg", "start": 19177961, "end": 19196133}, {"filename": "/sound/main/select.ogg", "start": 19196133, "end": 19201655}, {"filename": "/sound/pang/pop.ogg", "start": 19201655, "end": 19209600}, {"filename": "/sound/pang/shoot.ogg", "start": 19209600, "end": 19225303}, {"filename": "/sound/ramit/hit.ogg", "start": 19225303, "end": 19231305}, {"filename": "/sound/ramit/shoot.ogg", "start": 19231305, "end": 19237221}, {"filename": "/sound/snakey/food.ogg", "start": 19237221, "end": 19242143}], "remote_package_size": 19242143});
 
   })();
 
-// end include: /tmp/tmp6_t_v_vc.js
-// include: /tmp/tmpfwiz8ods.js
+// end include: /tmp/tmpg1b2wkvz.js
+// include: /tmp/tmpm8g29kqy.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if ((typeof ENVIRONMENT_IS_WASM_WORKER != 'undefined' && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != 'undefined' && ENVIRONMENT_IS_AUDIO_WORKLET)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmpfwiz8ods.js
-// include: /tmp/tmp9w4w7c20.js
+  // end include: /tmp/tmpm8g29kqy.js
+// include: /tmp/tmp_0xjp9xw.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmp9w4w7c20.js
+  // end include: /tmp/tmp_0xjp9xw.js
 
 
 var arguments_ = [];
@@ -510,6 +510,11 @@ function checkStackCookie() {
 }
 // end include: runtime_stack_check.js
 // include: runtime_exceptions.js
+// Base Emscripten EH error class
+class EmscriptenEH {}
+
+class EmscriptenSjLj extends EmscriptenEH {}
+
 // end include: runtime_exceptions.js
 // include: runtime_debug.js
 var runtimeDebug = true; // Switch to false at runtime to disable logging at the right times
@@ -637,31 +642,6 @@ function unexportedRuntimeSymbol(sym) {
 
 // end include: runtime_debug.js
 // Memory management
-var
-/** @type {!Int8Array} */
-  HEAP8,
-/** @type {!Uint8Array} */
-  HEAPU8,
-/** @type {!Int16Array} */
-  HEAP16,
-/** @type {!Uint16Array} */
-  HEAPU16,
-/** @type {!Int32Array} */
-  HEAP32,
-/** @type {!Uint32Array} */
-  HEAPU32,
-/** @type {!Float32Array} */
-  HEAPF32,
-/** @type {!Float64Array} */
-  HEAPF64;
-
-// BigInt64Array type is not correctly defined in closure
-var
-/** not-@type {!BigInt64Array} */
-  HEAP64,
-/* BigUint64Array type is not correctly defined in closure
-/** not-@type {!BigUint64Array} */
-  HEAPU64;
 
 var runtimeInitialized = false;
 
@@ -740,11 +720,13 @@ function postRun() {
   // End ATPOSTRUNS hooks
 }
 
-/** @param {string|number=} what */
+/**
+ * @param {string|number=} what
+ */
 function abort(what) {
   Module['onAbort']?.(what);
 
-  what = 'Aborted(' + what + ')';
+  what = `Aborted(${what})`;
   // TODO(sbc): Should we remove printing and leave it up to whoever
   // catches the exception?
   err(what);
@@ -954,6 +936,36 @@ async function createWasm() {
       }
     }
 
+  /** @type {!Int16Array} */
+  var HEAP16;
+
+  /** @type {!Int32Array} */
+  var HEAP32;
+
+  /** not-@type {!BigInt64Array} */
+  var HEAP64;
+
+  /** @type {!Int8Array} */
+  var HEAP8;
+
+  /** @type {!Float32Array} */
+  var HEAPF32;
+
+  /** @type {!Float64Array} */
+  var HEAPF64;
+
+  /** @type {!Uint16Array} */
+  var HEAPU16;
+
+  /** @type {!Uint32Array} */
+  var HEAPU32;
+
+  /** not-@type {!BigUint64Array} */
+  var HEAPU64;
+
+  /** @type {!Uint8Array} */
+  var HEAPU8;
+
   var callRuntimeCallbacks = (callbacks) => {
       while (callbacks.length > 0) {
         // Pass the module as the first argument.
@@ -1082,12 +1094,12 @@ async function createWasm() {
 
   var noExitRuntime = true;
 
-  var ptrToString = (ptr) => {
+  function ptrToString(ptr) {
       assert(typeof ptr === 'number', `ptrToString expects a number, got ${typeof ptr}`);
       // Convert to 32-bit unsigned value
       ptr >>>= 0;
       return '0x' + ptr.toString(16).padStart(8, '0');
-    };
+    }
 
 
   
@@ -1125,6 +1137,86 @@ async function createWasm() {
     };
 
   
+
+  var UTF8Decoder = globalThis.TextDecoder && new TextDecoder();
+  
+  var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
+      var maxIdx = idx + maxBytesToRead;
+      if (ignoreNul) return maxIdx;
+      // TextDecoder needs to know the byte length in advance, it doesn't stop on
+      // null terminator by itself.
+      // As a tiny code save trick, compare idx against maxIdx using a negation,
+      // so that maxBytesToRead=undefined/NaN means Infinity.
+      while (heapOrArray[idx] && !(idx >= maxIdx)) ++idx;
+      return idx;
+    };
+  
+  
+    /**
+   * Given a pointer 'idx' to a null-terminated UTF8-encoded string in the given
+   * array that contains uint8 values, returns a copy of that string as a
+   * Javascript String object.
+   * heapOrArray is either a regular array, or a JavaScript typed array view.
+   * @param {number=} idx
+   * @param {number=} maxBytesToRead
+   * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
+   * @return {string}
+   */
+  var UTF8ArrayToString = (heapOrArray, idx = 0, maxBytesToRead, ignoreNul) => {
+  
+      var endPtr = findStringEnd(heapOrArray, idx, maxBytesToRead, ignoreNul);
+  
+      // When using conditional TextDecoder, skip it for short strings as the overhead of the native call is not worth it.
+      if (endPtr - idx > 16 && heapOrArray.buffer && UTF8Decoder) {
+        return UTF8Decoder.decode(heapOrArray.subarray(idx, endPtr));
+      }
+      var str = '';
+      while (idx < endPtr) {
+        // For UTF8 byte structure, see:
+        // http://en.wikipedia.org/wiki/UTF-8#Description
+        // https://www.ietf.org/rfc/rfc2279.txt
+        // https://tools.ietf.org/html/rfc3629
+        var u0 = heapOrArray[idx++];
+        if (!(u0 & 0x80)) { str += String.fromCharCode(u0); continue; }
+        var u1 = heapOrArray[idx++] & 63;
+        if ((u0 & 0xE0) == 0xC0) { str += String.fromCharCode(((u0 & 31) << 6) | u1); continue; }
+        var u2 = heapOrArray[idx++] & 63;
+        if ((u0 & 0xF0) == 0xE0) {
+          u0 = ((u0 & 15) << 12) | (u1 << 6) | u2;
+        } else {
+          if ((u0 & 0xF8) != 0xF0) warnOnce(`Invalid UTF-8 leading byte ${ptrToString(u0)} encountered when deserializing a UTF-8 string in wasm memory to a JS string!`);
+          u0 = ((u0 & 7) << 18) | (u1 << 12) | (u2 << 6) | (heapOrArray[idx++] & 63);
+        }
+  
+        if (u0 < 0x10000) {
+          str += String.fromCharCode(u0);
+        } else {
+          var ch = u0 - 0x10000;
+          str += String.fromCharCode(0xD800 | (ch >> 10), 0xDC00 | (ch & 0x3FF));
+        }
+      }
+      return str;
+    };
+  
+    /**
+   * Given a pointer 'ptr' to a null-terminated UTF8-encoded string in the
+   * emscripten HEAP, returns a copy of that string as a Javascript String object.
+   *
+   * @param {number} ptr
+   * @param {number=} maxBytesToRead - An optional length that specifies the
+   *   maximum number of bytes to read. You can omit this parameter to scan the
+   *   string until the first 0 byte. If maxBytesToRead is passed, and the string
+   *   at [ptr, ptr+maxBytesToReadr[ contains a null byte in the middle, then the
+   *   string will cut short at that byte index.
+   * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
+   * @return {string}
+   */
+  var UTF8ToString = (ptr, maxBytesToRead, ignoreNul) => {
+      assert(typeof ptr == 'number', `UTF8ToString expects a number (got ${typeof ptr})`);
+      return ptr ? UTF8ArrayToString(HEAPU8, ptr, maxBytesToRead, ignoreNul) : '';
+    };
+  var ___assert_fail = (condition, filename, line, func) =>
+      abort(`Assertion failed: ${UTF8ToString(condition)}, at: ` + [filename ? UTF8ToString(filename) : 'unknown filename', line, func ? UTF8ToString(func) : 'unknown function']);
 
   class ExceptionInfo {
       // excPtr - Thrown object pointer to wrap. Metadata pointer is calculated from it.
@@ -1183,14 +1275,11 @@ async function createWasm() {
       }
     }
   
-  var exceptionLast = 0;
-  
   var uncaughtExceptionCount = 0;
   var ___cxa_throw = (ptr, type, destructor) => {
       var info = new ExceptionInfo(ptr);
       // Initialize ExceptionInfo content after it was allocated in __cxa_allocate_exception.
       info.init(type, destructor);
-      exceptionLast = ptr;
       uncaughtExceptionCount++;
       assert(false, 'Exception thrown, but exception catching is not enabled. Compile with -sNO_DISABLE_EXCEPTION_CATCHING or -sEXCEPTION_CATCHING_ALLOWED=[..] to catch.');
     };
@@ -1273,12 +1362,9 @@ var initRandomFill = () => {
       return (view) => nodeCrypto.randomFillSync(view);
     }
 
-    return (view) => crypto.getRandomValues(view);
+    return (view) => (crypto.getRandomValues(view), 0);
   };
-var randomFill = (view) => {
-    // Lazily init on the first invocation.
-    (randomFill = initRandomFill())(view);
-  };
+var randomFill = (view) => (randomFill = initRandomFill())(view);
 
 
 
@@ -1337,132 +1423,73 @@ relative:(from, to) => {
 };
 
 
-var UTF8Decoder = globalThis.TextDecoder && new TextDecoder();
 
-var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
-    var maxIdx = idx + maxBytesToRead;
-    if (ignoreNul) return maxIdx;
-    // TextDecoder needs to know the byte length in advance, it doesn't stop on
-    // null terminator by itself.
-    // As a tiny code save trick, compare idx against maxIdx using a negation,
-    // so that maxBytesToRead=undefined/NaN means Infinity.
-    while (heapOrArray[idx] && !(idx >= maxIdx)) ++idx;
-    return idx;
+var FS_stdin_getChar_buffer = [];
+
+var lengthBytesUTF8 = (str) => {
+    var len = 0;
+    for (var i = 0; i < str.length; ++i) {
+      // Gotcha: charCodeAt returns a 16-bit word that is a UTF-16 encoded code
+      // unit, not a Unicode code point of the character! So decode
+      // UTF16->UTF32->UTF8.
+      // See http://unicode.org/faq/utf_bom.html#utf16-3
+      var c = str.charCodeAt(i); // possibly a lead surrogate
+      if (c <= 0x7F) {
+        len++;
+      } else if (c <= 0x7FF) {
+        len += 2;
+      } else if (c >= 0xD800 && c <= 0xDFFF) {
+        len += 4; ++i;
+      } else {
+        len += 3;
+      }
+    }
+    return len;
   };
 
+var stringToUTF8Array = (str, heap, outIdx, maxBytesToWrite) => {
+    assert(typeof str === 'string', `stringToUTF8Array expects a string (got ${typeof str})`);
+    // Parameter maxBytesToWrite is not optional. Negative values, 0, null,
+    // undefined and false each don't write out any bytes.
+    if (!(maxBytesToWrite > 0))
+      return 0;
 
-  /**
-   * Given a pointer 'idx' to a null-terminated UTF8-encoded string in the given
-   * array that contains uint8 values, returns a copy of that string as a
-   * Javascript String object.
-   * heapOrArray is either a regular array, or a JavaScript typed array view.
-   * @param {number=} idx
-   * @param {number=} maxBytesToRead
-   * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
-   * @return {string}
-   */
-  var UTF8ArrayToString = (heapOrArray, idx = 0, maxBytesToRead, ignoreNul) => {
-  
-      var endPtr = findStringEnd(heapOrArray, idx, maxBytesToRead, ignoreNul);
-  
-      // When using conditional TextDecoder, skip it for short strings as the overhead of the native call is not worth it.
-      if (endPtr - idx > 16 && heapOrArray.buffer && UTF8Decoder) {
-        return UTF8Decoder.decode(heapOrArray.subarray(idx, endPtr));
+    var startIdx = outIdx;
+    var endIdx = outIdx + maxBytesToWrite - 1; // -1 for string null terminator.
+    for (var i = 0; i < str.length; ++i) {
+      // For UTF8 byte structure, see http://en.wikipedia.org/wiki/UTF-8#Description
+      // and https://www.ietf.org/rfc/rfc2279.txt
+      // and https://tools.ietf.org/html/rfc3629
+      var u = str.codePointAt(i);
+      if (u <= 0x7F) {
+        if (outIdx >= endIdx) break;
+        heap[outIdx++] = u;
+      } else if (u <= 0x7FF) {
+        if (outIdx + 1 >= endIdx) break;
+        heap[outIdx++] = 0xC0 | (u >> 6);
+        heap[outIdx++] = 0x80 | (u & 63);
+      } else if (u <= 0xFFFF) {
+        if (outIdx + 2 >= endIdx) break;
+        heap[outIdx++] = 0xE0 | (u >> 12);
+        heap[outIdx++] = 0x80 | ((u >> 6) & 63);
+        heap[outIdx++] = 0x80 | (u & 63);
+      } else {
+        if (outIdx + 3 >= endIdx) break;
+        if (u > 0x10FFFF) warnOnce(`Invalid Unicode code point ${ptrToString(u)} encountered when serializing a JS string to a UTF-8 string in wasm memory! (Valid unicode code points should be in range 0-0x10FFFF).`);
+        heap[outIdx++] = 0xF0 | (u >> 18);
+        heap[outIdx++] = 0x80 | ((u >> 12) & 63);
+        heap[outIdx++] = 0x80 | ((u >> 6) & 63);
+        heap[outIdx++] = 0x80 | (u & 63);
+        // Gotcha: if codePoint is over 0xFFFF, it is represented as a surrogate pair in UTF-16.
+        // We need to manually skip over the second code unit for correct iteration.
+        i++;
       }
-      var str = '';
-      while (idx < endPtr) {
-        // For UTF8 byte structure, see:
-        // http://en.wikipedia.org/wiki/UTF-8#Description
-        // https://www.ietf.org/rfc/rfc2279.txt
-        // https://tools.ietf.org/html/rfc3629
-        var u0 = heapOrArray[idx++];
-        if (!(u0 & 0x80)) { str += String.fromCharCode(u0); continue; }
-        var u1 = heapOrArray[idx++] & 63;
-        if ((u0 & 0xE0) == 0xC0) { str += String.fromCharCode(((u0 & 31) << 6) | u1); continue; }
-        var u2 = heapOrArray[idx++] & 63;
-        if ((u0 & 0xF0) == 0xE0) {
-          u0 = ((u0 & 15) << 12) | (u1 << 6) | u2;
-        } else {
-          if ((u0 & 0xF8) != 0xF0) warnOnce('Invalid UTF-8 leading byte ' + ptrToString(u0) + ' encountered when deserializing a UTF-8 string in wasm memory to a JS string!');
-          u0 = ((u0 & 7) << 18) | (u1 << 12) | (u2 << 6) | (heapOrArray[idx++] & 63);
-        }
-  
-        if (u0 < 0x10000) {
-          str += String.fromCharCode(u0);
-        } else {
-          var ch = u0 - 0x10000;
-          str += String.fromCharCode(0xD800 | (ch >> 10), 0xDC00 | (ch & 0x3FF));
-        }
-      }
-      return str;
-    };
-  
-  var FS_stdin_getChar_buffer = [];
-  
-  var lengthBytesUTF8 = (str) => {
-      var len = 0;
-      for (var i = 0; i < str.length; ++i) {
-        // Gotcha: charCodeAt returns a 16-bit word that is a UTF-16 encoded code
-        // unit, not a Unicode code point of the character! So decode
-        // UTF16->UTF32->UTF8.
-        // See http://unicode.org/faq/utf_bom.html#utf16-3
-        var c = str.charCodeAt(i); // possibly a lead surrogate
-        if (c <= 0x7F) {
-          len++;
-        } else if (c <= 0x7FF) {
-          len += 2;
-        } else if (c >= 0xD800 && c <= 0xDFFF) {
-          len += 4; ++i;
-        } else {
-          len += 3;
-        }
-      }
-      return len;
-    };
-  
-  var stringToUTF8Array = (str, heap, outIdx, maxBytesToWrite) => {
-      assert(typeof str === 'string', `stringToUTF8Array expects a string (got ${typeof str})`);
-      // Parameter maxBytesToWrite is not optional. Negative values, 0, null,
-      // undefined and false each don't write out any bytes.
-      if (!(maxBytesToWrite > 0))
-        return 0;
-  
-      var startIdx = outIdx;
-      var endIdx = outIdx + maxBytesToWrite - 1; // -1 for string null terminator.
-      for (var i = 0; i < str.length; ++i) {
-        // For UTF8 byte structure, see http://en.wikipedia.org/wiki/UTF-8#Description
-        // and https://www.ietf.org/rfc/rfc2279.txt
-        // and https://tools.ietf.org/html/rfc3629
-        var u = str.codePointAt(i);
-        if (u <= 0x7F) {
-          if (outIdx >= endIdx) break;
-          heap[outIdx++] = u;
-        } else if (u <= 0x7FF) {
-          if (outIdx + 1 >= endIdx) break;
-          heap[outIdx++] = 0xC0 | (u >> 6);
-          heap[outIdx++] = 0x80 | (u & 63);
-        } else if (u <= 0xFFFF) {
-          if (outIdx + 2 >= endIdx) break;
-          heap[outIdx++] = 0xE0 | (u >> 12);
-          heap[outIdx++] = 0x80 | ((u >> 6) & 63);
-          heap[outIdx++] = 0x80 | (u & 63);
-        } else {
-          if (outIdx + 3 >= endIdx) break;
-          if (u > 0x10FFFF) warnOnce('Invalid Unicode code point ' + ptrToString(u) + ' encountered when serializing a JS string to a UTF-8 string in wasm memory! (Valid unicode code points should be in range 0-0x10FFFF).');
-          heap[outIdx++] = 0xF0 | (u >> 18);
-          heap[outIdx++] = 0x80 | ((u >> 12) & 63);
-          heap[outIdx++] = 0x80 | ((u >> 6) & 63);
-          heap[outIdx++] = 0x80 | (u & 63);
-          // Gotcha: if codePoint is over 0xFFFF, it is represented as a surrogate pair in UTF-16.
-          // We need to manually skip over the second code unit for correct iteration.
-          i++;
-        }
-      }
-      // Null-terminate the pointer to the buffer.
-      heap[outIdx] = 0;
-      return outIdx - startIdx;
-    };
-  /** @type {function(string, boolean=, number=)} */
+    }
+    // Null-terminate the pointer to the buffer.
+    heap[outIdx] = 0;
+    return outIdx - startIdx;
+  };
+/** @type {function(string, boolean=, number=)} */
   var intArrayFromString = (stringy, dontAddNull, length) => {
       var len = length > 0 ? length : lengthBytesUTF8(stringy)+1;
       var u8array = new Array(len);
@@ -1736,11 +1763,14 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         } else if (FS.isFile(node.mode)) {
           node.node_ops = MEMFS.ops_table.file.node;
           node.stream_ops = MEMFS.ops_table.file.stream;
-          node.usedBytes = 0; // The actual number of bytes used in the typed array, as opposed to contents.length which gives the whole capacity.
-          // When the byte data of the file is populated, this will point to either a typed array, or a normal JS array. Typed arrays are preferred
-          // for performance, and used by default. However, typed arrays are not resizable like normal JS arrays are, so there is a small disk size
-          // penalty involved for appending file writes that continuously grow a file similar to std::vector capacity vs used -scheme.
-          node.contents = null; 
+          // The actual number of bytes used in the typed array, as opposed to
+          // contents.length which gives the whole capacity.
+          node.usedBytes = 0;
+          // The byte data of the file is stored in a typed array.
+          // Note: typed arrays are not resizable like normal JS arrays are, so
+          // there is a small penalty involved for appending file writes that
+          // continuously grow a file similar to std::vector capacity vs used.
+          node.contents = MEMFS.emptyFileContents ??= new Uint8Array(0);
         } else if (FS.isLink(node.mode)) {
           node.node_ops = MEMFS.ops_table.link.node;
           node.stream_ops = MEMFS.ops_table.link.stream;
@@ -1757,36 +1787,30 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         return node;
       },
   getFileDataAsTypedArray(node) {
-        if (!node.contents) return new Uint8Array(0);
-        if (node.contents.subarray) return node.contents.subarray(0, node.usedBytes); // Make sure to not return excess unused bytes.
-        return new Uint8Array(node.contents);
+        assert(FS.isFile(node.mode), 'getFileDataAsTypedArray called on non-file');
+        return node.contents.subarray(0, node.usedBytes); // Make sure to not return excess unused bytes.
       },
   expandFileStorage(node, newCapacity) {
-        var prevCapacity = node.contents ? node.contents.length : 0;
+        var prevCapacity = node.contents.length;
         if (prevCapacity >= newCapacity) return; // No need to expand, the storage was already large enough.
-        // Don't expand strictly to the given requested limit if it's only a very small increase, but instead geometrically grow capacity.
-        // For small filesizes (<1MB), perform size*2 geometric increase, but for large sizes, do a much more conservative size*1.125 increase to
-        // avoid overshooting the allocation cap by a very large margin.
+        // Don't expand strictly to the given requested limit if it's only a very
+        // small increase, but instead geometrically grow capacity.
+        // For small filesizes (<1MB), perform size*2 geometric increase, but for
+        // large sizes, do a much more conservative size*1.125 increase to avoid
+        // overshooting the allocation cap by a very large margin.
         var CAPACITY_DOUBLING_MAX = 1024 * 1024;
         newCapacity = Math.max(newCapacity, (prevCapacity * (prevCapacity < CAPACITY_DOUBLING_MAX ? 2.0 : 1.125)) >>> 0);
-        if (prevCapacity != 0) newCapacity = Math.max(newCapacity, 256); // At minimum allocate 256b for each file when expanding.
-        var oldContents = node.contents;
+        if (prevCapacity) newCapacity = Math.max(newCapacity, 256); // At minimum allocate 256b for each file when expanding.
+        var oldContents = MEMFS.getFileDataAsTypedArray(node);
         node.contents = new Uint8Array(newCapacity); // Allocate new storage.
-        if (node.usedBytes > 0) node.contents.set(oldContents.subarray(0, node.usedBytes), 0); // Copy old data over to the new storage.
+        node.contents.set(oldContents);
       },
   resizeFileStorage(node, newSize) {
         if (node.usedBytes == newSize) return;
-        if (newSize == 0) {
-          node.contents = null; // Fully decommit when requesting a resize to zero.
-          node.usedBytes = 0;
-        } else {
-          var oldContents = node.contents;
-          node.contents = new Uint8Array(newSize); // Allocate new storage.
-          if (oldContents) {
-            node.contents.set(oldContents.subarray(0, Math.min(newSize, node.usedBytes))); // Copy old data over to the new storage.
-          }
-          node.usedBytes = newSize;
-        }
+        var oldContents = node.contents;
+        node.contents = new Uint8Array(newSize); // Allocate new storage.
+        node.contents.set(oldContents.subarray(0, Math.min(newSize, node.usedBytes))); // Copy old data over to the new storage.
+        node.usedBytes = newSize;
       },
   node_ops:{
   getattr(node) {
@@ -1886,48 +1910,29 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
           if (position >= stream.node.usedBytes) return 0;
           var size = Math.min(stream.node.usedBytes - position, length);
           assert(size >= 0);
-          if (size > 8 && contents.subarray) { // non-trivial, and typed array
-            buffer.set(contents.subarray(position, position + size), offset);
-          } else {
-            for (var i = 0; i < size; i++) buffer[offset + i] = contents[position + i];
-          }
+          buffer.set(contents.subarray(position, position + size), offset);
           return size;
         },
   write(stream, buffer, offset, length, position, canOwn) {
-          // The data buffer should be a typed array view
-          assert(!(buffer instanceof ArrayBuffer));
+          assert(buffer.subarray, 'FS.write expects a TypedArray');
   
           if (!length) return 0;
           var node = stream.node;
           node.mtime = node.ctime = Date.now();
   
-          if (buffer.subarray && (!node.contents || node.contents.subarray)) { // This write is from a typed array to a typed array?
-            if (canOwn) {
-              assert(position === 0, 'canOwn must imply no weird position inside the file');
-              node.contents = buffer.subarray(offset, offset + length);
-              node.usedBytes = length;
-              return length;
-            } else if (node.usedBytes === 0 && position === 0) { // If this is a simple first write to an empty file, do a fast set since we don't need to care about old data.
-              node.contents = buffer.slice(offset, offset + length);
-              node.usedBytes = length;
-              return length;
-            } else if (position + length <= node.usedBytes) { // Writing to an already allocated and used subrange of the file?
-              node.contents.set(buffer.subarray(offset, offset + length), position);
-              return length;
-            }
-          }
-  
-          // Appending to an existing file and we need to reallocate, or source data did not come as a typed array.
-          MEMFS.expandFileStorage(node, position+length);
-          if (node.contents.subarray && buffer.subarray) {
+          if (canOwn) {
+            assert(position === 0, 'canOwn must imply no weird position inside the file');
+            node.contents = buffer.subarray(offset, offset + length);
+            node.usedBytes = length;
+          } else if (node.usedBytes === 0 && position === 0) { // If this is a simple first write to an empty file, do a fast set since we don't need to care about old data.
+            node.contents = buffer.slice(offset, offset + length);
+            node.usedBytes = length;
+          } else {
+            MEMFS.expandFileStorage(node, position+length);
             // Use typed array write which is available.
             node.contents.set(buffer.subarray(offset, offset + length), position);
-          } else {
-            for (var i = 0; i < length; i++) {
-             node.contents[position + i] = buffer[offset + i]; // Or fall back to manual write if not.
-            }
+            node.usedBytes = Math.max(node.usedBytes, position + length);
           }
-          node.usedBytes = Math.max(node.usedBytes, position + length);
           return length;
         },
   llseek(stream, offset, whence) {
@@ -1952,7 +1957,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
           var allocated;
           var contents = stream.node.contents;
           // Only make a new copy when MAP_PRIVATE is specified.
-          if (!(flags & 2) && contents && contents.buffer === HEAP8.buffer) {
+          if (!(flags & 2) && contents.buffer === HEAP8.buffer) {
             // We can't emulate MAP_SHARED when the file is not backed by the
             // buffer we're mapping to (e.g. the HEAP buffer).
             allocated = false;
@@ -1986,6 +1991,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
   };
   
   var FS_modeStringToFlags = (str) => {
+      if (typeof str != 'string') return str;
       var flagModes = {
         'r': 0,
         'r+': 2,
@@ -1999,6 +2005,16 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         throw new Error(`Unknown file open mode: ${str}`);
       }
       return flags;
+    };
+  
+  var FS_fileDataToTypedArray = (data) => {
+      if (typeof data == 'string') {
+        data = intArrayFromString(data, true);
+      }
+      if (!data.subarray) {
+        data = new Uint8Array(data);
+      }
+      return data;
     };
   
   var FS_getMode = (canRead, canWrite) => {
@@ -2176,7 +2192,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
           var stat;
   
           try {
-            stat = FS.stat(path);
+            stat = FS.lstat(path);
           } catch (e) {
             return callback(e);
           }
@@ -2228,13 +2244,15 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         try {
           var lookup = FS.lookupPath(path);
           node = lookup.node;
-          stat = FS.stat(path);
+          stat = FS.lstat(path);
         } catch (e) {
           return callback(e);
         }
   
         if (FS.isDir(stat.mode)) {
           return callback(null, { 'timestamp': stat.mtime, 'mode': stat.mode });
+        } else if (FS.isLink(stat.mode)) {
+          return callback(null, { 'timestamp': stat.mtime, 'mode': stat.mode, 'link': node.link, });
         } else if (FS.isFile(stat.mode)) {
           // Performance consideration: storing a normal JavaScript array to a IndexedDB is much slower than storing a typed array.
           // Therefore always convert the file contents to a typed array first before writing the data to IndexedDB.
@@ -2248,6 +2266,8 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         try {
           if (FS.isDir(entry['mode'])) {
             FS.mkdirTree(path, entry['mode']);
+          } else if (FS.isLink(entry['mode'])) {
+            FS.symlink(entry['link'], path);
           } else if (FS.isFile(entry['mode'])) {
             FS.writeFile(path, entry['contents'], { canOwn: true });
           } else {
@@ -2264,11 +2284,11 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
       },
   removeLocalEntry:(path, callback) => {
         try {
-          var stat = FS.stat(path);
+          var stat = FS.lstat(path);
   
           if (FS.isDir(stat.mode)) {
             FS.rmdir(path);
-          } else if (FS.isFile(stat.mode)) {
+          } else {
             FS.unlink(path);
           }
         } catch (e) {
@@ -2383,24 +2403,6 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
   };
   
   
-  
-    /**
-   * Given a pointer 'ptr' to a null-terminated UTF8-encoded string in the
-   * emscripten HEAP, returns a copy of that string as a Javascript String object.
-   *
-   * @param {number} ptr
-   * @param {number=} maxBytesToRead - An optional length that specifies the
-   *   maximum number of bytes to read. You can omit this parameter to scan the
-   *   string until the first 0 byte. If maxBytesToRead is passed, and the string
-   *   at [ptr, ptr+maxBytesToReadr[ contains a null byte in the middle, then the
-   *   string will cut short at that byte index.
-   * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
-   * @return {string}
-   */
-  var UTF8ToString = (ptr, maxBytesToRead, ignoreNul) => {
-      assert(typeof ptr == 'number', `UTF8ToString expects a number (got ${typeof ptr})`);
-      return ptr ? UTF8ArrayToString(HEAPU8, ptr, maxBytesToRead, ignoreNul) : '';
-    };
   
   var strError = (errno) => UTF8ToString(_strerror(errno));
   
@@ -3514,7 +3516,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         if (path === "") {
           throw new FS.ErrnoError(44);
         }
-        flags = typeof flags == 'string' ? FS_modeStringToFlags(flags) : flags;
+        flags = FS_modeStringToFlags(flags);
         if ((flags & 64)) {
           mode = (mode & 4095) | 32768;
         } else {
@@ -3665,6 +3667,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
       },
   write(stream, buffer, offset, length, position, canOwn) {
         assert(offset >= 0);
+        assert(buffer.subarray, 'FS.write expects a TypedArray');
         if (length < 0 || position < 0) {
           throw new FS.ErrnoError(28);
         }
@@ -3750,14 +3753,8 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
   writeFile(path, data, opts = {}) {
         opts.flags = opts.flags || 577;
         var stream = FS.open(path, opts.flags, opts.mode);
-        if (typeof data == 'string') {
-          data = new Uint8Array(intArrayFromString(data, true));
-        }
-        if (ArrayBuffer.isView(data)) {
-          FS.write(stream, data, 0, data.byteLength, undefined, opts.canOwn);
-        } else {
-          abort('Unsupported data type');
-        }
+        data = FS_fileDataToTypedArray(data);
+        FS.write(stream, data, 0, data.byteLength, undefined, opts.canOwn);
         FS.close(stream);
       },
   cwd:() => FS.currentPath,
@@ -3983,11 +3980,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         var mode = FS_getMode(canRead, canWrite);
         var node = FS.create(path, mode);
         if (data) {
-          if (typeof data == 'string') {
-            var arr = new Array(data.length);
-            for (var i = 0, len = data.length; i < len; ++i) arr[i] = data.charCodeAt(i);
-            data = arr;
-          }
+          data = FS_fileDataToTypedArray(data);
           // make sure we can write to the file
           FS.chmod(node, mode | 146);
           var stream = FS.open(node, 577);
@@ -4222,24 +4215,6 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
         node.stream_ops = stream_ops;
         return node;
       },
-  absolutePath() {
-        abort('FS.absolutePath has been removed; use PATH_FS.resolve instead');
-      },
-  createFolder() {
-        abort('FS.createFolder has been removed; use FS.mkdir instead');
-      },
-  createLink() {
-        abort('FS.createLink has been removed; use FS.symlink instead');
-      },
-  joinPath() {
-        abort('FS.joinPath has been removed; use PATH.join instead');
-      },
-  mmapAlloc() {
-        abort('FS.mmapAlloc has been replaced by the top level function mmapAlloc');
-      },
-  standardizePath() {
-        abort('FS.standardizePath has been removed; use PATH.normalize instead');
-      },
   };
   
   var SYSCALLS = {
@@ -4367,6 +4342,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_fstat64(fd, buf) {
   try {
@@ -4377,6 +4353,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   var stringToUTF8 = (str, outPtr, maxBytesToWrite) => {
       assert(typeof maxBytesToWrite == 'number', 'stringToUTF8(str, outPtr, maxBytesToWrite) is missing the third parameter that specifies the length of the output buffer!');
@@ -4441,6 +4418,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   
   function ___syscall_ioctl(fd, op, varargs) {
@@ -4538,6 +4516,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_lstat64(path, buf) {
   try {
@@ -4549,6 +4528,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_mkdirat(dirfd, path, mode) {
   try {
@@ -4562,6 +4542,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_newfstatat(dirfd, path, buf, flags) {
   try {
@@ -4578,6 +4559,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   
   function ___syscall_openat(dirfd, path, flags, varargs) {
@@ -4593,6 +4575,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_renameat(olddirfd, oldpath, newdirfd, newpath) {
   try {
@@ -4608,6 +4591,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_rmdir(path) {
   try {
@@ -4620,6 +4604,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_stat64(path, buf) {
   try {
@@ -4631,6 +4616,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   function ___syscall_unlinkat(dirfd, path, flags) {
   try {
@@ -4650,12 +4636,13 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return -e.errno;
   }
   }
+  
 
   var __abort_js = () =>
       abort('native code called abort()');
 
   var __emscripten_throw_longjmp = () => {
-      throw Infinity;
+      throw new EmscriptenSjLj;
     };
 
   var INT53_MAX = 9007199254740992;
@@ -4677,6 +4664,45 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
       var start = Date.UTC(date.getUTCFullYear(), 0, 1, 0, 0, 0, 0);
       var yday = ((date.getTime() - start) / (1000 * 60 * 60 * 24))|0;
       HEAP32[(((tmPtr)+(28))>>2)] = yday;
+    ;
+  }
+
+  var isLeapYear = (year) => year%4 === 0 && (year%100 !== 0 || year%400 === 0);
+  
+  var MONTH_DAYS_LEAP_CUMULATIVE = [0,31,60,91,121,152,182,213,244,274,305,335];
+  
+  var MONTH_DAYS_REGULAR_CUMULATIVE = [0,31,59,90,120,151,181,212,243,273,304,334];
+  var ydayFromDate = (date) => {
+      var leap = isLeapYear(date.getFullYear());
+      var monthDaysCumulative = (leap ? MONTH_DAYS_LEAP_CUMULATIVE : MONTH_DAYS_REGULAR_CUMULATIVE);
+      var yday = monthDaysCumulative[date.getMonth()] + date.getDate() - 1; // -1 since it's days since Jan 1
+  
+      return yday;
+    };
+  
+  function __localtime_js(time, tmPtr) {
+    time = bigintToI53Checked(time);
+  
+  
+      var date = new Date(time*1000);
+      HEAP32[((tmPtr)>>2)] = date.getSeconds();
+      HEAP32[(((tmPtr)+(4))>>2)] = date.getMinutes();
+      HEAP32[(((tmPtr)+(8))>>2)] = date.getHours();
+      HEAP32[(((tmPtr)+(12))>>2)] = date.getDate();
+      HEAP32[(((tmPtr)+(16))>>2)] = date.getMonth();
+      HEAP32[(((tmPtr)+(20))>>2)] = date.getFullYear()-1900;
+      HEAP32[(((tmPtr)+(24))>>2)] = date.getDay();
+  
+      var yday = ydayFromDate(date)|0;
+      HEAP32[(((tmPtr)+(28))>>2)] = yday;
+      HEAP32[(((tmPtr)+(36))>>2)] = -(date.getTimezoneOffset() * 60);
+  
+      // Attention: DST is in December in South, and some regions don't have DST at all.
+      var start = new Date(date.getFullYear(), 0, 1);
+      var summerOffset = new Date(date.getFullYear(), 6, 1).getTimezoneOffset();
+      var winterOffset = start.getTimezoneOffset();
+      var dst = (summerOffset != winterOffset && date.getTimezoneOffset() == Math.min(winterOffset, summerOffset))|0;
+      HEAP32[(((tmPtr)+(32))>>2)] = dst;
     ;
   }
 
@@ -6416,7 +6442,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
           argsList
         });
   
-        JSEvents.deferredCalls.sort((x,y) => x.precedence < y.precedence);
+        JSEvents.deferredCalls.sort((x,y) => x.precedence - y.precedence);
       },
   removeDeferredCalls(targetFunction) {
         JSEvents.deferredCalls = JSEvents.deferredCalls.filter((call) => call.targetFunction != targetFunction);
@@ -9203,6 +9229,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return e.errno;
   }
   }
+  
 
   /** @param {number=} offset */
   var doReadv = (stream, iov, iovcnt, offset) => {
@@ -9234,6 +9261,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return e.errno;
   }
   }
+  
 
   
   function _fd_seek(fd, offset, whence, newOffset) {
@@ -9288,6 +9316,7 @@ var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
     return e.errno;
   }
   }
+  
 
 
 
@@ -9756,9 +9785,9 @@ if (Module['wasmBinary']) wasmBinary = Module['wasmBinary'];
   'idsToPromises',
   'makePromiseCallback',
   'findMatchingCatch',
+  'incrementUncaughtExceptionCount',
+  'decrementUncaughtExceptionCount',
   'Browser_asyncPrepareDataCounter',
-  'isLeapYear',
-  'ydayFromDate',
   'arraySum',
   'addDays',
   'getSocketFromFD',
@@ -9787,16 +9816,6 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'callMain',
   'abort',
   'wasmExports',
-  'HEAPF32',
-  'HEAPF64',
-  'HEAP8',
-  'HEAPU8',
-  'HEAP16',
-  'HEAPU16',
-  'HEAP32',
-  'HEAPU32',
-  'HEAP64',
-  'HEAPU64',
   'writeStackCookie',
   'checkStackCookie',
   'writeI53ToI64',
@@ -9805,6 +9824,16 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'INT53_MAX',
   'INT53_MIN',
   'bigintToI53Checked',
+  'HEAP8',
+  'HEAPU8',
+  'HEAP16',
+  'HEAPU16',
+  'HEAP32',
+  'HEAPU32',
+  'HEAPF32',
+  'HEAPF64',
+  'HEAP64',
+  'HEAPU64',
   'stackSave',
   'stackRestore',
   'stackAlloc',
@@ -9909,7 +9938,6 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'emClearImmediate',
   'promiseMap',
   'uncaughtExceptionCount',
-  'exceptionLast',
   'exceptionCaught',
   'ExceptionInfo',
   'Browser',
@@ -9923,11 +9951,14 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'MONTH_DAYS_LEAP',
   'MONTH_DAYS_REGULAR_CUMULATIVE',
   'MONTH_DAYS_LEAP_CUMULATIVE',
+  'isLeapYear',
+  'ydayFromDate',
   'SYSCALLS',
   'preloadPlugins',
   'FS_createPreloadedFile',
   'FS_modeStringToFlags',
   'FS_getMode',
+  'FS_fileDataToTypedArray',
   'FS_stdin_getChar_buffer',
   'FS_stdin_getChar',
   'FS_readFile',
@@ -10035,12 +10066,6 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'FS_analyzePath',
   'FS_createFile',
   'FS_forceLoadFile',
-  'FS_absolutePath',
-  'FS_createFolder',
-  'FS_createLink',
-  'FS_joinPath',
-  'FS_mmapAlloc',
-  'FS_standardizePath',
   'MEMFS',
   'TTY',
   'PIPEFS',
@@ -10093,31 +10118,35 @@ function checkIncomingModuleAPI() {
   ignoredModuleProp('fetchSettings');
   ignoredModuleProp('logReadFiles');
   ignoredModuleProp('loadSplitModule');
+  ignoredModuleProp('onMalloc');
+  ignoredModuleProp('onRealloc');
+  ignoredModuleProp('onFree');
+  ignoredModuleProp('onSbrkGrow');
 }
 var ASM_CONSTS = {
-  657032: () => { var context; try { context = new AudioContext(); } catch (e) { context = new webkitAudioContext(); } return context.sampleRate; },  
- 657164: ($0) => { _pd_api_file_init_emscripten_done = 0; FS.mkdir('/saveddata.' + UTF8ToString($0)); FS.mount(IDBFS, {}, '/saveddata.' + UTF8ToString($0)); FS.syncfs(true, function (err) { if (err) console.log(err); _pd_api_file_init_emscripten_done = 1; }); },  
- 657409: () => { return _pd_api_file_init_emscripten_done },  
- 657450: () => { return _pd_api_file_init_emscripten_done },  
- 657491: () => { _pd_api_file_sync_emscripten_done = 0; FS.syncfs(false, function (err) { if (err) console.log("Error syncing files: " + err); _pd_api_file_sync_emscripten_done = 1; }); },  
- 657660: () => { return _pd_api_file_sync_emscripten_done },  
- 657701: () => { return _pd_api_file_sync_emscripten_done },  
- 657742: ($0) => { var str = UTF8ToString($0) + '\n\n' + 'Abort/Retry/Ignore/AlwaysIgnore? [ariA] :'; var reply = window.prompt(str, "i"); if (reply === null) { reply = "i"; } return reply.length === 1 ? reply.charCodeAt(0) : -1; },  
- 657957: () => { if (typeof(AudioContext) !== 'undefined') { return true; } else if (typeof(webkitAudioContext) !== 'undefined') { return true; } return false; },  
- 658104: () => { if ((typeof(navigator.mediaDevices) !== 'undefined') && (typeof(navigator.mediaDevices.getUserMedia) !== 'undefined')) { return true; } else if (typeof(navigator.webkitGetUserMedia) !== 'undefined') { return true; } return false; },  
- 658338: ($0) => { if(typeof(Module['SDL2']) === 'undefined') { Module['SDL2'] = {}; } var SDL2 = Module['SDL2']; if (!$0) { SDL2.audio = {}; } else { SDL2.capture = {}; } if (!SDL2.audioContext) { if (typeof(AudioContext) !== 'undefined') { SDL2.audioContext = new AudioContext(); } else if (typeof(webkitAudioContext) !== 'undefined') { SDL2.audioContext = new webkitAudioContext(); } if (SDL2.audioContext) { if ((typeof navigator.userActivation) === 'undefined') { autoResumeAudioContext(SDL2.audioContext); } } } return SDL2.audioContext === undefined ? -1 : 0; },  
- 658890: () => { var SDL2 = Module['SDL2']; return SDL2.audioContext.sampleRate; },  
- 658958: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; var have_microphone = function(stream) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); SDL2.capture.silenceTimer = undefined; SDL2.capture.silenceBuffer = undefined } SDL2.capture.mediaStreamNode = SDL2.audioContext.createMediaStreamSource(stream); SDL2.capture.scriptProcessorNode = SDL2.audioContext.createScriptProcessor($1, $0, 1); SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) { if ((SDL2 === undefined) || (SDL2.capture === undefined)) { return; } audioProcessingEvent.outputBuffer.getChannelData(0).fill(0.0); SDL2.capture.currentCaptureBuffer = audioProcessingEvent.inputBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.mediaStreamNode.connect(SDL2.capture.scriptProcessorNode); SDL2.capture.scriptProcessorNode.connect(SDL2.audioContext.destination); SDL2.capture.stream = stream; }; var no_microphone = function(error) { }; SDL2.capture.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.capture.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { SDL2.capture.currentCaptureBuffer = SDL2.capture.silenceBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); if ((navigator.mediaDevices !== undefined) && (navigator.mediaDevices.getUserMedia !== undefined)) { navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(have_microphone).catch(no_microphone); } else if (navigator.webkitGetUserMedia !== undefined) { navigator.webkitGetUserMedia({ audio: true, video: false }, have_microphone, no_microphone); } },  
- 660651: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; SDL2.audio.scriptProcessorNode = SDL2.audioContext['createScriptProcessor']($1, 0, $0); SDL2.audio.scriptProcessorNode['onaudioprocess'] = function (e) { if ((SDL2 === undefined) || (SDL2.audio === undefined)) { return; } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); SDL2.audio.silenceTimer = undefined; SDL2.audio.silenceBuffer = undefined; } SDL2.audio.currentOutputBuffer = e['outputBuffer']; dynCall('vp', $2, [$3]); }; SDL2.audio.scriptProcessorNode['connect'](SDL2.audioContext['destination']); if (SDL2.audioContext.state === 'suspended') { SDL2.audio.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.audio.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { if ((typeof navigator.userActivation) !== 'undefined') { if (navigator.userActivation.hasBeenActive) { SDL2.audioContext.resume(); } } SDL2.audio.currentOutputBuffer = SDL2.audio.silenceBuffer; dynCall('vp', $2, [$3]); SDL2.audio.currentOutputBuffer = undefined; }; SDL2.audio.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); } },  
- 661826: ($0, $1) => { var SDL2 = Module['SDL2']; var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.capture.currentCaptureBuffer.getChannelData(c); if (channelData.length != $1) { throw 'Web Audio capture buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } if (numChannels == 1) { for (var j = 0; j < $1; ++j) { setValue($0 + (j * 4), channelData[j], 'float'); } } else { for (var j = 0; j < $1; ++j) { setValue($0 + (((j * numChannels) + c) * 4), channelData[j], 'float'); } } } },  
- 662431: ($0, $1) => { var SDL2 = Module['SDL2']; var buf = $0 >>> 2; var numChannels = SDL2.audio.currentOutputBuffer['numberOfChannels']; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.audio.currentOutputBuffer['getChannelData'](c); if (channelData.length != $1) { throw 'Web Audio output buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } for (var j = 0; j < $1; ++j) { channelData[j] = HEAPF32[buf + (j*numChannels + c)]; } } },  
- 662920: ($0) => { var SDL2 = Module['SDL2']; if ($0) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); } if (SDL2.capture.stream !== undefined) { var tracks = SDL2.capture.stream.getAudioTracks(); for (var i = 0; i < tracks.length; i++) { SDL2.capture.stream.removeTrack(tracks[i]); } } if (SDL2.capture.scriptProcessorNode !== undefined) { SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) {}; SDL2.capture.scriptProcessorNode.disconnect(); } if (SDL2.capture.mediaStreamNode !== undefined) { SDL2.capture.mediaStreamNode.disconnect(); } SDL2.capture = undefined; } else { if (SDL2.audio.scriptProcessorNode != undefined) { SDL2.audio.scriptProcessorNode.disconnect(); } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); } SDL2.audio = undefined; } if ((SDL2.audioContext !== undefined) && (SDL2.audio === undefined) && (SDL2.capture === undefined)) { SDL2.audioContext.close(); SDL2.audioContext = undefined; } },  
- 663926: ($0, $1, $2) => { var w = $0; var h = $1; var pixels = $2; if (!Module['SDL2']) Module['SDL2'] = {}; var SDL2 = Module['SDL2']; if (SDL2.ctxCanvas !== Module['canvas']) { SDL2.ctx = Browser.createContext(Module['canvas'], false, true); SDL2.ctxCanvas = Module['canvas']; } if (SDL2.w !== w || SDL2.h !== h || SDL2.imageCtx !== SDL2.ctx) { SDL2.image = SDL2.ctx.createImageData(w, h); SDL2.w = w; SDL2.h = h; SDL2.imageCtx = SDL2.ctx; } var data = SDL2.image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = 0xff; src++; dst += 4; } } else { if (SDL2.data32Data !== data) { SDL2.data32 = new Int32Array(data.buffer); SDL2.data8 = new Uint8Array(data.buffer); SDL2.data32Data = data; } var data32 = SDL2.data32; num = data32.length; data32.set(HEAP32.subarray(src, src + num)); var data8 = SDL2.data8; var i = 3; var j = i + 4*num; if (num % 8 == 0) { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; } } else { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; } } } SDL2.ctx.putImageData(SDL2.image, 0, 0); },  
- 665392: ($0, $1, $2, $3, $4) => { var w = $0; var h = $1; var hot_x = $2; var hot_y = $3; var pixels = $4; var canvas = document.createElement("canvas"); canvas.width = w; canvas.height = h; var ctx = canvas.getContext("2d"); var image = ctx.createImageData(w, h); var data = image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = (val >> 24) & 0xff; src++; dst += 4; } } else { var data32 = new Int32Array(data.buffer); num = data32.length; data32.set(HEAP32.subarray(src, src + num)); } ctx.putImageData(image, 0, 0); var url = hot_x === 0 && hot_y === 0 ? "url(" + canvas.toDataURL() + "), auto" : "url(" + canvas.toDataURL() + ") " + hot_x + " " + hot_y + ", auto"; var urlBuf = _malloc(url.length + 1); stringToUTF8(url, urlBuf, url.length + 1); return urlBuf; },  
- 666380: ($0) => { if (Module['canvas']) { Module['canvas'].style['cursor'] = UTF8ToString($0); } },  
- 666463: () => { if (Module['canvas']) { Module['canvas'].style['cursor'] = 'none'; } },  
- 666532: () => { return window.innerWidth; },  
- 666562: () => { return window.innerHeight; }
+  679908: () => { var context; try { context = new AudioContext(); } catch (e) { context = new webkitAudioContext(); } return context.sampleRate; },  
+ 680040: ($0) => { _pd_api_file_init_emscripten_done = 0; FS.mkdir('/saveddata.' + UTF8ToString($0)); FS.mount(IDBFS, {}, '/saveddata.' + UTF8ToString($0)); FS.syncfs(true, function (err) { if (err) console.log(err); _pd_api_file_init_emscripten_done = 1; }); },  
+ 680285: () => { return _pd_api_file_init_emscripten_done },  
+ 680326: () => { return _pd_api_file_init_emscripten_done },  
+ 680367: () => { _pd_api_file_sync_emscripten_done = 0; FS.syncfs(false, function (err) { if (err) console.log("Error syncing files: " + err); _pd_api_file_sync_emscripten_done = 1; }); },  
+ 680536: () => { return _pd_api_file_sync_emscripten_done },  
+ 680577: () => { return _pd_api_file_sync_emscripten_done },  
+ 680618: ($0) => { var str = UTF8ToString($0) + '\n\n' + 'Abort/Retry/Ignore/AlwaysIgnore? [ariA] :'; var reply = window.prompt(str, "i"); if (reply === null) { reply = "i"; } return reply.length === 1 ? reply.charCodeAt(0) : -1; },  
+ 680833: () => { if (typeof(AudioContext) !== 'undefined') { return true; } else if (typeof(webkitAudioContext) !== 'undefined') { return true; } return false; },  
+ 680980: () => { if ((typeof(navigator.mediaDevices) !== 'undefined') && (typeof(navigator.mediaDevices.getUserMedia) !== 'undefined')) { return true; } else if (typeof(navigator.webkitGetUserMedia) !== 'undefined') { return true; } return false; },  
+ 681214: ($0) => { if(typeof(Module['SDL2']) === 'undefined') { Module['SDL2'] = {}; } var SDL2 = Module['SDL2']; if (!$0) { SDL2.audio = {}; } else { SDL2.capture = {}; } if (!SDL2.audioContext) { if (typeof(AudioContext) !== 'undefined') { SDL2.audioContext = new AudioContext(); } else if (typeof(webkitAudioContext) !== 'undefined') { SDL2.audioContext = new webkitAudioContext(); } if (SDL2.audioContext) { if ((typeof navigator.userActivation) === 'undefined') { autoResumeAudioContext(SDL2.audioContext); } } } return SDL2.audioContext === undefined ? -1 : 0; },  
+ 681766: () => { var SDL2 = Module['SDL2']; return SDL2.audioContext.sampleRate; },  
+ 681834: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; var have_microphone = function(stream) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); SDL2.capture.silenceTimer = undefined; SDL2.capture.silenceBuffer = undefined } SDL2.capture.mediaStreamNode = SDL2.audioContext.createMediaStreamSource(stream); SDL2.capture.scriptProcessorNode = SDL2.audioContext.createScriptProcessor($1, $0, 1); SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) { if ((SDL2 === undefined) || (SDL2.capture === undefined)) { return; } audioProcessingEvent.outputBuffer.getChannelData(0).fill(0.0); SDL2.capture.currentCaptureBuffer = audioProcessingEvent.inputBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.mediaStreamNode.connect(SDL2.capture.scriptProcessorNode); SDL2.capture.scriptProcessorNode.connect(SDL2.audioContext.destination); SDL2.capture.stream = stream; }; var no_microphone = function(error) { }; SDL2.capture.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.capture.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { SDL2.capture.currentCaptureBuffer = SDL2.capture.silenceBuffer; dynCall('vp', $2, [$3]); }; SDL2.capture.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); if ((navigator.mediaDevices !== undefined) && (navigator.mediaDevices.getUserMedia !== undefined)) { navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(have_microphone).catch(no_microphone); } else if (navigator.webkitGetUserMedia !== undefined) { navigator.webkitGetUserMedia({ audio: true, video: false }, have_microphone, no_microphone); } },  
+ 683527: ($0, $1, $2, $3) => { var SDL2 = Module['SDL2']; SDL2.audio.scriptProcessorNode = SDL2.audioContext['createScriptProcessor']($1, 0, $0); SDL2.audio.scriptProcessorNode['onaudioprocess'] = function (e) { if ((SDL2 === undefined) || (SDL2.audio === undefined)) { return; } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); SDL2.audio.silenceTimer = undefined; SDL2.audio.silenceBuffer = undefined; } SDL2.audio.currentOutputBuffer = e['outputBuffer']; dynCall('vp', $2, [$3]); }; SDL2.audio.scriptProcessorNode['connect'](SDL2.audioContext['destination']); if (SDL2.audioContext.state === 'suspended') { SDL2.audio.silenceBuffer = SDL2.audioContext.createBuffer($0, $1, SDL2.audioContext.sampleRate); SDL2.audio.silenceBuffer.getChannelData(0).fill(0.0); var silence_callback = function() { if ((typeof navigator.userActivation) !== 'undefined') { if (navigator.userActivation.hasBeenActive) { SDL2.audioContext.resume(); } } SDL2.audio.currentOutputBuffer = SDL2.audio.silenceBuffer; dynCall('vp', $2, [$3]); SDL2.audio.currentOutputBuffer = undefined; }; SDL2.audio.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1000); } },  
+ 684702: ($0, $1) => { var SDL2 = Module['SDL2']; var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.capture.currentCaptureBuffer.getChannelData(c); if (channelData.length != $1) { throw 'Web Audio capture buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } if (numChannels == 1) { for (var j = 0; j < $1; ++j) { setValue($0 + (j * 4), channelData[j], 'float'); } } else { for (var j = 0; j < $1; ++j) { setValue($0 + (((j * numChannels) + c) * 4), channelData[j], 'float'); } } } },  
+ 685307: ($0, $1) => { var SDL2 = Module['SDL2']; var buf = $0 >>> 2; var numChannels = SDL2.audio.currentOutputBuffer['numberOfChannels']; for (var c = 0; c < numChannels; ++c) { var channelData = SDL2.audio.currentOutputBuffer['getChannelData'](c); if (channelData.length != $1) { throw 'Web Audio output buffer length mismatch! Destination size: ' + channelData.length + ' samples vs expected ' + $1 + ' samples!'; } for (var j = 0; j < $1; ++j) { channelData[j] = HEAPF32[buf + (j*numChannels + c)]; } } },  
+ 685796: ($0) => { var SDL2 = Module['SDL2']; if ($0) { if (SDL2.capture.silenceTimer !== undefined) { clearInterval(SDL2.capture.silenceTimer); } if (SDL2.capture.stream !== undefined) { var tracks = SDL2.capture.stream.getAudioTracks(); for (var i = 0; i < tracks.length; i++) { SDL2.capture.stream.removeTrack(tracks[i]); } } if (SDL2.capture.scriptProcessorNode !== undefined) { SDL2.capture.scriptProcessorNode.onaudioprocess = function(audioProcessingEvent) {}; SDL2.capture.scriptProcessorNode.disconnect(); } if (SDL2.capture.mediaStreamNode !== undefined) { SDL2.capture.mediaStreamNode.disconnect(); } SDL2.capture = undefined; } else { if (SDL2.audio.scriptProcessorNode != undefined) { SDL2.audio.scriptProcessorNode.disconnect(); } if (SDL2.audio.silenceTimer !== undefined) { clearInterval(SDL2.audio.silenceTimer); } SDL2.audio = undefined; } if ((SDL2.audioContext !== undefined) && (SDL2.audio === undefined) && (SDL2.capture === undefined)) { SDL2.audioContext.close(); SDL2.audioContext = undefined; } },  
+ 686802: ($0, $1, $2) => { var w = $0; var h = $1; var pixels = $2; if (!Module['SDL2']) Module['SDL2'] = {}; var SDL2 = Module['SDL2']; if (SDL2.ctxCanvas !== Module['canvas']) { SDL2.ctx = Browser.createContext(Module['canvas'], false, true); SDL2.ctxCanvas = Module['canvas']; } if (SDL2.w !== w || SDL2.h !== h || SDL2.imageCtx !== SDL2.ctx) { SDL2.image = SDL2.ctx.createImageData(w, h); SDL2.w = w; SDL2.h = h; SDL2.imageCtx = SDL2.ctx; } var data = SDL2.image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = 0xff; src++; dst += 4; } } else { if (SDL2.data32Data !== data) { SDL2.data32 = new Int32Array(data.buffer); SDL2.data8 = new Uint8Array(data.buffer); SDL2.data32Data = data; } var data32 = SDL2.data32; num = data32.length; data32.set(HEAP32.subarray(src, src + num)); var data8 = SDL2.data8; var i = 3; var j = i + 4*num; if (num % 8 == 0) { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; data8[i] = 0xff; i = i + 4 | 0; } } else { while (i < j) { data8[i] = 0xff; i = i + 4 | 0; } } } SDL2.ctx.putImageData(SDL2.image, 0, 0); },  
+ 688268: ($0, $1, $2, $3, $4) => { var w = $0; var h = $1; var hot_x = $2; var hot_y = $3; var pixels = $4; var canvas = document.createElement("canvas"); canvas.width = w; canvas.height = h; var ctx = canvas.getContext("2d"); var image = ctx.createImageData(w, h); var data = image.data; var src = pixels / 4; var dst = 0; var num; if (typeof CanvasPixelArray !== 'undefined' && data instanceof CanvasPixelArray) { num = data.length; while (dst < num) { var val = HEAP32[src]; data[dst ] = val & 0xff; data[dst+1] = (val >> 8) & 0xff; data[dst+2] = (val >> 16) & 0xff; data[dst+3] = (val >> 24) & 0xff; src++; dst += 4; } } else { var data32 = new Int32Array(data.buffer); num = data32.length; data32.set(HEAP32.subarray(src, src + num)); } ctx.putImageData(image, 0, 0); var url = hot_x === 0 && hot_y === 0 ? "url(" + canvas.toDataURL() + "), auto" : "url(" + canvas.toDataURL() + ") " + hot_x + " " + hot_y + ", auto"; var urlBuf = _malloc(url.length + 1); stringToUTF8(url, urlBuf, url.length + 1); return urlBuf; },  
+ 689256: ($0) => { if (Module['canvas']) { Module['canvas'].style['cursor'] = UTF8ToString($0); } },  
+ 689339: () => { if (Module['canvas']) { Module['canvas'].style['cursor'] = 'none'; } },  
+ 689408: () => { return window.innerWidth; },  
+ 689438: () => { return window.innerHeight; }
 };
 
 // Imports from the Wasm binary.
@@ -10197,6 +10226,11 @@ var dynCall_vifff = makeInvalidEarlyAccess('dynCall_vifff');
 var dynCall_viffff = makeInvalidEarlyAccess('dynCall_viffff');
 var dynCall_vfff = makeInvalidEarlyAccess('dynCall_vfff');
 var dynCall_iidiiii = makeInvalidEarlyAccess('dynCall_iidiiii');
+var dynCall_viijii = makeInvalidEarlyAccess('dynCall_viijii');
+var dynCall_iiiiij = makeInvalidEarlyAccess('dynCall_iiiiij');
+var dynCall_iiiiid = makeInvalidEarlyAccess('dynCall_iiiiid');
+var dynCall_iiiiijj = makeInvalidEarlyAccess('dynCall_iiiiijj');
+var dynCall_iiiiiijj = makeInvalidEarlyAccess('dynCall_iiiiiijj');
 var _asyncify_start_unwind = makeInvalidEarlyAccess('_asyncify_start_unwind');
 var _asyncify_stop_unwind = makeInvalidEarlyAccess('_asyncify_stop_unwind');
 var _asyncify_start_rewind = makeInvalidEarlyAccess('_asyncify_start_rewind');
@@ -10283,6 +10317,11 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['dynCall_viffff'] != 'undefined', 'missing Wasm export: dynCall_viffff');
   assert(typeof wasmExports['dynCall_vfff'] != 'undefined', 'missing Wasm export: dynCall_vfff');
   assert(typeof wasmExports['dynCall_iidiiii'] != 'undefined', 'missing Wasm export: dynCall_iidiiii');
+  assert(typeof wasmExports['dynCall_viijii'] != 'undefined', 'missing Wasm export: dynCall_viijii');
+  assert(typeof wasmExports['dynCall_iiiiij'] != 'undefined', 'missing Wasm export: dynCall_iiiiij');
+  assert(typeof wasmExports['dynCall_iiiiid'] != 'undefined', 'missing Wasm export: dynCall_iiiiid');
+  assert(typeof wasmExports['dynCall_iiiiijj'] != 'undefined', 'missing Wasm export: dynCall_iiiiijj');
+  assert(typeof wasmExports['dynCall_iiiiiijj'] != 'undefined', 'missing Wasm export: dynCall_iiiiiijj');
   assert(typeof wasmExports['asyncify_start_unwind'] != 'undefined', 'missing Wasm export: asyncify_start_unwind');
   assert(typeof wasmExports['asyncify_stop_unwind'] != 'undefined', 'missing Wasm export: asyncify_stop_unwind');
   assert(typeof wasmExports['asyncify_start_rewind'] != 'undefined', 'missing Wasm export: asyncify_start_rewind');
@@ -10365,6 +10404,11 @@ function assignWasmExports(wasmExports) {
   dynCall_viffff = dynCalls['viffff'] = createExportWrapper('dynCall_viffff', 6);
   dynCall_vfff = dynCalls['vfff'] = createExportWrapper('dynCall_vfff', 4);
   dynCall_iidiiii = dynCalls['iidiiii'] = createExportWrapper('dynCall_iidiiii', 7);
+  dynCall_viijii = dynCalls['viijii'] = createExportWrapper('dynCall_viijii', 6);
+  dynCall_iiiiij = dynCalls['iiiiij'] = createExportWrapper('dynCall_iiiiij', 6);
+  dynCall_iiiiid = dynCalls['iiiiid'] = createExportWrapper('dynCall_iiiiid', 6);
+  dynCall_iiiiijj = dynCalls['iiiiijj'] = createExportWrapper('dynCall_iiiiijj', 7);
+  dynCall_iiiiiijj = dynCalls['iiiiiijj'] = createExportWrapper('dynCall_iiiiiijj', 8);
   _asyncify_start_unwind = createExportWrapper('asyncify_start_unwind', 1);
   _asyncify_stop_unwind = createExportWrapper('asyncify_stop_unwind', 0);
   _asyncify_start_rewind = createExportWrapper('asyncify_start_rewind', 1);
@@ -10374,6 +10418,8 @@ function assignWasmExports(wasmExports) {
 }
 
 var wasmImports = {
+  /** @export */
+  __assert_fail: ___assert_fail,
   /** @export */
   __cxa_throw: ___cxa_throw,
   /** @export */
@@ -10406,6 +10452,8 @@ var wasmImports = {
   _emscripten_throw_longjmp: __emscripten_throw_longjmp,
   /** @export */
   _gmtime_js: __gmtime_js,
+  /** @export */
+  _localtime_js: __localtime_js,
   /** @export */
   _mmap_js: __mmap_js,
   /** @export */
@@ -10928,7 +10976,7 @@ function invoke_ji(index,a1) {
     return dynCall_ji(index,a1);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
     return 0n;
   }
@@ -10940,7 +10988,7 @@ function invoke_ii(index,a1) {
     return dynCall_ii(index,a1);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -10951,7 +10999,7 @@ function invoke_iiiii(index,a1,a2,a3,a4) {
     return dynCall_iiiii(index,a1,a2,a3,a4);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -10962,7 +11010,7 @@ function invoke_iiii(index,a1,a2,a3) {
     return dynCall_iiii(index,a1,a2,a3);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -10973,7 +11021,7 @@ function invoke_vi(index,a1) {
     dynCall_vi(index,a1);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -10984,7 +11032,7 @@ function invoke_jiji(index,a1,a2,a3) {
     return dynCall_jiji(index,a1,a2,a3);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
     return 0n;
   }
@@ -10996,7 +11044,7 @@ function invoke_iii(index,a1,a2) {
     return dynCall_iii(index,a1,a2);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -11007,7 +11055,7 @@ function invoke_viii(index,a1,a2,a3) {
     dynCall_viii(index,a1,a2,a3);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -11018,7 +11066,7 @@ function invoke_vii(index,a1,a2) {
     dynCall_vii(index,a1,a2);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -11029,7 +11077,7 @@ function invoke_iiiiiiiiii(index,a1,a2,a3,a4,a5,a6,a7,a8,a9) {
     return dynCall_iiiiiiiiii(index,a1,a2,a3,a4,a5,a6,a7,a8,a9);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -11040,7 +11088,7 @@ function invoke_iiiiii(index,a1,a2,a3,a4,a5) {
     return dynCall_iiiiii(index,a1,a2,a3,a4,a5);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -11051,7 +11099,7 @@ function invoke_iiiiiiiii(index,a1,a2,a3,a4,a5,a6,a7,a8) {
     return dynCall_iiiiiiiii(index,a1,a2,a3,a4,a5,a6,a7,a8);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -11062,7 +11110,7 @@ function invoke_i(index) {
     return dynCall_i(index);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -11073,7 +11121,7 @@ function invoke_viiii(index,a1,a2,a3,a4) {
     dynCall_viiii(index,a1,a2,a3,a4);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
@@ -11084,7 +11132,7 @@ function invoke_v(index) {
     dynCall_v(index);
   } catch(e) {
     stackRestore(sp);
-    if (e !== e+0) throw e;
+    if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
   }
 }
