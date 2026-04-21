@@ -3,13 +3,15 @@ Builds of Playdate games to html running through my SDL2 Reimplementation
 
 ## Generic Game controls
 
-GamePads are supported if your browser support it.
+GamePads are supported if your browser support it and are best used for crank controls.
 
 | Key | Action |
 | ------ | ------ |
 | Directional keys | movement, selecting in menu's etc |
 | A or X | A Button as mentioned in the games for functionality of each game please check each game's repository |
 | B or C | B Button as mentioned in the games for functionality of each game please check each game's repository |
+| F5 | Dock crank |
+| F6 | Undock crank |
 | F7 | Simulate crank move backwards movement, in my games usually used in the level editors to select previous piece. In other games consult game's repository to know the functionality |
 | F8 | Crank move forwards movement, in my games usually used in the level editors to select next piece. In other games consult game's repository to know the functionality |
 | F3 | In (my Playdate) games starting up in black and white, reboot and use colored version of graphics, some games have multiple colored graphics so you can press it again to see more options. The button basically makes you cycle through all possibilities (can crash other people's games)|
@@ -24,7 +26,7 @@ Please see respective repo of each game to get more information about the games 
 
 Puzzle Bobble (Bust-a-Move) meets 2048 with some extra sauce.
 
-Note: Audio does not work due to unimplemented sound functions in sdl2api, requires crank (F7/F8)
+Note: Audio does not work due to unimplemented sound functions in sdl2api, requires crank (F7/F8 or joystick)
 
 [Game Info](https://github.com/Hegodi/Playdate-Stellarator) - [Play](https://joyrider3774.github.io/playdate_games_html/games/bifusion)
 
@@ -47,12 +49,44 @@ Blokdude is a remake of the well known TI Caluculator game from Brandon Sterner 
 [Game Info](https://joyrider3774.github.io/blockdude_playdate/) - [Play](https://joyrider3774.github.io/playdate_games_html/games/blockdude)
 
 ---
+
+## Bullet Hell
+![Bullet Hell Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/bullet-hell-screenshot1.png) ![Bullet Hell Screenshot 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/bullet-hell-screenshot2.png)
+
+Bullet Hell is a Crank-aimed 2D bullethell prototype for the Playdate console. 
+
+Note: requires crank (F7/F8 or joystick)
+
+[Game Info](https://github.com/AndrewPrifer/playdate-bullethell-c) - [Play](https://joyrider3774.github.io/playdate_games_html/games/bullet-hell)
+
+---
+
 ## Checkers
 ![Checkers Screenshot 1](https://raw.githubusercontent.com/joyrider3774/checkers_playdate/main/metadata/screenshots/Checkers-screenshot1.gif) ![Checkers Screenshot 2](https://raw.githubusercontent.com/joyrider3774/checkers_playdate/main/metadata/screenshots/Checkers-screenshot5.png)
 
 Checkers is the well known board game with four difficulties and a jump heuristic. This version is port of my gp2x version made to work with the Playdate.
 
 [Game Info](https://joyrider3774.github.io/checkers_playdate/) - [Play](https://joyrider3774.github.io/playdate_games_html/games/checkers)
+
+---
+
+## Crank The World
+![Crank The World Screenshot 1](https://raw.githubusercontent.com/aras-p/demo-pd-cranktheworld/main/log/playdate-20240419-140918.png) ![Crank The World Screenshot 2](https://raw.githubusercontent.com/aras-p/demo-pd-cranktheworld/main/log/playdate-20240419-140936.png)
+
+A real-time rendering demo for Playdate.
+
+[Game Info](https://github.com/aras-p/demo-pd-cranktheworld) - [Play](https://joyrider3774.github.io/playdate_games_html/games/cranktheworld)
+
+---
+
+## Death Star Shooter
+![Death Star Shooter Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/deathStarShooter-screenshot1.png) ![Death Star Shooter Screenshot 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/deathStarShooter-screenshot2.png)
+
+Death Star Shooter is a crank based game where you control the direction of the death star with the crank and shoot with the buttons. Shoot down as much enemies as you can. 
+
+Note: requires crank (F7/F8 or joystick)
+
+[Game Info](https://github.com/darkusagi99/deathStarShooter) - [Play](https://joyrider3774.github.io/playdate_games_html/games/deathStarShooter)
 
 ---
 
@@ -180,6 +214,17 @@ RetroTime is a game containing 8 retro based games playable in 3 game modes bein
 Rubido is a little chinese checkers or solitaire game with four difficulties.
 
 [Game Info](https://joyrider3774.github.io/rubido_playdate/) - [Play](https://joyrider3774.github.io/playdate_games_html/games/rubido)
+
+---
+
+## Slime Ascension
+![Slime Ascension Screenshot 1](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/Slime-Ascension-screenshot1.png) ![DSlime Ascension Screenshot 2](https://raw.githubusercontent.com/joyrider3774/playdate_games_html/main/screenshots/Slime-Ascension-screenshot2.png)
+
+Climb up game Created for PlayJam 8 "Ascension".
+
+Note: requires crank (F7/F8 or joystick)
+
+[Game Info](https://github.com/uguu-org/slime-ascension) - [Play](https://joyrider3774.github.io/playdate_games_html/games/slime-ascension)
 
 ---
 
