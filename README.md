@@ -253,3 +253,12 @@ Waternet is a multiplatform puzzle game written for old consoles and handhelds l
 Worm is a copter / worm game remake with 5 game modes and a seed system written for playdate
 
 [Game Info](https://joyrider3774.github.io/worm_playdate/) - [Play](https://joyrider3774.github.io/playdate_games_html/games/worm)
+
+---
+
+## Znax
+![Znax Screenshot 1](https://raw.githubusercontent.com/joyrider3774/znax_playdate/main/metadata/screenshots/screenshot1.png) ![Znax Screenshot 2](https://raw.githubusercontent.com/joyrider3774/znax_playdate/main/metadata/screenshots/screenshot9.png)
+
+Znax is a remake of a game by Nick Kouvaris. It is a sort of puzzle / arcade game where you as the player need to select 4 blocks of the same color as the corners of rectangles as big as you can.
+
+[Game Info](https://joyrider3774.github.io/znax_playdate/) - [Play](https://joyrider3774.github.io/playdate_games_html/games/znax)
