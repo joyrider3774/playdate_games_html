@@ -257,7 +257,7 @@ Worm is a copter / worm game remake with 5 game modes and a seed system written 
 ---
 
 ## Znax
-![Znax Screenshot 1](https://raw.githubusercontent.com/joyrider3774/znax_playdate/main/metadata/screenshots/screenshot1.png) ![Znax Screenshot 2](https://raw.githubusercontent.com/joyrider3774/znax_playdate/main/metadata/screenshots/screenshot9.png)
+![Znax Screenshot 1](https://raw.githubusercontent.com/joyrider3774/znax_playdate/main/screenshots/screenshot1.png) ![Znax Screenshot 2](https://raw.githubusercontent.com/joyrider3774/znax_playdate/main/screenshots/screenshot9.png)
 
 Znax is a remake of a game by Nick Kouvaris. It is a sort of puzzle / arcade game where you as the player need to select 4 blocks of the same color as the corners of rectangles as big as you can.
 
